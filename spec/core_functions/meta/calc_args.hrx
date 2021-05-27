@@ -170,6 +170,14 @@ Error: Missing argument $calc.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $calc.
+  ,
+2 | a {b: meta.calc-args()}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -188,6 +196,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: meta.calc-args(calc(var(--c)), calc(var(--d)))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/invalid_args/input.scss
@@ -201,3 +217,16 @@ Error: $calc: 1 is not a calculation.
   |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/invalid_args/error-libsass
+Error: $calc: 1 is not a calculation.
+  ,
+2 | a {b: meta.calc-args(1)}
+  |                      ^
+  '
+  input.scss 2:22  calc-args()
+  ,
+2 | a {b: meta.calc-args(1)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

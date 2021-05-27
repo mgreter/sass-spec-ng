@@ -26,6 +26,11 @@ a {b: color.blackness(color.hwb(0, 0%, 50%))}
 
 <===> middle/zero_whiteness/output.css
 a {
+  b: 50%;
+}
+
+<===> middle/zero_whiteness/output-dart-sass.css
+a {
   b: 49.8039215686%;
 }
 
@@ -36,6 +41,11 @@ a {
 a {b: color.blackness(color.hwb(0, 50%, 50%))}
 
 <===> middle/half_whiteness/output.css
+a {
+  b: 50%;
+}
+
+<===> middle/half_whiteness/output-dart-sass.css
 a {
   b: 49.8039215686%;
 }
@@ -48,6 +58,11 @@ a {b: color.blackness(color.hwb(0, 70%, 70%))}
 
 <===> middle/high_whiteness/output.css
 a {
+  b: 70%;
+}
+
+<===> middle/high_whiteness/output-dart-sass.css
+a {
   b: 49.8039215686%;
 }
 
@@ -59,6 +74,11 @@ a {b: color.blackness(color.hwb(0, 0%, 0.5%))}
 
 <===> fraction/output.css
 a {
+  b: 0.5%;
+}
+
+<===> fraction/output-dart-sass.css
+a {
   b: 0.3921568627%;
 }
 
@@ -69,6 +89,11 @@ a {
 a {b: color.blackness($color: color.hwb(0, 0%, 42%))}
 
 <===> named/output.css
+a {
+  b: 42%;
+}
+
+<===> named/output-dart-sass.css
 a {
   b: 41.9607843137%;
 }
@@ -91,6 +116,14 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.blackness()}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -109,6 +142,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: color.blackness(red, green)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -122,3 +163,16 @@ Error: $color: 1 is not a color.
   |       ^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/error-libsass
+Error: $color: 1 is not a color.
+  ,
+2 | a {b: color.blackness(1)}
+  |                       ^
+  '
+  input.scss 2:23  blackness()
+  ,
+2 | a {b: color.blackness(1)}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

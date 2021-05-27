@@ -1,3 +1,8 @@
+<===> into_pseudo/extends_after/options.yml
+---
+:todo:
+- libsass#extend
+
 <===> into_pseudo/extends_after/input.scss
 // Regression test for sass/dart-sass#1297, where the root cause was that
 // extending an existing extension accidentally ignored simple selectors in

@@ -14,6 +14,24 @@ Error: $selector1: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> selector1/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: selector-unify(&, "c")}
+  |                      ^
+  '
+  input.scss 1:22  selector-unify()
+  ,
+1 | a {b: selector-unify("&", "c")}
+  |                      ^^^
+  '
+  input.scss 1:22  selector-unify()
+  ,
+1 | a {b: selector-unify("&", "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> selector1/invalid/input.scss
@@ -32,6 +50,24 @@ Error: $selector1: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> selector1/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: selector-unify([c, "d")}
+  |                        ^
+  '
+  input.scss 1:24  selector-unify()
+  ,
+1 | a {b: selector-unify("[c", "d")}
+  |                      ^^^^
+  '
+  input.scss 1:22  selector-unify()
+  ,
+1 | a {b: selector-unify("[c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> selector1/type/input.scss
@@ -45,6 +81,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> selector1/type/error-libsass
+Error: $selector1: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: selector-unify(1, "c")}
+  |                      ^
+  '
+  input.scss 1:22  selector-unify()
+  ,
+1 | a {b: selector-unify(1, "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -64,6 +114,24 @@ Error: $selector2: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> selector2/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: selector-unify("c", &)}
+  |                           ^
+  '
+  input.scss 1:27  selector-unify()
+  ,
+1 | a {b: selector-unify("c", "&")}
+  |                           ^^^
+  '
+  input.scss 1:27  selector-unify()
+  ,
+1 | a {b: selector-unify("c", "&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> selector2/invalid/input.scss
@@ -82,6 +150,24 @@ Error: $selector2: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> selector2/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: selector-unify("c", [d)}
+  |                             ^
+  '
+  input.scss 1:29  selector-unify()
+  ,
+1 | a {b: selector-unify("c", "[d")}
+  |                           ^^^^
+  '
+  input.scss 1:27  selector-unify()
+  ,
+1 | a {b: selector-unify("c", "[d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> selector2/type/input.scss
@@ -95,3 +181,17 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> selector2/type/error-libsass
+Error: $selector2: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: selector-unify("c", 1)}
+  |                           ^
+  '
+  input.scss 1:27  selector-unify()
+  ,
+1 | a {b: selector-unify("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

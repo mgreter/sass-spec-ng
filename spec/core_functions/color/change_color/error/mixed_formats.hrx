@@ -9,6 +9,14 @@ Error: RGB parameters may not be passed along with HSL parameters.
   '
   input.scss 1:7  root stylesheet
 
+<===> red_and_hue/error-libsass
+Error: RGB parameters may not be passed along with HSL/HWB parameters.
+  ,
+1 | a {b: change-color(red, $red: 1, $hue: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> green_and_saturation/input.scss

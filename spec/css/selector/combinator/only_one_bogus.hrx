@@ -17,3 +17,16 @@ More info: https://sass-lang.com/d/bogus-combinators
   |    ^^^
   '
     input.scss 1:4  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 1, column 4 of input.scss:
+The selector "+ b" is invalid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a, + b {c: d}
+  |    ^^^
+  '
+    input.scss 1:4  root stylesheet

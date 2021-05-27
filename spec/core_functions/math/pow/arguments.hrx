@@ -21,6 +21,19 @@ Error: $base: "0" is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/base_type/error-libsass
+Error: $base: "0" is not a number.
+  ,
+2 | a {b: math.pow("0", 0)}
+  |                ^^^
+  '
+  input.scss 2:16  pow()
+  ,
+2 | a {b: math.pow("0", 0)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/exponent_type/input.scss
@@ -34,6 +47,19 @@ Error: $exponent: "0" is not a number.
   |       ^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/exponent_type/error-libsass
+Error: $exponent: "0" is not a number.
+  ,
+2 | a {b: math.pow(0, "0")}
+  |                   ^^^
+  '
+  input.scss 2:19  pow()
+  ,
+2 | a {b: math.pow(0, "0")}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -81,6 +107,13 @@ Error: Missing argument $base.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/zero_args/error-libsass
+Error: Missing argument $base.
+  ,
+2 | a {b: math.pow()}
+  |       ^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 
 <===>
 ================================================================================
@@ -100,6 +133,14 @@ Error: Missing argument $exponent.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/one_arg/error-libsass
+Error: Missing argument $exponent.
+  ,
+2 | a {b: math.pow(0)}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -115,5 +156,13 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:math
 1 | @function pow($base, $exponent) {
   |           ===================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: math.pow(0, 0, 0)}
+  |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

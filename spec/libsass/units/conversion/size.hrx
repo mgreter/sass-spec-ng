@@ -1086,3 +1086,19 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
     |            ^^^^^^^^^^^^^^^^^
     '
     input.scss 109:12  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 3, column 12 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(4.2px, 1px) or calc(4.2px / 1px)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+3 |   output: (4.2px / 1px);
+  |            ^^^^^^^^^^^
+  '
+    input.scss 3:12  root stylesheet
+
+Additionally, 71 similar warnings were suppressed!

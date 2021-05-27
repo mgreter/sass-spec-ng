@@ -78,6 +78,19 @@ Error: Expected 1% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/unknown/error-libsass
+Error: $number: Expected 1% to have no units.
+  ,
+1 | a {b: sqrt(1%)}
+  |            ^^
+  '
+  input.scss 1:12  sqrt()
+  ,
+1 | a {b: sqrt(1%)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/real/input.scss
@@ -90,6 +103,19 @@ Error: Expected 16px to have no units.
   |       ^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/units/real/error-libsass
+Error: $number: Expected 16px to have no units.
+  ,
+1 | a {b: sqrt(16px)}
+  |            ^^^^
+  '
+  input.scss 1:12  sqrt()
+  ,
+1 | a {b: sqrt(16px)}
+  |       ^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -111,6 +137,14 @@ a {b: sqrt()}
 
 <===> error/syntax/too_few_args/error
 Error: Missing argument.
+  ,
+1 | a {b: sqrt()}
+  |       ^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/syntax/too_few_args/error-libsass
+Error: Missing argument $number.
   ,
 1 | a {b: sqrt()}
   |       ^^^^^^
@@ -155,3 +189,11 @@ Error: This operation can't be used in a calculation.
   |              ^
   '
   input.scss 1:14  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: sqrt(7 % 3)}
+  |            ^^^^^
+  '
+  input.scss 1:12  root stylesheet

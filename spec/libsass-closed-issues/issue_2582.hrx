@@ -4,6 +4,7 @@
   font-size: (16px / 16px  + 0em);
   font-size: 16px / 16px  + 0em;
 }
+
 <===> output.css
 .test {
   font-size: 1em;
@@ -47,3 +48,19 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |              ^^^^^^^^^^^
   '
     input.scss 4:14  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 2, column 15 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(16px, 16px) or calc(16px / 16px)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+2 |   font-size: (16px / 16px) + 0em;
+  |               ^^^^^^^^^^^
+  '
+    input.scss 2:15  root stylesheet
+
+Additionally, 2 similar warnings were suppressed!

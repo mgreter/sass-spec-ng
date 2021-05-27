@@ -83,6 +83,23 @@ Recommendation: call(get-function("a"))
   '
     input.scss 2:7  root stylesheet
 
+<===> string/local/warning-libsass
+DEPRECATION WARNING on line 2, column 12 of input.scss:
+Passing a string to call() is deprecated and will be illegal in LibSass 5.0.0.
+
+Recommendation: call(get-function("a"))
+
+  ,
+2 | a {b: call("a", 1)}
+  |            ^^^
+  '
+    input.scss 2:12  call()
+  ,
+2 | a {b: call("a", 1)}
+  |       ^^^^^^^^^^^^
+  '
+    input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> string/built_in/input.scss
@@ -103,6 +120,23 @@ Recommendation: call(get-function("rgb"))
   |       ^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> string/built_in/warning-libsass
+DEPRECATION WARNING on line 1, column 12 of input.scss:
+Passing a string to call() is deprecated and will be illegal in LibSass 5.0.0.
+
+Recommendation: call(get-function("rgb"))
+
+  ,
+1 | a {b: call("rgb", 1, 2, 3)}
+  |            ^^^^^
+  '
+    input.scss 1:12  call()
+  ,
+1 | a {b: call("rgb", 1, 2, 3)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -127,6 +161,19 @@ Error: $function: 1 is not a function reference.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $function: 1 is not a function reference.
+  ,
+1 | a {b: call(1)}
+  |            ^
+  '
+  input.scss 1:12  call()
+  ,
+1 | a {b: call(1)}
+  |       ^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -144,6 +191,14 @@ Error: Missing argument $function.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $function.
+  ,
+1 | a {b: call()}
+  |       ^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/invalid_args/input.scss
@@ -151,6 +206,19 @@ a {b: call(get-function("rgb"), 1)}
 
 <===> error/invalid_args/error
 Error: Missing element $green.
+  ,
+1 | a {b: call(get-function("rgb"), 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/invalid_args/error-libsass
+Error: Missing argument $green.
+  ,
+1 | a {b: call(get-function("rgb"), 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  call()
   ,
 1 | a {b: call(get-function("rgb"), 1)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -172,3 +240,16 @@ Error: Undefined variable.
   |                                          ^^^^^^^^^^
   '
   input.scss 4:42  root stylesheet
+
+<===> error/if_args/error-libsass
+Error: Undefined variable.
+  ,
+4 | a {b: call(get-function("if"), true, "", $undefined)}
+  |                                          ^^^^^^^^^^
+  '
+  input.scss 4:42  call()
+  ,
+4 | a {b: call(get-function("if"), true, "", $undefined)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:7   root stylesheet

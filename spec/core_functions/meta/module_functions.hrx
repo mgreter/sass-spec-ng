@@ -260,6 +260,19 @@ Error: $module: 1 is not a string.
   '
   input.scss 2:5  root stylesheet
 
+<===> error/type/error-libsass
+Error: $module: 1 is not a string.
+  ,
+2 | $a: meta.module-functions(1);
+  |                           ^
+  '
+  input.scss 2:27  module-functions()
+  ,
+2 | $a: meta.module-functions(1);
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -278,6 +291,14 @@ Error: Missing argument $module.
   '
   input.scss 2:5  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $module.
+  ,
+2 | $a: meta.module-functions();
+  |     ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -293,6 +314,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:meta
 1 | @function module-functions($module) {
   |           ========================= declaration
+  '
+  input.scss 2:5  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | $a: meta.module-functions("meta", "c");
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:5  root stylesheet
 

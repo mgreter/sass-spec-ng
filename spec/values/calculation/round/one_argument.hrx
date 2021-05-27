@@ -96,6 +96,20 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 2:6  root stylesheet
 
+<===> math/slash_as_division/warning-libsass
+DEPRECATION WARNING on line 2, column 6 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(2px, round(1.5)) or calc(2px / round(1.5))
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+2 |   a: 2px / round(1.5);
+  |      ^^^^^^^^^^^^^^^^
+  '
+    input.scss 2:6  root stylesheet
+
 <===>
 ================================================================================
 <===> case_insensitive/input.scss

@@ -30,3 +30,29 @@ More info: https://sass-lang.com/d/bogus-combinators
   |            ============ @extend rule
   '
     input.scss 2:1  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector "> .foo" is invalid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | > .foo {a: b}
+  | ^^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
+DEPRECATION WARNING on line 2, column 1 of input.scss:
+The selector "> foo bar" is invalid CSS.
+Therefore, it shouldn't be an extender.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+2 | > foo bar {@extend .foo}
+  | ^^^^^^^^^
+  '
+    input.scss 2:1  root stylesheet

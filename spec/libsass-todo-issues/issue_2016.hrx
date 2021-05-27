@@ -1,9 +1,18 @@
 <===> input.scss
 $_: ___((Classes and IDs must follow a specific grammar. And this thing here doesn’t.));
+
 <===> error
 Error: Expected identifier.
   ,
 1 | $_: ___((Classes and IDs must follow a specific grammar. And this thing here doesn’t.));
+  |                                                         ^
+  '
+  input.scss 1:57  root stylesheet
+
+<===> error-libsass
+Error: Expected identifier.
+  ,
+1 | $_: ___((Classes and IDs must follow a specific grammar. And this thing here doesn?t.));
   |                                                         ^
   '
   input.scss 1:57  root stylesheet

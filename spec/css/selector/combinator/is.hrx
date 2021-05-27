@@ -15,6 +15,20 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:1  root stylesheet
 
+<===> leading/single/child/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector ":is(> a)" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | :is(> a) {b: c}
+  | ^^^^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> leading/single/next_sibling/input.scss
@@ -25,6 +39,20 @@ More info: https://sass-lang.com/d/bogus-combinators
 <===> leading/single/next_sibling/warning
 DEPRECATION WARNING: The selector ":is(+ a)" is invalid CSS. It will be omitted from the generated CSS.
 This will be an error in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | :is(+ a) {b: c}
+  | ^^^^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
+<===> leading/single/next_sibling/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector ":is(+ a)" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
 
 More info: https://sass-lang.com/d/bogus-combinators
 
@@ -53,6 +81,20 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:1  root stylesheet
 
+<===> leading/single/sibling/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector ":is(~ a)" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | :is(~ a) {b: c}
+  | ^^^^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> leading/multiple/input.scss
@@ -63,6 +105,20 @@ More info: https://sass-lang.com/d/bogus-combinators
 <===> leading/multiple/warning
 DEPRECATION WARNING: The selector ":is(+ ~ a)" is invalid CSS. It will be omitted from the generated CSS.
 This will be an error in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | :is(+ ~ a) {b: c}
+  | ^^^^^^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
+<===> leading/multiple/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector ":is(+ ~ a)" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
 
 More info: https://sass-lang.com/d/bogus-combinators
 

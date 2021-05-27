@@ -1,0 +1,7 @@
+<===> input.scss
+@warn "warn";
+
+<===> output.css
+<===> warning
+WARNING: warn
+    input.scss 1:1  root stylesheet

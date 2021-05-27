@@ -118,6 +118,14 @@ Error: $number: Expected 1% to have an angle unit (deg, grad, rad, turn).
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/unknown/error-libsass
+Error: $angle: Expected 1% to have an angle unit (deg, grad, rad, turn).
+  ,
+1 | a {b: cos(1%)}
+  |       ^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/known/input.scss
@@ -131,6 +139,14 @@ Error: $number: Expected 1px to have an angle unit (deg, grad, rad, turn).
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/known/error-libsass
+Error: $angle: Expected 1px to have an angle unit (deg, grad, rad, turn).
+  ,
+1 | a {b: cos(1px)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/complex/input.scss
@@ -138,6 +154,14 @@ a {b: cos(-7px / 4em)}
 
 <===> error/unit/complex/error
 Error: $number: Expected calc(-1.75px / 1em) to have an angle unit (deg, grad, rad, turn).
+  ,
+1 | a {b: cos(-7px / 4em)}
+  |       ^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/unit/complex/error-libsass
+Error: $angle: Expected calc(-1.75px / 1em) to have an angle unit (deg, grad, rad, turn).
   ,
 1 | a {b: cos(-7px / 4em)}
   |       ^^^^^^^^^^^^^^^
@@ -164,6 +188,14 @@ a {b: cos()}
 
 <===> error/too_few_args/error
 Error: Missing argument.
+  ,
+1 | a {b: cos()}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $angle.
   ,
 1 | a {b: cos()}
   |       ^^^^^
@@ -208,3 +240,11 @@ Error: This operation can't be used in a calculation.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: cos(7 % 3)}
+  |           ^^^^^
+  '
+  input.scss 1:11  root stylesheet

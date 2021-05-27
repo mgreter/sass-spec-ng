@@ -2,6 +2,7 @@
 @if (true) {
   @mixin foo() {}
 }
+
 <===> error
 Error: Mixins may not be declared in control directives.
   ,

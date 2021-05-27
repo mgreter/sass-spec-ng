@@ -163,6 +163,11 @@ a {
 
 <===>
 ================================================================================
+<===> fuzzy/with_exponent/negative_even_integer/options.yml
+---
+:todo:
+- libsass#fuzzy
+
 <===> fuzzy/with_exponent/negative_even_integer/input.scss
 @use "sass:math";
 a {b: math.pow(0.000000000001, -2)}
@@ -174,6 +179,11 @@ a {
 
 <===>
 ================================================================================
+<===> fuzzy/with_exponent/negative_odd_integer/options.yml
+---
+:todo:
+- libsass#fuzzy
+
 <===> fuzzy/with_exponent/negative_odd_integer/input.scss
 @use "sass:math";
 a {b: math.pow(0.000000000001, -3)}

@@ -73,6 +73,14 @@ Error: Missing argument $color.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+1 | a {b: ie-hex-str()}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -90,6 +98,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+1 | a {b: ie-hex-str(red, blue)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -102,3 +118,16 @@ Error: $color: c is not a color.
   |       ^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/type/error-libsass
+Error: $color: c is not a color.
+  ,
+1 | a {b: ie-hex-str(c)}
+  |                  ^
+  '
+  input.scss 1:18  ie-hex-str()
+  ,
+1 | a {b: ie-hex-str(c)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

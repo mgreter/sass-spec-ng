@@ -23,3 +23,11 @@ Error: Expected identifier.
   |  ^
   '
   input.scss 1:2  root stylesheet
+
+<===> error/empty_placeholder/error-libsass
+Error: Expected identifier.
+  ,
+1 | % {
+  |  ^
+  '
+  input.scss 1:2  root stylesheet

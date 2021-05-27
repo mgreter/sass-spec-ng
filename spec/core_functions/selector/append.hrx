@@ -202,6 +202,24 @@ Error: Selector ".c ~" can't be used as a parent in a compound selector.
   '
   - 1:1  root stylesheet
 
+<===> error/combinator/trailing/error-libsass
+Error: Selector ".c ~" can't be used as a parent in a compound selector.
+  ,
+1 | a {b: selector-append(".c ~", .d)}
+  |                               ^^
+  '
+  input.scss 1:31  selector-append()
+  ,
+1 | a {b: selector-append(.c ~, ".d")}
+  |                          ^
+  '
+  input.scss 1:26  selector-append()
+  ,
+1 | a {b: selector-append(".c ~", ".d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/combinator/only/input.scss
@@ -246,6 +264,24 @@ Error: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: selector-append(".c", &)}
+  |                             ^
+  '
+  input.scss 1:29  selector-append()
+  ,
+1 | a {b: selector-append(".c", "&")}
+  |                             ^^^
+  '
+  input.scss 1:29  selector-append()
+  ,
+1 | a {b: selector-append(".c", "&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/invalid/input.scss
@@ -264,6 +300,24 @@ Error: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: selector-append([c, "d")}
+  |                         ^
+  '
+  input.scss 1:25  selector-append()
+  ,
+1 | a {b: selector-append("[c", "d")}
+  |                       ^^^^
+  '
+  input.scss 1:23  selector-append()
+  ,
+1 | a {b: selector-append("[c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -277,6 +331,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/type/error-libsass
+Error: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: selector-append("c", 1)}
+  |                            ^
+  '
+  input.scss 1:28  selector-append()
+  ,
+1 | a {b: selector-append("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================

@@ -153,6 +153,10 @@ shared, in-imported {
 
 <===>
 ================================================================================
+<===> use_into_use_and_use_into_import/options.yml
+:todo:
+  - libsass#extend-mod
+
 <===> use_into_use_and_use_into_import/input.scss
 @use "user";
 @use "importer";
@@ -184,6 +188,10 @@ shared, in-importer {
 
 <===>
 ================================================================================
+<===> use_into_use_and_use_into_import_into_use/options.yml
+:todo:
+  - libsass#extend-mod
+
 <===> use_into_use_and_use_into_import_into_use/input.scss
 @use "importer";
 @use "used";
@@ -218,6 +226,10 @@ shared, in-used {
 
 <===>
 ================================================================================
+<===> use_and_import_into_diamond_extend/options.yml
+:todo:
+  - libsass#extend-mod
+
 <===> use_and_import_into_diamond_extend/input.scss
 @use "downstream";
 @import "downstream";

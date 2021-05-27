@@ -11,6 +11,7 @@ $map: (
 .foo {
   content: inspect($map);
 }
+
 <===> error
 Error: Duplicate key.
   ,
@@ -18,5 +19,13 @@ Error: Duplicate key.
   |   =========== first key
 7 |   fncall(1+2): 'bar',
   |   ^^^^^^^^^^^ second key
+  '
+  input.scss 7:3  root stylesheet
+
+<===> error-libsass
+Error: Duplicate key.
+  ,
+7 |   fncall(1+2): 'bar',
+  |   ^^^^^^^^^^^
   '
   input.scss 7:3  root stylesheet

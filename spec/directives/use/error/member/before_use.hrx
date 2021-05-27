@@ -32,6 +32,11 @@ Error: There is no module with the namespace "other".
 
 <===>
 ================================================================================
+<===> variable_declaration_without_namespace/options.yml
+---
+:todo:
+- libsass#modules
+
 <===> variable_declaration_without_namespace/input.scss
 $member: from input;
 
@@ -52,6 +57,11 @@ Error: This module and the new module both define a variable named "$member".
 
 <===>
 ================================================================================
+<===> function/options.yml
+---
+:todo:
+- libsass#error-msg
+
 <===> function/input.scss
 $variable: other.member();
 @use "other";

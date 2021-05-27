@@ -106,6 +106,19 @@ Error: Expected 10px to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/compatible/error-libsass
+Error: $base: Expected 10px to have no units.
+  ,
+1 | a {b: pow(10px, 10px)}
+  |           ^^^^
+  '
+  input.scss 1:11  pow()
+  ,
+1 | a {b: pow(10px, 10px)}
+  |       ^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/unknown_and_unitless/input.scss
@@ -119,6 +132,19 @@ Error: Expected 10% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/unknown_and_unitless/error-libsass
+Error: $base: Expected 10% to have no units.
+  ,
+1 | a {b: pow(10%, 10)}
+  |           ^^^
+  '
+  input.scss 1:11  pow()
+  ,
+1 | a {b: pow(10%, 10)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/real_and_unitless/input.scss
@@ -131,6 +157,19 @@ Error: Expected 10px to have no units.
   |       ^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/units/real_and_unitless/error-libsass
+Error: $base: Expected 10px to have no units.
+  ,
+1 | a {b: pow(10px, 10)}
+  |           ^^^^
+  '
+  input.scss 1:11  pow()
+  ,
+1 | a {b: pow(10px, 10)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -209,3 +248,11 @@ Error: This operation can't be used in a calculation.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: pow(7 % 3, 1)}
+  |           ^^^^^
+  '
+  input.scss 1:11  root stylesheet

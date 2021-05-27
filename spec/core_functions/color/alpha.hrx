@@ -152,6 +152,19 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+1 | a {b: alpha(red, green)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  alpha()
+  ,
+1 | a {b: alpha(red, green)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -165,12 +178,21 @@ Error: $color: 1 is not a color.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $color: 1 is not a color.
+  ,
+1 | a {b: alpha(1)}
+  |             ^
+  '
+  input.scss 1:13  alpha()
+  ,
+1 | a {b: alpha(1)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
-<===> error/with_module/type/input.scss
-@use 'sass:color';
-a {b: color.opacity(var(--c))}
-
 <===> error/with_module/type/error
 Error: $color: var(--c) is not a color.
   ,
@@ -192,6 +214,19 @@ Error: $color: "c=d" is not a color.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/quoted_string/error-libsass
+Error: $color: "c=d" is not a color.
+  ,
+1 | a {b: alpha("c=d")}
+  |             ^^^^^
+  '
+  input.scss 1:13  alpha()
+  ,
+1 | a {b: alpha("c=d")}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unquoted_string/no_equals/input.scss
@@ -205,6 +240,19 @@ Error: $color: cd is not a color.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unquoted_string/no_equals/error-libsass
+Error: $color: cd is not a color.
+  ,
+1 | a {b: alpha(cd)}
+  |             ^^
+  '
+  input.scss 1:13  alpha()
+  ,
+1 | a {b: alpha(cd)}
+  |       ^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unquoted_string/non_identifier_before_equals/input.scss
@@ -217,3 +265,16 @@ Error: $color: 1=c is not a color.
   |       ^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/unquoted_string/non_identifier_before_equals/error-libsass
+Error: $color: 1=c is not a color.
+  ,
+1 | a {b: alpha(unquote("1=c"))}
+  |                     ^^^^^
+  '
+  input.scss 1:21  alpha()
+  ,
+1 | a {b: alpha(unquote("1=c"))}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

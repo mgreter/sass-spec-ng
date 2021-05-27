@@ -15,6 +15,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/syntax/no_args/error-libsass
+Error: min() must have at least one argument.
+  ,
+1 | a {b: min()}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/syntax/invalid_arg/input.scss
@@ -42,6 +50,24 @@ Error: 1s and 2px are incompatible.
   '
   input.scss 1:11  root stylesheet
 
+<===> error/known_incompatible/first/error-libsass
+Error: Incompatible units px and s.
+  ,
+1 | a {b: min(1s, 2px)}
+  |               ^^^
+  '
+  input.scss 1:15  min()
+  ,
+1 | a {b: min(1s, 2px)}
+  |           ^^
+  '
+  input.scss 1:11  min()
+  ,
+1 | a {b: min(1s, 2px)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/known_incompatible/second/input.scss
@@ -55,6 +81,24 @@ Error: 1px and 2s are incompatible.
   |                == 2s
   '
   input.scss 1:11  root stylesheet
+
+<===> error/known_incompatible/second/error-libsass
+Error: Incompatible units s and px.
+  ,
+1 | a {b: min(1px, 2s)}
+  |                ^^
+  '
+  input.scss 1:16  min()
+  ,
+1 | a {b: min(1px, 2s)}
+  |           ^^^
+  '
+  input.scss 1:11  min()
+  ,
+1 | a {b: min(1px, 2s)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -70,6 +114,24 @@ Error: 1px and 3s are incompatible.
   '
   input.scss 1:11  root stylesheet
 
+<===> error/known_incompatible/third/error-libsass
+Error: Incompatible units s and px.
+  ,
+1 | a {b: min(1px, 2px, 3s)}
+  |                     ^^
+  '
+  input.scss 1:21  min()
+  ,
+1 | a {b: min(1px, 2px, 3s)}
+  |           ^^^
+  '
+  input.scss 1:11  min()
+  ,
+1 | a {b: min(1px, 2px, 3s)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unitless_after_potentially_incompatible/input.scss
@@ -84,6 +146,24 @@ Error: 1c and 3 are incompatible.
   '
   input.scss 1:11  root stylesheet
 
+<===> error/unitless_after_potentially_incompatible/error-libsass
+Error: Incompatible units [unitless] and c.
+  ,
+1 | a {b: min(1c, 2d, 3)}
+  |                   ^
+  '
+  input.scss 1:19  min()
+  ,
+1 | a {b: min(1c, 2d, 3)}
+  |           ^^
+  '
+  input.scss 1:11  min()
+  ,
+1 | a {b: min(1c, 2d, 3)}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unitless_and_real/in_calc/input.scss
@@ -91,6 +171,24 @@ a {b: min(calc(1px + 2))}
 
 <===> error/unitless_and_real/in_calc/error
 Error: 1px and 2 are incompatible.
+  ,
+1 | a {b: min(calc(1px + 2))}
+  |                ^^^^^^^
+  '
+  input.scss 1:16  root stylesheet
+
+<===> error/unitless_and_real/in_calc/error-libsass
+Error: Incompatible units [unitless] and px.
+  ,
+1 | a {b: min(calc(1px + 2))}
+  |                      ^
+  '
+  input.scss 1:22  root stylesheet
+  ,
+1 | a {b: min(calc(1px + 2))}
+  |                ^^^
+  '
+  input.scss 1:16  root stylesheet
   ,
 1 | a {b: min(calc(1px + 2))}
   |                ^^^^^^^
@@ -109,6 +207,19 @@ Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
   |           ^^^^^^^
   '
   input.scss 1:11  root stylesheet
+
+<===> error/complex_unit/error-libsass
+Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: min(1px*1px, 2%*2%)}
+  |           ^^^^^^^
+  '
+  input.scss 1:11  min()
+  ,
+1 | a {b: min(1px*1px, 2%*2%)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -328,6 +439,20 @@ b {
 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
 Recommendation: math.div(2px, min(1.5)) or calc(2px / min(1.5))
 More info and automated migrator: https://sass-lang.com/d/slash-div
+  ,
+2 |   a: 2px / min(1.5);
+  |      ^^^^^^^^^^^^^^
+  '
+    input.scss 2:6  root stylesheet
+
+<===> math/slash_as_division/warning-libsass
+DEPRECATION WARNING on line 2, column 6 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(2px, min(1.5)) or calc(2px / min(1.5))
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
   ,
 2 |   a: 2px / min(1.5);
   |      ^^^^^^^^^^^^^^

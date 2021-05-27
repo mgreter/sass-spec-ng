@@ -4,6 +4,7 @@
         color: green;
     }
 }
+
 <===> error
 Error: Selector ".code.ruby >" can't be used as a parent in a compound selector.
   ,
@@ -13,3 +14,16 @@ Error: Selector ".code.ruby >" can't be used as a parent in a compound selector.
   |     = parent selector
   '
   input.scss 1:1  root stylesheet
+
+<===> error-libsass
+Error: Selector ".code.ruby >" can't be used as a parent in a compound selector.
+  ,
+2 |     &.ruby {
+  |     ^^^^^^
+  '
+  input.scss 2:5   root stylesheet
+  ,
+1 | .code.ruby > {
+  |            ^
+  '
+  input.scss 1:12  root stylesheet

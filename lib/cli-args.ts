@@ -119,7 +119,7 @@ export async function parseArgs(
     })
     .parseSync();
 
-  const root = path.resolve(process.cwd(), argv['root-path']);
+  const root = path.resolve(process.cwd(), argv['root-path']).replace(/\\/g, "/");
 
   const args: Partial<CliArgs> = {
     root,
@@ -138,9 +138,12 @@ export async function parseArgs(
   args.impl = argv.dart ? 'dart-sass' : argv.impl!;
   let cmdArgs = implArgs[args.impl] ?? [];
   cmdArgs.push(`--load-path=${root}`);
+  cmdArgs.push(`--style=expanded`);
+  cmdArgs.push(`--no-term-unicode`);
   if (argv['cmd-args']) {
     cmdArgs = cmdArgs.concat(argv['cmd-args'].split(' '));
   }
+
 
   if (argv.command) {
     args.compiler = new ExecutableCompiler(

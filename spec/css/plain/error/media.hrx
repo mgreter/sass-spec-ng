@@ -13,6 +13,19 @@ Error: expected "{".
   plain.css 1:22  @import
   input.scss 1:9  root stylesheet
 
+<===> logic/and_after/type_and_not/error-libsass
+Error: expected "{".
+  ,
+1 | @media a and not (b) and (c) {x {y: z}}
+  |                      ^
+  '
+  plain.css 1:22  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> logic/and_after/or/input.scss
@@ -28,6 +41,19 @@ Error: expected "{".
   |                   ^
   '
   plain.css 1:19  @import
+  input.scss 1:9  root stylesheet
+
+<===> logic/and_after/or/error-libsass
+Error: expected "{".
+  ,
+1 | @media (a) or (b) and (c) {x {y: z}}
+  |                   ^
+  '
+  plain.css 1:19  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -47,6 +73,19 @@ Error: expected "{".
   plain.css 1:13  @import
   input.scss 1:9  root stylesheet
 
+<===> logic/or_after/type/error-libsass
+Error: expected "{".
+  ,
+1 | @media a or (b) {x {y: z}}
+  |             ^
+  '
+  plain.css 1:13  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> logic/or_after/type_and_not/input.scss
@@ -62,6 +101,19 @@ Error: expected "{".
   |                      ^
   '
   plain.css 1:22  @import
+  input.scss 1:9  root stylesheet
+
+<===> logic/or_after/type_and_not/error-libsass
+Error: expected "{".
+  ,
+1 | @media a and not (b) or (c) {x {y: z}}
+  |                      ^
+  '
+  plain.css 1:22  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -81,6 +133,19 @@ Error: expected "{".
   plain.css 1:20  @import
   input.scss 1:9  root stylesheet
 
+<===> logic/or_after/and/error-libsass
+Error: expected "{".
+  ,
+1 | @media (a) and (b) or (c) {x {y: z}}
+  |                    ^
+  '
+  plain.css 1:20  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> logic/or_after/type_then_and/input.scss
@@ -96,6 +161,19 @@ Error: expected "{".
   |                  ^
   '
   plain.css 1:18  @import
+  input.scss 1:9  root stylesheet
+
+<===> logic/or_after/type_then_and/error-libsass
+Error: expected "{".
+  ,
+1 | @media a and (b) or (c) {x {y: z}}
+  |                  ^
+  '
+  plain.css 1:18  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -115,6 +193,19 @@ Error: expected media condition in parentheses.
   plain.css 1:12  @import
   input.scss 1:9  root stylesheet
 
+<===> logic/nothing_after/not/error-libsass
+Error: expected media condition in parentheses.
+  ,
+1 | @media not {x {y: z}}
+  |            ^
+  '
+  plain.css 1:12  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> logic/nothing_after/and_not/input.scss
@@ -130,6 +221,19 @@ Error: expected media condition in parentheses.
   |                  ^
   '
   plain.css 1:18  @import
+  input.scss 1:9  root stylesheet
+
+<===> logic/nothing_after/and_not/error-libsass
+Error: expected media condition in parentheses.
+  ,
+1 | @media a and not {x {y: z}}
+  |                  ^
+  '
+  plain.css 1:18  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -149,6 +253,19 @@ Error: expected media condition in parentheses.
   plain.css 1:14  @import
   input.scss 1:9  root stylesheet
 
+<===> logic/nothing_after/and/after_type/error-libsass
+Error: expected media condition in parentheses.
+  ,
+1 | @media a and {x {y: z}}
+  |              ^
+  '
+  plain.css 1:14  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> logic/nothing_after/and/after_paren/input.scss
@@ -164,6 +281,19 @@ Error: expected media condition in parentheses.
   |                ^
   '
   plain.css 1:16  @import
+  input.scss 1:9  root stylesheet
+
+<===> logic/nothing_after/and/after_paren/error-libsass
+Error: expected media condition in parentheses.
+  ,
+1 | @media (a) and {x {y: z}}
+  |                ^
+  '
+  plain.css 1:16  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -183,6 +313,19 @@ Error: expected media condition in parentheses.
   plain.css 1:15  @import
   input.scss 1:9  root stylesheet
 
+<===> logic/nothing_after/or/error-libsass
+Error: expected media condition in parentheses.
+  ,
+1 | @media (a) or {x {y: z}}
+  |               ^
+  '
+  plain.css 1:15  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> missing_whitespace/not/input.scss
@@ -198,6 +341,19 @@ Error: Expected whitespace.
   |           ^
   '
   plain.css 1:11  @import
+  input.scss 1:9  root stylesheet
+
+<===> missing_whitespace/not/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media not(a) {x {y: z}}
+  |           ^
+  '
+  plain.css 1:11  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -217,6 +373,19 @@ Error: Expected whitespace.
   plain.css 1:17  @import
   input.scss 1:9  root stylesheet
 
+<===> missing_whitespace/and_not/type/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media a and not(b) {x {y: z}}
+  |                 ^
+  '
+  plain.css 1:17  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> missing_whitespace/and_not/type_and_modifier/input.scss
@@ -232,6 +401,19 @@ Error: Expected whitespace.
   |                      ^
   '
   plain.css 1:22  @import
+  input.scss 1:9  root stylesheet
+
+<===> missing_whitespace/and_not/type_and_modifier/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media only a and not(b) {x {y: z}}
+  |                      ^
+  '
+  plain.css 1:22  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -251,6 +433,19 @@ Error: Expected whitespace.
   plain.css 1:13  @import
   input.scss 1:9  root stylesheet
 
+<===> missing_whitespace/and/after_type/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media a and(b) {x {y: z}}
+  |             ^
+  '
+  plain.css 1:13  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> missing_whitespace/and/first/input.scss
@@ -266,6 +461,19 @@ Error: Expected whitespace.
   |               ^
   '
   plain.css 1:15  @import
+  input.scss 1:9  root stylesheet
+
+<===> missing_whitespace/and/first/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media (a) and(b) {x {y: z}}
+  |               ^
+  '
+  plain.css 1:15  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -285,6 +493,19 @@ Error: Expected whitespace.
   plain.css 1:23  @import
   input.scss 1:9  root stylesheet
 
+<===> missing_whitespace/and/later/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media (a) and (b) and(c) {x {y: z}}
+  |                       ^
+  '
+  plain.css 1:23  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> missing_whitespace/or/first/input.scss
@@ -302,6 +523,19 @@ Error: Expected whitespace.
   plain.css 1:14  @import
   input.scss 1:9  root stylesheet
 
+<===> missing_whitespace/or/first/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media (a) or(b) {x {y: z}}
+  |              ^
+  '
+  plain.css 1:14  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> missing_whitespace/or/later/input.scss
@@ -317,4 +551,17 @@ Error: Expected whitespace.
   |                     ^
   '
   plain.css 1:21  @import
+  input.scss 1:9  root stylesheet
+
+<===> missing_whitespace/or/later/error-libsass
+Error: Expected whitespace.
+  ,
+1 | @media (a) or (b) or(c) {x {y: z}}
+  |                     ^
+  '
+  plain.css 1:21  @import
+  ,
+1 | @import 'plain';
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet

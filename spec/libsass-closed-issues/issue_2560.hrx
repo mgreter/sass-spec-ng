@@ -5,6 +5,7 @@ test {
     font-size: $x;
     font-size: #{$x};
 }
+
 <===> output.css
 test {
   font-size: 2;
@@ -13,6 +14,20 @@ test {
 
 <===> warning
 DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(10px, 5px)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | $x: 10px / 5px;
+  |     ^^^^^^^^^^
+  '
+    input.scss 1:5  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 1, column 5 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(10px, 5px)
 

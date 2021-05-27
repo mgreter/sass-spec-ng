@@ -3,10 +3,17 @@ test {
   test1: (3px*4in) / 1in;
   test2: ((1px*2in) + (3px*4in)) / 1in;
 }
+
 <===> output.css
 test {
   test1: 0.125in;
   test2: 0.1458333333in;
+}
+
+<===> output-libsass.css
+test {
+  test1: 12px;
+  test2: 14px;
 }
 
 <===> warning
@@ -33,3 +40,19 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 3:10  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 2, column 10 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(3px * 4in, 1in) or calc((3px * 4in) / 1in)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+2 |   test1: (3px*4in) / 1in;
+  |          ^^^^^^^^^^^^^^^
+  '
+    input.scss 2:10  root stylesheet
+
+Additionally, one similar warning was suppressed!

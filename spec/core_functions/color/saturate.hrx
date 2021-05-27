@@ -25,10 +25,6 @@ a {
 
 <===>
 ================================================================================
-<===> one_arg/with_sass_var/input.scss
-$c: 1;
-a {b: saturate($c)}
-
 <===> one_arg/with_sass_var/output.css
 a {
   b: saturate(1);
@@ -151,6 +147,14 @@ Error: Missing argument $amount.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+1 | a {b: saturate()}
+  |       ^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -168,6 +172,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+1 | a {b: saturate(plum, 1%, 2)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/one_arg/type/input.scss
@@ -181,6 +193,18 @@ Error: $amount: red is not a number.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/one_arg/type/error-libsass
+Error: $amount: red is not a number.
+  ,
+1 | a {b: saturate(red)}
+  |                ^^^
+  '
+  input.scss 1:16  saturate()
+  ,
+1 | a {b: saturate(red)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -200,6 +224,14 @@ Error: Missing argument $amount.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/with_module/one_arg/type/error-libsass
+Error: Missing argument $amount.
+  ,
+2 | a {b: color.saturate(var(--c))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/two_args/type/color/input.scss
@@ -212,6 +244,19 @@ Error: $color: 1 is not a color.
   |       ^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/two_args/type/color/error-libsass
+Error: $color: 1 is not a color.
+  ,
+1 | a {b: saturate(1, 2)}
+  |                ^
+  '
+  input.scss 1:16  saturate()
+  ,
+1 | a {b: saturate(1, 2)}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -226,6 +271,19 @@ Error: $amount: blue is not a number.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/two_args/type/lightness/error-libsass
+Error: $amount: blue is not a number.
+  ,
+1 | a {b: saturate(plum, blue)}
+  |                      ^^^^
+  '
+  input.scss 1:22  saturate()
+  ,
+1 | a {b: saturate(plum, blue)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/two_args/bounds/too_low/input.scss
@@ -239,6 +297,19 @@ Error: $amount: Expected -0.001 to be within 0 and 100.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/two_args/bounds/too_low/error-libsass
+Error: $amount: Expected -0.001 to be within 0 and 100.
+  ,
+1 | a {b: saturate(plum, -0.001)}
+  |                      ^^^^^^
+  '
+  input.scss 1:22  saturate()
+  ,
+1 | a {b: saturate(plum, -0.001)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/two_args/bounds/too_high/input.scss
@@ -251,3 +322,16 @@ Error: $amount: Expected 100.001 to be within 0 and 100.
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/two_args/bounds/too_high/error-libsass
+Error: $amount: Expected 100.001 to be within 0 and 100.
+  ,
+1 | a {b: saturate(plum, 100.001)}
+  |                      ^^^^^^^
+  '
+  input.scss 1:22  saturate()
+  ,
+1 | a {b: saturate(plum, 100.001)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

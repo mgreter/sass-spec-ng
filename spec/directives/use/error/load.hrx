@@ -180,6 +180,15 @@ Error: Module loop: this module is already being loaded.
   '
   input.scss 1:1  root stylesheet
 
+<===> loop/use_self/error-libsass
+Error: An @import loop has been found:
+    input.scss imports input.scss
+  ,
+1 | @use "input";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> loop/use_to_use/input.scss
@@ -195,6 +204,21 @@ Error: Module loop: this module is already being loaded.
   | ^^^^^^^^^^^^
   '
   other.scss 1:1  @use
+  input.scss 1:1  root stylesheet
+
+<===> loop/use_to_use/error-libsass
+Error: An @import loop has been found:
+    input.scss imports other.scss
+    other.scss imports input.scss
+  ,
+1 | @use "input";
+  | ^^^^^^^^^^^^
+  '
+  other.scss 1:1  @use
+  ,
+1 | @use "other";
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet
 
 <===>
@@ -214,6 +238,21 @@ Error: This file is already being loaded.
   other.scss 1:9  @use
   input.scss 1:1  root stylesheet
 
+<===> loop/use_to_import/error-libsass
+Error: An @import loop has been found:
+    input.scss imports other.scss
+    other.scss imports input.scss
+  ,
+1 | @import "input";
+  |         ^^^^^^^
+  '
+  other.scss 1:9  @use
+  ,
+1 | @use "other";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> loop/import_to_use/input.scss
@@ -229,6 +268,21 @@ Error: Module loop: this module is already being loaded.
   | ^^^^^^^^^^^^
   '
   other.scss 1:1  @import
+  input.scss 1:9  root stylesheet
+
+<===> loop/import_to_use/error-libsass
+Error: An @import loop has been found:
+    input.scss imports other.scss
+    other.scss imports input.scss
+  ,
+1 | @use "input";
+  | ^^^^^^^^^^^^
+  '
+  other.scss 1:1  @import
+  ,
+1 | @import "other";
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -248,6 +302,14 @@ Error: There's already a module with namespace "other".
   | ====================== original @use
 2 | @use "other2" as other;
   | ^^^^^^^^^^^^^^^^^^^^^^ new @use
+  '
+  input.scss 2:1  root stylesheet
+
+<===> conflicting_namespace/explicit/error-libsass
+Error: There's already a module with namespace "other".
+  ,
+2 | @use "other2" as other;
+  | ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
 
@@ -271,6 +333,14 @@ Error: There's already a module with namespace "other".
   '
   input.scss 2:1  root stylesheet
 
+<===> conflicting_namespace/implicit/error-libsass
+Error: There's already a module with namespace "other".
+  ,
+2 | @use "dir2/other";
+  | ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet
+
 <===>
 ================================================================================
 <===> conflicting_namespace/built_in/input.scss
@@ -285,6 +355,14 @@ Error: There's already a module with namespace "math".
   | ================ original @use
 3 | @use "sass:math";
   | ^^^^^^^^^^^^^^^^ new @use
+  '
+  input.scss 3:1  root stylesheet
+
+<===> conflicting_namespace/built_in/error-libsass
+Error: There's already a module with namespace "math".
+  ,
+3 | @use "sass:math";
+  | ^^^^^^^^^^^^^^^^
   '
   input.scss 3:1  root stylesheet
 
@@ -305,5 +383,13 @@ Error: There's already a module with namespace "other".
   | ============ original @use
 2 | @use "other2" as other;
   | ^^^^^^^^^^^^^^^^^^^^^^ new @use
+  '
+  input.scss 2:1  root stylesheet
+
+<===> conflicting_namespace/mixed/error-libsass
+Error: There's already a module with namespace "other".
+  ,
+2 | @use "other2" as other;
+  | ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet

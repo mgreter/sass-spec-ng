@@ -18,3 +18,11 @@ Error: Duplicate key.
   |     ^^^ second key
   '
   input.scss 7:5  root stylesheet
+
+<===> error-libsass
+Error: Duplicate key.
+  ,
+7 |     eta: 6,
+  |     ^^^
+  '
+  input.scss 7:5  root stylesheet

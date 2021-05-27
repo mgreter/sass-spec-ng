@@ -36,6 +36,7 @@ bar {
   bar: call('bar_', one, two);
   bar: call('bar_', one, two...);
 }
+
 <===> output.css
 foo {
   foo: string;
@@ -139,3 +140,22 @@ Recommendation: call(get-function("bar_"))
    |        ^^^^^^^^^^^^^^^^^^^^^^^^^
    '
     input.scss 36:8  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 22, column 13 of input.scss:
+Passing a string to call() is deprecated and will be illegal in LibSass 5.0.0.
+
+Recommendation: call(get-function("foo"))
+
+   ,
+22 |   foo: call('foo', one);
+   |             ^^^^^
+   '
+    input.scss 22:13  call()
+   ,
+22 |   foo: call('foo', one);
+   |        ^^^^^^^^^^^^^^^^
+   '
+    input.scss 22:8   root stylesheet
+
+Additionally, 7 similar warnings were suppressed!

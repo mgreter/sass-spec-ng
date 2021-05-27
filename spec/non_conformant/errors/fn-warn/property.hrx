@@ -1,0 +1,16 @@
+<===> input.scss
+a {
+  b: {
+    @warn "warn";
+    foo: bar;
+  }
+}
+
+<===> output.css
+a {
+  b-foo: bar;
+}
+
+<===> warning
+WARNING: warn
+    input.scss 3:5  root stylesheet

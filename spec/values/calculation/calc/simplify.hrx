@@ -95,6 +95,11 @@ a {
 
 <===>
 ================================================================================
+<===> invert/plus/options.yml
+---
+:todo:
+- libsass#simplify
+
 <===> invert/plus/input.scss
 a {b: calc(1% + -1px)}
 
@@ -105,6 +110,11 @@ a {
 
 <===>
 ================================================================================
+<===> invert/minus/options.yml
+---
+:todo:
+- libsass#simplify
+
 <===> invert/minus/input.scss
 a {b: calc(1% - -1px)}
 

@@ -233,6 +233,19 @@ Error: $name: 12px is not a string.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/argument/type/name/error-libsass
+Error: $name: 12px is not a string.
+  ,
+1 | a {b: global-variable-exists(12px)}
+  |                              ^^^^
+  '
+  input.scss 1:30  global-variable-exists()
+  ,
+1 | a {b: global-variable-exists(12px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/argument/type/module/input.scss
@@ -245,6 +258,19 @@ Error: $module: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/argument/type/module/error-libsass
+Error: $module: 1 is not a string.
+  ,
+1 | a {b: global-variable-exists("c", 1)}
+  |                                   ^
+  '
+  input.scss 1:35  global-variable-exists()
+  ,
+1 | a {b: global-variable-exists("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -263,6 +289,14 @@ Error: Missing argument $name.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/argument/too_few/error-libsass
+Error: Missing argument $name.
+  ,
+1 | a {b: global-variable-exists()}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/argument/too_many/input.scss
@@ -277,6 +311,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:meta
 1 | @function global-variable-exists($name, $module: null) {
   |           ============================================ declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/argument/too_many/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+1 | a {b: global-variable-exists(c, d, e)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
 
@@ -306,6 +348,14 @@ Error: This variable is available from multiple global modules.
     |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ variable use
     '
   input.scss 4:7  root stylesheet
+
+<===> error/conflict/error-libsass
+Error: $member is available from multiple global modules.
+  ,
+2 | @use "other2" as *;
+  | ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet
 
 <===>
 ================================================================================

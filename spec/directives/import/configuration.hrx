@@ -94,6 +94,11 @@ b {
 
 <===>
 ================================================================================
+<===> midstream_definition/with_config/options.yml
+---
+:todo:
+- sass/libsass#3040
+
 <===> midstream_definition/with_config/input.scss
 $a: configured;
 @import "midstream";
@@ -113,6 +118,11 @@ b {
 
 <===>
 ================================================================================
+<===> midstream_definition/no_config/options.yml
+---
+:todo:
+- sass/libsass#3040
+
 <===> midstream_definition/no_config/input.scss
 @import "midstream";
 
@@ -131,6 +141,11 @@ b {
 
 <===>
 ================================================================================
+<===> import_twice/no_change/options.yml
+---
+:todo:
+- sass/libsass#3040
+
 <===> import_twice/no_change/input.scss
 $a: configured;
 @import "other";
@@ -154,6 +169,11 @@ b {
 
 <===>
 ================================================================================
+<===> import_twice/with_change/options.yml
+---
+:todo:
+- sass/libsass#3040
+
 <===> import_twice/with_change/input.scss
 $a: configured;
 @import "other";
@@ -178,6 +198,11 @@ b {
 
 <===>
 ================================================================================
+<===> import_twice/still_changes_in_same_file/options.yml
+---
+:todo:
+- sass/libsass#3040
+
 <===> import_twice/still_changes_in_same_file/input.scss
 @import "other";
 $a: changed;

@@ -38,3 +38,20 @@ Recommendation: call(get-function("foo"))
    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    '
     input.scss 13:9  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 13, column 14 of input.scss:
+Passing a string to call() is deprecated and will be illegal in LibSass 5.0.0.
+
+Recommendation: call(get-function("foo"))
+
+   ,
+13 |   $map: call("foo", (this: is, my: map)...);
+   |              ^^^^^
+   '
+    input.scss 13:14  call()
+   ,
+13 |   $map: call("foo", (this: is, my: map)...);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   '
+    input.scss 13:9   root stylesheet

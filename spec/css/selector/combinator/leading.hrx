@@ -18,6 +18,19 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:1  root stylesheet
 
+<===> single/child/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector "> a" is invalid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | > a {b: c}
+  | ^^^
+  '
+    input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> single/next_sibling/input.scss
@@ -31,6 +44,19 @@ More info: https://sass-lang.com/d/bogus-combinators
 <===> single/next_sibling/warning
 DEPRECATION WARNING: The selector "+ a" is invalid CSS.
 This will be an error in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | + a {b: c}
+  | ^^^
+  '
+    input.scss 1:1  root stylesheet
+
+<===> single/next_sibling/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector "+ a" is invalid CSS.
+This will be an error in LibSass 5.0.0.
 
 More info: https://sass-lang.com/d/bogus-combinators
 
@@ -62,6 +88,19 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:1  root stylesheet
 
+<===> single/sibling/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector "~ a" is invalid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | ~ a {b: c}
+  | ^^^
+  '
+    input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> multiple/whitespace/input.scss
@@ -81,6 +120,20 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:1  root stylesheet
 
+<===> multiple/whitespace/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector "+ ~ a" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | + ~ a {b: c}
+  | ^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> multiple/no_whitespace/input.scss
@@ -89,8 +142,23 @@ More info: https://sass-lang.com/d/bogus-combinators
 <===> multiple/no_whitespace/output.css
 
 <===> multiple/no_whitespace/warning
-DEPRECATION WARNING: The selector "> > a" is invalid CSS. It will be omitted from the generated CSS.
+DEPRECATION WARNING: The selector "> > a" is invalid CSS.
+It will be omitted from the generated CSS.
 This will be an error in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | > > a {b: c}
+  | ^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
+<===> multiple/no_whitespace/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector "> > a" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
 
 More info: https://sass-lang.com/d/bogus-combinators
 

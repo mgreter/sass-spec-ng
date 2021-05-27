@@ -8,6 +8,7 @@
     }
   }
 }
+
 <===> error
 Error: "&" may only used at the beginning of a compound selector.
   ,
@@ -15,4 +16,17 @@ Error: "&" may only used at the beginning of a compound selector.
   |      ^
   '
   include.scss 2:6  @import
+  input.scss 1:9    root stylesheet
+
+<===> error-libsass
+Error: "&" may only used at the beginning of a compound selector.
+  ,
+2 |   pre& {
+  |      ^
+  '
+  include.scss 2:6  @import
+  ,
+1 | @import "include.scss";
+  |         ^^^^^^^^^^^^^^
+  '
   input.scss 1:9    root stylesheet

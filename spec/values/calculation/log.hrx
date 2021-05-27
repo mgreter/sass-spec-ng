@@ -138,6 +138,19 @@ Error: Expected 1% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/unknown/error-libsass
+Error: $number: Expected 1% to have no units.
+  ,
+1 | a {b: log(1%)}
+  |           ^^
+  '
+  input.scss 1:11  log()
+  ,
+1 | a {b: log(1%)}
+  |       ^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/unitless_and_real/input.scss
@@ -150,6 +163,19 @@ Error: Expected 1px to have no units.
   |       ^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/units/unitless_and_real/error-libsass
+Error: $base: Expected 1px to have no units.
+  ,
+1 | a {b: log(1, 1px)}
+  |              ^^^
+  '
+  input.scss 1:14  log()
+  ,
+1 | a {b: log(1, 1px)}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -164,6 +190,19 @@ Error: Expected 1deg to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/known_incompatible/error-libsass
+Error: $number: Expected 1deg to have no units.
+  ,
+1 | a {b: log(1deg, 1px)}
+  |           ^^^^
+  '
+  input.scss 1:11  log()
+  ,
+1 | a {b: log(1deg, 1px)}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/complex_and_unknown/input.scss
@@ -177,6 +216,19 @@ Error: Expected calc(2px * 1px) to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/complex_and_unknown/error-libsass
+Error: $number: Expected calc(2px * 1px) to have no units.
+  ,
+1 | a {b: log(1px*2px, 10%)}
+  |           ^^^^^^^
+  '
+  input.scss 1:11  log()
+  ,
+1 | a {b: log(1px*2px, 10%)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/known/input.scss
@@ -189,6 +241,19 @@ Error: Expected 3px to have no units.
   |       ^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/units/known/error-libsass
+Error: $number: Expected 3px to have no units.
+  ,
+1 | a {b: log(3px)}
+  |           ^^^
+  '
+  input.scss 1:11  log()
+  ,
+1 | a {b: log(3px)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -229,6 +294,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
+  ,
+1 | a {b: log()}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -255,6 +328,14 @@ Error: Expected identifier.
   '
   input.scss 1:12  root stylesheet
 
+<===> error/syntax/invalid_arg/error-libsass
+Error: Expected identifier.
+  ,
+1 | a {b: log($, 10)}
+  |            ^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> error/sass_script/input.scss
@@ -267,3 +348,11 @@ Error: This operation can't be used in a calculation.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: log(7 % 3)}
+  |           ^^^^^
+  '
+  input.scss 1:11  root stylesheet

@@ -98,6 +98,19 @@ Error: Expected 1% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/unknown/error-libsass
+Error: $number: Expected 1% to have no units.
+  ,
+1 | a {b: asin(1%)}
+  |            ^^
+  '
+  input.scss 1:12  asin()
+  ,
+1 | a {b: asin(1%)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/known/input.scss
@@ -111,6 +124,19 @@ Error: Expected 1px to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/known/error-libsass
+Error: $number: Expected 1px to have no units.
+  ,
+1 | a {b: asin(1px)}
+  |            ^^^
+  '
+  input.scss 1:12  asin()
+  ,
+1 | a {b: asin(1px)}
+  |       ^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/complex/input.scss
@@ -123,6 +149,19 @@ Error: Expected calc(-1.75px / 1em) to have no units.
   |       ^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/unit/complex/error-libsass
+Error: $number: Expected calc(-1.75px / 1em) to have no units.
+  ,
+1 | a {b: asin(-7px / 4em)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  asin()
+  ,
+1 | a {b: asin(-7px / 4em)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -144,6 +183,14 @@ a {b: asin()}
 
 <===> error/too_few_args/error
 Error: Missing argument.
+  ,
+1 | a {b: asin()}
+  |       ^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
   ,
 1 | a {b: asin()}
   |       ^^^^^^
@@ -188,3 +235,11 @@ Error: This operation can't be used in a calculation.
   |              ^
   '
   input.scss 1:14  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: asin(7 % 3)}
+  |            ^^^^^
+  '
+  input.scss 1:12  root stylesheet

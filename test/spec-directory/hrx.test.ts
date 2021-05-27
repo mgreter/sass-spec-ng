@@ -95,9 +95,6 @@ UTIL
 <===> output-dart-sass.css
 IMPL OUTPUT
 
-<===> warning-libsass
-IMPL WARNING
-
 <===> subdir/input.scss
 MORE UTIL
 
@@ -132,14 +129,6 @@ IMPL OUTPUT
 <===> warning
 WARNING
 
-<===> warning-libsass
-IMPL WARNING
-`;
-    await expectHrx(input, expected);
-  });
-
-  it('processes multiple test directories in a single archive correctly', async () => {
-    const input = `
 <===> test-1/input.scss
 INPUT
 

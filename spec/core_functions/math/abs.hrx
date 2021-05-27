@@ -75,6 +75,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 2:16  root stylesheet
 
+<===> preserves_units/warning-libsass
+DEPRECATION WARNING on line 2, column 16 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(-7px, 4em)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+2 | a {b: math.abs(-7px / 4em) * 1em}
+  |                ^^^^^^^^^^
+  '
+    input.scss 2:16  abs()
+  ,
+2 | a {b: math.abs(-7px / 4em) * 1em}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> named/input.scss
@@ -100,6 +119,19 @@ Error: $number: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $number: c is not a number.
+  ,
+2 | a {b: math.abs(c)}
+  |                ^
+  '
+  input.scss 2:16  abs()
+  ,
+2 | a {b: math.abs(c)}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -118,6 +150,14 @@ Error: Missing argument $number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
+  ,
+2 | a {b: math.abs()}
+  |       ^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -133,5 +173,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:math
 1 | @function abs($number) {
   |           ============ declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: math.abs(1, 2)}
+  |       ^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

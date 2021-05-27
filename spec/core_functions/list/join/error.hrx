@@ -17,6 +17,19 @@ Error: $separator: 1 is not a string.
   '
   input.scss 1:7  root stylesheet
 
+<===> type/separator/error-libsass
+Error: $separator: 1 is not a string.
+  ,
+1 | a {b: join(c, d, $separator: 1)}
+  |                              ^
+  '
+  input.scss 1:30  join()
+  ,
+1 | a {b: join(c, d, $separator: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> too_many_args/input.scss
@@ -31,6 +44,14 @@ Error: Only 4 arguments allowed, but 5 were passed.
   ,--> sass:list
 1 | @function join($list1, $list2, $separator: auto, $bracketed: auto) {
   |           ======================================================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> too_many_args/error-libsass
+Error: Only 4 arguments allowed, but 5 were passed.
+  ,
+1 | a {b: join(c, d, comma, true, false)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
 
@@ -51,6 +72,14 @@ Error: Missing argument $list2.
   '
   input.scss 1:7  root stylesheet
 
+<===> too_few_args/error-libsass
+Error: Missing argument $list2.
+  ,
+1 | a {b: join(c)}
+  |       ^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> named/input.scss
@@ -68,6 +97,14 @@ Error: No argument named $invalid.
   '
   input.scss 1:7  root stylesheet
 
+<===> named/error-libsass
+Error: No argument named $invalid.
+  ,
+1 | a {b: join(c, d, $invalid: true)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> positional_and_named/input.scss
@@ -82,6 +119,14 @@ Error: Only 4 positional arguments allowed, but 5 were passed.
   ,--> sass:list
 1 | @function join($list1, $list2, $separator: auto, $bracketed: auto) {
   |           ======================================================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> positional_and_named/error-libsass
+Error: Only 4 arguments allowed, but 5 were passed.
+  ,
+1 | a {b: join(c, d, comma, true, false, $invalid: true)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
 

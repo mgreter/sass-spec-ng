@@ -58,6 +58,20 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:1  root stylesheet
 
+<===> leading/multiple/direct/warning-libsass
+DEPRECATION WARNING on line 1, column 1 of input.scss:
+The selector ":has(+ ~ a)" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | :has(+ ~ a) {b: c}
+  | ^^^^^^^^^^^
+  '
+    input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> leading/multiple/parent/input.scss
@@ -70,6 +84,20 @@ More info: https://sass-lang.com/d/bogus-combinators
 <===> leading/multiple/parent/warning
 DEPRECATION WARNING: The selector ":has(+ ~ a)" is invalid CSS. It will be omitted from the generated CSS.
 This will be an error in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+2 |   :has(+ &) {b: c}
+  |   ^^^^^^^^^
+  '
+    input.scss 2:3  root stylesheet
+
+<===> leading/multiple/parent/warning-libsass
+DEPRECATION WARNING on line 2, column 3 of input.scss:
+The selector ":has(+ ~ a)" is invalid CSS.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
 
 More info: https://sass-lang.com/d/bogus-combinators
 

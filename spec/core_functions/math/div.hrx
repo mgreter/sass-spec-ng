@@ -128,6 +128,22 @@ Use list.slash() instead for a slash separator.
   '
     input.scss 3:12  root stylesheet
 
+<===> non_numeric/numerator/warning-libsass
+WARNING on line 3, column 21 of input.scss:
+math.div() will only support number arguments in a future release.
+Use list.slash() instead for a slash separator.
+
+  ,
+3 |   $result: math.div(b, 3);
+  |                     ^
+  '
+    input.scss 3:21  div()
+  ,
+3 |   $result: math.div(b, 3);
+  |            ^^^^^^^^^^^^^^
+  '
+    input.scss 3:12  root stylesheet
+
 <===>
 ================================================================================
 <===> non_numeric/denominator/input.scss
@@ -154,6 +170,22 @@ Use list.slash() instead for a slash separator.
   '
     input.scss 3:12  root stylesheet
 
+<===> non_numeric/denominator/warning-libsass
+WARNING on line 3, column 24 of input.scss:
+math.div() will only support number arguments in a future release.
+Use list.slash() instead for a slash separator.
+
+  ,
+3 |   $result: math.div(6, b);
+  |                        ^
+  '
+    input.scss 3:24  div()
+  ,
+3 |   $result: math.div(6, b);
+  |            ^^^^^^^^^^^^^^
+  '
+    input.scss 3:12  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -172,6 +204,14 @@ Error: Missing argument $number2.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number2.
+  ,
+2 | a {b: math.div(6)}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -187,5 +227,13 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:math
 1 | @function div($number1, $number2) {
   |           ======================= declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: math.div(6, 3, 1)}
+  |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

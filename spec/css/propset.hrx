@@ -74,6 +74,14 @@ Error: Declarations whose names begin with "--" may not be nested.
   '
   input.scss 1:10  root stylesheet
 
+<===> error/custom_property/simple/error-libsass
+Error: Declarations whose names begin with "--" may not be nested.
+  ,
+1 | a { b: { --d: e } }
+  |          ^^^^^^
+  '
+  input.scss 1:10  root stylesheet
+
 <===>
 ================================================================================
 <===> error/custom_property/nested/simple/input.scss

@@ -4,3 +4,5 @@ tmp
 Gemfile.*.lock
 node_modules
 spec/sandbox
+spec-alpha-4spec-alpha-4
+spec-squash-1

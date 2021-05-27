@@ -57,7 +57,7 @@ export default class VirtualDirectory extends SpecDirectory {
   constructor(basePath: string, hrxDir: HrxDirectory, parent?: SpecDirectory) {
     super(parent?.root);
     this._parent = parent ?? null;
-    this.path = path.resolve(basePath, hrxDir.path);
+    this.path = path.resolve(basePath, hrxDir.path).replace(/\\/g, "/");
     this.basePath = basePath;
     // Separate the contents of the HrxDirectory into files and subdirs.
     // Since files are modifiable, we throw away the original HrxDirectory object
@@ -96,7 +96,7 @@ export default class VirtualDirectory extends SpecDirectory {
     }
 
     const {dir, name} = path.parse(hrxPath);
-    return new VirtualDirectory(path.resolve(dir, name), archive, parent);
+    return new VirtualDirectory(path.resolve(dir, name).replace(/\\/g, "/"), archive, parent);
   }
 
   /**
@@ -177,7 +177,7 @@ export default class VirtualDirectory extends SpecDirectory {
     });
     await Promise.all(
       writableFiles.map(async filename => {
-        const filepath = path.resolve(this.path, filename);
+        const filepath = path.resolve(this.path, filename).replace(/\\/g, "/");
         await fs.promises.writeFile(filepath, await this.readFile(filename), {
           encoding: 'utf-8',
         });

@@ -8,6 +8,7 @@ $map: (
     eta: 6,
   ),
 );
+
 <===> error
 Error: Duplicate key.
   ,
@@ -15,5 +16,13 @@ Error: Duplicate key.
   |     === first key
 7 |     eta: 6,
   |     ^^^ second key
+  '
+  input.scss 7:5  root stylesheet
+
+<===> error-libsass
+Error: Duplicate key.
+  ,
+7 |     eta: 6,
+  |     ^^^
   '
   input.scss 7:5  root stylesheet

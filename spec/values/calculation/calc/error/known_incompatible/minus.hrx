@@ -8,3 +8,21 @@ Error: 1px and 1s are incompatible.
   |            ^^^^^^^^
   '
   input.scss 1:12  root stylesheet
+
+<===> error-libsass
+Error: Incompatible units s and px.
+  ,
+1 | a {b: calc(1px - 1s)}
+  |                  ^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px - 1s)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px - 1s)}
+  |            ^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet

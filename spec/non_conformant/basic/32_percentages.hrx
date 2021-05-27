@@ -12,6 +12,7 @@ div {
   // hwah: (24 / 8%);
   nyah: (35% / 7);
 }
+
 <===> output.css
 div {
   width: 30%;
@@ -50,3 +51,19 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
    |          ^^^^^^^
    '
     input.scss 12:10  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 8, column 10 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(20%, 4%) or calc(20% / 4%)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+8 |   blah: (20% / 4%);
+  |          ^^^^^^^^
+  '
+    input.scss 8:10  root stylesheet
+
+Additionally, one similar warning was suppressed!

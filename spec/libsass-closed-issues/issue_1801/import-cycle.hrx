@@ -20,3 +20,23 @@ Error: This file is already being loaded.
   _beta.scss 1:9   @import
   _alpha.scss 1:9  @import
   input.scss 1:9   root stylesheet
+
+<===> error-libsass
+Error: An @import loop has been found:
+    _alpha.scss imports _beta.scss
+    _beta.scss imports _alpha.scss
+  ,
+1 | @import 'alpha';
+  |         ^^^^^^^
+  '
+  _beta.scss 1:9   @import
+  ,
+1 | @import 'beta';
+  |         ^^^^^^
+  '
+  _alpha.scss 1:9  @import
+  ,
+1 | @import 'alpha';
+  |         ^^^^^^^
+  '
+  input.scss 1:9   root stylesheet

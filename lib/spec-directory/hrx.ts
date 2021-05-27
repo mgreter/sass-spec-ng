@@ -14,8 +14,8 @@ async function getFilesHrx(
   const fileSections = await Promise.all(
     filenames.map(async filename => {
       const contents = await dir.readFile(filename);
-      const fullPath = path.resolve(dir.path, filename);
-      const relPath = path.relative(root, fullPath);
+      const fullPath = path.resolve(dir.path, filename).replace(/\\/g, "/");
+      const relPath = path.relative(root, fullPath).replace(/\\/g, "/");
       return `<===> ${relPath}\n${contents}`;
     })
   );

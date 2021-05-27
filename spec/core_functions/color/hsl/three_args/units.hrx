@@ -39,6 +39,25 @@ See https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> hue/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 11 of input.scss:
+$hue: Passing a unit other than deg (60in) is deprecated.
+
+To preserve current behavior: calc($hue / 1in)
+
+See https://sass-lang.com/d/color-units
+
+  ,
+1 | a {b: hsl(60in, 100%, 50%)}
+  |           ^^^^
+  '
+    input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl(60in, 100%, 50%)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> hue/angle/input.scss
@@ -71,6 +90,25 @@ More info: https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> saturation/unitless/warning-libsass
+DEPRECATION WARNING on line 1, column 14 of input.scss:
+$saturation: Passing a number without unit % (50) is deprecated.
+
+To preserve current behavior: $saturation * 1%
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: hsl(0, 50, 50%)}
+  |              ^^
+  '
+    input.scss 1:14  hsl()
+  ,
+1 | a {b: hsl(0, 50, 50%)}
+  |       ^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -117,6 +155,25 @@ More info: https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> lightness/unitless/warning-libsass
+DEPRECATION WARNING on line 1, column 20 of input.scss:
+$lightness: Passing a number without unit % (50) is deprecated.
+
+To preserve current behavior: $lightness * 1%
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: hsl(0, 100%, 50)}
+  |                    ^^
+  '
+    input.scss 1:20  hsl()
+  ,
+1 | a {b: hsl(0, 100%, 50)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================

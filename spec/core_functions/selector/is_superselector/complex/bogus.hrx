@@ -18,6 +18,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> super/warning-libsass
+DEPRECATION WARNING on line 1, column 24 of input.scss:
+$super: > c is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: is-superselector(> c, "c")}
+  |                        ^^^
+  '
+    input.scss 1:24  is-superselector()
+  ,
+1 | a {b: is-superselector("> c", "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> sub/input.scss
@@ -39,3 +57,21 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> sub/warning-libsass
+DEPRECATION WARNING on line 1, column 29 of input.scss:
+$sub: d + ~ c is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: is-superselector("c", d + ~ c)}
+  |                             ^^^^^^^
+  '
+    input.scss 1:29  is-superselector()
+  ,
+1 | a {b: is-superselector("c", "d + ~ c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet

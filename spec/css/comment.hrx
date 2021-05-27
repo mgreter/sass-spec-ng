@@ -48,6 +48,14 @@ Baz */
   a: b;
 }
 
+<===> weird_indentation/output-libsass.css
+.foo {
+  /* Foo
+ Bar
+Baz */
+  a: b;
+}
+
 <===>
 ================================================================================
 <===> converts_newlines/README.md
@@ -61,7 +69,8 @@ should include their own tests for CR LF newlines.
 <===>
 ================================================================================
 <===> converts_newlines/scss/cr/input.scss
-/* foo * bar */
+/* foo
+ * bar */
 
 <===> converts_newlines/scss/cr/output.css
 /* foo
@@ -80,7 +89,8 @@ should include their own tests for CR LF newlines.
 ================================================================================
 <===> converts_newlines/sass/cr/input.sass
 /*
-  foo  bar
+  foo
+  bar
 
 <===> converts_newlines/sass/cr/output.css
 /* foo
@@ -168,6 +178,11 @@ a {
   b: c;
 }
 
+<===> sourcemap/between_loads/output-libsass.css
+a {
+  b: c;
+}
+
 <===>
 ================================================================================
 <===> sourcemap/sourceurl/input.scss
@@ -225,6 +240,11 @@ Error: expected */.
 
 <===>
 ================================================================================
+<===> error/loud/interpolation/unterminated/options.yml
+---
+:todo:
+- libsass#reporting
+
 <===> error/loud/interpolation/unterminated/input.scss
 /* #{broken */
 

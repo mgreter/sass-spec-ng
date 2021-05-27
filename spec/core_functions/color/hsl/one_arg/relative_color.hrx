@@ -100,6 +100,19 @@ Error: Only 3 elements allowed, but 5 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/quoted/alpha/error-libsass
+Error: Only 3 arguments allowed, but 5 were passed.
+  ,
+1 | a {b: hsl("from" #aaa h s l / 25%)}
+  |           ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl("from" #aaa h s l / 25%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/quoted/no_alpha/input.scss
@@ -112,6 +125,19 @@ Error: Only 3 elements allowed, but 5 were passed.
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/quoted/no_alpha/error-libsass
+Error: Only 3 arguments allowed, but 5 were passed.
+  ,
+1 | a {b: hsl("from" #aaa h s l)}
+  |           ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl("from" #aaa h s l)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -126,6 +152,19 @@ Error: Only 3 elements allowed, but 5 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/wrong_keyword/alpha/error-libsass
+Error: Only 3 arguments allowed, but 5 were passed.
+  ,
+1 | a {b: hsl(c #aaa h s l / 25%)}
+  |           ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl(c #aaa h s l / 25%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/wrong_keyword/no_alpha/input.scss
@@ -138,3 +177,16 @@ Error: Only 3 elements allowed, but 5 were passed.
   |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/wrong_keyword/no_alpha/error-libsass
+Error: Only 3 arguments allowed, but 5 were passed.
+  ,
+1 | a {b: hsl(c #aaa h s l)}
+  |           ^^^^^^^^^^^^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl(c #aaa h s l)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

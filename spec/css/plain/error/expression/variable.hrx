@@ -14,6 +14,19 @@ Error: Sass variables aren't allowed in plain CSS.
   plain.css 2:6   @import
   input.scss 1:9  root stylesheet
 
+<===> use/error-libsass
+Error: Sass variables aren't allowed in plain CSS.
+  ,
+2 |   x: $var;
+  |      ^^^^
+  '
+  plain.css 2:6   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> declaration/input.scss
@@ -28,4 +41,17 @@ Error: Sass variables aren't allowed in plain CSS.
   | ^^^^
   '
   plain.css 1:1   @import
+  input.scss 1:9  root stylesheet
+
+<===> declaration/error-libsass
+Error: Sass variables aren't allowed in plain CSS.
+  ,
+1 | $var: value;
+  | ^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet

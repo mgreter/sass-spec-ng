@@ -1,3 +1,8 @@
+<===> positive/options.yml
+---
+:todo:
+- libsass#bigint
+
 <===> positive/input.scss
 @use 'sass:math';
 a {b: math.pow(10.0, 30)}
@@ -9,6 +14,11 @@ a {
 
 <===>
 ================================================================================
+<===> negative/options.yml
+---
+:todo:
+- libsass#bigint
+
 <===> negative/input.scss
 @use 'sass:math';
 a {b: -(math.pow(10.0, 30))}

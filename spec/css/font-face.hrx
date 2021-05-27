@@ -22,6 +22,12 @@ a {
 <===> bubble/empty/output.css
 @font-face { /**/ }
 
+
+<===> bubble/empty/output-libsass.css
+@font-face {
+  /**/
+}
+
 <===>
 ================================================================================
 <===> bubble/in-mixin/input.scss

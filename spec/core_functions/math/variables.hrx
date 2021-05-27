@@ -56,6 +56,11 @@ a {
 
 <===>
 ================================================================================
+<===> max_number/options.yml
+---
+:todo:
+- libsass#constants
+
 <===> max_number/input.scss
 @use "sass:math";
 a {b: math.$max-number}
@@ -67,6 +72,11 @@ a {
 
 <===>
 ================================================================================
+<===> min_number/options.yml
+---
+:todo:
+- libsass#constants
+
 <===> min_number/input.scss
 @use "sass:math";
 // Multiplied by 1e339 so Sass's serialization doesn't remove the precision.

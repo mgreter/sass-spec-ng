@@ -44,6 +44,29 @@ div {
   lt: false;
 }
 
+<===> output-libsass.css
+div {
+  less: true;
+  less: 0.75;
+  less: true;
+  eq: true;
+  eq: true;
+  eq: true;
+  eq: false;
+  eq: false;
+  eq: false;
+  eq: false;
+  eq: true;
+  x: 1in, 1in;
+  y: 1cm;
+  eq: true;
+  blah: 0.3937007874;
+  in: 2.54cm;
+  lt: false;
+  lt: false;
+  lt: false;
+}
+
 <===> warning
 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
 
@@ -140,3 +163,19 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
    |        ^^^^^^^^^^^^^^
    '
     input.scss 17:8  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 3, column 10 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1px, 1pt) or calc(1px / 1pt)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+3 |   less: (1px / 1pt);
+  |          ^^^^^^^^^
+  '
+    input.scss 3:10  root stylesheet
+
+Additionally, 7 similar warnings were suppressed!

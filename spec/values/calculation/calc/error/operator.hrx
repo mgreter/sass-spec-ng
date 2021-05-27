@@ -191,6 +191,14 @@ Error: Undefined operation "calc(var(--c)) + 1".
   '
   input.scss 1:7  root stylesheet
 
+<===> plus/lhs/error-libsass
+Error: Undefined operation "calc(var(--c)) + 1".
+  ,
+1 | a {b: calc(var(--c)) + 1}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> plus/rhs/input.scss
@@ -217,12 +225,28 @@ Error: Undefined operation "calc(var(--c)) + calc(var(--d))".
   '
   input.scss 1:7  root stylesheet
 
+<===> plus/both/error-libsass
+Error: Undefined operation "calc(var(--c)) + calc(var(--d))".
+  ,
+1 | a {b: calc(var(--c)) + calc(var(--d))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> minus/lhs/input.scss
 a {b: calc(var(--c)) - 1}
 
 <===> minus/lhs/error
+Error: Undefined operation "calc(var(--c)) - 1".
+  ,
+1 | a {b: calc(var(--c)) - 1}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> minus/lhs/error-libsass
 Error: Undefined operation "calc(var(--c)) - 1".
   ,
 1 | a {b: calc(var(--c)) - 1}
@@ -249,6 +273,14 @@ Error: Undefined operation "1 - calc(var(--c))".
 a {b: calc(var(--c)) - calc(var(--d))}
 
 <===> minus/both/error
+Error: Undefined operation "calc(var(--c)) - calc(var(--d))".
+  ,
+1 | a {b: calc(var(--c)) - calc(var(--d))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> minus/both/error-libsass
 Error: Undefined operation "calc(var(--c)) - calc(var(--d))".
   ,
 1 | a {b: calc(var(--c)) - calc(var(--d))}
