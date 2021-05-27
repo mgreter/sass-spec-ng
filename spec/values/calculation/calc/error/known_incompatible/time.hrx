@@ -9,6 +9,24 @@ Error: 1s and 1Hz are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> s/hz/error-libsass
+Error: Incompatible units Hz and s.
+  ,
+1 | a {b: calc(1s + 1Hz)}
+  |                 ^^^
+  '
+  input.scss 1:17  root stylesheet
+  ,
+1 | a {b: calc(1s + 1Hz)}
+  |            ^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1s + 1Hz)}
+  |            ^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> s/khz/input.scss
@@ -16,6 +34,24 @@ a {b: calc(1s + 1kHz)}
 
 <===> s/khz/error
 Error: 1s and 1kHz are incompatible.
+  ,
+1 | a {b: calc(1s + 1kHz)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> s/khz/error-libsass
+Error: Incompatible units kHz and s.
+  ,
+1 | a {b: calc(1s + 1kHz)}
+  |                 ^^^^
+  '
+  input.scss 1:17  root stylesheet
+  ,
+1 | a {b: calc(1s + 1kHz)}
+  |            ^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1s + 1kHz)}
   |            ^^^^^^^^^
@@ -35,6 +71,24 @@ Error: 1s and 1dpi are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> s/dpi/error-libsass
+Error: Incompatible units dpi and s.
+  ,
+1 | a {b: calc(1s + 1dpi)}
+  |                 ^^^^
+  '
+  input.scss 1:17  root stylesheet
+  ,
+1 | a {b: calc(1s + 1dpi)}
+  |            ^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1s + 1dpi)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> s/dpcm/input.scss
@@ -42,6 +96,24 @@ a {b: calc(1s + 1dpcm)}
 
 <===> s/dpcm/error
 Error: 1s and 1dpcm are incompatible.
+  ,
+1 | a {b: calc(1s + 1dpcm)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> s/dpcm/error-libsass
+Error: Incompatible units dpcm and s.
+  ,
+1 | a {b: calc(1s + 1dpcm)}
+  |                 ^^^^^
+  '
+  input.scss 1:17  root stylesheet
+  ,
+1 | a {b: calc(1s + 1dpcm)}
+  |            ^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1s + 1dpcm)}
   |            ^^^^^^^^^^
@@ -61,6 +133,24 @@ Error: 1s and 1dppx are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> s/dppx/error-libsass
+Error: Incompatible units dppx and s.
+  ,
+1 | a {b: calc(1s + 1dppx)}
+  |                 ^^^^^
+  '
+  input.scss 1:17  root stylesheet
+  ,
+1 | a {b: calc(1s + 1dppx)}
+  |            ^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1s + 1dppx)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> ms/hz/input.scss
@@ -68,6 +158,24 @@ a {b: calc(1ms + 1Hz)}
 
 <===> ms/hz/error
 Error: 1ms and 1Hz are incompatible.
+  ,
+1 | a {b: calc(1ms + 1Hz)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> ms/hz/error-libsass
+Error: Incompatible units Hz and ms.
+  ,
+1 | a {b: calc(1ms + 1Hz)}
+  |                  ^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1Hz)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1ms + 1Hz)}
   |            ^^^^^^^^^
@@ -87,6 +195,24 @@ Error: 1ms and 1kHz are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> ms/khz/error-libsass
+Error: Incompatible units kHz and ms.
+  ,
+1 | a {b: calc(1ms + 1kHz)}
+  |                  ^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1kHz)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1kHz)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> ms/dpi/input.scss
@@ -94,6 +220,24 @@ a {b: calc(1ms + 1dpi)}
 
 <===> ms/dpi/error
 Error: 1ms and 1dpi are incompatible.
+  ,
+1 | a {b: calc(1ms + 1dpi)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> ms/dpi/error-libsass
+Error: Incompatible units dpi and ms.
+  ,
+1 | a {b: calc(1ms + 1dpi)}
+  |                  ^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1dpi)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1ms + 1dpi)}
   |            ^^^^^^^^^^
@@ -113,6 +257,24 @@ Error: 1ms and 1dpcm are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> ms/dpcm/error-libsass
+Error: Incompatible units dpcm and ms.
+  ,
+1 | a {b: calc(1ms + 1dpcm)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1dpcm)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1dpcm)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> ms/dppx/input.scss
@@ -120,6 +282,24 @@ a {b: calc(1ms + 1dppx)}
 
 <===> ms/dppx/error
 Error: 1ms and 1dppx are incompatible.
+  ,
+1 | a {b: calc(1ms + 1dppx)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> ms/dppx/error-libsass
+Error: Incompatible units dppx and ms.
+  ,
+1 | a {b: calc(1ms + 1dppx)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1ms + 1dppx)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1ms + 1dppx)}
   |            ^^^^^^^^^^^

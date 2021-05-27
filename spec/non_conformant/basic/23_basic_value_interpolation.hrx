@@ -7,6 +7,7 @@ div {
   b: #{12 + 111};
   b: type-of(#{12 + 111});
 }
+
 <===> output.css
 div {
   a: helloworld;

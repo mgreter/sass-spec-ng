@@ -9,6 +9,24 @@ Error: 1px and 1deg are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> deg/error-libsass
+Error: Incompatible units deg and px.
+  ,
+1 | a {b: calc(1px + 1deg)}
+  |                  ^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1deg)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px + 1deg)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> grad/input.scss
@@ -16,6 +34,24 @@ a {b: calc(1px + 1grad)}
 
 <===> grad/error
 Error: 1px and 1grad are incompatible.
+  ,
+1 | a {b: calc(1px + 1grad)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> grad/error-libsass
+Error: Incompatible units grad and px.
+  ,
+1 | a {b: calc(1px + 1grad)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1grad)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1px + 1grad)}
   |            ^^^^^^^^^^^
@@ -35,6 +71,24 @@ Error: 1px and 1rad are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> rad/error-libsass
+Error: Incompatible units rad and px.
+  ,
+1 | a {b: calc(1px + 1rad)}
+  |                  ^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1rad)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px + 1rad)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> turn/input.scss
@@ -42,6 +96,24 @@ a {b: calc(1px + 1turn)}
 
 <===> turn/error
 Error: 1px and 1turn are incompatible.
+  ,
+1 | a {b: calc(1px + 1turn)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> turn/error-libsass
+Error: Incompatible units turn and px.
+  ,
+1 | a {b: calc(1px + 1turn)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1turn)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1px + 1turn)}
   |            ^^^^^^^^^^^
@@ -61,6 +133,24 @@ Error: 1px and 1s are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> s/error-libsass
+Error: Incompatible units s and px.
+  ,
+1 | a {b: calc(1px + 1s)}
+  |                  ^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1s)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px + 1s)}
+  |            ^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> ms/input.scss
@@ -68,6 +158,24 @@ a {b: calc(1px + 1ms)}
 
 <===> ms/error
 Error: 1px and 1ms are incompatible.
+  ,
+1 | a {b: calc(1px + 1ms)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> ms/error-libsass
+Error: Incompatible units ms and px.
+  ,
+1 | a {b: calc(1px + 1ms)}
+  |                  ^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1ms)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1px + 1ms)}
   |            ^^^^^^^^^
@@ -87,6 +195,24 @@ Error: 1px and 1Hz are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> hz/error-libsass
+Error: Incompatible units Hz and px.
+  ,
+1 | a {b: calc(1px + 1Hz)}
+  |                  ^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1Hz)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px + 1Hz)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> khz/input.scss
@@ -94,6 +220,24 @@ a {b: calc(1px + 1kHz)}
 
 <===> khz/error
 Error: 1px and 1kHz are incompatible.
+  ,
+1 | a {b: calc(1px + 1kHz)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> khz/error-libsass
+Error: Incompatible units kHz and px.
+  ,
+1 | a {b: calc(1px + 1kHz)}
+  |                  ^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1kHz)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1px + 1kHz)}
   |            ^^^^^^^^^^
@@ -113,6 +257,24 @@ Error: 1px and 1dpi are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> dpi/error-libsass
+Error: Incompatible units dpi and px.
+  ,
+1 | a {b: calc(1px + 1dpi)}
+  |                  ^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1dpi)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px + 1dpi)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> dpcm/input.scss
@@ -126,6 +288,24 @@ Error: 1px and 1dpcm are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> dpcm/error-libsass
+Error: Incompatible units dpcm and px.
+  ,
+1 | a {b: calc(1px + 1dpcm)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1dpcm)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px + 1dpcm)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> dppx/input.scss
@@ -133,6 +313,24 @@ a {b: calc(1px + 1dppx)}
 
 <===> dppx/error
 Error: 1px and 1dppx are incompatible.
+  ,
+1 | a {b: calc(1px + 1dppx)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> dppx/error-libsass
+Error: Incompatible units dppx and px.
+  ,
+1 | a {b: calc(1px + 1dppx)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1dppx)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1px + 1dppx)}
   |            ^^^^^^^^^^^

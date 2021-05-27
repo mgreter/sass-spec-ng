@@ -2,6 +2,7 @@
 // Regression test for sass/dart-sass#1049. The lack of a trailing newline is
 // necessary for the regression test.
 a {b: !
+
 <===> error/syntax/eof_after_bang/error
 Error: Expected "important".
   ,
@@ -9,3 +10,11 @@ Error: Expected "important".
   |        ^
   '
   input.scss 3:8  root stylesheet
+
+<===> error/syntax/eof_after_bang/error-libsass
+Error: Expected "important".
+  ,
+5 |
+  | ^
+  '
+  input.scss 5:1  root stylesheet

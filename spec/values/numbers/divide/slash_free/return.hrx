@@ -22,6 +22,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
     input.scss 1:24  a()
     input.scss 3:7   root stylesheet
 
+<===> user_defined/warning-libsass
+DEPRECATION WARNING on line 1, column 24 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | @function a() {@return 1/2}
+  |                        ^^^
+  '
+    input.scss 1:24  a()
+  ,
+3 | b {c: a()}
+  |       ^^^
+  '
+    input.scss 3:7   root stylesheet
+
 <===>
 ================================================================================
 <===> built_in/input.scss

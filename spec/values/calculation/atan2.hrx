@@ -127,6 +127,24 @@ Error: 1 and 1px are incompatible.
   '
   input.scss 1:13  root stylesheet
 
+<===> error/units/unitless_and_real/error-libsass
+Error: Incompatible units px and [unitless].
+  ,
+1 | a {b: atan2(1, 1px)}
+  |                ^^^
+  '
+  input.scss 1:16  atan2()
+  ,
+1 | a {b: atan2(1, 1px)}
+  |             ^
+  '
+  input.scss 1:13  atan2()
+  ,
+1 | a {b: atan2(1, 1px)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/known_incompatible/input.scss
@@ -141,6 +159,24 @@ Error: 1deg and 1px are incompatible.
   '
   input.scss 1:13  root stylesheet
 
+<===> error/units/known_incompatible/error-libsass
+Error: Incompatible units px and deg.
+  ,
+1 | a {b: atan2(1deg, 1px)}
+  |                   ^^^
+  '
+  input.scss 1:19  atan2()
+  ,
+1 | a {b: atan2(1deg, 1px)}
+  |             ^^^^
+  '
+  input.scss 1:13  atan2()
+  ,
+1 | a {b: atan2(1deg, 1px)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/complex_and_unknown/input.scss
@@ -153,6 +189,19 @@ Error: Number calc(2px * 1px) isn't compatible with CSS calculations.
   |             ^^^^^^^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/units/complex_and_unknown/error-libsass
+Error: Number calc(2px * 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: atan2(1px*2px, 10%)}
+  |             ^^^^^^^
+  '
+  input.scss 1:13  atan2()
+  ,
+1 | a {b: atan2(1px*2px, 10%)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -206,6 +255,14 @@ Error: 2 arguments required, but only 1 was passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: 2 arguments required, but only 1 was passed.
+  ,
+1 | a {b: atan2(0)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -231,3 +288,11 @@ Error: This operation can't be used in a calculation.
   |               ^
   '
   input.scss 1:15  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: atan2(7 % 3, 1)}
+  |             ^^^^^
+  '
+  input.scss 1:13  root stylesheet

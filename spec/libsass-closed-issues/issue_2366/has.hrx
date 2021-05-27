@@ -15,6 +15,7 @@
     @extend .link;
     padding: 0 10px;
 }
+
 <===> output.css
 .item {
   display: inline-block;

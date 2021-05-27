@@ -6,6 +6,7 @@
   center: (10000/3);
   blah: (20/8);
 }
+
 <===> output.css
 .asdf {
   left: -17.3333333333px;
@@ -62,3 +63,19 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |          ^^^^
   '
     input.scss 6:10  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 3, column 9 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(-$bwidth, 3) or calc(-1 * $bwidth / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+3 |   left: -$bwidth/3;
+  |         ^^^^^^^^^^
+  '
+    input.scss 3:9  root stylesheet
+
+Additionally, 3 similar warnings were suppressed!

@@ -11,6 +11,14 @@ Error: Missing element $hue.
   '
   input.scss 2:6  root stylesheet
 
+<===> list/empty/error-libsass
+Error: Missing argument $hue.
+  ,
+2 |   b: hsl(());
+  |      ^^^^^^^
+  '
+  input.scss 2:6  root stylesheet
+
 <===>
 ================================================================================
 <===> list/comma_separated/input.scss
@@ -25,6 +33,19 @@ Error: $channels must be a space-separated list.
   |      ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:6  root stylesheet
+
+<===> list/comma_separated/error-libsass
+Error: $channels must be a space-separated list.
+  ,
+2 |   b: hsl((0, 100%, 50%));
+  |          ^^^^^^^^^^^^^^
+  '
+  input.scss 2:10  hsl()
+  ,
+2 |   b: hsl((0, 100%, 50%));
+  |      ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
 
 <===>
 ================================================================================
@@ -41,6 +62,19 @@ Error: $channels must be an unbracketed list.
   '
   input.scss 2:6  root stylesheet
 
+<===> list/bracketed/error-libsass
+Error: $channels must be an unbracketed list.
+  ,
+2 |   b: hsl([0 100% 50%]);
+  |          ^^^^^^^^^^^^
+  '
+  input.scss 2:10  hsl()
+  ,
+2 |   b: hsl([0 100% 50%]);
+  |      ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
+
 <===>
 ================================================================================
 <===> list/one_element/input.scss
@@ -50,6 +84,14 @@ a {
 
 <===> list/one_element/error
 Error: Missing element $saturation.
+  ,
+2 |   b: hsl(0);
+  |      ^^^^^^
+  '
+  input.scss 2:6  root stylesheet
+
+<===> list/one_element/error-libsass
+Error: Missing argument $saturation.
   ,
 2 |   b: hsl(0);
   |      ^^^^^^
@@ -71,6 +113,14 @@ Error: Missing element $lightness.
   '
   input.scss 2:6  root stylesheet
 
+<===> list/two_elements/error-libsass
+Error: Missing argument $lightness.
+  ,
+2 |   b: hsl(0 100%);
+  |      ^^^^^^^^^^^
+  '
+  input.scss 2:6  root stylesheet
+
 <===>
 ================================================================================
 <===> list/four_elements/input.scss
@@ -85,6 +135,19 @@ Error: Only 3 elements allowed, but 4 were passed.
   |      ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:6  root stylesheet
+
+<===> list/four_elements/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 |   b: hsl(0 100% 50% 0.4);
+  |          ^^^^^^^^^^^^^^
+  '
+  input.scss 2:10  hsl()
+  ,
+2 |   b: hsl(0 100% 50% 0.4);
+  |      ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
 
 <===>
 ================================================================================
@@ -101,6 +164,19 @@ Error: $hue: "foo" is not a number.
   '
   input.scss 2:6  root stylesheet
 
+<===> type/hue/error-libsass
+Error: $hue: "foo" is not a number.
+  ,
+2 |   b: hsl("foo" 100% 50%);
+  |          ^^^^^
+  '
+  input.scss 2:10  hsl()
+  ,
+2 |   b: hsl("foo" 100% 50%);
+  |      ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
+
 <===>
 ================================================================================
 <===> type/saturation/input.scss
@@ -115,6 +191,19 @@ Error: $saturation: "foo" is not a number.
   |      ^^^^^^^^^^^^^^^^
   '
   input.scss 2:6  root stylesheet
+
+<===> type/saturation/error-libsass
+Error: $saturation: "foo" is not a number.
+  ,
+2 |   b: hsl(0 "foo" 50%);
+  |            ^^^^^
+  '
+  input.scss 2:12  hsl()
+  ,
+2 |   b: hsl(0 "foo" 50%);
+  |      ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
 
 <===>
 ================================================================================
@@ -131,6 +220,19 @@ Error: $lightness: "foo" is not a number.
   '
   input.scss 2:6  root stylesheet
 
+<===> type/lightness/error-libsass
+Error: $lightness: "foo" is not a number.
+  ,
+2 |   b: hsl(0 100% "foo");
+  |                 ^^^^^
+  '
+  input.scss 2:17  hsl()
+  ,
+2 |   b: hsl(0 100% "foo");
+  |      ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
+
 <===>
 ================================================================================
 <===> quoted_var_slash/input.scss
@@ -145,6 +247,19 @@ Error: $lightness: "var(--foo) / 0.4" is not a number.
   |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:6  root stylesheet
+
+<===> quoted_var_slash/error-libsass
+Error: $lightness: "var(--foo) / 0.4" is not a number.
+  ,
+2 |   b: hsl(0 100% "var(--foo) / 0.4");
+  |                 ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:17  hsl()
+  ,
+2 |   b: hsl(0 100% "var(--foo) / 0.4");
+  |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:6   root stylesheet
 
 <===>
 ================================================================================
@@ -187,6 +302,14 @@ Error: Missing element $hue.
   '
   input.scss 2:7  root stylesheet
 
+<===> slash_list/channels/empty/error-libsass
+Error: Missing argument $hue.
+  ,
+2 | a {b: hsl(list.slash((), 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> slash_list/channels/comma_separated/input.scss
@@ -200,6 +323,19 @@ Error: $channels must be a space-separated list.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> slash_list/channels/comma_separated/error-libsass
+Error: $channels must be a space-separated list.
+  ,
+2 | a {b: hsl(list.slash((0, 100%, 50%), 1))}
+  |                      ^^^^^^^^^^^^^^
+  '
+  input.scss 2:22  hsl()
+  ,
+2 | a {b: hsl(list.slash((0, 100%, 50%), 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -215,6 +351,19 @@ Error: $channels must be an unbracketed list.
   '
   input.scss 2:7  root stylesheet
 
+<===> slash_list/channels/bracketed/error-libsass
+Error: $channels must be an unbracketed list.
+  ,
+2 | a {b: hsl(list.slash([0 100% 50%], 1))}
+  |                      ^^^^^^^^^^^^
+  '
+  input.scss 2:22  hsl()
+  ,
+2 | a {b: hsl(list.slash([0 100% 50%], 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> slash_list/channels/one_element/input.scss
@@ -223,6 +372,14 @@ a {b: hsl(list.slash(0, 1))}
 
 <===> slash_list/channels/one_element/error
 Error: Missing element $saturation.
+  ,
+2 | a {b: hsl(list.slash(0, 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===> slash_list/channels/one_element/error-libsass
+Error: Missing argument $saturation.
   ,
 2 | a {b: hsl(list.slash(0, 1))}
   |       ^^^^^^^^^^^^^^^^^^^^^
@@ -243,6 +400,14 @@ Error: Missing element $lightness.
   '
   input.scss 2:7  root stylesheet
 
+<===> slash_list/channels/two_elements/error-libsass
+Error: Missing argument $lightness.
+  ,
+2 | a {b: hsl(list.slash(0 100%, 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> slash_list/channels/four_elements/input.scss
@@ -256,3 +421,16 @@ Error: Only 3 elements allowed, but 4 were passed.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> slash_list/channels/four_elements/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: hsl(list.slash(0 100% 50% 0.4, 1))}
+  |                      ^^^^^^^^^^^^^^
+  '
+  input.scss 2:22  hsl()
+  ,
+2 | a {b: hsl(list.slash(0 100% 50% 0.4, 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

@@ -14,3 +14,11 @@ Error: Missing argument $channels.
   |           ============== declaration
   '
   input.scss 2:6  root stylesheet
+
+<===> error-libsass
+Error: Missing argument $channels.
+  ,
+2 |   b: hsl();
+  |      ^^^^^
+  '
+  input.scss 2:6  root stylesheet

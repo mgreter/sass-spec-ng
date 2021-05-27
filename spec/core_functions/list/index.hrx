@@ -144,6 +144,14 @@ Error: Missing argument $value.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $value.
+  ,
+1 | a {b: index(c d e)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -158,5 +166,13 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:list
 1 | @function index($list, $value) {
   |           ==================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+1 | a {b: index(c d e, d, e)}
+  |       ^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet

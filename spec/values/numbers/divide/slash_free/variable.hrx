@@ -20,6 +20,20 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:5  root stylesheet
 
+<===> local/warning-libsass
+DEPRECATION WARNING on line 1, column 5 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | $a: 1/2;
+  |     ^^^
+  '
+    input.scss 1:5  root stylesheet
+
 <===>
 ================================================================================
 <===> use_with/input.scss
@@ -46,6 +60,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                        ^^^
   '
     input.scss 1:24  root stylesheet
+
+<===> use_with/warning-libsass
+DEPRECATION WARNING on line 1, column 24 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | @use "other" with ($a: 1/2);
+  |                        ^^^
+  '
+    input.scss 1:24  @use
+  ,
+1 | @use "other" with ($a: 1/2);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:1   root stylesheet
 
 <===>
 ================================================================================
@@ -76,4 +109,28 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                               ^^^
   '
     _midstream.scss 1:31  @use
+    input.scss 1:1        root stylesheet
+
+<===> forward_with/warning-libsass
+DEPRECATION WARNING on line 1, column 31 of _midstream.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | @forward "upstream" with ($a: 1/2);
+  |                               ^^^
+  '
+    _midstream.scss 1:31  @forward
+  ,
+1 | @forward "upstream" with ($a: 1/2);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
     input.scss 1:1        root stylesheet

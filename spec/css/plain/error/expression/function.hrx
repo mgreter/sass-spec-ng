@@ -14,6 +14,19 @@ Error: This function isn't allowed in plain CSS.
   plain.css 2:6   @import
   input.scss 1:9  root stylesheet
 
+<===> built_in/error-libsass
+Error: This function isn't allowed in plain CSS.
+  ,
+2 |   x: index(1 2 3, 1);
+  |      ^^^^^^^^^^^^^^^
+  '
+  plain.css 2:6   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> variable_arguments/input.scss
@@ -32,6 +45,19 @@ Error: expected ")".
   plain.css 2:22  @import
   input.scss 1:9  root stylesheet
 
+<===> variable_arguments/error-libsass
+Error: expected ")".
+  ,
+2 |   x: hsl(0, 100%, 50%...);
+  |                      ^
+  '
+  plain.css 2:22  @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> keyword_arguments/input.scss
@@ -48,4 +74,17 @@ Error: Sass variables aren't allowed in plain CSS.
   |                   ^^^^^^^^^^
   '
   plain.css 2:19  @import
+  input.scss 1:9  root stylesheet
+
+<===> keyword_arguments/error-libsass
+Error: Sass variables aren't allowed in plain CSS.
+  ,
+2 |   x: hsl(0, 100%, $lightness: 50%);
+  |                   ^^^^^^^^^^
+  '
+  plain.css 2:19  @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet

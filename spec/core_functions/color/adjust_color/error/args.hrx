@@ -13,6 +13,14 @@ Error: Missing argument $color.
   '
   input.scss 1:7  root stylesheet
 
+<===> too_few/error-libsass
+Error: Missing argument $color.
+  ,
+1 | a {b: adjust-color()}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_many/input.scss
@@ -25,6 +33,19 @@ Error: Only one positional argument is allowed. All other arguments must be pass
   |       ^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> too_many/error-libsass
+Error: Only one positional argument is allowed. All other arguments must be passed by name.
+  ,
+1 | a {b: adjust-color(red, 1)}
+  |                    ^^^
+  '
+  input.scss 1:20  adjust-color()
+  ,
+1 | a {b: adjust-color(red, 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================

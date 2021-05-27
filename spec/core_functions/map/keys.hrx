@@ -61,6 +61,19 @@ Error: $map: 1 is not a map.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $map: 1 is not a map.
+  ,
+1 | a {b: map-keys(1)}
+  |                ^
+  '
+  input.scss 1:16  map-keys()
+  ,
+1 | a {b: map-keys(1)}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -78,11 +91,18 @@ Error: Missing argument $map.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $map.
+  ,
+1 | a {b: map-keys()}
+  |       ^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
 a {b: map-keys((c: d), (e: f))}
-
 
 <===> error/too_many_args/error
 Error: Only 1 argument allowed, but 2 were passed.
@@ -93,5 +113,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:map
 1 | @function keys($map) {
   |           ========== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+1 | a {b: map-keys((c: d), (e: f))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet

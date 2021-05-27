@@ -39,6 +39,25 @@ See https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> hue/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 31 of input.scss:
+$hue: Passing a unit other than deg (60in) is deprecated.
+
+To preserve current behavior: calc($hue / 1in)
+
+See https://sass-lang.com/d/color-units
+
+  ,
+1 | a {b: change-color(red, $hue: 60in)}
+  |                               ^^^^
+  '
+    input.scss 1:31  change-color()
+  ,
+1 | a {b: change-color(red, $hue: 60in)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> hue/angle/input.scss
@@ -82,6 +101,25 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> saturation/unitless/warning-libsass
+DEPRECATION WARNING on line 1, column 38 of input.scss:
+$saturation: Passing a number without unit % (50) is deprecated.
+
+To preserve current behavior: $saturation * 1%
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: change-color(red, $saturation: 50)}
+  |                                      ^^
+  '
+    input.scss 1:38  change-color()
+  ,
+1 | a {b: change-color(red, $saturation: 50)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> saturation/unknown/input.scss
@@ -104,6 +142,25 @@ More info: https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> saturation/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 38 of input.scss:
+$saturation: Passing a number without unit % (50in) is deprecated.
+
+To preserve current behavior: calc($saturation / 1in * 1%)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: change-color(red, $saturation: 50in)}
+  |                                      ^^^^
+  '
+    input.scss 1:38  change-color()
+  ,
+1 | a {b: change-color(red, $saturation: 50in)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -138,6 +195,25 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> lightness/unitless/warning-libsass
+DEPRECATION WARNING on line 1, column 37 of input.scss:
+$lightness: Passing a number without unit % (30) is deprecated.
+
+To preserve current behavior: $lightness * 1%
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: change-color(red, $lightness: 30)}
+  |                                     ^^
+  '
+    input.scss 1:37  change-color()
+  ,
+1 | a {b: change-color(red, $lightness: 30)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> lightness/unknown/input.scss
@@ -161,58 +237,21 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
-<===>
-================================================================================
-<===> alpha/unitless/input.scss
-a {b: change-color(red, $alpha: 0.5)}
+<===> lightness/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 37 of input.scss:
+$lightness: Passing a number without unit % (30in) is deprecated.
 
-<===> alpha/unitless/output.css
-a {
-  b: rgba(255, 0, 0, 0.5);
-}
-
-<===>
-================================================================================
-<===> alpha/percent/input.scss
-a {b: adjust-color(red, $alpha: 0.5%)}
-
-<===> alpha/percent/output.css
-a {
-  b: red;
-}
-
-<===> alpha/percent/warning
-DEPRECATION WARNING: $alpha: Passing a number with unit % is deprecated.
-
-To preserve current behavior: calc($alpha / 1%)
+To preserve current behavior: calc($lightness / 1in * 1%)
 
 More info: https://sass-lang.com/d/function-units
 
   ,
-1 | a {b: adjust-color(red, $alpha: 0.5%)}
-  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1 | a {b: change-color(red, $lightness: 30in)}
+  |                                     ^^^^
   '
-    input.scss 1:7  root stylesheet
-
-<===>
-================================================================================
-<===> alpha/unknown/input.scss
-a {b: adjust-color(red, $alpha: 0.5px)}
-
-<===> alpha/unknown/output.css
-a {
-  b: red;
-}
-
-<===> alpha/unknown/warning
-DEPRECATION WARNING: $alpha: Passing a number with unit px is deprecated.
-
-To preserve current behavior: calc($alpha / 1px)
-
-More info: https://sass-lang.com/d/function-units
-
+    input.scss 1:37  change-color()
   ,
-1 | a {b: adjust-color(red, $alpha: 0.5px)}
-  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1 | a {b: change-color(red, $lightness: 30in)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
-    input.scss 1:7  root stylesheet
+    input.scss 1:7   root stylesheet

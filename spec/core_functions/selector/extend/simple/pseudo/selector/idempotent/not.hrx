@@ -70,10 +70,6 @@ a {
 
 <===>
 ================================================================================
-<===> is/list_of_complex/options.yml
-:todo:
-  - libsass
-
 <===> is/list_of_complex/input.scss
 a {b: selector-extend(":not(.c)", ".c", ":is(.d .e, .f .g)")}
 

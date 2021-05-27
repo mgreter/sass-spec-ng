@@ -205,6 +205,24 @@ Error: $selector: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/selector/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: selector-replace(&, "c", "d")}
+  |                        ^
+  '
+  input.scss 1:24  selector-replace()
+  ,
+1 | a {b: selector-replace("&", "c", "d")}
+  |                        ^^^
+  '
+  input.scss 1:24  selector-replace()
+  ,
+1 | a {b: selector-replace("&", "c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/selector/invalid/input.scss
@@ -223,6 +241,24 @@ Error: $selector: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/selector/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: selector-replace([c, "d", "e")}
+  |                          ^
+  '
+  input.scss 1:26  selector-replace()
+  ,
+1 | a {b: selector-replace("[c", "d", "e")}
+  |                        ^^^^
+  '
+  input.scss 1:24  selector-replace()
+  ,
+1 | a {b: selector-replace("[c", "d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/selector/type/input.scss
@@ -236,6 +272,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/selector/type/error-libsass
+Error: $selector: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: selector-replace(1, "c", "d")}
+  |                        ^
+  '
+  input.scss 1:24  selector-replace()
+  ,
+1 | a {b: selector-replace(1, "c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -254,6 +304,24 @@ Error: $original: Parent selectors aren't allowed here.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/extendee/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: selector-replace("c", &, "d")}
+  |                             ^
+  '
+  input.scss 1:29  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "&", "d")}
+  |                             ^^^
+  '
+  input.scss 1:29  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "&", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -299,6 +367,24 @@ Error: $original: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/extendee/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: selector-replace("c", [d, "e")}
+  |                               ^
+  '
+  input.scss 1:31  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "[d", "e")}
+  |                             ^^^^
+  '
+  input.scss 1:29  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "[d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extendee/type/input.scss
@@ -312,6 +398,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/extendee/type/error-libsass
+Error: $original: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: selector-replace("c", 1, "d")}
+  |                             ^
+  '
+  input.scss 1:29  selector-replace()
+  ,
+1 | a {b: selector-replace("c", 1, "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -331,6 +431,24 @@ Error: $replacement: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/extender/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: selector-replace("c", "d", &)}
+  |                                  ^
+  '
+  input.scss 1:34  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "d", "&")}
+  |                                  ^^^
+  '
+  input.scss 1:34  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "d", "&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extender/invalid/input.scss
@@ -349,6 +467,24 @@ Error: $replacement: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/extender/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: selector-replace("c", "d", [e)}
+  |                                    ^
+  '
+  input.scss 1:36  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "d", "[e")}
+  |                                  ^^^^
+  '
+  input.scss 1:34  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "d", "[e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extender/type/input.scss
@@ -362,6 +498,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/extender/type/error-libsass
+Error: $replacement: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: selector-replace("c", "d", 1)}
+  |                                  ^
+  '
+  input.scss 1:34  selector-replace()
+  ,
+1 | a {b: selector-replace("c", "d", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -380,6 +530,14 @@ Error: Only 3 arguments allowed, but 4 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+1 | a {b: selector-replace("c", "d", "e", "f")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -394,5 +552,13 @@ Error: Missing argument $replacement.
   ,--> sass:selector
 1 | @function replace($selector, $original, $replacement) {
   |           =========================================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $replacement.
+  ,
+1 | a {b: selector-replace("c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet

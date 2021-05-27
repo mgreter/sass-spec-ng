@@ -173,6 +173,19 @@ Error: $name: 12px is not a string.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/argument/type/error-libsass
+Error: $name: 12px is not a string.
+  ,
+1 | a {b: variable-exists(12px)}
+  |                       ^^^^
+  '
+  input.scss 1:23  variable-exists()
+  ,
+1 | a {b: variable-exists(12px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/argument/too_few/input.scss
@@ -190,6 +203,14 @@ Error: Missing argument $name.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/argument/too_few/error-libsass
+Error: Missing argument $name.
+  ,
+1 | a {b: variable-exists()}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/argument/too_many/input.scss
@@ -204,6 +225,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:meta
 1 | @function variable-exists($name) {
   |           ====================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/argument/too_many/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+1 | a {b: variable-exists(foo, bar)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
 
@@ -233,3 +262,11 @@ Error: This variable is available from multiple global modules.
     |       ^^^^^^^^^^^^^^^^^^^^^^^ variable use
     '
   input.scss 4:7  root stylesheet
+
+<===> conflict/error-libsass
+Error: $member is available from multiple global modules.
+  ,
+2 | @use "other2" as *;
+  | ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet

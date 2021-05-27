@@ -11,4 +11,12 @@ Error: expected selector.
 1 | #{&} {
   |      ^
   '
-  input.scss 1:6  root stylesheet
+  input.scss 1:1  root stylesheet
+
+<===> error-libsass
+Error: expected selector.
+  ,
+1 | #{&} {
+  | ^^^^^
+  '
+  input.scss 1:1  root stylesheet

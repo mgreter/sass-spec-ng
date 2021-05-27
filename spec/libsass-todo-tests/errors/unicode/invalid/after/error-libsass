@@ -1,0 +1,7 @@
+Error: Invalid UTF-8.
+  ,
+1 | foo{;????????
+  |      ^
+  '
+  input.scss 1:6  root stylesheet
+

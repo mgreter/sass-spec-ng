@@ -113,6 +113,19 @@ Error: $min: "0" is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/min/error-libsass
+Error: $min: "0" is not a number.
+  ,
+2 | a {b: math.clamp("0", 1, 2)}
+  |                  ^^^
+  '
+  input.scss 2:18  clamp()
+  ,
+2 | a {b: math.clamp("0", 1, 2)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/number/input.scss
@@ -126,6 +139,19 @@ Error: $number: "0" is not a number.
   |       ^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/number/error-libsass
+Error: $number: "0" is not a number.
+  ,
+2 | a {b: math.clamp(1, "0", 2)}
+  |                     ^^^
+  '
+  input.scss 2:21  clamp()
+  ,
+2 | a {b: math.clamp(1, "0", 2)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -141,6 +167,19 @@ Error: $max: "0" is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/max/error-libsass
+Error: $max: "0" is not a number.
+  ,
+2 | a {b: math.clamp(1, 2, "0")}
+  |                        ^^^
+  '
+  input.scss 2:24  clamp()
+  ,
+2 | a {b: math.clamp(1, 2, "0")}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/incompatible_units/min_and_number/input.scss
@@ -154,6 +193,29 @@ Error: $number: 1px and $min: 1deg have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/incompatible_units/min_and_number/error-libsass
+Error: Incompatible units px and deg.
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1turn)}
+  |                        ^^^
+  '
+  input.scss 2:24  clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1turn)}
+  |                  ^^^^
+  '
+  input.scss 2:18  clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1turn)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1turn)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -169,6 +231,29 @@ Error: $max: 1px and $min: 1deg have incompatible units.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/incompatible_units/min_and_max/error-libsass
+Error: Incompatible units px and deg.
+  ,
+2 | a {b: math.clamp(1deg, 1turn, 1px)}
+  |                               ^^^
+  '
+  input.scss 2:31  clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1turn, 1px)}
+  |                  ^^^^
+  '
+  input.scss 2:18  clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1turn, 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1turn, 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/incompatible_units/number_and_max/input.scss
@@ -183,6 +268,29 @@ Error: $max: 1px and $min: 1turn have incompatible units.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/incompatible_units/number_and_max/error-libsass
+Error: Incompatible units px and turn.
+  ,
+2 | a {b: math.clamp(1turn, 1deg, 1px)}
+  |                               ^^^
+  '
+  input.scss 2:31  clamp()
+  ,
+2 | a {b: math.clamp(1turn, 1deg, 1px)}
+  |                  ^^^^^
+  '
+  input.scss 2:18  clamp()
+  ,
+2 | a {b: math.clamp(1turn, 1deg, 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   clamp()
+  ,
+2 | a {b: math.clamp(1turn, 1deg, 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/incompatible_units/all/input.scss
@@ -196,6 +304,29 @@ Error: $number: 1px and $min: 1deg have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/incompatible_units/all/error-libsass
+Error: Incompatible units s and deg.
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1s)}
+  |                             ^^
+  '
+  input.scss 2:29  clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1s)}
+  |                  ^^^^
+  '
+  input.scss 2:18  clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1s)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   clamp()
+  ,
+2 | a {b: math.clamp(1deg, 1px, 1s)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -299,6 +430,14 @@ Error: Missing argument $min.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/zero_args/error-libsass
+Error: Missing argument $min.
+  ,
+2 | a {b: math.clamp()}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/one_arg/input.scss
@@ -314,6 +453,14 @@ Error: Missing argument $number.
   ,--> sass:math
 1 | @function clamp($min, $number, $max) {
   |           ========================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/one_arg/error-libsass
+Error: Missing argument $number.
+  ,
+2 | a {b: math.clamp(0)}
+  |       ^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
 
@@ -335,6 +482,14 @@ Error: Missing argument $max.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/two_args/error-libsass
+Error: Missing argument $max.
+  ,
+2 | a {b: math.clamp(0, 0)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -350,5 +505,13 @@ Error: Only 3 arguments allowed, but 4 were passed.
   ,--> sass:math
 1 | @function clamp($min, $number, $max) {
   |           ========================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: math.clamp(0, 0, 0, 0)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

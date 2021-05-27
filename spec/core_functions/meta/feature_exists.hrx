@@ -105,6 +105,19 @@ Error: $feature: 1 is not a string.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $feature: 1 is not a string.
+  ,
+1 | a {b: feature-exists(1)}
+  |                      ^
+  '
+  input.scss 1:22  feature-exists()
+  ,
+1 | a {b: feature-exists(1)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -122,6 +135,14 @@ Error: Missing argument $feature.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $feature.
+  ,
+1 | a {b: feature-exists()}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -136,5 +157,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:meta
 1 | @function feature-exists($feature) {
   |           ======================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+1 | a {b: feature-exists(at-error, custom-property)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet

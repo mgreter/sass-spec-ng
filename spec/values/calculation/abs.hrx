@@ -121,6 +121,20 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 2:6  root stylesheet
 
+<===> math/slash_as_division/warning-libsass
+DEPRECATION WARNING on line 2, column 6 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(2px, abs(1.5)) or calc(2px / abs(1.5))
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+2 |   a: 2px / abs(1.5);
+  |      ^^^^^^^^^^^^^^
+  '
+    input.scss 2:6  root stylesheet
+
 <===>
 ================================================================================
 <===> case_insensitive/input.scss
@@ -155,6 +169,19 @@ Error: $number: var(--c) is not a number.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/sass_script_and_variable/error-libsass
+Error: $number: var(--c) is not a number.
+  ,
+1 | a {b: abs($number: var(--c))}
+  |                    ^^^^^^^^
+  '
+  input.scss 1:20  abs()
+  ,
+1 | a {b: abs($number: var(--c))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -168,6 +195,19 @@ Error: $number: "0" is not a number.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $number: "0" is not a number.
+  ,
+1 | a {b: abs("0")}
+  |           ^^^
+  '
+  input.scss 1:11  abs()
+  ,
+1 | a {b: abs("0")}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -175,6 +215,14 @@ a {b: abs()}
 
 <===> error/too_few_args/error
 Error: Missing argument.
+  ,
+1 | a {b: abs()}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
   ,
 1 | a {b: abs()}
   |       ^^^^^

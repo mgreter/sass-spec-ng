@@ -21,6 +21,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 3:9  root stylesheet
 
+<===> function/user_defined/warning-libsass
+DEPRECATION WARNING on line 3, column 9 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+3 | c {d: a(1/2)}
+  |         ^^^
+  '
+    input.scss 3:9  a()
+  ,
+3 | c {d: a(1/2)}
+  |       ^^^^^^
+  '
+    input.scss 3:7  root stylesheet
+
 <===>
 ================================================================================
 <===> function/built_in/input.scss
@@ -55,6 +74,27 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                 ^^^
   '
     input.scss 1:17  root stylesheet
+
+<===> function/built_in/warning-libsass
+DEPRECATION WARNING on line 1, column 12 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: join(1/2, 3/4)}
+  |            ^^^
+  '
+    input.scss 1:12  join()
+  ,
+1 | c {d: join(1/2, 3/4)}
+  |       ^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
 
 <===>
 ================================================================================
@@ -91,6 +131,27 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:33  root stylesheet
 
+<===> function/named/warning-libsass
+DEPRECATION WARNING on line 1, column 20 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: join($list1: 1/2, $list2: 3/4)}
+  |                    ^^^
+  '
+    input.scss 1:20  join()
+  ,
+1 | c {d: join($list1: 1/2, $list2: 3/4)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
+
 <===>
 ================================================================================
 <===> function/rest/single/input.scss
@@ -125,6 +186,27 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                 ^^^
   '
     input.scss 1:17  root stylesheet
+
+<===> function/rest/single/warning-libsass
+DEPRECATION WARNING on line 1, column 12 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: join(1/2, 3/4...)}
+  |            ^^^
+  '
+    input.scss 1:12  join()
+  ,
+1 | c {d: join(1/2, 3/4...)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
 
 <===>
 ================================================================================
@@ -161,6 +243,27 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:12  root stylesheet
 
+<===> function/rest/list/warning-libsass
+DEPRECATION WARNING on line 1, column 12 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: join(1/2 3/4...)}
+  |            ^^^
+  '
+    input.scss 1:12  join()
+  ,
+1 | c {d: join(1/2 3/4...)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
+
 <===>
 ================================================================================
 <===> function/rest/map/input.scss
@@ -195,6 +298,27 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                                    ^^^
   '
     input.scss 1:36  root stylesheet
+
+<===> function/rest/map/warning-libsass
+DEPRECATION WARNING on line 1, column 22 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2) or calc(1 / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | c {d: join(("list1": 1/2, "list2": 3/4)...)}
+  |                      ^^^
+  '
+    input.scss 1:22  join()
+  ,
+1 | c {d: join(("list1": 1/2, "list2": 3/4)...)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
 
 <===>
 ================================================================================
@@ -231,6 +355,27 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:30  root stylesheet
 
+<===> function/rest/kwargs/warning-libsass
+DEPRECATION WARNING on line 1, column 12 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: join(1/2..., ("list2": 3/4)...)}
+  |            ^^^
+  '
+    input.scss 1:12  join()
+  ,
+1 | c {d: join(1/2..., ("list2": 3/4)...)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
+
 <===>
 ================================================================================
 <===> macro/positional/input.scss
@@ -253,6 +398,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                ^^^
   '
     input.scss 1:16  root stylesheet
+
+<===> macro/positional/warning-libsass
+DEPRECATION WARNING on line 1, column 16 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: if(true, 1/2, null)}
+  |                ^^^
+  '
+    input.scss 1:16  root stylesheet
+  ,
+1 | c {d: if(true, 1/2, null)}
+  |         ^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:9   root stylesheet
 
 <===>
 ================================================================================
@@ -277,6 +441,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:26  root stylesheet
 
+<===> macro/named/warning-libsass
+DEPRECATION WARNING on line 1, column 26 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: if(true, $if-true: 1/2, $if-false: null)}
+  |                          ^^^
+  '
+    input.scss 1:26  root stylesheet
+  ,
+1 | c {d: if(true, $if-true: 1/2, $if-false: null)}
+  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:9   root stylesheet
+
 <===>
 ================================================================================
 <===> macro/rest/input.scss
@@ -299,6 +482,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |                ^^^^^^^^
   '
     input.scss 1:16  root stylesheet
+
+<===> macro/rest/warning-libsass
+DEPRECATION WARNING on line 1, column 16 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | c {d: if(true, 1/2 null...)}
+  |                ^^^
+  '
+    input.scss 1:16  root stylesheet
+  ,
+1 | c {d: if(true, 1/2 null...)}
+  |         ^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:9   root stylesheet
 
 <===>
 ================================================================================
@@ -325,6 +527,25 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 3:12  root stylesheet
 
+<===> mixin/user_defined/warning-libsass
+DEPRECATION WARNING on line 3, column 12 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+3 | @include a(1/2);
+  |            ^^^
+  '
+    input.scss 3:12  a()
+  ,
+3 | @include a(1/2);
+  | ^^^^^^^^^^^^^^^
+  '
+    input.scss 3:1   root stylesheet
+
 <===>
 ================================================================================
 <===> mixin/default/input.scss
@@ -349,4 +570,23 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |              ^^^
   '
     input.scss 1:14  a()
+    input.scss 3:1   root stylesheet
+
+<===> mixin/default/warning-libsass
+DEPRECATION WARNING on line 1, column 14 of input.scss:
+Using / for division is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div 
+
+  ,
+1 | @mixin a($b: 1/2) {c {d: $b}}
+  |              ^^^
+  '
+    input.scss 1:14  a()
+  ,
+3 | @include a;
+  | ^^^^^^^^^^
+  '
     input.scss 3:1   root stylesheet

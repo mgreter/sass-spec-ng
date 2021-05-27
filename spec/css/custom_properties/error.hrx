@@ -43,8 +43,23 @@ Error: Nothing may be indented beneath a custom property.
   '
   input.sass 3:5  root stylesheet
 
+<===> nested/error-libsass
+Error: Nothing may be indented beneath a custom property.
+  ,
+2 |     --foo: bar
+  | /--------------^
+3 | |     baz: qux
+  | \----^
+  '
+  input.sass 2:13  root stylesheet
+
 <===>
 ================================================================================
+<===> brackets/curly/options.yml
+---
+:todo:
+- libsass#reporting
+
 <===> brackets/curly/input.scss
 .curly {
   --prop: };

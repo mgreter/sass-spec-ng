@@ -78,6 +78,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> leading_combinator/selector/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: > .c is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(> .c, ".c", ".d")}
+  |                       ^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend("> .c", ".c", ".d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> leading_combinator/extender/input.scss
@@ -99,6 +117,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> leading_combinator/extender/warning-libsass
+DEPRECATION WARNING on line 1, column 35 of input.scss:
+$extender: + .d is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c", ".c", + .d)}
+  |                                   ^^^^
+  '
+    input.scss 1:35  selector-extend()
+  ,
+1 | a {b: selector-extend(".c", ".c", "+ .d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -133,6 +169,26 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> leading_combinator/both/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: ~ .c is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(~ .c, ".c", "+ .d")}
+  |                       ^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend("~ .c", ".c", "+ .d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
+
 <===>
 ================================================================================
 <===> trailing_combinator/selector/input.scss
@@ -154,6 +210,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> trailing_combinator/selector/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: .c + is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(.c +, ".c", ".d")}
+  |                       ^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend(".c +", ".c", ".d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -177,6 +251,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> trailing_combinator/extender/child/warning-libsass
+DEPRECATION WARNING on line 1, column 38 of input.scss:
+$extender: .e > is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c .d", ".c", .e >)}
+  |                                      ^^^^
+  '
+    input.scss 1:38  selector-extend()
+  ,
+1 | a {b: selector-extend(".c .d", ".c", ".e >")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> trailing_combinator/extender/sibling/input.scss
@@ -199,6 +291,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> trailing_combinator/extender/sibling/warning-libsass
+DEPRECATION WARNING on line 1, column 38 of input.scss:
+$extender: .e ~ is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c .d", ".c", .e ~)}
+  |                                      ^^^^
+  '
+    input.scss 1:38  selector-extend()
+  ,
+1 | a {b: selector-extend(".c .d", ".c", ".e ~")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> trailing_combinator/extender/next_sibling/input.scss
@@ -220,6 +330,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> trailing_combinator/extender/next_sibling/warning-libsass
+DEPRECATION WARNING on line 1, column 38 of input.scss:
+$extender: .e + is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c .d", ".c", .e +)}
+  |                                      ^^^^
+  '
+    input.scss 1:38  selector-extend()
+  ,
+1 | a {b: selector-extend(".c .d", ".c", ".e +")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -254,6 +382,26 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> trailing_combinator/both/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: .c ~ is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(.c ~, ".c", ".d >")}
+  |                       ^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend(".c ~", ".c", ".d >")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
+Additionally, one similar warning was suppressed!
+
 <===>
 ================================================================================
 <===> multiple_combinators/middle/selector/input.scss
@@ -275,6 +423,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> multiple_combinators/middle/selector/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: .c ~ ~ .d is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(.c ~ ~ .d, ".c", ".e")}
+  |                       ^^^^^^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend(".c ~ ~ .d", ".c", ".e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -298,6 +464,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> multiple_combinators/middle/extender/warning-libsass
+DEPRECATION WARNING on line 1, column 35 of input.scss:
+$extender: .d ~ + .e is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c", ".c", .d ~ + .e)}
+  |                                   ^^^^^^^^^
+  '
+    input.scss 1:35  selector-extend()
+  ,
+1 | a {b: selector-extend(".c", ".c", ".d ~ + .e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> multiple_combinators/leading/selector/input.scss
@@ -319,6 +503,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> multiple_combinators/leading/selector/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: > + .c is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(> + .c, ".c", ".d")}
+  |                       ^^^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend("> + .c", ".c", ".d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -342,6 +544,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> multiple_combinators/leading/extender/warning-libsass
+DEPRECATION WARNING on line 1, column 35 of input.scss:
+$extender: + ~ .d is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c", ".c", + ~ .d)}
+  |                                   ^^^^^^
+  '
+    input.scss 1:35  selector-extend()
+  ,
+1 | a {b: selector-extend(".c", ".c", "+ ~ .d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> multiple_combinators/trailing/selector/input.scss
@@ -364,6 +584,24 @@ More info: https://sass-lang.com/d/bogus-combinators
   '
     input.scss 1:7  root stylesheet
 
+<===> multiple_combinators/trailing/selector/warning-libsass
+DEPRECATION WARNING on line 1, column 23 of input.scss:
+$selector: .c > ~ is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(.c > ~, ".c", ".d")}
+  |                       ^^^^^^
+  '
+    input.scss 1:23  selector-extend()
+  ,
+1 | a {b: selector-extend(".c > ~", ".c", ".d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> multiple_combinators/trailing/extender/input.scss
@@ -385,3 +623,21 @@ More info: https://sass-lang.com/d/bogus-combinators
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> multiple_combinators/trailing/extender/warning-libsass
+DEPRECATION WARNING on line 1, column 35 of input.scss:
+$extender: .d + + is not valid CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+1 | a {b: selector-extend(".c", ".c", .d + +)}
+  |                                   ^^^^^^
+  '
+    input.scss 1:35  selector-extend()
+  ,
+1 | a {b: selector-extend(".c", ".c", ".d + +")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet

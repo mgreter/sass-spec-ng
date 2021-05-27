@@ -12,6 +12,11 @@ a {
   b: *;
 }
 
+<===> equal/output-libsass.css
+a {
+  b: *;
+}
+
 <===>
 ================================================================================
 <===> and_type/input.scss
@@ -278,6 +283,11 @@ a {
 a {b: selector-extend("*|*", "*|*", "c")}
 
 <===> namespace/universal/and_universal/universal/output.css
+a {
+  b: *|*;
+}
+
+<===> namespace/universal/and_universal/universal/output-libsass.css
 a {
   b: *|*;
 }

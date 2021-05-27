@@ -21,6 +21,7 @@ $arg: join((), 5%);
   function: dark(#102030, 5%);
   function2: dark2(#102030, 5%);
 }
+
 <===> output.css
 .single {
   direct: #0a131d;
@@ -62,3 +63,22 @@ Recommendation: call(get-function("darken"))
    '
     input.scss 11:11  dark2()
     input.scss 21:14  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 19, column 14 of input.scss:
+Passing a string to call() is deprecated and will be illegal in LibSass 5.0.0.
+
+Recommendation: call(get-function("darken"))
+
+   ,
+19 |   call: call('darken', #102030, $arg...);
+   |              ^^^^^^^^
+   '
+    input.scss 19:14  call()
+   ,
+19 |   call: call('darken', #102030, $arg...);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   '
+    input.scss 19:9   root stylesheet
+
+Additionally, 2 similar warnings were suppressed!

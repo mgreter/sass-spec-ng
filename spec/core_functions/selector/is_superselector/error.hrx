@@ -14,6 +14,24 @@ Error: $super: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> super/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: is-superselector(&, "c")}
+  |                        ^
+  '
+  input.scss 1:24  is-superselector()
+  ,
+1 | a {b: is-superselector("&", "c")}
+  |                        ^^^
+  '
+  input.scss 1:24  is-superselector()
+  ,
+1 | a {b: is-superselector("&", "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> super/invalid/input.scss
@@ -32,6 +50,24 @@ Error: $super: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> super/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: is-superselector([c, "d")}
+  |                          ^
+  '
+  input.scss 1:26  is-superselector()
+  ,
+1 | a {b: is-superselector("[c", "d")}
+  |                        ^^^^
+  '
+  input.scss 1:24  is-superselector()
+  ,
+1 | a {b: is-superselector("[c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> super/type/input.scss
@@ -45,6 +81,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> super/type/error-libsass
+Error: $super: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: is-superselector(1, "c")}
+  |                        ^
+  '
+  input.scss 1:24  is-superselector()
+  ,
+1 | a {b: is-superselector(1, "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -64,6 +114,24 @@ Error: $sub: Parent selectors aren't allowed here.
   '
   input.scss 1:7  root stylesheet
 
+<===> sub/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+1 | a {b: is-superselector("c", &)}
+  |                             ^
+  '
+  input.scss 1:29  is-superselector()
+  ,
+1 | a {b: is-superselector("c", "&")}
+  |                             ^^^
+  '
+  input.scss 1:29  is-superselector()
+  ,
+1 | a {b: is-superselector("c", "&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> sub/invalid/input.scss
@@ -82,6 +150,24 @@ Error: $sub: expected more input.
   '
   input.scss 1:7  root stylesheet
 
+<===> sub/invalid/error-libsass
+Error: expected more input.
+  ,
+1 | a {b: is-superselector("c", [d)}
+  |                               ^
+  '
+  input.scss 1:31  is-superselector()
+  ,
+1 | a {b: is-superselector("c", "[d")}
+  |                             ^^^^
+  '
+  input.scss 1:29  is-superselector()
+  ,
+1 | a {b: is-superselector("c", "[d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> sub/type/input.scss
@@ -95,6 +181,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> sub/type/error-libsass
+Error: $sub: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+1 | a {b: is-superselector("c", 1)}
+  |                             ^
+  '
+  input.scss 1:29  is-superselector()
+  ,
+1 | a {b: is-superselector("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -113,6 +213,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 1:7  root stylesheet
 
+<===> too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+1 | a {b: is-superselector("c", "d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_few_args/input.scss
@@ -127,5 +235,13 @@ Error: Missing argument $sub.
   ,--> sass:selector
 1 | @function is-superselector($super, $sub) {
   |           ============================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> too_few_args/error-libsass
+Error: Missing argument $sub.
+  ,
+1 | a {b: is-superselector("c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet

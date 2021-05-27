@@ -153,6 +153,19 @@ Error: $map1: 1 is not a map.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/map1/error-libsass
+Error: $map1: 1 is not a map.
+  ,
+2 | a {b: map.deep-merge(1, (c: d))}
+  |                      ^
+  '
+  input.scss 2:22  deep-merge()
+  ,
+2 | a {b: map.deep-merge(1, (c: d))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/map2/input.scss
@@ -166,6 +179,19 @@ Error: $map2: 1 is not a map.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/map2/error-libsass
+Error: $map2: 1 is not a map.
+  ,
+2 | a {b: map.deep-merge((c: d), 1)}
+  |                              ^
+  '
+  input.scss 2:30  deep-merge()
+  ,
+2 | a {b: map.deep-merge((c: d), 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -185,6 +211,14 @@ Error: Missing argument $map2.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $map2.
+  ,
+2 | a {b: map.deep-merge((c: d))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -200,5 +234,13 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:map
 1 | @function deep-merge($map1, $map2) {
   |           ======================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: map.deep-merge((c: d), (e: f), (g: h))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

@@ -10,6 +10,19 @@ Error: $name: 2px is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/type/name/error-libsass
+Error: $name: 2px is not a string.
+  ,
+2 | a {b: meta.get-mixin(2px)}
+  |                      ^^^
+  '
+  input.scss 2:22  get-mixin()
+  ,
+2 | a {b: meta.get-mixin(2px)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> argument/type/module/input.scss
@@ -24,6 +37,19 @@ Error: $module: 1 is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/type/module/error-libsass
+Error: $module: 1 is not a string.
+  ,
+2 | a {b: meta.get-mixin(c, $module: 1)}
+  |                                  ^
+  '
+  input.scss 2:34  get-mixin()
+  ,
+2 | a {b: meta.get-mixin(c, $module: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> argument/mixin_ref/input.scss
@@ -35,6 +61,19 @@ a {b: meta.get-mixin($a-ref)}
 
 <===> argument/mixin_ref/error
 Error: $name: get-mixin("a") is not a string.
+  ,
+5 | a {b: meta.get-mixin($a-ref)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 5:7  root stylesheet
+
+<===> argument/mixin_ref/error-libsass
+Error: $name: get-mixin("a") is not a string.
+  ,
+4 | $a-ref: meta.get-mixin(a);
+  |         ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:9  get-mixin()
   ,
 5 | a {b: meta.get-mixin($a-ref)}
   |       ^^^^^^^^^^^^^^^^^^^^^^
@@ -59,6 +98,14 @@ Error: Missing argument $name.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/too_few/error-libsass
+Error: Missing argument $name.
+  ,
+2 | a {b: meta.get-mixin()}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> argument/too_many/input.scss
@@ -76,6 +123,19 @@ Error: Only 2 arguments allowed, but 4 were passed.
   |           =============================== declaration
   '
   input.scss 2:20  root stylesheet
+
+<===> argument/too_many/error-libsass
+Error: Only 2 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: meta.inspect(meta.get-mixin(c, true, d, e))}
+  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:20  inspect()
+  ,
+2 | a {b: meta.inspect(meta.get-mixin(c, true, d, e))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -114,6 +174,19 @@ Error: Mixin not found: d
   '
   input.scss 4:23  root stylesheet
 
+<===> through_forward/show/error-libsass
+Error: Mixin not found: d
+  ,
+4 |   @include meta.apply(meta.get-mixin(d));
+  |                       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:23  apply()
+  ,
+4 |   @include meta.apply(meta.get-mixin(d));
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:3   root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/hide/input.scss
@@ -136,6 +209,19 @@ Error: Mixin not found: c
   |                       ^^^^^^^^^^^^^^^^^
   '
   input.scss 4:23  root stylesheet
+
+<===> through_forward/hide/error-libsass
+Error: Mixin not found: c
+  ,
+4 |   @include meta.apply(meta.get-mixin(c));
+  |                       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:23  apply()
+  ,
+4 |   @include meta.apply(meta.get-mixin(c));
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:3   root stylesheet
 
 <===>
 ================================================================================
@@ -164,6 +250,14 @@ Error: This mixin is available from multiple global modules.
     |       ^^^^^^^^^^^^^^^^^^^^^^ mixin use
     '
   input.scss 5:7  root stylesheet
+
+<===> conflict/error-libsass
+Error: Mixin "member(...)" is available from multiple global modules.
+  ,
+3 | @use "other2" as *;
+  | ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1  root stylesheet
 
 <===>
 ================================================================================

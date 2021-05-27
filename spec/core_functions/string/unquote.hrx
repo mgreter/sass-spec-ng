@@ -141,6 +141,19 @@ Error: $string: 1 is not a string.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $string: 1 is not a string.
+  ,
+1 | a {b: unquote(1)}
+  |               ^
+  '
+  input.scss 1:15  unquote()
+  ,
+1 | a {b: unquote(1)}
+  |       ^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -158,6 +171,14 @@ Error: Missing argument $string.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $string.
+  ,
+1 | a {b: unquote()}
+  |       ^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -172,5 +193,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:string
 1 | @function unquote($string) {
   |           ================ declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+1 | a {b: unquote(c, d)}
+  |       ^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet

@@ -8,3 +8,21 @@ Error: 1unknown and 1 are incompatible.
   |            ^^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
+
+<===> error-libsass
+Error: Incompatible units [unitless] and unknown.
+  ,
+1 | a {b: calc(1unknown + 1)}
+  |                       ^
+  '
+  input.scss 1:23  root stylesheet
+  ,
+1 | a {b: calc(1unknown + 1)}
+  |            ^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1unknown + 1)}
+  |            ^^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet

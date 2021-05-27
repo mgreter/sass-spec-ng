@@ -120,6 +120,19 @@ Error: $map: 1 is not a map.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $map: 1 is not a map.
+  ,
+2 | a {b: map.deep-remove(1, 2)}
+  |                       ^
+  '
+  input.scss 2:23  deep-remove()
+  ,
+2 | a {b: map.deep-remove(1, 2)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -135,5 +148,13 @@ Error: Missing argument $key.
   ,--> sass:map
 1 | @function deep-remove($map, $key, $keys...) {
   |           ================================= declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $key.
+  ,
+2 | a {b: map.deep-remove((c: d))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

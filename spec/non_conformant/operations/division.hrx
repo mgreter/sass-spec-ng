@@ -19,6 +19,20 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:7  root stylesheet
 
+<===> slash/with_string/slash_plus_string/warning-libsass
+DEPRECATION WARNING on line 1, column 7 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2) or calc(1 / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | a {b: 1 / 2 + foo()}
+  |       ^^^^^
+  '
+    input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> slash/with_string/slash_minus_string/input.scss
@@ -31,6 +45,20 @@ a {
 
 <===> slash/with_string/slash_minus_string/warning
 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(1, 2) or calc(1 / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | a {b: 1 / 2 - foo()}
+  |       ^^^^^
+  '
+    input.scss 1:7  root stylesheet
+
+<===> slash/with_string/slash_minus_string/warning-libsass
+DEPRECATION WARNING on line 1, column 7 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / 2)
 
@@ -75,6 +103,20 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 1:15  root stylesheet
 
+<===> slash/with_string/string_plus_slash/warning-libsass
+DEPRECATION WARNING on line 1, column 15 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(1, 2) or calc(1 / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | a {b: foo() + 1 / 2}
+  |               ^^^^^
+  '
+    input.scss 1:15  root stylesheet
+
 <===>
 ================================================================================
 <===> slash/with_string/string_minus_slash/input.scss
@@ -87,6 +129,20 @@ a {
 
 <===> slash/with_string/string_minus_slash/warning
 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(1, 2) or calc(1 / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | a {b: foo() - 1 / 2}
+  |               ^^^^^
+  '
+    input.scss 1:15  root stylesheet
+
+<===> slash/with_string/string_minus_slash/warning-libsass
+DEPRECATION WARNING on line 1, column 15 of input.scss:
+Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / 2)
 

@@ -8,6 +8,7 @@
     }
   }
 }
+
 <===> error
 Error: Top-level selectors may not contain the parent selector "&".
   ,
@@ -15,4 +16,17 @@ Error: Top-level selectors may not contain the parent selector "&".
   |   ^
   '
   include.scss 2:3  @import
+  input.scss 1:9    root stylesheet
+
+<===> error-libsass
+Error: Top-level selectors may not contain the parent selector "&".
+  ,
+2 |   & {
+  |   ^
+  '
+  include.scss 2:3  @import
+  ,
+1 | @import "include.scss";
+  |         ^^^^^^^^^^^^^^
+  '
   input.scss 1:9    root stylesheet
