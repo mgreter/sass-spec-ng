@@ -105,7 +105,8 @@ Recommendation: call(get-function(missing))
 
 <===> warning-libsass
 DEPRECATION WARNING on line 7, column 8 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1px, round(1.5)) or calc(1px / round(1.5))
 
