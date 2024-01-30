@@ -41,3 +41,22 @@ See https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 2:7  root stylesheet
+
+<===> hue/non_angle/warning-libsass
+DEPRECATION WARNING on line 2, column 17 of input.scss:
+$hue: Passing a unit other than deg (1in) is deprecated.
+
+To preserve current behavior: calc($hue / 1in)
+
+See https://sass-lang.com/d/color-units
+
+  ,
+2 | a {b: color.hwb(1in, 30%, 40%)}
+  |                 ^^^
+  '
+    input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb(1in, 30%, 40%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 2:7   root stylesheet
