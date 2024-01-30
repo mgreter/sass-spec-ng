@@ -208,3 +208,31 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
    |                     ^^^
    '
     input.scss 38:21  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 1, column 7 of input.scss:
+Using the division operator `/` is deprecated.
+This will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(3, 4)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+1 | $x: a 3/4 b;
+  |       ^^^
+  '
+    input.scss 1:7   nth()
+   ,
+10 |   goo: nth($x, 2);
+   |        ^^^^^^^^^^
+   '
+    input.scss 10:8  root stylesheet
+
+WARNING: 2/3
+    input.scss 21:3  root stylesheet
+
+WARNING: blah blah
+    input.scss 31:1  root stylesheet
+
+Additionally, 9 similar warnings were suppressed!
