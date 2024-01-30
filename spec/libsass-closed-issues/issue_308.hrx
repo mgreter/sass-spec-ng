@@ -29,3 +29,17 @@ If you really want to use the color value here, use '"" + $var'.
   |    ^^^^
   '
     input.scss 7:4  root stylesheet
+
+<===> warning-libsass
+WARNING on line 7, column 4 of input.scss:
+You probably don't mean to use the color value orange in interpolation here.
+It may end up represented as orange, which will likely produce invalid CSS.
+Always quote color names when using them as strings or map keys (for example,
+"orange"). If you really want to use the color value, append it to an empty
+string to avoid this warning (e.g. use '"" + orange').
+
+  ,
+7 | .#{$var} {
+  |    ^^^^
+  '
+    input.scss 7:4  root stylesheet
