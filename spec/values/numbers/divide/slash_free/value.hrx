@@ -21,7 +21,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> parentheses/all/warning-libsass
 DEPRECATION WARNING on line 1, column 8 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / 2)
 
@@ -58,7 +59,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> parentheses/left/warning-libsass
 DEPRECATION WARNING on line 1, column 7 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc((1) / 2)
 
@@ -95,7 +97,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> parentheses/right/warning-libsass
 DEPRECATION WARNING on line 1, column 7 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / (2))
 
@@ -132,7 +135,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> outer_math/left/warning-libsass
 DEPRECATION WARNING on line 1, column 9 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / 2)
 
@@ -169,7 +173,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> outer_math/right/warning-libsass
 DEPRECATION WARNING on line 1, column 7 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / 2)
 
@@ -206,7 +211,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> inner_math/warning-libsass
 DEPRECATION WARNING on line 1, column 7 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1 * 1, 2) or calc(1 * 1 / 2)
 
@@ -243,7 +249,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> parentheses_in_list/warning-libsass
 DEPRECATION WARNING on line 1, column 10 of input.scss:
-Using / for division outside of calc() is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(1, 2) or calc(1 / 2)
 
