@@ -61,7 +61,8 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 <===> preserves_units/warning-libsass
 DEPRECATION WARNING on line 1, column 12 of input.scss:
-Using / for division is deprecated and will be removed in LibSass 5.0.0.
+Using the division operator `/` is deprecated.
+This will be removed in LibSass 5.0.0.
 
 Recommendation: math.div(7px, 4em)
 
