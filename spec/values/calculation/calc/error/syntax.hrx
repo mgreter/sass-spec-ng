@@ -211,6 +211,32 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   input.scss 1:14  root stylesheet
 
 <===> no_whitespace/plus/after/error-libsass
+DEPRECATION WARNING on line 1, column 14 of input.scss:
+This operation is parsed as:
+
+    1 + 1
+
+but you may have intended it to mean:
+
+    1 (+1)
+
+Add a space after the plus sign (+) to clarify that it's meant to be a binary
+operation, or wrap it in parentheses to make it a unary operation.
+This will be an error in future versions of Sass.
+
+More info and automated migrator: https://sass-lang.com/d/strict-unary
+
+  ,
+1 | a {b: calc(1 +1)}
+  |              ^
+  '
+    input.scss 1:14  root stylesheet
+  ,
+1 | a {b: calc(1 +1)}
+  |            ^^^^
+  '
+    input.scss 1:12  root stylesheet
+
 Error: "+" and "-" must be surrounded by whitespace in calculations.
   ,
 1 | a {b: calc(1 +1)}
