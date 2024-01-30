@@ -139,6 +139,25 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> units/weight/unitless/warning-libsass
+DEPRECATION WARNING on line 1, column 25 of input.scss:
+$weight: Passing a number without unit % (10) is deprecated.
+
+To preserve current behavior: $weight * 1%
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: invert(turquoise, 10)}
+  |                         ^^
+  '
+    input.scss 1:25  invert()
+  ,
+1 | a {b: invert(turquoise, 10)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> units/weight/unknown/input.scss
