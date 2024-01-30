@@ -133,6 +133,25 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> saturation/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 14 of input.scss:
+$saturation: Passing a number without unit % (50in) is deprecated.
+
+To preserve current behavior: calc($saturation / 1in * 1%)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: hsl(0, 50in, 50%)}
+  |              ^^^^
+  '
+    input.scss 1:14  hsl()
+  ,
+1 | a {b: hsl(0, 50in, 50%)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> lightness/unitless/input.scss
@@ -197,3 +216,22 @@ More info: https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> lightness/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 20 of input.scss:
+$lightness: Passing a number without unit % (50in) is deprecated.
+
+To preserve current behavior: calc($lightness / 1in * 1%)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: hsl(0, 100%, 50in)}
+  |                    ^^^^
+  '
+    input.scss 1:20  hsl()
+  ,
+1 | a {b: hsl(0, 100%, 50in)}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
