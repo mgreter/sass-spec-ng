@@ -316,6 +316,24 @@ Error: $saturation: Expected 200px to be within -100% and 100%.
   input.scss 3:7  root stylesheet
 
 <===> saturation/unit/error-libsass
+DEPRECATION WARNING on line 3, column 38 of input.scss:
+$saturation: Passing a number without unit % (200px) is deprecated.
+
+To preserve current behavior: calc($saturation / 1px * 1%)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+3 | a {b: adjust-color(red, $saturation: 200px)}
+  |                                      ^^^^^
+  '
+    input.scss 3:38  adjust-color()
+  ,
+3 | a {b: adjust-color(red, $saturation: 200px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 3:7   root stylesheet
+
 Error: $saturation: Expected 200px to be within -100% and 100%.
   ,
 3 | a {b: adjust-color(red, $saturation: 200px)}
@@ -327,25 +345,6 @@ Error: $saturation: Expected 200px to be within -100% and 100%.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:7   root stylesheet
-
-<===> saturation/unit/warning-libsass
-Deprecation Warning on line 3, column 38 of D:/github-sass-4.0/input.scss:
-$saturation: Passing a number without unit % (200px) is deprecated.
-
-To preserve current behavior: calc($saturation / 1px * 1%)
-
-More info: https://sass-lang.com/d/function-units
-
-  ╷
-3 │ a {b: adjust-color(red, $saturation: 200px)}
-  │                                      ^^^^^
-  ╵
-    input.scss 3:38  adjust-color()
-  ╷
-3 │ a {b: adjust-color(red, $saturation: 200px)}
-  │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  ╵
-    input.scss 3:7   root stylesheet
 
 <===>
 ================================================================================
@@ -427,6 +426,24 @@ Error: $lightness: Expected 200px to be within -100% and 100%.
   input.scss 3:7  root stylesheet
 
 <===> lightness/unit/error-libsass
+DEPRECATION WARNING on line 3, column 37 of input.scss:
+$lightness: Passing a number without unit % (200px) is deprecated.
+
+To preserve current behavior: calc($lightness / 1px * 1%)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+3 | a {b: adjust-color(red, $lightness: 200px)}
+  |                                     ^^^^^
+  '
+    input.scss 3:37  adjust-color()
+  ,
+3 | a {b: adjust-color(red, $lightness: 200px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 3:7   root stylesheet
+
 Error: $lightness: Expected 200px to be within -100% and 100%.
   ,
 3 | a {b: adjust-color(red, $lightness: 200px)}
@@ -438,25 +455,6 @@ Error: $lightness: Expected 200px to be within -100% and 100%.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:7   root stylesheet
-
-<===> lightness/unit/warning-libsass
-Deprecation Warning on line 3, column 37 of D:/github-sass-4.0/input.scss:
-$lightness: Passing a number without unit % (200px) is deprecated.
-
-To preserve current behavior: calc($lightness / 1px * 1%)
-
-More info: https://sass-lang.com/d/function-units
-
-  ╷
-3 │ a {b: adjust-color(red, $lightness: 200px)}
-  │                                     ^^^^^
-  ╵
-    input.scss 3:37  adjust-color()
-  ╷
-3 │ a {b: adjust-color(red, $lightness: 200px)}
-  │       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  ╵
-    input.scss 3:7   root stylesheet
 
 <===>
 ================================================================================
