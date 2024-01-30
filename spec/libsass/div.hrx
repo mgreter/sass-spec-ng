@@ -88,3 +88,5 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   |     ^^^
   '
     input.scss 1:5  root stylesheet
+
+Additionally, 3 similar warnings were suppressed!
