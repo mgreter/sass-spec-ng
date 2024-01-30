@@ -134,8 +134,8 @@ Recommendation: add `$check_default: null` at the stylesheet root.
 DEPRECATION WARNING on line 5, column 1 of input.scss:
 As of LibSass 5.0.0, !global assignments won't be able to declare new variables.
 
-Since this assignment is at the root of the stylesheet, the !global flag is unnecessary and can
-safely be removed.
+Since this assignment is at the root of the stylesheet, the !global flag is
+unnecessary and can safely be removed.
 
   ,
 5 | $root_explicit: initial !global;
