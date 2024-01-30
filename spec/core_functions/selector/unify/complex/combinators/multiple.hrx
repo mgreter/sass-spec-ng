@@ -48,7 +48,7 @@ DEPRECATION WARNING on line 1, column 22 of input.scss:
 $selector1: .c + ~ > .d is not valid CSS.
 This will be an error in LibSass 5.0.0.
 
-More info: https://sass-lang.com/d/bogus-combinators 
+More info: https://sass-lang.com/d/bogus-combinators
 
   ,
 1 | a {b: selector-unify(.c + ~ > .d, ".e + ~ > .f")}
@@ -98,7 +98,7 @@ DEPRECATION WARNING on line 1, column 22 of input.scss:
 $selector1: .c + ~ > .d is not valid CSS.
 This will be an error in LibSass 5.0.0.
 
-More info: https://sass-lang.com/d/bogus-combinators 
+More info: https://sass-lang.com/d/bogus-combinators
 
   ,
 1 | a {b: selector-unify(.c + ~ > .d, ".e > + ~ > > .f")}
@@ -148,7 +148,7 @@ DEPRECATION WARNING on line 1, column 22 of input.scss:
 $selector1: .c + ~ > .d is not valid CSS.
 This will be an error in LibSass 5.0.0.
 
-More info: https://sass-lang.com/d/bogus-combinators 
+More info: https://sass-lang.com/d/bogus-combinators
 
   ,
 1 | a {b: selector-unify(.c + ~ > .d, ".e + > ~ ~ > .f")}
@@ -201,7 +201,7 @@ DEPRECATION WARNING on line 1, column 30 of input.scss:
 $selector1: .c + ~ > .d is not valid CSS.
 This will be an error in LibSass 5.0.0.
 
-More info: https://sass-lang.com/d/bogus-combinators 
+More info: https://sass-lang.com/d/bogus-combinators
 
   ,
 1 | a {b: inspect(selector-unify(.c + ~ > .d, ".e + > ~ ~ .f"))}
