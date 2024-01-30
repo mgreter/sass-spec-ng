@@ -235,6 +235,25 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> units/weight/unitless/warning-libsass
+DEPRECATION WARNING on line 1, column 29 of input.scss:
+$weight: Passing a number without unit % (50) is deprecated.
+
+To preserve current behavior: $weight * 1%
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: mix(#91e16f, #0144bf, 50)}
+  |                             ^^
+  '
+    input.scss 1:29  mix()
+  ,
+1 | a {b: mix(#91e16f, #0144bf, 50)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> units/weight/unknown/input.scss
@@ -257,6 +276,25 @@ More info: https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===> units/weight/unknown/warning-libsass
+DEPRECATION WARNING on line 1, column 29 of input.scss:
+$weight: Passing a number without unit % (50px) is deprecated.
+
+To preserve current behavior: calc($weight / 1px * 1%)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: mix(#91e16f, #0144bf, 50px)}
+  |                             ^^^^
+  '
+    input.scss 1:29  mix()
+  ,
+1 | a {b: mix(#91e16f, #0144bf, 50px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================

@@ -96,6 +96,25 @@ More info: https://sass-lang.com/d/abs-percent
   '
     input.scss 1:7  root stylesheet
 
+<===> percentage_warning/warning-libsass
+DEPRECATION WARNING on line 1, column 11 of input.scss:
+Passing percentage units to the global abs() function is deprecated.
+In the future, this will emit a CSS abs() function to be resolved by the browser.
+To preserve current behavior: math.abs(-7.5%)
+To emit a CSS abs() now: abs(#{-7.5%})
+More info: https://sass-lang.com/d/abs-percent
+
+  ,
+1 | a {b: abs(-7.5%)}
+  |           ^^^^^
+  '
+    input.scss 1:11  abs()
+  ,
+1 | a {b: abs(-7.5%)}
+  |       ^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> math/slash_as_division/input.scss
