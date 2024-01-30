@@ -24,6 +24,21 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
   '
     input.scss 2:7  root stylesheet
 
+<===> namespaced_variables/warning-libsass
+DEPRECATION WARNING on line 2, column 7 of input.scss:
+Using the division operator `/` outside of calc() is deprecated.
+This will be removed in LibSass 5.0.0.
+
+Recommendation: math.div(other.$a, other.$b) or calc(other.$a / other.$b)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ,
+2 | a {b: other.$a / other.$b}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> separator/calculation/simplified/left/input.scss
