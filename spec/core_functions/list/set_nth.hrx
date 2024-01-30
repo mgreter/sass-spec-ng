@@ -154,6 +154,25 @@ More info: https://sass-lang.com/d/function-units
   '
     input.scss 1:7  root stylesheet
 
+<===> units/warning-libsass
+DEPRECATION WARNING on line 1, column 20 of input.scss:
+$n: Passing a number with unit px is deprecated.
+
+To preserve current behavior: calc($n / 1px)
+
+More info: https://sass-lang.com/d/function-units
+
+  ,
+1 | a {b: set-nth(c d, 1px, e)}
+  |                    ^^^
+  '
+    input.scss 1:20  set-nth()
+  ,
+1 | a {b: set-nth(c d, 1px, e)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+    input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss

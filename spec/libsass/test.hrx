@@ -161,3 +161,22 @@ More info: https://sass-lang.com/d/function-units
    |         ^^^^^^^^^^^^^^^
    '
     input.scss 46:9  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 46, column 20 of input.scss:
+$n: Passing a number with unit px is deprecated.
+
+To preserve current behavior: calc($n / 1px)
+
+More info: https://sass-lang.com/d/function-units
+
+   ,
+46 |   krug: nth(1 2 3, 2px);
+   |                    ^^^
+   '
+    input.scss 46:20  nth()
+   ,
+46 |   krug: nth(1 2 3, 2px);
+   |         ^^^^^^^^^^^^^^^
+   '
+    input.scss 46:9   root stylesheet
