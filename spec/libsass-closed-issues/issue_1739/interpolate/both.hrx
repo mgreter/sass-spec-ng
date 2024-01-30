@@ -33,6 +33,7 @@ mod {
   baz: #{1  %2}  %#{1  %2};
   baz: #{1  %  2}  %  #{1  %  2};
 }
+
 <===> error
 DEPRECATION WARNING on line 11, column 10 of input.scss: 
 This operation is parsed as:
@@ -91,6 +92,41 @@ More info and automated migrator: https://sass-lang.com/d/strict-unary
    |        ^^^^^^^^^^^^^^^^^^^
    '
 
+Error: Undefined operation "2 * 2".
+   ,
+23 |   baz: #{1*2}*#{1*2};
+   |        ^^^^^^^^^^^^^
+   '
+  input.scss 23:8  root stylesheet
+
+<===> error-libsass
+DEPRECATION WARNING on line 11, column 13 of input.scss:
+This operation is parsed as:
+
+    1 + 2
+
+but you may have intended it to mean:
+
+    1 (+2)
+
+Add a space after the plus sign (+) to clarify that it's meant to be a binary
+operation, or wrap it in parentheses to make it a unary operation.
+This will be an error in future versions of Sass.
+
+More info and automated migrator: https://sass-lang.com/d/strict-unary
+
+   ,
+11 |   baz: #{1  +2}  +#{1  +2};
+   |             ^
+   '
+    input.scss 11:13  root stylesheet
+   ,
+11 |   baz: #{1  +2}  +#{1  +2};
+   |          ^^^^^
+   '
+    input.scss 11:10  root stylesheet
+
+Additionally, 2 similar warnings were suppressed!
 Error: Undefined operation "2 * 2".
    ,
 23 |   baz: #{1*2}*#{1*2};
