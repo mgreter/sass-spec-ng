@@ -19,7 +19,8 @@ More info: https://sass-lang.com/d/bogus-combinators
 
 <===> single/child/warning-libsass
 DEPRECATION WARNING on line 1, column 1 of input.scss:
-The selector "a >" is only valid for nesting and shouldn't have children other than style rules.
+The selector "a >" is only valid for nesting
+It shouldn't have children other than style rules.
 It will be omitted from the generated CSS.
 This will be an error in LibSass 5.0.0.
 
@@ -54,7 +55,8 @@ More info: https://sass-lang.com/d/bogus-combinators
 
 <===> single/next_sibling/warning-libsass
 DEPRECATION WARNING on line 1, column 1 of input.scss:
-The selector "a +" is only valid for nesting and shouldn't have children other than style rules.
+The selector "a +" is only valid for nesting
+It shouldn't have children other than style rules.
 It will be omitted from the generated CSS.
 This will be an error in LibSass 5.0.0.
 
@@ -89,7 +91,8 @@ More info: https://sass-lang.com/d/bogus-combinators
 
 <===> single/sibling/warning-libsass
 DEPRECATION WARNING on line 1, column 1 of input.scss:
-The selector "a ~" is only valid for nesting and shouldn't have children other than style rules.
+The selector "a ~" is only valid for nesting
+It shouldn't have children other than style rules.
 It will be omitted from the generated CSS.
 This will be an error in LibSass 5.0.0.
 
