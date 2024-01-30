@@ -276,3 +276,32 @@ More info and automated migrator: https://sass-lang.com/d/strict-unary
 39 |   test-38: #{1}0 +#{1}0;
    |            ^^^^^^^^^^^^
    '
+
+<===> warning-libsass
+DEPRECATION WARNING on line 3, column 14 of input.scss:
+This operation is parsed as:
+
+    10 + 10
+
+but you may have intended it to mean:
+
+    10 (+10)
+
+Add a space after the plus sign (+) to clarify that it's meant to be a binary
+operation, or wrap it in parentheses to make it a unary operation.
+This will be an error in future versions of Sass.
+
+More info and automated migrator: https://sass-lang.com/d/strict-unary
+
+  ,
+3 |   test-2: 10 +10;
+  |              ^
+  '
+    input.scss 3:14  root stylesheet
+  ,
+3 |   test-2: 10 +10;
+  |           ^^^^^^
+  '
+    input.scss 3:11  root stylesheet
+
+Additionally, 9 similar warnings were suppressed!
