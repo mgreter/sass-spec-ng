@@ -1,8 +1,3 @@
-<===> options.yml
----
-:todo:
-- libsass#linefeed
-
 <===> input.scss
 h1:lang(as),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kn),h1:lang(ml),h1:lang(mr),h1:lang(or),h1:lang(pa),h1:lang(sa),h1:lang(ta),h1:lang(te) {
   line-height:1.5em !important
