@@ -55,11 +55,6 @@ Error: Nothing may be indented beneath a custom property.
 
 <===>
 ================================================================================
-<===> brackets/curly/options.yml
----
-:todo:
-- libsass#reporting
-
 <===> brackets/curly/input.scss
 .curly {
   --prop: };
