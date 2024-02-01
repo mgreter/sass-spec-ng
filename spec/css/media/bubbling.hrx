@@ -22,11 +22,6 @@
 
 <===>
 ================================================================================
-<===> options.yml
----
-:todo:
-- libsass#bubblemerge
-
 <===> preserve_merge_after_bubble/input.scss
 // Regression test for sass/dart-sass#777
 @media (a: b) {
