@@ -95,3 +95,20 @@ More info: https://sass-lang.com/d/bogus-combinators
   |     =========== this is not a style rule
   '
     input.sass 7:3  root stylesheet
+
+<===> warning-libsass
+DEPRECATION WARNING on line 3, column 3 of input.sass:
+The selector ".test ~" is only valid for nesting
+It shouldn't have children other than style rules.
+It will be omitted from the generated CSS.
+This will be an error in LibSass 5.0.0.
+
+More info: https://sass-lang.com/d/bogus-combinators
+
+  ,
+3 |   ~
+  |   ^
+  '
+    input.sass 3:3  root stylesheet
+
+Additionally, 2 similar warnings were suppressed!
