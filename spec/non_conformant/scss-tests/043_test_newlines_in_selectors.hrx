@@ -8,11 +8,3 @@ baz {
 foo bang, foo bip bop, bar baz bang, bar baz bip bop {
   a: b;
 }
-
-<===> output-libsass.css
-foo bang,
-foo bip bop,
-bar baz bang,
-bar baz bip bop {
-  a: b;
-}
