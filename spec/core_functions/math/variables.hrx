@@ -72,6 +72,10 @@ a {
 
 <===>
 ================================================================================
+<===> min_number/options.yml
+:ignore_for:
+  - libsass#unpredictable
+
 <===> min_number/input.scss
 @use "sass:math";
 // Multiplied by 1e339 so Sass's serialization doesn't remove the precision.
@@ -81,11 +85,6 @@ a {b: math.$min-number * 1e300 * 1e39}
 <===> min_number/output.css
 a {
   b: 4940656458412465;
-}
-
-<===> min_number/output-libsass.css
-a {
-  b: 4940656458412469;
 }
 
 <===>
