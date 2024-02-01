@@ -172,6 +172,11 @@ a {
   b: 1000000000000000000000000;
 }
 
+<===> fuzzy/with_exponent/negative_even_integer/output-libsass.css
+a {
+  b: 999999999999999983222784;
+}
+
 <===>
 ================================================================================
 <===> fuzzy/with_exponent/negative_odd_integer/input.scss
@@ -181,6 +186,11 @@ a {b: math.pow(-0.000000000001, -3)}
 <===> fuzzy/with_exponent/negative_odd_integer/output.css
 a {
   b: -1000000000000000000000000000000000000;
+}
+
+<===> fuzzy/with_exponent/negative_odd_integer/output-libsass.css
+a {
+  b: -1000000000000000042420637374017961984;
 }
 
 <===>
