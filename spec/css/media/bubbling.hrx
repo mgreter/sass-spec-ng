@@ -1,4 +1,10 @@
+<===> unmergeable_and_merged/options.yml
+---
+:todo:
+- libsass#bubblemerge
+
 <===> unmergeable_and_merged/input.scss
+// https://github.com/sass/dart-sass/pull/1792
 // Regression test for sass/sass#3384. In Dart Sass, this caused a bug because
 // we were asking "has this media query been merged?" to determine whether to
 // bubble it up through parent queries, disregarding whether it had been merged
