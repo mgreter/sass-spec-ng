@@ -240,11 +240,6 @@ Error: expected */.
 
 <===>
 ================================================================================
-<===> error/loud/interpolation/unterminated/options.yml
----
-:todo:
-- libsass#reporting
-
 <===> error/loud/interpolation/unterminated/input.scss
 /* #{broken */
 
