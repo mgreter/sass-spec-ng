@@ -56,11 +56,6 @@ a {
 
 <===>
 ================================================================================
-<===> max_number/options.yml
----
-:todo:
-- libsass#constants
-
 <===> max_number/input.scss
 @use "sass:math";
 a {b: math.$max-number}
