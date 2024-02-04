@@ -1,8 +1,3 @@
-<===> options.yml
----
-:todo:
-- libsass#extend-loop
-
 <===> input.scss
 // Make sure extend loops are handled correctly. Test in all different orderings
 // so we can be sure this works for implementations like Dart Sass where extend
