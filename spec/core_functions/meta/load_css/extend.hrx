@@ -37,11 +37,6 @@ resolved before it's loaded.
 
 <===>
 ================================================================================
-<===> in_other/before/options.yml
----
-:todo:
-- libsass#extend
-
 <===> in_other/before/input.scss
 @use "sass:meta";
 
@@ -58,11 +53,6 @@ a {
 
 <===>
 ================================================================================
-<===> in_other/after/options.yml
----
-:todo:
-- libsass#extend
-
 <===> in_other/after/input.scss
 @use "sass:meta";
 

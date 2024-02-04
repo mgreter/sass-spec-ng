@@ -39,11 +39,6 @@ a b {
 
 <===>
 ================================================================================
-<===> use/different_extend/options.yml
----
-:todo:
-- libsass#extend
-
 <===> use/different_extend/input.scss
 @use "sass:meta";
 @use "midstream";
@@ -125,11 +120,6 @@ b c {
 
 <===>
 ================================================================================
-<===> load_css/different_extend/options.yml
----
-:todo:
-- libsass#extend
-
 <===> load_css/different_extend/input.scss
 @use "left";
 @use "right";
