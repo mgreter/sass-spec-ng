@@ -50,11 +50,6 @@ $b: default !default;
 
 <===>
 ================================================================================
-<===> repeated/options.yml
----
-:todo:
-- libsass#extend
-
 <===> repeated/input.scss
 @use 'module' with (
   $a: 'a',

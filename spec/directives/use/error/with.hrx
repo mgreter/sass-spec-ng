@@ -669,11 +669,6 @@ Error: $missing was not declared with !default in the @used module.
 
 <===>
 ================================================================================
-<===> missing_distributed_vars/multi_use/options.yml
----
-:todo:
-- libsass#modules
-
 <===> missing_distributed_vars/multi_use/input.scss
 @use 'module' with (
   $a: 'a',
