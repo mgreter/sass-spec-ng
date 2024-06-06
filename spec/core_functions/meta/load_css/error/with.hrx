@@ -667,7 +667,12 @@ Use "@extend missing !optional" to avoid this error.
 1 | a {@extend missing}
   |    ^^^^^^^^^^^^^^^
   '
-  _other.scss 1:4  root stylesheet
+  _other.scss 1:4  load-css()
+  ,
+2 | @include meta.load-css("other");
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 
 <===>
 ================================================================================
