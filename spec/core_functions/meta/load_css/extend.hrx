@@ -70,9 +70,8 @@ a {
 <===>
 ================================================================================
 <===> shared_cssless_midstream/options.yml
----
 :todo:
-- libsass#extend-loop
+  - libsass#css-clone
 
 <===> shared_cssless_midstream/input.scss
 // Regression test for sass/sass#3322

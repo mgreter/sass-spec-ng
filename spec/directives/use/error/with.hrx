@@ -718,3 +718,20 @@ Error: This variable was not declared with !default in the @used module.
   |   ^^^^^^^^^^^^^
   '
   input.scss 4:3  root stylesheet
+
+<===> missing_distributed_vars/multi_use/error-libsass
+Error: $missing was not declared with !default in the @used module.
+  ,
+4 |   $missing: 'c',
+  |   ^^^^^^^^^^^^^
+  '
+  input.scss 4:3  @use
+  ,
+1 | / @use 'module' with (
+2 | |   $a: 'a',
+3 | |   $b: 'b',
+4 | |   $missing: 'c',
+5 | | );
+  | \-^
+  '
+  input.scss 1:1  root stylesheet
