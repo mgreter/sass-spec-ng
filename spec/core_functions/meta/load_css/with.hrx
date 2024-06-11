@@ -33,11 +33,6 @@ b {
 
 <===>
 ================================================================================
-<===> null/options.yml
----
-:todo:
-- libsass#extend-loop
-
 <===> null/input.scss
 @use "sass:meta";
 @include meta.load-css("other", $with: (a: null));

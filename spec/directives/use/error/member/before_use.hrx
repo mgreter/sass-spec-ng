@@ -52,11 +52,6 @@ Error: This module and the new module both define a variable named "$member".
 
 <===>
 ================================================================================
-<===> function/options.yml
----
-:todo:
-- libsass#error-msg
-
 <===> function/input.scss
 $variable: other.member();
 @use "other";
