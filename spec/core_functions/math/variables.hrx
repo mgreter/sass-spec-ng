@@ -74,7 +74,7 @@ a {
 ================================================================================
 <===> min_number/options.yml
 :ignore_for:
-  - libsass#unpredictable
+  - libsass#unportable
 
 <===> min_number/input.scss
 @use "sass:math";
