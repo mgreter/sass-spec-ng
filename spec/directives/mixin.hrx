@@ -17,6 +17,20 @@ For details, see https://sass-lang.com/d/css-function-mixin
   |        ^^^
   '
 
+<===> custom_ident_name/warning-libsass
+DEPRECATION WARNING on line 1, column 8 of input.scss: 
+Sass @mixin names beginning with -- are deprecated for forward-compatibility with
+plain CSS mixins.
+For details, see https://sass-lang.com/d/css-function-mixin
+
+  ,
+1 | @mixin --a {b: c}
+  |        ^^^
+  '
+    input.scss 1:8  root stylesheet
+
+Additionally, one similar warning was suppressed!
+
 <===>
 ================================================================================
 <===> double_underscore_name/input.scss
@@ -42,6 +56,18 @@ d {
 <===> custom_ident_include/warning
 DEPRECATION WARNING: Sass @mixin names beginning with -- are deprecated for forward-compatibility with plain CSS mixins.
 
+For details, see https://sass-lang.com/d/css-function-mixin
+
+  ,
+2 | d {@include --a}
+  |             ^^^
+  '
+    input.scss 2:13  root stylesheet
+
+<===> custom_ident_include/warning-libsass
+DEPRECATION WARNING on line 2, column 13 of input.scss:
+Sass @mixin names beginning with -- are deprecated for forward-compatibility with
+plain CSS mixins.
 For details, see https://sass-lang.com/d/css-function-mixin
 
   ,

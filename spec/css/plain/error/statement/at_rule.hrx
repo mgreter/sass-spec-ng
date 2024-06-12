@@ -16,6 +16,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 2:3   @import
   input.scss 1:9  root stylesheet
 
+<===> at_root/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+2 |   @at-root b {
+  |   ^^^^^^^^^^
+  '
+  plain.css 2:3   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> content/input.scss
@@ -32,6 +45,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> content/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @content;
+  | ^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> debug/input.scss
@@ -46,6 +72,19 @@ Error: This at-rule isn't allowed in plain CSS.
   | ^^^^^^^^^^
   '
   plain.css 1:1   @import
+  input.scss 1:9  root stylesheet
+
+<===> debug/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @debug foo;
+  | ^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -68,6 +107,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> each/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @each $i in 1 2 3 {
+  | ^^^^^^^^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> error/input.scss
@@ -82,6 +134,19 @@ Error: This at-rule isn't allowed in plain CSS.
   | ^^^^^^^^^^
   '
   plain.css 1:1   @import
+  input.scss 1:9  root stylesheet
+
+<===> error/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @error foo;
+  | ^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -100,6 +165,19 @@ Error: This at-rule isn't allowed in plain CSS.
   |   ^^^^^^^^^
   '
   plain.css 2:3   @import
+  input.scss 1:9  root stylesheet
+
+<===> extend/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+2 |   @extend b;
+  |   ^^^^^^^^^
+  '
+  plain.css 2:3   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -122,6 +200,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> for/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @for $i from 1 to 5 {
+  | ^^^^^^^^^^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> function/input.scss
@@ -138,6 +229,19 @@ Error: This at-rule isn't allowed in plain CSS.
   | ^^^^^^^^^^^^^^^^
   '
   plain.css 1:1   @import
+  input.scss 1:9  root stylesheet
+
+<===> function/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @function foo() {
+  | ^^^^^^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -160,6 +264,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> if/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @if true {
+  | ^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> import/interpolated/input.scss
@@ -174,6 +291,19 @@ Error: Interpolation isn't allowed in plain CSS.
   |                 ^^^^^^
   '
   plain.css 1:17  @import
+  input.scss 1:9  root stylesheet
+
+<===> import/interpolated/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | @import url("foo#{bar}baz");
+  |                 ^^^^^^
+  '
+  plain.css 1:17  @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -206,6 +336,19 @@ Error: expected ";".
   plain.css 1:14  @import
   input.scss 1:9  root stylesheet
 
+<===> import/multi/error-libsass
+Error: expected ";".
+  ,
+1 | @import "foo", "bar";
+  |              ^
+  '
+  plain.css 1:14  @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> include/input.scss
@@ -220,6 +363,19 @@ Error: This at-rule isn't allowed in plain CSS.
   | ^^^^^^^^^^^^
   '
   plain.css 1:1   @import
+  input.scss 1:9  root stylesheet
+
+<===> include/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @include foo;
+  | ^^^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -242,6 +398,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> mixin/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @mixin foo {
+  | ^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> return/input.scss
@@ -258,6 +427,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> return/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @return foo;
+  | ^^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> warn/input.scss
@@ -272,6 +454,19 @@ Error: This at-rule isn't allowed in plain CSS.
   | ^^^^^^^^^
   '
   plain.css 1:1   @import
+  input.scss 1:9  root stylesheet
+
+<===> warn/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @warn foo;
+  | ^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -294,6 +489,19 @@ Error: This at-rule isn't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> while/error-libsass
+Error: This at-rule isn't allowed in plain CSS.
+  ,
+1 | @while false {
+  | ^^^^^^^^^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> interpolation/input.scss
@@ -308,4 +516,17 @@ Error: Interpolation isn't allowed in plain CSS.
   |       ^^^^
   '
   plain.css 1:7   @import
+  input.scss 1:9  root stylesheet
+
+<===> interpolation/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | @foo a#{b}c;
+  |       ^^^^
+  '
+  plain.css 1:7   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet

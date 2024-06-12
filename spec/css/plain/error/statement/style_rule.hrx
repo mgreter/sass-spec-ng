@@ -54,6 +54,19 @@ Error: Parent selectors can't have suffixes in plain CSS.
   plain.css 1:4   @use
   input.scss 1:1  root stylesheet
 
+<===> parent_selector/suffix/error-libsass
+Error: Parent selectors can't have suffixes in plain CSS.
+  ,
+1 | a {&b {c: d}}
+  |    ^
+  '
+  plain.css 1:4   @use
+  ,
+1 | @use 'plain';
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> trailing_combinator/no_nesting/input.scss
@@ -71,6 +84,19 @@ Error: expected selector.
   plain.css 1:5   @use
   input.scss 1:1  root stylesheet
 
+<===> trailing_combinator/no_nesting/error-libsass
+Error: expected selector.
+  ,
+1 | a > {b: c}
+  |     ^
+  '
+  plain.css 1:5   @use
+  ,
+1 | @use 'plain';
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> trailing_combinator/nesting/input.scss
@@ -86,6 +112,19 @@ Error: expected selector.
   |     ^
   '
   plain.css 1:5   @use
+  input.scss 1:1  root stylesheet
+
+<===> trailing_combinator/nesting/error-libsass
+Error: expected selector.
+  ,
+1 | a > {b {c: d}}
+  |     ^
+  '
+  plain.css 1:5   @use
+  ,
+1 | @use 'plain';
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet
 
 <===>
@@ -159,6 +198,19 @@ Error: Placeholder selectors aren't allowed in plain CSS.
   plain.css 1:1   @import
   input.scss 1:9  root stylesheet
 
+<===> placeholder_selector/error-libsass
+Error: Placeholder selectors aren't allowed in plain CSS.
+  ,
+1 | %foo {
+  | ^^^^
+  '
+  plain.css 1:1   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> interpolation/selector/input.scss
@@ -175,6 +227,19 @@ Error: Interpolation isn't allowed in plain CSS.
   |  ^^^^
   '
   plain.css 1:2   @import
+  input.scss 1:9  root stylesheet
+
+<===> interpolation/selector/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | a#{b}c {
+  |  ^^^^
+  '
+  plain.css 1:2   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -195,6 +260,19 @@ Error: Interpolation isn't allowed in plain CSS.
   plain.css 2:4   @import
   input.scss 1:9  root stylesheet
 
+<===> interpolation/declaration/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+2 |   w#{x}y: z;
+  |    ^^^^
+  '
+  plain.css 2:4   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> interpolation/custom_property/input.scss
@@ -211,4 +289,17 @@ Error: Interpolation isn't allowed in plain CSS.
   |        ^^^^
   '
   plain.css 2:8   @import
+  input.scss 1:9  root stylesheet
+
+<===> interpolation/custom_property/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+2 |   --b: #{c};
+  |        ^^^^
+  '
+  plain.css 2:8   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
