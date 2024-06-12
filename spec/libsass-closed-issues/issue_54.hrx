@@ -28,10 +28,10 @@ Error: Expected "to" or "from".
   input.scss 6:8  root stylesheet
 
 <===> error-libsass
-Error: Expected "to" or "from".
+Error: Style rules may not be used within keyframe blocks.
   ,
-2 |   foo{ test: opacity($percent); }
-  |   ^
+2 |   foo { test: opacity($percent); }
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:3  opacity()
   ,

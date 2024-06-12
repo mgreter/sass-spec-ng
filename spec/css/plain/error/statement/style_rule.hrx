@@ -16,6 +16,19 @@ Error: Nested declarations aren't allowed in plain CSS.
   plain.css 2:6   @import
   input.scss 1:9  root stylesheet
 
+<===> nested_property/no_value/error-libsass
+Error: Nested declarations aren't allowed in plain CSS.
+  ,
+2 |   x: {
+  |      ^
+  '
+  plain.css 2:6   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
+  input.scss 1:9  root stylesheet
+
 <===>
 ================================================================================
 <===> nested_property/value/input.scss
@@ -35,6 +48,19 @@ Error: Nested declarations aren't allowed in plain CSS.
   |        ^
   '
   plain.css 2:8   @import
+  input.scss 1:9  root stylesheet
+
+<===> nested_property/value/error-libsass
+Error: Nested declarations aren't allowed in plain CSS.
+  ,
+2 |   b: c {
+  |        ^
+  '
+  plain.css 2:8   @import
+  ,
+1 | @import 'plain'
+  |         ^^^^^^^
+  '
   input.scss 1:9  root stylesheet
 
 <===>
@@ -144,6 +170,19 @@ Error: Top-level leading combinators aren't allowed in plain CSS.
   plain.css 1:1   @use
   input.scss 1:1  root stylesheet
 
+<===> leading_combinator/top_level/error-libsass
+Error: Top-level leading combinators aren't allowed in plain CSS.
+  ,
+1 | > a {b: c}
+  | ^
+  '
+  plain.css 1:1   @use
+  ,
+1 | @use 'plain';
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> leading_combinator/through_load_css/input.scss
@@ -163,6 +202,19 @@ Error: Top-level leading combinators aren't allowed in plain CSS.
   plain.css 1:1   load-css()
   input.scss 3:4  root stylesheet
 
+<===> leading_combinator/through_load_css/error-libsass
+Error: Top-level leading combinators aren't allowed in plain CSS.
+  ,
+1 | > b {c: d}
+  | ^
+  '
+  plain.css 1:1   load-css()
+  ,
+3 | a {@include meta.load-css("plain")}
+  |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:4  root stylesheet
+
 <===>
 ================================================================================
 <===> leading_combinator/through_import/input.scss
@@ -178,6 +230,19 @@ Error: Top-level leading combinators aren't allowed in plain CSS.
   | ^
   '
   plain.css 1:1    @import
+  input.scss 1:12  root stylesheet
+
+<===> leading_combinator/through_import/error-libsass
+Error: Top-level leading combinators aren't allowed in plain CSS.
+  ,
+1 | > b {c: d}
+  | ^
+  '
+  plain.css 1:1    @import
+  ,
+1 | a {@import "plain"}
+  |            ^^^^^^^
+  '
   input.scss 1:12  root stylesheet
 
 <===>
