@@ -209,6 +209,11 @@ a b {
   }
 }
 
+<===> nesting/through_load_css/two_levels/output-libsass.css
+a b c {
+  d: e;
+}
+
 <===>
 ================================================================================
 <===> nesting/through_load_css/top_level_parent/input.scss
@@ -225,6 +230,10 @@ a & {
     c: d;
   }
 }
+
+<===> nesting/through_load_css/top_level_parent/output-libsass.css
+a b {
+  c: d}
 
 <===>
 ================================================================================
