@@ -178,7 +178,8 @@ a {
 
 <===> fuzzy/with_exponent/negative_even_integer/output-libsass.css
 a {
-  b: 999999999999999983222784;
+  b: 999999999999999983222784; // x86
+  b: 1000000000000000117440512; // x64
 }
 
 <===>
