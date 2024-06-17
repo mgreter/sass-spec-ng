@@ -233,7 +233,7 @@ a & {
 
 <===> nesting/through_load_css/top_level_parent/output-libsass.css
 a b {
-  c: d
+  c: d;
 }
 
 <===>
