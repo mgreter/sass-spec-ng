@@ -163,6 +163,10 @@ a {
 
 <===>
 ================================================================================
+<===> min_number/options.yml
+:ignore_for:
+  - libsass#unportable
+
 <===> fuzzy/with_exponent/negative_even_integer/input.scss
 @use "sass:math";
 a {b: math.pow(0.000000000001, -2)}
