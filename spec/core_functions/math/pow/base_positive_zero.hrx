@@ -163,7 +163,7 @@ a {
 
 <===>
 ================================================================================
-<===> min_number/options.yml
+<===> fuzzy/with_exponent/negative_even_integer/options.yml
 :ignore_for:
   - libsass#unportable
 
