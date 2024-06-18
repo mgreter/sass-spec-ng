@@ -20,6 +20,10 @@ a {
 
 <===>
 ================================================================================
+<===> negative_asymptote/radian/options.yml
+:ignore_for:
+  - libsass#unportable
+
 <===> negative_asymptote/radian/input.scss
 @use "sass:math";
 a {b: math.tan(-0.5rad * math.$pi)}
@@ -31,6 +35,10 @@ a {
 
 <===>
 ================================================================================
+<===> asymptote/radian/options.yml
+:ignore_for:
+  - libsass#unportable
+
 <===> asymptote/radian/input.scss
 @use "sass:math";
 a {b: math.tan(0.5rad * math.$pi)}
