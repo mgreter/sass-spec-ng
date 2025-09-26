@@ -2,6 +2,7 @@
 ruleset {
   @return 42;
 }
+
 <===> error
 Error: This at-rule is not allowed here.
   ,

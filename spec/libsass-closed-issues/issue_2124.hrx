@@ -32,7 +32,6 @@ test {
   }
 }
 
-
 <===> output.css
 test {
   test-01: true;

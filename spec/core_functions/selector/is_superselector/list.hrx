@@ -105,4 +105,3 @@ a {b: selector.is-superselector("c, d, e", "c, f")}
 a {
   b: false;
 }
-

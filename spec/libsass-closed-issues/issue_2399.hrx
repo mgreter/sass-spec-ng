@@ -10,6 +10,7 @@
 .e {
 	&:not(.thing) { @extend .thing; }
 }
+
 <===> output.css
 .thing, .a:not(.thing),
 .b:not(.thing),

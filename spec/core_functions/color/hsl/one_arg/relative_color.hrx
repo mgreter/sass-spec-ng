@@ -50,6 +50,7 @@ a {
 ================================================================================
 <===> var/no_alpha/input.scss
 a {b: hsl(from var(--c) h s l)}
+
 <===> var/no_alpha/output.css
 a {
   b: hsl(from var(--c) h s l);

@@ -3,6 +3,7 @@
 // necessary for the regression test.
 @if a {}
 @else i
+
 <===> else/partial_if/error
 Error: expected "{".
   ,

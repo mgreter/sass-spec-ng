@@ -13,6 +13,7 @@ $string: 'Foo Bar Baz Qux';
 .foo {
   content: str-replace($string, ' ', '-');
 }
+
 <===> output.css
 .foo {
   content: "Foo-Bar-Baz-Qux";

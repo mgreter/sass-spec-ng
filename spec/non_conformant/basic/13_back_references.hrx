@@ -5,6 +5,7 @@ hey, ho {
   }
   blah: blah;
 }
+
 <===> output.css
 hey, ho {
   blah: blah;

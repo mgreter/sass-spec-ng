@@ -12,6 +12,7 @@
   @include inner {}
   x: y;
 }
+
 <===> output.css
 a {
   x: y;

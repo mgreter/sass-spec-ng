@@ -39,7 +39,6 @@ foo {
   }
 }
 
-
 <===> output.css
 foo {
   color: blue;

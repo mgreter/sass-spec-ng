@@ -15,6 +15,7 @@
     @extend %foo--up;
   }
 }
+
 <===> output.css
 .zoo,
 .foo {

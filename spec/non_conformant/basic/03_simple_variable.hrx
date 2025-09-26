@@ -4,6 +4,7 @@ $color: red;
 a {
   color: $color;
 }
+
 <===> output.css
 a {
   color: red;

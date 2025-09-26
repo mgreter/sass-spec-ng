@@ -1,5 +1,6 @@
 <===> input.scss
 @use 'plain'
+
 <===> plain.css
 a {
   x: (y);

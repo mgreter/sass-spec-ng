@@ -8,6 +8,7 @@
   content: test(string.slice('scale-0', 7));   // Nope
   content: test-#{string.slice('scale-0', 7)}; // Yep
 }
+
 <===> output.css
 .foo {
   content: test-0;

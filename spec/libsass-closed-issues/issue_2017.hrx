@@ -14,6 +14,7 @@ foo {
   @extend .btn;
   @include link;
 }
+
 <===> output.css
 foo {
   bar: baz;

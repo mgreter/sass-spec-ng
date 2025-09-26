@@ -9,6 +9,7 @@ div {
   why: $y;
   @include foo(ecks);
 }
+
 <===> output.css
 div {
   why: why;

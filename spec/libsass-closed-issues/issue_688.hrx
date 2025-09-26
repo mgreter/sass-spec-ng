@@ -34,14 +34,14 @@ test {
   pc-to-mm: 0mm + 1pc;
   in-to-mm: 0mm + 1in;
   mm-to-mm: 0mm + 1mm;
-  cm-to-mm: 0mm + 1cm; 
+  cm-to-mm: 0mm + 1cm;
   /* Convert to cm  */
   px-to-cm: 0cm + 1px;
   pt-to-cm: 0cm + 1pt;
   pc-to-cm: 0cm + 1pc;
   in-to-cm: 0cm + 1in;
   mm-to-cm: 0cm + 1mm;
-  cm-to-cm: 0cm + 1cm;   
+  cm-to-cm: 0cm + 1cm;
 }
 
 <===> output.css

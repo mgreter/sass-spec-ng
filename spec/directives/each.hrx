@@ -34,7 +34,7 @@ Error: expected "$".
 ================================================================================
 <===> error/sass/multiline/after-variable/input.sass
 
-@each $a 
+@each $a
   in b, c
   .#{$a}
     d: $a
@@ -42,7 +42,7 @@ Error: expected "$".
 <===> error/sass/multiline/after-variable/error
 Error: Expected "in".
   ,
-2 | @each $a 
+2 | @each $a
   |          ^
   '
   input.sass 2:10  root stylesheet

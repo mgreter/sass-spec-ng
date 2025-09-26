@@ -33,6 +33,7 @@
     }
   }
 }
+
 <===> output.css
 .foo {
   mixin-sees: .foo;

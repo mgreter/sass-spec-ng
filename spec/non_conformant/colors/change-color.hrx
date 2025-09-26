@@ -6,6 +6,7 @@ p {
   color: color.change(#102030, $red: 120, $blue: 5);
   color: color.change(hsl(25, 100%, 80%), $lightness: 40%, $alpha: 0.8);
 }
+
 <===> output.css
 p {
   color: #102005;

@@ -14,6 +14,7 @@ div {
   e: list.nth($xs, 2) == 0.75;
   f: meta.type-of(list.nth($xs, 2));
 }
+
 <===> output.css
 div {
   /* $x: 3/4 */

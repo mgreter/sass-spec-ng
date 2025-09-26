@@ -40,6 +40,7 @@ $Selectors: ();
     content: list.nth($Selectors, $i);
   }
 }
+
 <===> output.css
 .result {
   length: 4;

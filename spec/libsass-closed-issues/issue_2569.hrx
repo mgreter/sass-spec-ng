@@ -10,6 +10,7 @@
 .my-module {
   opacity: test();
 }
+
 <===> error
 Error: @function rules may not contain declarations.
   ,

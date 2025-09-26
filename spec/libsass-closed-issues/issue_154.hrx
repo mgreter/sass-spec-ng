@@ -2,6 +2,7 @@
 test {
   filter:alpha(opacity=75);
 }
+
 <===> output.css
 test {
   filter: alpha(opacity=75);

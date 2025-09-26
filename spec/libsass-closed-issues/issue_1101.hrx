@@ -4,6 +4,7 @@ $foo: white;
 foo {
   bar: color.adjust($foo, $hue: -6deg, $lightness: -16%, $saturation: -7%);
 }
+
 <===> output.css
 foo {
   bar: rgb(214.2, 214.2, 214.2);

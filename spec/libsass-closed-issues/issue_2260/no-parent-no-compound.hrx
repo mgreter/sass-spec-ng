@@ -10,6 +10,7 @@
     property: value;
    }
  }
+
 <===> output.css
 .test {
   property: value;

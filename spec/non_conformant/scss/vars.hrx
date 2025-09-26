@@ -6,6 +6,7 @@ div {
   content: 1 2 $x;
   content: $y;
 }
+
 <===> output.css
 div {
   content: 1 2 hello;

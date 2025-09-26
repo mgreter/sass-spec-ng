@@ -64,6 +64,7 @@ of elements matched by its selector gets, `:not(X, Y)` is equivalent to
 <===> equivalence/split_super/superset/input.scss
 @use "sass:selector";
 a {b: selector.is-superselector(":not(c d):not(e f):not(g h)", ":not(c d.i, e j f)")}
+
 <===> equivalence/split_super/superset/output.css
 a {
   b: false;

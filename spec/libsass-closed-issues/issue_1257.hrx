@@ -3,6 +3,7 @@
 .foo {
   color: color.invert(red...);
 }
+
 <===> output.css
 .foo {
   color: aqua;

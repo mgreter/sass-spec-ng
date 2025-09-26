@@ -386,7 +386,6 @@ These tests verify the configuration is reused by opaque ID across multiple
 source files preventing unexpected behaviors when variables are declared on
 separate files with validations that occur when a module is used more than once.
 
-
 <===>
 ================================================================================
 <===> missing_distributed_vars/single_use/input.scss

@@ -4,6 +4,7 @@
     bar: baz;
   }
 }
+
 <===> error
 Error: Top-level selectors may not contain the parent selector "&".
   ,

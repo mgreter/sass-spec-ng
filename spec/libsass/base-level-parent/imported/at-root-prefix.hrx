@@ -1,5 +1,6 @@
 <===> input.scss
 @import "include.scss";
+
 <===> include.scss
 @at-root {
   pre& {
@@ -8,6 +9,7 @@
     }
   }
 }
+
 <===> error
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 

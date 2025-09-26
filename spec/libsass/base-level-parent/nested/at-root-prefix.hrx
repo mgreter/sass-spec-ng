@@ -8,6 +8,7 @@ test{
     }
   }
 }
+
 <===> error
 Error: "&" may only used at the beginning of a compound selector.
   ,

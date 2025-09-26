@@ -35,6 +35,7 @@
     }
   }
 }
+
 <===> output.css
 .foo {
   type: list;

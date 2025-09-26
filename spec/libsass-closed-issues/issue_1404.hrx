@@ -5,6 +5,7 @@
     color: meta.type-of(#aaabbb--1-2-a);
     color: meta.type-of(#aaabbb--1-2);
 }
+
 <===> output.css
 .test {
   color: #aaabbb--1-2-a;

@@ -25,6 +25,7 @@
 .named-arguments {
   @include helper($param1: param___1);
 }
+
 <===> output.css
 .ordinal-arguments {
   param1-value: param___1;

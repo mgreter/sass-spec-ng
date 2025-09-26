@@ -105,7 +105,6 @@ Error: expected "(".
 <===> before_as/input.scss
 @use "other" with ($a: b) as c;
 
-
 <===> before_as/error
 Error: expected ";".
   ,

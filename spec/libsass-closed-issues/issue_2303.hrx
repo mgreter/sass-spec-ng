@@ -2,6 +2,7 @@
 .wrapper-class {
   @import 'module';
 }
+
 <===> _module.scss
 .okay {
   background: green;
@@ -12,6 +13,7 @@
     background: red;
   }
 }
+
 <===> output.css
 .wrapper-class .okay {
   background: green;

@@ -6,11 +6,12 @@ b:after:not(:first-child) {
   @extend %a;
 }
 c:s {
-  @extend %a;  
+  @extend %a;
 }
 d::e {
   @extend c;
 }
+
 <===> output.css
 c:s, d:s::e, b:after:not(:first-child) {
   x: y;

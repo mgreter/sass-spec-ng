@@ -4,6 +4,7 @@ $endColor: red;
 test {
   background-color: color.adjust($endColor, $lightness: -10%) \9;
 }
+
 <===> output.css
 test {
   background-color: #cc0000 \9 ;

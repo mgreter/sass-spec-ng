@@ -4,6 +4,7 @@
 div {
   color: red;
 }
+
 <===> output.css
 @import 'foo.css';
 @import "bar.css";

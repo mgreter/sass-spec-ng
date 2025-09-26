@@ -9,6 +9,7 @@
 div {
   y: test-while();
 }
+
 <===> output.css
 div {
   y: true;

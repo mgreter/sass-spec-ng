@@ -4,6 +4,7 @@ $foo: bar;
 div {
     content: "foo #{$foo}"
 }
+
 <===> output.css
 div {
   content: "foo bar";

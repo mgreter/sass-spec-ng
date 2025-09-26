@@ -7,7 +7,7 @@
 }
 
 $sel: selector.nest('.theme1, .theme2', '.something');
-  
+
 #{$sel} {
   /* nothing */
 }

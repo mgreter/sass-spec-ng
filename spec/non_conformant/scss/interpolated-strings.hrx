@@ -8,6 +8,7 @@ div {
   bluh: "foo #{$x}";
   bleg: foo#{"hey"}bar;
 }
+
 <===> output.css
 div {
   blah: "hey ecks ho";

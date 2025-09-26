@@ -8,6 +8,7 @@
   }
 
 }
+
 <===> output.css
 .foo a .baz,
 .bar p .baz {

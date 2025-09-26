@@ -9,13 +9,14 @@
     border-color: $value;
 }
 
-body 
+body
 {
     @include test("#ccc");
     @include simple-media-query(900px, 400px) {
         border-color: black;
     }
 }
+
 <===> output.css
 body {
   border-color: "#ccc";

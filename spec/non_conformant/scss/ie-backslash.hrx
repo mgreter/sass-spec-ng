@@ -3,6 +3,7 @@
 div {
   background-color: color.adjust(red, $lightness: -10%) \9;
 }
+
 <===> output.css
 div {
   background-color: #cc0000 \9 ;

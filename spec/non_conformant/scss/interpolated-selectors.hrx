@@ -2,6 +2,7 @@
 foo#{bar} hux {
   color: red;
 }
+
 <===> output.css
 foobar hux {
   color: red;

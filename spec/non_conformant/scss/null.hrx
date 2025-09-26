@@ -25,6 +25,7 @@ div {
   j2: ($x), ($x), 3, 4;
   k2: list.length((($x), ($x), 3, 4));
 }
+
 <===> output.css
 div {
   a: 3;

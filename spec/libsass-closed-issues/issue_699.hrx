@@ -3,6 +3,7 @@
 .selector {
   color: color.invert(rebeccapurple);
 }
+
 <===> output.css
 .selector {
   color: #99cc66;

@@ -9,6 +9,7 @@
 .baz {
   @extend .foo;
 }
+
 <===> output.css
 .foo, .baz {
   background-color: lime;

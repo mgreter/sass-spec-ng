@@ -5,6 +5,7 @@ main {
 }
 
 @include meta.load-css("dir");
+
 <===> dir.scss
 @use "sass:meta";
 dir {
@@ -12,10 +13,12 @@ dir {
 }
 
 @include meta.load-css("blir/fudge");
+
 <===> blir/_fudge.scss
 fudge {
   color: brown;
 }
+
 <===> dir/whatever
 
 <===> output.css

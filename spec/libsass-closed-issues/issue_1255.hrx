@@ -15,6 +15,7 @@
 .foo {
   @include dummy-bug(1, 2, 3, 4);
 }
+
 <===> output.css
 .foo {
   content: 2, 4, 6, 8;

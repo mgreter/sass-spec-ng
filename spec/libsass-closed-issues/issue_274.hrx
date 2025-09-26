@@ -5,6 +5,7 @@ input[type=button]
 {
        filter:chroma(color=#000000);
 }
+
 <===> output.css
 input[type=submit],
 input[type=reset],

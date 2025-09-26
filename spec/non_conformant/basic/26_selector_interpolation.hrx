@@ -12,6 +12,7 @@ f#{$x}r {
     }
   }
 }
+
 <===> output.css
 foo, bar {
   p: 1;

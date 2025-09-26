@@ -187,4 +187,3 @@ a {b: rgb(1, 2, string.unquote("clamp(3, 4, 5)"))}
 a {
   b: rgb(1, 2, clamp(3, 4, 5));
 }
-

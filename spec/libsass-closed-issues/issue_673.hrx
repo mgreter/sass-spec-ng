@@ -12,8 +12,9 @@
     }
 
 }
+
 <===> error
-Error: From line 1, column 1 of input.scss: 
+Error: From line 1, column 1 of input.scss:
   ,
 1 | .example {
   | ^^^^^^^^^

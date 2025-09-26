@@ -17,7 +17,6 @@ div {
   blah: not (true);
 }
 
-
 <===> output.css
 div {
   blah: true;

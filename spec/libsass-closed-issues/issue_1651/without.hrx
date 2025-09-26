@@ -7,7 +7,7 @@
   @at-root (without: media) {
     @extend .a;
   }
-} 
+}
 
 <===> output.css
 .a, .b {

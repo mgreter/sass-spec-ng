@@ -6,6 +6,7 @@
 .foo {
   @include dummy( ('a', 'b', 'c', 'e')..., $e: false );
 }
+
 <===> output.css
 .foo {
   content: "a" "b" "c" "e" false;

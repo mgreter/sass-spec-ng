@@ -2,6 +2,7 @@
 @function foo () {
   @function bar() {}
 }
+
 <===> error
 Error: This at-rule is not allowed here.
   ,

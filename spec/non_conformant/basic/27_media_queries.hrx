@@ -16,8 +16,6 @@ a b c {
   blah: blah;
 }
 
-
-
 <===> output.css
 a b c {
   blee: blee;

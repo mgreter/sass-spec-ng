@@ -7,4 +7,5 @@ $foo: "bar";
     color: red;
   }
 }
+
 <===> output.css

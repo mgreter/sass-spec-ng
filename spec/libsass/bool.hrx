@@ -8,6 +8,7 @@ div {
   b: "hey" and "ho";
   b: string.unquote("hey") or "ho";
 }
+
 <===> output.css
 div {
   a: false;

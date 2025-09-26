@@ -3,6 +3,7 @@ div {
   color: red ! important;
   width: 5px ! important;
 }
+
 <===> output.css
 div {
   color: red !important;

@@ -36,6 +36,7 @@ div {
 div {
   foo: blah-blah();
 }
+
 <===> output.css
 div {
   blah: blah;

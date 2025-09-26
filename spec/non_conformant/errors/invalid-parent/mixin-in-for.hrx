@@ -2,6 +2,7 @@
 @for $i from 1 through 1 {
   @mixin foo() {}
 }
+
 <===> error
 Error: Mixins may not be declared in control directives.
   ,

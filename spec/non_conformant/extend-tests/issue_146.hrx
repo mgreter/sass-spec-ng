@@ -9,6 +9,7 @@
 button {
   @extend %btn-style-default;
 }
+
 <===> output.css
 button {
   background: green;

@@ -8,6 +8,7 @@
 div.a {
   @include m;
 }
+
 <===> output.css
 div.a .m {
   color: red;

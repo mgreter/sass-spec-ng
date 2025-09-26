@@ -3,6 +3,7 @@ $var: 10px;
 p {
 	width: -$var;
 }
+
 <===> output.css
 p {
   width: -10px;

@@ -141,7 +141,6 @@ a list of strings, or a list of lists of strings.
 @use "sass:selector";
 a {b: selector.nest()}
 
-
 <===> too_few_args/error
 Error: $selectors: At least one selector must be passed.
   ,

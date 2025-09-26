@@ -9,6 +9,7 @@ $foobar: "foo#{$bar}";
   #{$foobar}: #{$foobar};
   #{$foobar}: $foobar;
 }
+
 <===> output.css
 bar {
   bar: bar;

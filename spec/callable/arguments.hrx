@@ -296,7 +296,7 @@ Error: Positional arguments must come before keyword arguments.
 ================================================================================
 <===> function/error/sass/multi-line-arguments/declaration/input.sass
 @function a(
-  $b, 
+  $b,
   $c
 )
   @return d
@@ -320,7 +320,7 @@ Error: expected ")".
 
 e
   f: a(
-    g, 
+    g,
     h
   )
 

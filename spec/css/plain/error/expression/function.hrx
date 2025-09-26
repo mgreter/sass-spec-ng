@@ -1,5 +1,6 @@
 <===> built_in/input.scss
 @use 'plain'
+
 <===> built_in/plain.css
 a {
   x: index(1 2 3, 1);
@@ -18,6 +19,7 @@ Error: This function isn't allowed in plain CSS.
 ================================================================================
 <===> variable_arguments/input.scss
 @use 'plain'
+
 <===> variable_arguments/plain.css
 a {
   x: hsl(0, 100%, 50%...);
@@ -36,6 +38,7 @@ Error: expected ")".
 ================================================================================
 <===> keyword_arguments/input.scss
 @use 'plain'
+
 <===> keyword_arguments/plain.css
 a {
   x: hsl(0, 100%, $lightness: 50%);

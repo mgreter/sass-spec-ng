@@ -25,6 +25,7 @@ c, d {
     }
   }
 }
+
 <===> output.css
 a, b {
   color: red;

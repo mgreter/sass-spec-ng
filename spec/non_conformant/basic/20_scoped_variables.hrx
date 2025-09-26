@@ -16,6 +16,7 @@ outer {
     x: $x;
   }
 }
+
 <===> output.css
 outer {
   /* assigning to $x */

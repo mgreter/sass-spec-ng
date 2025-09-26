@@ -4,6 +4,7 @@
 foo {
   bar: meta.type-of(selector.unify('p', 'a'));
 }
+
 <===> output.css
 foo {
   bar: null;

@@ -3,6 +3,7 @@
   a { x:y; }
   @page {}
 }
+
 <===> output.css
 @media screen {
   a {

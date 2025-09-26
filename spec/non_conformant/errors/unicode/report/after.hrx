@@ -1,5 +1,6 @@
 <===> input.scss
 foo{;öüäöüäöü
+
 <===> error
 Error: expected "{".
   ,

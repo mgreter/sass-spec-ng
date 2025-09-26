@@ -10,6 +10,7 @@ div {
 	content: "foo\
 bar";
 }
+
 <===> output.css
 .foo .bar {
   color: #F00;

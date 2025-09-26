@@ -56,4 +56,3 @@ a {b: rgb(var(--foo))}
 a {
   b: rgb(var(--foo));
 }
-

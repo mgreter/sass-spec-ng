@@ -11,6 +11,7 @@ div.a {
     hey: now;
   }
 }
+
 <===> output.css
 div.a .foo {
   color: red;

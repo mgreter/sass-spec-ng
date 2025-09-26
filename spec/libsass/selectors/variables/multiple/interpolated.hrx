@@ -4,6 +4,7 @@
   $bar: &;
   content: #{$bar};
 }
+
 <===> output.css
 .foo a,
 .bar p {

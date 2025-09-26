@@ -1,5 +1,6 @@
 <===> input.scss
 @import "module";
+
 <===> _module.scss
 .foo, & {
   background: red;
@@ -8,6 +9,7 @@
 .foo, &:before {
   background: red;
 }
+
 <===> error
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 

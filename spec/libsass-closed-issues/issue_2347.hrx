@@ -13,6 +13,7 @@ custom2, [custom2], .custom2 {
 [custom3], custom3, .custom3 {
     @extend %baz3
 }
+
 <===> output.css
 custom2, [custom2], .custom2 {
   display: flex;

@@ -23,6 +23,7 @@ $button-sizes: (
     min-height: map.get($size-metrics, 'line-height') * 1em;
   }
 }
+
 <===> output.css
 .c-button__icon {
   min-height: 1.3333333333em;

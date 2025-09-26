@@ -5,6 +5,7 @@
 		height: 100px;
 	}
 }
+
 <===> output.css
 .test {
   background: url(//img12.360buyimg.com/..);

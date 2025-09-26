@@ -6,6 +6,7 @@ test {
     }
   }
 }
+
 <===> output.css
 test foo {
   bar: baz;

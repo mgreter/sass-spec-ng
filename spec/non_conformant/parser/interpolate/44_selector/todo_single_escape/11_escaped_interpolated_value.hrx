@@ -6,10 +6,10 @@ $key: 'bar';
 Error: expected selector.
   ,--> input.scss
 2 | .test11#{'\@#{$key}'} { content: '1.1'; }
-  |          ^^^^^^^^^^^ 
+  |          ^^^^^^^^^^^
   '
   ,
-1 | .test11@bar 
+1 | .test11@bar
   |        = error in interpolated output
   '
   input.scss 2:10  root stylesheet

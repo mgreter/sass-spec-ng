@@ -8,6 +8,7 @@
 foo {
   @include do_import();
 }
+
 <===> output.css
 foo {
   @import url("http://www.libsass.org");

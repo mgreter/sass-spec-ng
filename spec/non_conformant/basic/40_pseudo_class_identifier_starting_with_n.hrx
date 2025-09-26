@@ -2,6 +2,7 @@
 div:lang(nb) {
   color: blue;
 }
+
 <===> output.css
 div:lang(nb) {
   color: blue;

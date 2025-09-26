@@ -54,6 +54,7 @@ div {
   @include bar($x: n1);
   blah: string.unquote("hello");
 }
+
 <===> output.css
 div {
   background-image: image-url("test.png", true);

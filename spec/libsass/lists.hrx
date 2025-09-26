@@ -25,6 +25,7 @@ div {
   color: list.nth($color-list, 2) == #ff0000;
   color: list.nth($color-list, 2) == red;
 }
+
 <===> output.css
 div {
   content: false;

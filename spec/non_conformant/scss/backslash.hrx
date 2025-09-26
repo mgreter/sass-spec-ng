@@ -5,6 +5,7 @@ div, span {
 		color: blue;
 	}
 }
+
 <===> output.css
 div, span {
   color: red;

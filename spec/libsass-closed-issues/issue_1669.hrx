@@ -3,7 +3,6 @@ foo {
   bar: #{100%/3}
 }
 
-
 <===> output.css
 foo {
   bar: 100%/3;

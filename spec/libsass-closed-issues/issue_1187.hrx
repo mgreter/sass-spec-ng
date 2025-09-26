@@ -12,6 +12,7 @@ $map: (
   content: $a == $b;
   content: meta.inspect($map);
 }
+
 <===> error
 Error: Duplicate key.
   ,

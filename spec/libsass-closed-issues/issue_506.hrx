@@ -9,6 +9,7 @@ div {
   _list-comma: list.separator($list--comma);
   _single-item: list.separator($single);
 }
+
 <===> output.css
 div {
   _list-space: space;

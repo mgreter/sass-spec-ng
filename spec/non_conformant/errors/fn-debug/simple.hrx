@@ -1,5 +1,6 @@
 <===> input.scss
 @debug "debug";
+
 <===> output.css
 
 <===> warning

@@ -5,6 +5,7 @@ div {
   ho: a b c d;
   ha: string.unquote("a, b, c, d");
 }
+
 <===> output.css
 div {
   hey: a, b, c, d;

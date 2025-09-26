@@ -359,7 +359,7 @@ See https://sass-lang.com/d/import
 <===>
 ================================================================================
 <===> math/slash_as_division/input.scss
-b { 
+b {
   a: 2px / max(1.5);
 }
 

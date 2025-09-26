@@ -11,6 +11,7 @@
     @extend %dog;
     background-color: red;
 }
+
 <===> output.css
 @media (min-width: 10px) {
   .puppy:hover {

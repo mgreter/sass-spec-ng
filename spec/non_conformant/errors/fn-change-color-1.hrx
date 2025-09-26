@@ -3,6 +3,7 @@
 foo {
   test: color.change(red, $red: 0.5, $hue: 0.2);
 }
+
 <===> error
 Error: $hue: Color space rgb doesn't have a channel with this name.
   ,

@@ -5,6 +5,7 @@
     feature: true;
   }
 }
+
 <===> output.css
 div {
   feature: true;

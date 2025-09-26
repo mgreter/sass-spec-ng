@@ -10,6 +10,7 @@ foo {
   }
   @import "sub/c.scss";
 }
+
 <===> a.scss
 div {
   span {
@@ -18,21 +19,25 @@ div {
 }
 
 $x: boo;
+
 <===> b.scss
 hoo {
   mux: scooba-dee-doo;
   flux: gooboo $x;
   @import "d.scss";
 }
+
 <===> d.scss
 d {
   inside: d now;
 }
+
 <===> sub/c.scss
 blux {
   hey: another thing;
   ho: will this work;
 }
+
 <===> output.css
 div span {
   moo: goo;

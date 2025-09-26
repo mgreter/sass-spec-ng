@@ -10,6 +10,7 @@ div {
     foo: is_gold(gold);
     bar: is_gold(white);
 }
+
 <===> output.css
 div {
   foo: "yes";

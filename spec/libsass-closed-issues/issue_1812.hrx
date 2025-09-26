@@ -6,6 +6,7 @@
 .foo {
   background: svg-inline(test);
 }
+
 <===> output.css
 @svg-load test url(foo.svg) {
   fill: red;

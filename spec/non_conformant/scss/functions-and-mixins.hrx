@@ -23,6 +23,7 @@ div {
   height: length(a b c d e);
 
 }
+
 <===> output.css
 div {
   height: 5;

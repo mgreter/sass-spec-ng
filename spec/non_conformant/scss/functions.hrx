@@ -16,6 +16,7 @@ div {
   answer: bar(true);
   flanswer: fudge(mux+flux) + mudge(a/b);
 }
+
 <===> output.css
 div {
   answer: YES;

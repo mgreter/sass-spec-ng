@@ -5,6 +5,7 @@ div {
   c: 3 + "hello";
   d: "hello" + 3;
 }
+
 <===> output.css
 div {
   a: hellogoodbye;

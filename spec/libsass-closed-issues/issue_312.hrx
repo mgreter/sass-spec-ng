@@ -4,6 +4,7 @@
         transform: translateY($i * 100%);
     }
 }
+
 <===> output.css
 .foo [index="0"] {
   transform: translateY(0%);

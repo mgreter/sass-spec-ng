@@ -1,5 +1,6 @@
 <===> at_root/input.scss
 @use 'plain'
+
 <===> at_root/plain.css
 a {
   @at-root b {
@@ -20,6 +21,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> content/input.scss
 @use 'plain'
+
 <===> content/plain.css
 @content;
 
@@ -36,6 +38,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> debug/input.scss
 @use 'plain'
+
 <===> debug/plain.css
 @debug foo;
 
@@ -52,6 +55,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> each/input.scss
 @use 'plain'
+
 <===> each/plain.css
 @each $i in 1 2 3 {
   a {
@@ -72,6 +76,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> error/input.scss
 @use 'plain'
+
 <===> error/plain.css
 @error foo;
 
@@ -88,6 +93,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> extend/input.scss
 @use 'plain'
+
 <===> extend/plain.css
 a {
   @extend b;
@@ -106,6 +112,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> for/input.scss
 @use 'plain'
+
 <===> for/plain.css
 @for $i from 1 to 5 {
   a {
@@ -126,6 +133,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> function/input.scss
 @use 'plain'
+
 <===> function/plain.css
 @function foo() {
   @return 1;
@@ -144,6 +152,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> if/input.scss
 @use 'plain'
+
 <===> if/plain.css
 @if true {
   a {
@@ -164,6 +173,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> import/interpolated/input.scss
 @use 'plain'
+
 <===> import/interpolated/plain.css
 @import url("foo#{bar}baz");
 
@@ -180,6 +190,7 @@ Error: Interpolation isn't allowed in plain CSS.
 ================================================================================
 <===> import/nested/input.scss
 @use 'plain'
+
 <===> import/nested/plain.css
 a {
   @import "foo";
@@ -194,6 +205,7 @@ a {
 ================================================================================
 <===> import/multi/input.scss
 @use 'plain'
+
 <===> import/multi/plain.css
 @import "foo", "bar";
 
@@ -210,6 +222,7 @@ Error: expected ";".
 ================================================================================
 <===> include/input.scss
 @use 'plain'
+
 <===> include/plain.css
 @include foo;
 
@@ -226,6 +239,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> mixin/input.scss
 @use 'plain'
+
 <===> mixin/plain.css
 @mixin foo {
   a {
@@ -246,6 +260,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> return/input.scss
 @use 'plain'
+
 <===> return/plain.css
 @return foo;
 
@@ -262,6 +277,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> warn/input.scss
 @use 'plain'
+
 <===> warn/plain.css
 @warn foo;
 
@@ -278,6 +294,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> while/input.scss
 @use 'plain'
+
 <===> while/plain.css
 @while false {
   a {
@@ -298,6 +315,7 @@ Error: This at-rule isn't allowed in plain CSS.
 ================================================================================
 <===> interpolation/input.scss
 @use 'plain'
+
 <===> interpolation/plain.css
 @foo a#{b}c;
 

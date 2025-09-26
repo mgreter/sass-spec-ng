@@ -122,7 +122,7 @@ a {
 @use "dir";
 
 <===> index/sass/dir/index.sass
-.foo 
+.foo
   a: b
 
 <===> index/sass/output.css

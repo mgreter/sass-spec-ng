@@ -62,6 +62,7 @@ a b c {
   /* d */
   blah: blah;
 }
+
 <===> output.css
 a b {
   color: red;

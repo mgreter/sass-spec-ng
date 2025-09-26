@@ -24,6 +24,7 @@ div {
   }
   width: $x;
 }
+
 <===> output.css
 div {
   background-something-color: green;

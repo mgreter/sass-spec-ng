@@ -5,6 +5,7 @@ foo {
   @apply  (  --bar  );
   @ap#{pl}y   (   --bar , --foo  )  ;
 }
+
 <===> output.css
 foo {
   @apply;

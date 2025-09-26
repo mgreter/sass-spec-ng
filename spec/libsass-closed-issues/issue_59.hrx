@@ -9,6 +9,7 @@
     background-image: url(/logo.gif);
   }
 }
+
 <===> output.css
 * html #logo {
   background-image: url(/logo.gif);

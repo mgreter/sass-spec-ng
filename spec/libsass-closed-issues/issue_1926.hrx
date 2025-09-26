@@ -9,7 +9,7 @@ $columnName  : one two three four five six seven eight nine ten eleven twelve th
 =column-generator
   @for $i from 1 through $columnAmount
     [class*="#{list.nth($columnName, $i)} wide"]
-      width: 100% / $columnAmount * $i 
+      width: 100% / $columnAmount * $i
 
     &[class*="#{list.nth($columnName, $i)} column"], & .row[class*="#{list.nth($columnName, $i)} column"]
       > .column:not(.row)
@@ -17,6 +17,7 @@ $columnName  : one two three four five six seven eight nine ten eleven twelve th
 
 .grid
   +column-generator
+
 <===> output.css
 .grid [class*="one wide"] {
   width: 6.25%;
@@ -123,7 +124,7 @@ Recommendation: math.div(100%, $columnAmount) or calc(100% / $columnAmount)
 More info and automated migrator: https://sass-lang.com/d/slash-div
 
    ,
-11 |       width: 100% / $columnAmount * $i 
+11 |       width: 100% / $columnAmount * $i
    |              ^^^^^^^^^^^^^^^^^^^^
    '
     input.sass 11:14  column-generator()

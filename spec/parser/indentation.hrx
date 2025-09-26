@@ -3,10 +3,10 @@
 a
   b
     c: d
-    
+
   e
     f: g
-  
+
 <===> empty_line/after_indented/output.css
 a b {
   c: d;
@@ -21,7 +21,7 @@ a e {
 a {
   b: c
 }
-  
+
 <===> error/mixed-syntax/block/error
 Error: Expected newline.
   ,

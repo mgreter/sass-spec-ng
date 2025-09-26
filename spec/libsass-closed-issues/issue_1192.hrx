@@ -24,6 +24,7 @@ $keyword: foobar;
 @include test(foo, bar, baz, $keyword: keyword);
 // Ruby Sass:  "Mixin test1 doesn't have an argument named $keyword."
 // LibSass  :  /*foo, bar, baz, $keyword: keyword*/
+
 <===> output.css
 /*()*/
 /*foo, bar, baz*/

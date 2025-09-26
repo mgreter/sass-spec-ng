@@ -13,7 +13,6 @@
     }
  }
 
-
 <===> output.css
 @media (foo: bar), (bar: baz) {
   .foo {

@@ -15,6 +15,7 @@ foo {
     background: blue;
   }
 }
+
 <===> output.css
 .foo[disabled] {
   background: blue;

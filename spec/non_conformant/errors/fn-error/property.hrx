@@ -5,6 +5,7 @@ a {
     foo: bar;
   }
 }
+
 <===> error
 Error: "error"
   ,

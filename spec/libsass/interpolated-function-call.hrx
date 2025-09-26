@@ -4,6 +4,7 @@ $f: foo;
 div {
   color: #{$f}(a, 1+2, c);
 }
+
 <===> output.css
 div {
   color: foo(a, 3, c);

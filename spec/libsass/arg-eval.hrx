@@ -18,6 +18,7 @@ div {
   content: foo();
   @include bar();
 }
+
 <===> output.css
 div {
   content: foobar(3 3/4 11, orange);

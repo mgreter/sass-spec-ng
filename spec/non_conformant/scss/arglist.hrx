@@ -8,6 +8,7 @@
 div {
   @include foo(a, b, c, d, e);
 }
+
 <===> output.css
 div {
   foo-x: a;

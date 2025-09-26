@@ -102,7 +102,6 @@ Error: Missing argument $string.
 @use "sass:string";
 a {b: string.to-upper-case("", "")}
 
-
 <===> error/too_many_args/error
 Error: Only 1 argument allowed, but 2 were passed.
   ,--> input.scss

@@ -7,6 +7,7 @@ a + b, .class {
     blee: blee;
   }
 }
+
 <===> output.css
 a + b, .class {
   blah: blah;

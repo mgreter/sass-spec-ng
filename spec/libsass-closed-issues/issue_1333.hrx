@@ -8,7 +8,6 @@ foo {
     bar: baz() #{' !important'};
 }
 
-
 <===> output.css
 foo {
   bar: "baz"  !important;

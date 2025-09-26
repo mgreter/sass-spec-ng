@@ -15,6 +15,7 @@ div {
   }
 
 }
+
 <===> output.css
 div_foo {
   blah: blah;

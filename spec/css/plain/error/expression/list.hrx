@@ -1,5 +1,6 @@
 <===> empty/input.scss
 @use 'plain'
+
 <===> empty/plain.css
 a {
   x: ();
@@ -18,6 +19,7 @@ Error: Expected expression.
 ================================================================================
 <===> empty_comma/input.scss
 @use 'plain'
+
 <===> empty_comma/plain.css
 a {
   x: (,);

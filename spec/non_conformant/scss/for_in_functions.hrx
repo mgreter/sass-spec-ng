@@ -12,6 +12,7 @@
 div {
 	width: foo();
 }
+
 <===> output.css
 div {
   width: 55;

@@ -12,6 +12,7 @@ hux {
   height: 12px;
   @extend %x;
 }
+
 <===> output.css
 hux, foo {
   color: red;

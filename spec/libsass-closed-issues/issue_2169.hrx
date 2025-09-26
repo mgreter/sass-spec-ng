@@ -6,6 +6,7 @@
 foo {
   content: test('bim', 'baz');
 }
+
 <===> output.css
 foo {
   content: "bimbaz";

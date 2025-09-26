@@ -10,6 +10,7 @@ foo {
     tst-3: 0 -#{$value};
     tst-4: 0 -#{map.get($score, item-height)};
 }
+
 <===> output.css
 foo {
   tst-1: 0 -0.12em;

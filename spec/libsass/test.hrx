@@ -87,6 +87,7 @@ gudge {
 h1:lang(en) {
   foo: bar;
 }
+
 <===> output.css
 div {
   noo: false;

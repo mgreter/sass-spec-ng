@@ -3,6 +3,7 @@ div {
   foo: -hux-#{2+3};
   bar: hux-#{2+3};
 }
+
 <===> output.css
 div {
   foo: -hux-5;

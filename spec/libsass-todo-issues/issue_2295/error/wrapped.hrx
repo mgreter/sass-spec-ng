@@ -2,10 +2,12 @@
 .my-scope {
   @import 'include.scss';
 }
+
 <===> include.scss
 @if (true) {
   display: none;
 }
+
 <===> error
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 

@@ -22,12 +22,12 @@
 @mixin green-text { color: red; }
 
 div {
-  foo: meta.mixin-exists(red-text); 
-  foo: meta.mixin-exists("red-text"); 
-  foo: meta.mixin-exists(blue-text); 
-  foo: meta.mixin-exists("blue-text"); 
-  foo: meta.mixin-exists(green-text);   
-  foo: meta.mixin-exists("green-text"); 
+  foo: meta.mixin-exists(red-text);
+  foo: meta.mixin-exists("red-text");
+  foo: meta.mixin-exists(blue-text);
+  foo: meta.mixin-exists("blue-text");
+  foo: meta.mixin-exists(green-text);
+  foo: meta.mixin-exists("green-text");
   foo: meta.mixin-exists(nope);
   foo: meta.mixin-exists("nope");
   foo: g();
@@ -36,24 +36,24 @@ div {
 
 
   span {
-    foo: meta.mixin-exists(red-text); 
-    foo: meta.mixin-exists("red-text"); 
-    foo: meta.mixin-exists(blue-text); 
-    foo: meta.mixin-exists("blue-text"); 
-    foo: meta.mixin-exists(green-text);   
-    foo: meta.mixin-exists("green-text"); 
+    foo: meta.mixin-exists(red-text);
+    foo: meta.mixin-exists("red-text");
+    foo: meta.mixin-exists(blue-text);
+    foo: meta.mixin-exists("blue-text");
+    foo: meta.mixin-exists(green-text);
+    foo: meta.mixin-exists("green-text");
     foo: meta.mixin-exists(nope);
     foo: meta.mixin-exists("nope");
     foo: g();
     foo: f();
     foo: h();
     p {
-      foo: meta.mixin-exists(red-text); 
-      foo: meta.mixin-exists("red-text"); 
-      foo: meta.mixin-exists(blue-text); 
-      foo: meta.mixin-exists("blue-text"); 
-      foo: meta.mixin-exists(green-text);   
-      foo: meta.mixin-exists("green-text"); 
+      foo: meta.mixin-exists(red-text);
+      foo: meta.mixin-exists("red-text");
+      foo: meta.mixin-exists(blue-text);
+      foo: meta.mixin-exists("blue-text");
+      foo: meta.mixin-exists(green-text);
+      foo: meta.mixin-exists("green-text");
       foo: meta.mixin-exists(nope);
       foo: meta.mixin-exists("nope");
       foo: g();
@@ -63,6 +63,7 @@ div {
   }
 
 }
+
 <===> output.css
 div {
   foo: true;

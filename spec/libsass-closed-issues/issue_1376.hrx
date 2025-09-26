@@ -4,6 +4,7 @@
 
   content: "#{$foo}";
 }
+
 <===> output.css
 .div {
   content: "1, 2, 3";

@@ -1022,7 +1022,6 @@ $ease-in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 // @include border-image(linear-gradient(45deg, orange, yellow) 20 30 40 50 stretch round);
 // @include border-image(radial-gradient(top, cover, orange, yellow, orange));
 
-
 <===> lib/css3/_border-radius.scss
 //************************************************************************//
 // Shorthand Border-radius mixins
@@ -1504,6 +1503,7 @@ $placeholders: '-webkit-input-placeholder',
 //      width: flex-grid(2, 4); // returns (145px / 315px) = 46.031746%;
 //    }
 //  }
+
 <===> lib/functions/_grid-width.scss
 @function grid-width($n) {
   @return $n * $gw-column + ($n - 1) * $gw-gutter;
@@ -1585,7 +1585,6 @@ $placeholders: '-webkit-input-placeholder',
   @return ($pxval / $base) * 1em;
 }
 
-
 <===> lib/functions/_radial-gradient.scss
 // This function is required and used by the background-image mixin.
 @function radial-gradient($G1,        $G2,
@@ -1608,8 +1607,6 @@ $placeholders: '-webkit-input-placeholder',
   $type-gradient: $type, $shape-size $pos, $gradient;
   @return $type-gradient;
 }
-
-
 
 <===> lib/functions/_tint-shade.scss
 // Add percentage of white to a color
@@ -1645,6 +1642,7 @@ $placeholders: '-webkit-input-placeholder',
 		@return $prop;
 	}
 }
+
 <===> lib/helpers/_deprecated-webkit-gradient.scss
 // Render Deprecated Webkit Gradient - Linear || Radial
 //************************************************************************//
