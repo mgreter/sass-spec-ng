@@ -127,6 +127,14 @@ Error: Only 4 positional arguments allowed, but 5 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> positional_and_named/error-libsass
+Error: Only 4 arguments allowed, but 5 were passed.
+  ,
+2 | a {b: list.join(c, d, comma, true, false, $invalid: true)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> unknown_separator/input.scss
