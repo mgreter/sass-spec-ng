@@ -33,6 +33,10 @@ a b {
 
 <===>
 ================================================================================
+<===> weird_indentation/options.yml
+:todo:
+  - libsass#comments
+
 <===> weird_indentation/input.scss
 .foo {
     /* Foo
@@ -61,7 +65,8 @@ should include their own tests for CR LF newlines.
 <===>
 ================================================================================
 <===> converts_newlines/scss/cr/input.scss
-/* foo * bar */
+/* foo
+ * bar */
 
 <===> converts_newlines/scss/cr/output.css
 /* foo
@@ -80,7 +85,8 @@ should include their own tests for CR LF newlines.
 ================================================================================
 <===> converts_newlines/sass/cr/input.sass
 /*
-  foo  bar
+  foo
+  bar
 
 <===> converts_newlines/sass/cr/output.css
 /* foo
