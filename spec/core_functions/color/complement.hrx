@@ -350,6 +350,15 @@ Error: $hue: Because the CSS working group is still deciding on the best behavio
   '
   input.scss 2:7  root stylesheet
 
+<===> error/space/missing/legacy/same/implicit/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: hsl(none 30% 40%).
+  ,
+2 | a {b: color.complement(hsl(none 30% 40%))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/space/missing/legacy/same/explicit/input.scss
@@ -364,6 +373,15 @@ Error: $hue: Because the CSS working group is still deciding on the best behavio
   '
   input.scss 2:7  root stylesheet
 
+<===> error/space/missing/legacy/same/explicit/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: hsl(none 30% 40%).
+  ,
+2 | a {b: color.complement(hsl(none 30% 40%), $space: hsl)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/space/missing/legacy/analogous/hue/input.scss
@@ -372,6 +390,15 @@ a {b: color.complement(hsl(none 30% 40%), $space: lch)}
 
 <===> error/space/missing/legacy/analogous/hue/error
 Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support modifying missing channels (color: lch(38.0910184332% 29.3078189694 none)).
+  ,
+2 | a {b: color.complement(hsl(none 30% 40%), $space: lch)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/space/missing/legacy/analogous/hue/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: lch(38.0910184332% 29.3078189694 none).
   ,
 2 | a {b: color.complement(hsl(none 30% 40%), $space: lch)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -394,6 +421,15 @@ Error: $hue: Because the CSS working group is still deciding on the best behavio
   '
   input.scss 4:7  root stylesheet
 
+<===> error/space/missing/legacy/analogous/lightness/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: lch(none 0 none).
+  ,
+4 | a {b: color.complement(hsl(0deg 50% none), $space: lch)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/space/missing/modern/same/input.scss
@@ -402,6 +438,15 @@ a {b: color.complement(lch(40% 30% none), $space: hsl)}
 
 <===> error/space/missing/modern/same/error
 Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support modifying missing channels (color: hsl(none 46.6772108151% 42.1546574074%)).
+  ,
+2 | a {b: color.complement(lch(40% 30% none), $space: hsl)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/space/missing/modern/same/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: hsl(none 46.6772108151% 42.1546574074%).
   ,
 2 | a {b: color.complement(lch(40% 30% none), $space: hsl)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -422,6 +467,15 @@ Error: $hue: Because the CSS working group is still deciding on the best behavio
   '
   input.scss 2:7  root stylesheet
 
+<===> error/space/missing/modern/analogous/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: lch(40% 45 none).
+  ,
+2 | a {b: color.complement(lch(40% 30% none), $space: lch)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/space/powerless/legacy/explicit/input.scss
@@ -436,6 +490,15 @@ Error: $hue: Because the CSS working group is still deciding on the best behavio
   '
   input.scss 2:7  root stylesheet
 
+<===> error/space/powerless/legacy/explicit/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: hsl(none 0% 50.1960784314%).
+  ,
+2 | a {b: color.complement(grey, $space: hsl)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/space/powerless/modern/input.scss
@@ -444,6 +507,15 @@ a {b: color.complement(lab(50% 0 0), $space: lch)}
 
 <===> error/space/powerless/modern/error
 Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support modifying missing channels (color: lch(50% 0 none)).
+  ,
+2 | a {b: color.complement(lab(50% 0 0), $space: lch)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/space/powerless/modern/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: lch(50% 0 none).
   ,
 2 | a {b: color.complement(lab(50% 0 0), $space: lch)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

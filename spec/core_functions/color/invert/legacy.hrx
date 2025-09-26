@@ -169,6 +169,15 @@ Error: $hue: Because the CSS working group is still deciding on the best behavio
   '
   input.scss 2:7  root stylesheet
 
+<===> space/hsl/missing/analogous/error-libsass
+Error: $hue: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
+modifying missing channels (color: lch(43.192289563% none none).
+  ,
+2 | a {b: color.invert(hsl(30deg none 40%), $space: lch)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> space/hwb/no_missing/input.scss

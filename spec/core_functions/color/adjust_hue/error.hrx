@@ -143,3 +143,12 @@ Error: adjust-hue() is only supported for legacy colors. Please use color.adjust
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> non_legacy/error-libsass
+Error: adjust-hue() is only supported for legacy colors. Please use color.adjust() instead with an explicit $space
+argument.
+  ,
+1 | a {b: adjust-hue(lch(0% 0 0deg), 10deg)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet

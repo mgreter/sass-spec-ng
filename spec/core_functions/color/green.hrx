@@ -184,3 +184,11 @@ Error: color.green() is only supported for legacy colors. Please use color.chann
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/non_legacy/error-libsass
+Error: green() is only supported for legacy colors. Please use color.channel() instead with an explicit $space argument.
+  ,
+2 | a {b: color.green(color(srgb 1 1 1))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet

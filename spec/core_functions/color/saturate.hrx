@@ -559,3 +559,12 @@ Error: saturate() is only supported for legacy colors. Please use color.adjust()
   '
   input.scss 1:7  root stylesheet
 
+<===> error/non_legacy/error-libsass
+Error: saturate() is only supported for legacy colors. Please use color.adjust() instead with an explicit $space
+argument.
+  ,
+1 | a {b: saturate(color(srgb 1 1 1), 10%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
