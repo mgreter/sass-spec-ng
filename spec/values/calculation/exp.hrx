@@ -88,6 +88,19 @@ Error: Expected 1% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/unknown/error-libsass
+Error: $number: Expected 1% to have no units.
+  ,
+1 | a {b: exp(1%)}
+  |           ^^
+  '
+  input.scss 1:11  exp()
+  ,
+1 | a {b: exp(1%)}
+  |       ^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/known/input.scss
@@ -100,6 +113,19 @@ Error: Expected 1px to have no units.
   |       ^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/unit/known/error-libsass
+Error: $number: Expected 1px to have no units.
+  ,
+1 | a {b: exp(1px)}
+  |           ^^^
+  '
+  input.scss 1:11  exp()
+  ,
+1 | a {b: exp(1px)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
