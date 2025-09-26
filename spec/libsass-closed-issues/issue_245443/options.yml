@@ -1,3 +1,4 @@
 ---
 :todo:
-- lint-hrx
+  - lint-hrx
+  - libsass#unicode

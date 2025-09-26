@@ -194,6 +194,10 @@ a {
 
 <===>
 ================================================================================
+<===> sourcemap/between_loads/options.yml
+:todo:
+  - libsass#whitespace
+
 <===> sourcemap/between_loads/input.scss
 @use 'sass:math';
 /*# sourceMappingURL=whatever */
@@ -290,6 +294,10 @@ Error: Undefined variable.
 
 <===>
 ================================================================================
+<===> error/loud/sass/content_after_close/single_line/options.yml
+:todo:
+  - libsass#error-msg
+
 <===> error/loud/sass/content_after_close/single_line/input.sass
 /* */ a
 
@@ -304,6 +312,10 @@ Error: Unexpected text after end of comment
 
 <===>
 ================================================================================
+<===> error/loud/sass/content_after_close/multi_line/options.yml
+:todo:
+  - libsass#error-msg
+
 <===> error/loud/sass/content_after_close/multi_line/input.sass
 /*
   */

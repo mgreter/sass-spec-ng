@@ -14,6 +14,10 @@ a {
 
 <===>
 ================================================================================
+<===> unsimplified/options.yml
+:todo:
+  - libsass#calc
+
 <===> unsimplified/input.scss
 a {b: calc-size(auto, 5% - 20px + size)}
 
@@ -24,6 +28,10 @@ a {
 
 <===>
 ================================================================================
+<===> simplified/options.yml
+:todo:
+  - libsass#calc
+
 <===> simplified/input.scss
 a {b: calc-size(auto, 100px - 20px + size)}
 
@@ -34,6 +42,10 @@ a {
 
 <===>
 ================================================================================
+<===> case_insensitive/options.yml
+:todo:
+  - libsass#calc
+
 <===> case_insensitive/input.scss
 a {b: CaLc-size(auto, size - 20px)}
 
@@ -55,6 +67,10 @@ a {
 
 <===>
 ================================================================================
+<===> error/too_few_args/options.yml
+:todo:
+  - libsass#calc
+
 <===> error/too_few_args/input.scss
 a {b: calc-size()}
 
@@ -94,6 +110,10 @@ Error: Expected identifier.
 
 <===>
 ================================================================================
+<===> error/sass_script/options.yml
+:todo:
+  - libsass#calc
+
 <===> error/sass_script/input.scss
 a {b: calc-size(auto, 7 % 3)}
 

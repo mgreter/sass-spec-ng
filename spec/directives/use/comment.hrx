@@ -175,6 +175,10 @@ $a: 1 !default
 
 <===>
 ================================================================================
+<===> after_close_paren/loud/options.yml
+:todo:
+  - libsass#parser
+
 <===> after_close_paren/loud/input.scss
 @use "other" with ($a: b) /**/
 
@@ -185,6 +189,11 @@ $a: 1 !default
 
 <===>
 ================================================================================
+<===> after_close_paren/silent/options.yml
+:todo:
+  - libsass#parser
+
+
 <===> after_close_paren/silent/input.scss
 @use "other" with ($a: b) //
 
