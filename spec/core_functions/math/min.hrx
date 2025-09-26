@@ -215,6 +215,14 @@ Error: At least one argument must be passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: min() must have at least one argument.
+  ,
+2 | a {b: math.min()}
+  |       ^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/incompatible_units/input.scss
