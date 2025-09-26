@@ -145,6 +145,14 @@ Error: Unknown gamut map method "c".
   '
   input.scss 2:7  root stylesheet
 
+<===> method/unknown/error-libsass
+Error: $method: Unknown gamut map method "c".
+  ,
+2 | a {b: color.to-gamut(pink, $method: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> method/quoted/input.scss

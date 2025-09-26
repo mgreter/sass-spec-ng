@@ -10,6 +10,19 @@ Error: Expected hue channel to be a number, was "foo".
   '
   input.scss 2:7  root stylesheet
 
+<===> hue/type/error-libsass
+Error: $channels: Expected hue channel to be a number, was "foo".
+  ,
+2 | a {b: color.hwb("foo", 30%, 40%, 0.5)}
+  |                 ^^^^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb("foo", 30%, 40%, 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> whiteness/type/input.scss
@@ -23,6 +36,19 @@ Error: Expected whiteness channel to be a number, was "foo".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> whiteness/type/error-libsass
+Error: $channels: Expected whiteness channel to be a number, was "foo".
+  ,
+2 | a {b: color.hwb(0, "foo", 40%, 0.5)}
+  |                    ^^^^^
+  '
+  input.scss 2:20  hwb()
+  ,
+2 | a {b: color.hwb(0, "foo", 40%, 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -91,6 +117,19 @@ Error: Expected blackness channel to be a number, was "foo".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> blackness/type/error-libsass
+Error: $channels: Expected blackness channel to be a number, was "foo".
+  ,
+2 | a {b: color.hwb(0, 30%, "foo", 0.5)}
+  |                         ^^^^^
+  '
+  input.scss 2:25  hwb()
+  ,
+2 | a {b: color.hwb(0, 30%, "foo", 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
