@@ -326,6 +326,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: hypot() must have at least one argument.
+  ,
+1 | a {b: hypot()}
+  |       ^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/syntax/invalid_arg/input.scss
