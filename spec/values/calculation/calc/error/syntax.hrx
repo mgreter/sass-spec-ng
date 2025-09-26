@@ -9,6 +9,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> empty/error-libsass
+Error: Missing argument $number.
+  ,
+1 | a {b: calc()}
+  |       ^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> leading_operator/input.scss

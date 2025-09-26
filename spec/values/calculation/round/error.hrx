@@ -15,6 +15,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> too_few_args/error-libsass
+Error: Missing argument $number.
+  ,
+1 | a {b: round()}
+  |       ^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_many_args/input.scss

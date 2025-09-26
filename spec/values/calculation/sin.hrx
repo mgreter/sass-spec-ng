@@ -180,6 +180,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $angle.
+  ,
+1 | a {b: sin()}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss

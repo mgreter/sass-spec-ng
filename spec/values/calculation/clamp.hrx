@@ -15,6 +15,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/syntax/no_args/error-libsass
+Error: Missing argument $number.
+  ,
+1 | a {b: clamp()}
+  |       ^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/syntax/one_arg/input.scss

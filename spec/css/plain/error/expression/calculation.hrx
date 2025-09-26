@@ -132,3 +132,16 @@ Error: Missing argument.
   '
   plain.css 1:7   @use
   input.scss 1:1  root stylesheet
+
+<===> wrong_args/error-libsass
+Error: Missing argument $number.
+  ,
+1 | a {b: calc()}
+  |       ^^^^^^
+  '
+  plain.css 1:7   @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
