@@ -47,6 +47,14 @@ Error: Expected "in".
   '
   input.sass 2:10  root stylesheet
 
+<===> error/sass/multiline/after-variable/error-libsass
+Error: Expected "in".
+  ,
+2 | @each $a
+  |         ^
+  '
+  input.sass 2:9  root stylesheet
+
 <===>
 ================================================================================
 <===> error/sass/multiline/after-in/input.sass

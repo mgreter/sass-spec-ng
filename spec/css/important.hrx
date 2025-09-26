@@ -14,7 +14,7 @@ Error: Expected "important".
 <===> error/syntax/eof_after_bang/error-libsass
 Error: Expected "important".
   ,
-4 |
+5 |
   | ^
   '
-  input.scss 4:1  root stylesheet
+  input.scss 5:1  root stylesheet

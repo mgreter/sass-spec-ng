@@ -73,3 +73,11 @@ Error: Expected expression.
   |       ^
   '
   input.sass 4:7  root stylesheet
+
+<===> error/if-statement-unwrapped-multiline/error-libsass
+Error: Expected expression.
+  ,
+4 |   @if
+  |      ^
+  '
+  input.sass 4:6  root stylesheet

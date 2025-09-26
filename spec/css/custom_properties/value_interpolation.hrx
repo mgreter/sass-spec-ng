@@ -162,3 +162,11 @@ Error: expected "}".
   |            ^
   '
   input.sass 2:12  root stylesheet
+
+<===> error/sass/linebreak-interpolation/error-libsass
+Error: expected "}".
+  ,
+2 |   --b: #{1
+  |           ^
+  '
+  input.sass 2:11  root stylesheet
