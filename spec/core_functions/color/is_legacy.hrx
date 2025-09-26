@@ -234,8 +234,6 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
-<===> error/too_few_args/error 
-
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss

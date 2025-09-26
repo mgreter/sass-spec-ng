@@ -278,8 +278,6 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
-<===> error/too_few_args/error 
-
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -368,3 +366,15 @@ Error: $space: Expected "hsl" to be an unquoted string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/quoted/error-libsass
+Error: $space: Expected "hsl" to be an unquoted string.
+  ,
+2 | a {b: color.is-in-gamut(rgb(0 255 0), "hsl")}
+  |                                       ^^^^^
+  '
+  input.scss 2:39  is-in-gamut()
+  ,
+2 | a {b: color.is-in-gamut(rgb(0 255 0), "hsl")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
