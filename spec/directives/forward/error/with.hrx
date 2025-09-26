@@ -16,6 +16,24 @@ Error: This variable was not declared with !default in the @used module.
   _midstream.scss 1:27  @use
   input.scss 1:1        root stylesheet
 
+<===> undefined/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "upstream" with ($a: b);
+  |                           ^^^^^
+  '
+  _midstream.scss 1:27  @forward
+  ,
+1 | @forward "upstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1        root stylesheet
+
 <===>
 ================================================================================
 <===> not_default/input.scss
@@ -34,6 +52,24 @@ Error: This variable was not declared with !default in the @used module.
   |                           ^^^^^
   '
   _midstream.scss 1:27  @use
+  input.scss 1:1        root stylesheet
+
+<===> not_default/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "upstream" with ($a: b);
+  |                           ^^^^^
+  '
+  _midstream.scss 1:27  @forward
+  ,
+1 | @forward "upstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
   input.scss 1:1        root stylesheet
 
 <===>
@@ -60,6 +96,24 @@ Error: This variable was not declared with !default in the @used module.
   _downstream.scss 1:28  @use
   input.scss 1:1         root stylesheet
 
+<===> namespace/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "midstream" with ($a: b);
+  |                            ^^^^^
+  '
+  _downstream.scss 1:28  @forward
+  ,
+1 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _downstream.scss 1:1   @use
+  ,
+1 | @use "downstream";
+  | ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1         root stylesheet
+
 <===>
 ================================================================================
 <===> nested/input.scss
@@ -78,6 +132,24 @@ Error: This variable was not declared with !default in the @used module.
   |                           ^^^^^
   '
   _midstream.scss 1:27  @use
+  input.scss 1:1        root stylesheet
+
+<===> nested/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "upstream" with ($a: b);
+  |                           ^^^^^
+  '
+  _midstream.scss 1:27  @forward
+  ,
+1 | @forward "upstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
   input.scss 1:1        root stylesheet
 
 <===>
@@ -485,6 +557,19 @@ Error: This variable was not declared with !default in the @used module.
   '
   input.scss 1:28  root stylesheet
 
+<===> through_forward/show/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "midstream" with ($a: b);
+  |                            ^^^^^
+  '
+  input.scss 1:28  @forward
+  ,
+1 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/hide/input.scss
@@ -503,6 +588,19 @@ Error: This variable was not declared with !default in the @used module.
   |                            ^^^^^
   '
   input.scss 1:28  root stylesheet
+
+<===> through_forward/hide/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "midstream" with ($a: b);
+  |                            ^^^^^
+  '
+  input.scss 1:28  @forward
+  ,
+1 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
 
 <===>
 ================================================================================
@@ -523,6 +621,19 @@ Error: This variable was not declared with !default in the @used module.
   '
   input.scss 1:28  root stylesheet
 
+<===> through_forward/as/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "midstream" with ($a: b);
+  |                            ^^^^^
+  '
+  input.scss 1:28  @forward
+  ,
+1 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/with/input.scss
@@ -541,3 +652,16 @@ Error: This variable was not declared with !default in the @used module.
   |                            ^^^^^
   '
   input.scss 1:28  root stylesheet
+
+<===> through_forward/with/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @forward "midstream" with ($a: b);
+  |                            ^^^^^
+  '
+  input.scss 1:28  @forward
+  ,
+1 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
