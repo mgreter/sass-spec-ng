@@ -22,3 +22,16 @@ Error: $string: null is not a string.
   |              ^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 8:14  root stylesheet
+
+<===> error-libsass
+Error: $string: null is not a string.
+  ,
+3 | $foo: null;
+  |       ^^^^
+  '
+  input.scss 3:7   unquote()
+  ,
+8 |     unquote: string.unquote($foo);
+  |              ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 8:14  root stylesheet

@@ -13,6 +13,19 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> undefined/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("other", $with: (a: b));
+  |                                         ^
+  '
+  input.scss 2:41  load-css()
+  ,
+2 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+
 <===>
 ================================================================================
 <===> not_default/input.scss
@@ -29,6 +42,19 @@ Error: $a was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+
+<===> not_default/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("other", $with: (a: b));
+  |                                         ^
+  '
+  input.scss 2:41  load-css()
+  ,
+2 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 
 <===>
 ================================================================================
@@ -51,6 +77,19 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> namespace/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("midstream", $with: (a: b));
+  |                                             ^
+  '
+  input.scss 2:45  load-css()
+  ,
+2 | @include meta.load-css("midstream", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+
 <===>
 ================================================================================
 <===> nested/input.scss
@@ -67,6 +106,19 @@ Error: $a was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+
+<===> nested/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("other", $with: (a: b));
+  |                                         ^
+  '
+  input.scss 2:41  load-css()
+  ,
+2 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 
 <===>
 ================================================================================
@@ -157,6 +209,14 @@ Error: _other.scss was already loaded, so it can't be configured using "with".
   '
   input.scss 3:1  root stylesheet
 
+<===> multi_configuration/double_load/both_configured/error-libsass
+Error: _other.scss was already loaded, so it can't be configured using "with".
+  ,
+3 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1  root stylesheet
+
 <===>
 ================================================================================
 <===> multi_configuration/double_load/unconfigured_first/input.scss
@@ -174,6 +234,14 @@ Error: _other.scss was already loaded, so it can't be configured using "with".
   | =============================== original load
 3 | @include meta.load-css("other", $with: (a: b));
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
+  '
+  input.scss 3:1  root stylesheet
+
+<===> multi_configuration/double_load/unconfigured_first/error-libsass
+Error: _other.scss was already loaded, so it can't be configured using "with".
+  ,
+3 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:1  root stylesheet
 
@@ -208,6 +276,19 @@ Error: This module was already loaded, so it can't be configured using "with".
   _midstream.scss 1:1  load-css()
   input.scss 3:1       root stylesheet
 
+<===> multi_configuration/double_load/through_forward/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @forward "forwarded";
+  | ^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1  load-css()
+  ,
+3 | @include meta.load-css("midstream", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1       root stylesheet
+
 <===>
 ================================================================================
 <===> multi_configuration/use_and_load/both_configured/input.scss
@@ -225,6 +306,14 @@ Error: _other.scss was already loaded, so it can't be configured using "with".
   | ========================= original load
 3 | @include meta.load-css("other", $with: (a: b));
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
+  '
+  input.scss 3:1  root stylesheet
+
+<===> multi_configuration/use_and_load/both_configured/error-libsass
+Error: _other.scss was already loaded, so it can't be configured using "with".
+  ,
+3 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:1  root stylesheet
 
@@ -255,6 +344,14 @@ Error: This module was already loaded, so it can't be configured using "with".
   '
   input.scss 4:1  root stylesheet
 
+<===> multi_configuration/use_and_load/load_first/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+4 | @use "other" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:1  root stylesheet
+
 <===>
 ================================================================================
 <===> multi_configuration/use_and_load/unconfigured_first/input.scss
@@ -272,6 +369,14 @@ Error: _other.scss was already loaded, so it can't be configured using "with".
   | ============ original load
 3 | @include meta.load-css("other", $with: (a: b));
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
+  '
+  input.scss 3:1  root stylesheet
+
+<===> multi_configuration/use_and_load/unconfigured_first/error-libsass
+Error: _other.scss was already loaded, so it can't be configured using "with".
+  ,
+3 | @include meta.load-css("other", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:1  root stylesheet
 
@@ -306,6 +411,19 @@ Error: This module was already loaded, so it can't be configured using "with".
   _midstream.scss 1:1  load-css()
   input.scss 3:1       root stylesheet
 
+<===> multi_configuration/use_and_load/through_forward/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @forward "forwarded";
+  | ^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1  load-css()
+  ,
+3 | @include meta.load-css("midstream", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1       root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/show/input.scss
@@ -325,6 +443,19 @@ Error: $a was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+
+<===> through_forward/show/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 
 <===>
 ================================================================================
@@ -346,6 +477,19 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> through_forward/hide/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/as/input.scss
@@ -366,6 +510,19 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> through_forward/as/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/with/input.scss
@@ -385,3 +542,16 @@ Error: $a was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+
+<===> through_forward/with/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet

@@ -19,3 +19,11 @@ Error: Duplicate key.
   |   ^^^^^^^^^^^ second key
   '
   input.scss 5:3  root stylesheet
+
+<===> error-libsass
+Error: Duplicate key.
+  ,
+5 |   #{re}#{'d'}: 'baz',
+  |   ^^^^^^^^^^^
+  '
+  input.scss 5:3  root stylesheet

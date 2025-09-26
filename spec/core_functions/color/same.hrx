@@ -196,6 +196,14 @@ Error: Missing argument $color2.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color2.
+  ,
+2 | a {b: color.same(plum)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -214,6 +222,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: color.same(red, green, blue)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/color1/input.scss
@@ -228,6 +244,19 @@ Error: $color1: 1 is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/color1/error-libsass
+Error: $color1: 1 is not a color.
+  ,
+2 | a {b: color.same(1, red)}
+  |                  ^
+  '
+  input.scss 2:18  same()
+  ,
+2 | a {b: color.same(1, red)}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/color2/input.scss
@@ -241,3 +270,16 @@ Error: $color2: 1 is not a color.
   |       ^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/color2/error-libsass
+Error: $color2: 1 is not a color.
+  ,
+2 | a {b: color.same(red, 1)}
+  |                       ^
+  '
+  input.scss 2:23  same()
+  ,
+2 | a {b: color.same(red, 1)}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

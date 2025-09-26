@@ -13,3 +13,11 @@ Error: expected selector.
   |        = error in interpolated output
   '
   input.scss 2:10  root stylesheet
+
+<===> error-libsass
+Error: expected selector.
+  ,
+2 | .test11@bar { content: '1.1'}
+  |        ^
+  '
+  input.scss 2:8  root stylesheet

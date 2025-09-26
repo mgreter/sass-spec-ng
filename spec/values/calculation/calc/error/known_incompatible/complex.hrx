@@ -22,6 +22,19 @@ Error: Number calc(1 / 1px) isn't compatible with CSS calculations.
   '
   input.scss 1:12  root stylesheet
 
+<===> unitless/and_denominator/error-libsass
+Error: Number calc(1 / 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1 + 1/1px)}
+  |                ^^^^^
+  '
+  input.scss 1:16  root stylesheet
+  ,
+1 | a {b: calc(1 + 1/1px)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> numerator_and_denominator/input.scss
@@ -29,6 +42,19 @@ a {b: calc(1px + 1/1px)}
 
 <===> numerator_and_denominator/error
 Error: Number calc(1 / 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1px + 1/1px)}
+  |            ^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> numerator_and_denominator/error-libsass
+Error: Number calc(1 / 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1px + 1/1px)}
+  |                  ^^^^^
+  '
+  input.scss 1:18  root stylesheet
   ,
 1 | a {b: calc(1px + 1/1px)}
   |            ^^^^^^^^^^^
@@ -48,6 +74,19 @@ Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
   '
   input.scss 1:12  root stylesheet
 
+<===> numerator_and_numerators/error-libsass
+Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1px + 1px*1px)}
+  |                  ^^^^^^^
+  '
+  input.scss 1:18  root stylesheet
+  ,
+1 | a {b: calc(1px + 1px*1px)}
+  |            ^^^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> denominator_and_denominators/input.scss
@@ -55,6 +94,19 @@ a {b: calc(1/1px + 1/1px/1px)}
 
 <===> denominator_and_denominators/error
 Error: Number calc(1 / 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1/1px + 1/1px/1px)}
+  |            ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> denominator_and_denominators/error-libsass
+Error: Number calc(1 / 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1/1px + 1/1px/1px)}
+  |            ^^^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1/1px + 1/1px/1px)}
   |            ^^^^^^^^^^^^^^^^^
@@ -74,6 +126,19 @@ Error: Number calc(1px * 1s) isn't compatible with CSS calculations.
   '
   input.scss 1:12  root stylesheet
 
+<===> mismatched_numerators/error-libsass
+Error: Number calc(1px * 1s) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1px*1s + 1px*1px)}
+  |            ^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1px*1s + 1px*1px)}
+  |            ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> mismatched_denominators/input.scss
@@ -81,6 +146,19 @@ a {b: calc(1/1px/1s + 1/1px/1px)}
 
 <===> mismatched_denominators/error
 Error: Number calc(1 / 1px / 1s) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1/1px/1s + 1/1px/1px)}
+  |            ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
+<===> mismatched_denominators/error-libsass
+Error: Number calc(1 / 1px / 1s) isn't compatible with CSS calculations.
+  ,
+1 | a {b: calc(1/1px/1s + 1/1px/1px)}
+  |            ^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
   ,
 1 | a {b: calc(1/1px/1s + 1/1px/1px)}
   |            ^^^^^^^^^^^^^^^^^^^^

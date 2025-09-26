@@ -18,3 +18,16 @@ Error: Undefined variable.
   '
   input.scss 3:57  import-google-fonts()
   input.scss 7:3   root stylesheet
+
+<===> error-libsass
+Error: Undefined variable.
+  ,
+3 |   @import url("http://fonts.googleapis.com/css?family=#{$family}");
+  |                                                         ^^^^^^^
+  '
+  input.scss 3:57  import-google-fonts()
+  ,
+7 |   @include import-google-fonts();
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 7:3   root stylesheet

@@ -8,3 +8,11 @@ Error: expected "}".
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error-libsass
+Error: expected "}".
+  ,
+1 | ????????{a:c
+  |             ^
+  '
+  input.scss 1:13  root stylesheet

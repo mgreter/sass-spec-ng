@@ -14,3 +14,16 @@ Error: The parent selector isn't allowed in plain CSS.
   '
   plain.css 2:6   @use
   input.scss 1:1  root stylesheet
+
+<===> error-libsass
+Error: The parent selector isn't allowed in plain CSS.
+  ,
+2 |   x: &;
+  |      ^
+  '
+  plain.css 2:6   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet

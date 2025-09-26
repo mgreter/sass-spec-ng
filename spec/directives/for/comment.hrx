@@ -32,6 +32,14 @@ Error: expected "$".
   '
   input.sass 1:8  root stylesheet
 
+<===> error/before_var/silent/sass/error-libsass
+Error: expected "$".
+  ,
+2 |   $i from 1 through 10
+  |                       ^
+  '
+  input.sass 2:23  root stylesheet
+
 <===>
 ================================================================================
 <===> error/before_from/silent/sass/input.sass
@@ -45,6 +53,14 @@ Error: Expected "from".
   |           ^
   '
   input.sass 1:11  root stylesheet
+
+<===> error/before_from/silent/sass/error-libsass
+Error: Expected "from".
+  ,
+2 |   from 1 through 10
+  |                    ^
+  '
+  input.sass 2:20  root stylesheet
 
 <===>
 ================================================================================
@@ -60,6 +76,14 @@ Error: Expected expression.
   '
   input.sass 1:14  root stylesheet
 
+<===> error/after_from/silent/sass/error-libsass
+Error: Expected expression.
+  ,
+2 |   1 through 10
+  |               ^
+  '
+  input.sass 2:15  root stylesheet
+
 <===>
 ================================================================================
 <===> error/before_through/silent/sass/input.sass
@@ -74,6 +98,14 @@ Error: Expected "to" or "through".
   '
   input.sass 1:16  root stylesheet
 
+<===> error/before_through/silent/sass/error-libsass
+Error: Expected "to" or "through".
+  ,
+2 |   through 10
+  |             ^
+  '
+  input.sass 2:13  root stylesheet
+
 <===>
 ================================================================================
 <===> error/after_through/silent/sass/input.sass
@@ -87,6 +119,14 @@ Error: Expected expression.
   |                        ^^
   '
   input.sass 1:24  root stylesheet
+
+<===> error/after_through/silent/sass/error-libsass
+Error: Expected expression.
+  ,
+2 |   10
+  |     ^
+  '
+  input.sass 2:5  root stylesheet
 
 <===>
 ================================================================================

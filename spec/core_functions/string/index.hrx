@@ -129,6 +129,19 @@ Error: $string: 1 is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/string/error-libsass
+Error: $string: 1 is not a string.
+  ,
+2 | a {b: string.index(1, "c")}
+  |                    ^
+  '
+  input.scss 2:20  str-index()
+  ,
+2 | a {b: string.index(1, "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/substring/input.scss
@@ -142,6 +155,19 @@ Error: $substring: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/substring/error-libsass
+Error: $substring: 1 is not a string.
+  ,
+2 | a {b: string.index("c", 1)}
+  |                         ^
+  '
+  input.scss 2:25  str-index()
+  ,
+2 | a {b: string.index("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -161,6 +187,14 @@ Error: Missing argument $substring.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $substring.
+  ,
+2 | a {b: string.index("c")}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -176,5 +210,13 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:string
 1 | @function index($string, $substring) {
   |           ========================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: string.index("c", "d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

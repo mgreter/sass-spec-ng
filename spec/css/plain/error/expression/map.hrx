@@ -14,3 +14,16 @@ Error: expected ")".
   '
   plain.css 2:8   @use
   input.scss 1:1  root stylesheet
+
+<===> error-libsass
+Error: expected ")".
+  ,
+2 |   x: (y: z);
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet

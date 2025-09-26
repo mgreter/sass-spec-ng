@@ -10,6 +10,19 @@ Error: $color: c is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> color/type/error-libsass
+Error: $color: c is not a color.
+  ,
+2 | a {b: color.to-gamut(c, $method: local-minde)}
+  |                      ^
+  '
+  input.scss 2:22  to-gamut()
+  ,
+2 | a {b: color.to-gamut(c, $method: local-minde)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> space/type/input.scss
@@ -23,6 +36,19 @@ Error: $space: red is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> space/type/error-libsass
+Error: $space: red is not a string.
+  ,
+2 | a {b: color.to-gamut(pink, $space: red, $method: local-minde)}
+  |                                    ^^^
+  '
+  input.scss 2:36  to-gamut()
+  ,
+2 | a {b: color.to-gamut(pink, $space: red, $method: local-minde)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $space: Unknown color space "c".
   '
   input.scss 2:7  root stylesheet
 
+<===> space/unknown/error-libsass
+Error: $space: Unknown color space "c".
+  ,
+2 | a {b: color.to-gamut(pink, $space: c, $method: local-minde)}
+  |                                    ^
+  '
+  input.scss 2:36  to-gamut()
+  ,
+2 | a {b: color.to-gamut(pink, $space: c, $method: local-minde)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> space/quoted/input.scss
@@ -52,6 +91,19 @@ Error: $space: Expected "rgb" to be an unquoted string.
   '
   input.scss 2:7  root stylesheet
 
+<===> space/quoted/error-libsass
+Error: $space: Expected "rgb" to be an unquoted string.
+  ,
+2 | a {b: color.to-gamut(pink, $space: "rgb", $method: local-minde)}
+  |                                    ^^^^^
+  '
+  input.scss 2:36  to-gamut()
+  ,
+2 | a {b: color.to-gamut(pink, $space: "rgb", $method: local-minde)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> method/type/input.scss
@@ -65,6 +117,19 @@ Error: $method: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> method/type/error-libsass
+Error: $method: 1 is not a string.
+  ,
+2 | a {b: color.to-gamut(pink, $method: 1)}
+  |                                     ^
+  '
+  input.scss 2:37  to-gamut()
+  ,
+2 | a {b: color.to-gamut(pink, $method: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -93,6 +158,19 @@ Error: $method: Expected "clip" to be an unquoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> method/quoted/error-libsass
+Error: $method: Expected "clip" to be an unquoted string.
+  ,
+2 | a {b: color.to-gamut(pink, $method: "clip")}
+  |                                     ^^^^^^
+  '
+  input.scss 2:37  to-gamut()
+  ,
+2 | a {b: color.to-gamut(pink, $method: "clip")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -144,6 +222,14 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
+<===> too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.to-gamut()}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_many_args/input.scss
@@ -159,5 +245,13 @@ Error: Only 3 arguments allowed, but 4 were passed.
   ,--> sass:color
 1 | @function to-gamut($color, $space: null, $method: null) {
   |           ============================================= declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: color.to-gamut(red, rgb, clip, c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

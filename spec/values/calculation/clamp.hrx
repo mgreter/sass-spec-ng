@@ -135,6 +135,19 @@ Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
   '
   input.scss 1:13  root stylesheet
 
+<===> error/complex_unit/error-libsass
+Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: clamp(1px*1px, 2%*2%, 3px*3px)}
+  |             ^^^^^^^
+  '
+  input.scss 1:13  clamp()
+  ,
+1 | a {b: clamp(1px*1px, 2%*2%, 3px*3px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> simplified/lower_bound/far_below/input.scss

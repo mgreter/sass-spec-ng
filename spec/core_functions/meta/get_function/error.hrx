@@ -10,6 +10,19 @@ Error: $name: 2px is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/type/name/error-libsass
+Error: $name: 2px is not a string.
+  ,
+2 | a {b: meta.get-function(2px)}
+  |                         ^^^
+  '
+  input.scss 2:25  get-function()
+  ,
+2 | a {b: meta.get-function(2px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> argument/type/module/input.scss
@@ -23,6 +36,19 @@ Error: $module: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> argument/type/module/error-libsass
+Error: $module: 1 is not a string.
+  ,
+2 | a {b: meta.get-function(c, $module: 1)}
+  |                                     ^
+  '
+  input.scss 2:37  get-function()
+  ,
+2 | a {b: meta.get-function(c, $module: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -43,6 +69,19 @@ Error: $name: get-function("foo") is not a string.
   '
   input.scss 7:7  root stylesheet
 
+<===> argument/function_ref/error-libsass
+Error: $name: get-function("foo") is not a string.
+  ,
+6 | $foo-ref: meta.get-function(foo);
+  |           ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 6:11  get-function()
+  ,
+7 | a {b: meta.get-function($foo-ref)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 7:7   root stylesheet
+
 <===>
 ================================================================================
 <===> argument/too_few/input.scss
@@ -60,6 +99,14 @@ Error: Missing argument $name.
   '
   input.scss 1:7  root stylesheet
 
+<===> argument/too_few/error-libsass
+Error: Missing argument $name.
+  ,
+1 | a {b: get-function()}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> argument/too_many/input.scss
@@ -74,6 +121,14 @@ Error: Only 3 arguments allowed, but 4 were passed.
   ,--> sass:meta
 1 | @function get-function($name, $css: false, $module: null) {
   |           =============================================== declaration
+  '
+  input.scss 1:7  root stylesheet
+
+<===> argument/too_many/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+1 | a {b: get-function(c, true, d, e)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
 
@@ -114,6 +169,19 @@ Error: Function not found: d
   '
   input.scss 4:16  root stylesheet
 
+<===> through_forward/show/error-libsass
+Error: Function not found: d
+  ,
+4 |   b: meta.call(meta.get-function(d));
+  |                ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:16  call()
+  ,
+4 |   b: meta.call(meta.get-function(d));
+  |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:6   root stylesheet
+
 <===>
 ================================================================================
 <===> through_forward/hide/input.scss
@@ -137,6 +205,19 @@ Error: Function not found: c
   '
   input.scss 4:16  root stylesheet
 
+<===> through_forward/hide/error-libsass
+Error: Function not found: c
+  ,
+4 |   b: meta.call(meta.get-function(c));
+  |                ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:16  call()
+  ,
+4 |   b: meta.call(meta.get-function(c));
+  |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:6   root stylesheet
+
 <===>
 ================================================================================
 <===> division/input.scss
@@ -148,6 +229,14 @@ Error: get-function("rgb") isn't a valid CSS value.
   ,
 2 | a {b: meta.get-function(rgb) / meta.get-function(lighten)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===> division/error-libsass
+Error: get-function("rgb") isn't a valid CSS value.
+  ,
+2 | a {b: meta.get-function(rgb) / meta.get-function(lighten)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
 
@@ -168,6 +257,19 @@ $add-two-fn: meta.get-function(add-two);
 
 <===> function_exists/error
 Error: $name: get-function("add-two") is not a string.
+   ,
+10 |   error: meta.get-function($add-two-fn);
+   |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   '
+  input.scss 10:10  root stylesheet
+
+<===> function_exists/error-libsass
+Error: $name: get-function("add-two") is not a string.
+  ,
+7 | $add-two-fn: meta.get-function(add-two);
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 7:14   get-function()
    ,
 10 |   error: meta.get-function($add-two-fn);
    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

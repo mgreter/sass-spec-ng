@@ -110,6 +110,19 @@ Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
   '
   input.scss 1:11  root stylesheet
 
+<===> error/complex_unit/error-libsass
+Error: Number calc(1px * 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: max(1px*1px, 2%*2%)}
+  |           ^^^^^^^
+  '
+  input.scss 1:11  max()
+  ,
+1 | a {b: max(1px*1px, 2%*2%)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> extra_whitespace/number/input.scss

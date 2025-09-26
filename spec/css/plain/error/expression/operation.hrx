@@ -15,6 +15,19 @@ Error: Operators aren't allowed in plain CSS.
   plain.css 2:8   @use
   input.scss 1:1  root stylesheet
 
+<===> addition/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y + z;
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> subtraction/input.scss
@@ -32,6 +45,19 @@ Error: Operators aren't allowed in plain CSS.
   |        ^
   '
   plain.css 2:8   @use
+  input.scss 1:1  root stylesheet
+
+<===> subtraction/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y - z;
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet
 
 <===>
@@ -53,6 +79,19 @@ Error: Operators aren't allowed in plain CSS.
   plain.css 2:8   @use
   input.scss 1:1  root stylesheet
 
+<===> multiplication/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y * z;
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> modulo/input.scss
@@ -70,6 +109,19 @@ Error: Operators aren't allowed in plain CSS.
   |        ^
   '
   plain.css 2:8   @use
+  input.scss 1:1  root stylesheet
+
+<===> modulo/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y % z;
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet
 
 <===>
@@ -91,6 +143,19 @@ Error: Operators aren't allowed in plain CSS.
   plain.css 2:8   @use
   input.scss 1:1  root stylesheet
 
+<===> less_than/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y < z;
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> less_than_or_equal/input.scss
@@ -108,6 +173,19 @@ Error: Operators aren't allowed in plain CSS.
   |        ^^
   '
   plain.css 2:8   @use
+  input.scss 1:1  root stylesheet
+
+<===> less_than_or_equal/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y <= z;
+  |        ^^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet
 
 <===>
@@ -129,6 +207,19 @@ Error: Operators aren't allowed in plain CSS.
   plain.css 2:8   @use
   input.scss 1:1  root stylesheet
 
+<===> greater_than/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y > z;
+  |        ^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> greater_than_or_equal/input.scss
@@ -146,6 +237,19 @@ Error: Operators aren't allowed in plain CSS.
   |        ^^
   '
   plain.css 2:8   @use
+  input.scss 1:1  root stylesheet
+
+<===> greater_than_or_equal/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y >= z;
+  |        ^^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet
 
 <===>
@@ -167,6 +271,19 @@ Error: Operators aren't allowed in plain CSS.
   plain.css 2:8   @use
   input.scss 1:1  root stylesheet
 
+<===> equals/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y == z;
+  |        ^^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> not_equals/input.scss
@@ -184,4 +301,17 @@ Error: Operators aren't allowed in plain CSS.
   |        ^^
   '
   plain.css 2:8   @use
+  input.scss 1:1  root stylesheet
+
+<===> not_equals/error-libsass
+Error: Operators aren't allowed in plain CSS.
+  ,
+2 |   x: y != z;
+  |        ^^
+  '
+  plain.css 2:8   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet

@@ -38,6 +38,19 @@ Error: $whiteness: Expected 30 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> whiteness/unit/none/error-libsass
+Error: $whiteness: Expected 30 to have unit "%".
+  ,
+2 | a {b: color.hwb(0, 30, 40%, 0.5)}
+  |                    ^^
+  '
+  input.scss 2:20  hwb()
+  ,
+2 | a {b: color.hwb(0, 30, 40%, 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> whiteness/unit/wrong/input.scss
@@ -51,6 +64,19 @@ Error: $whiteness: Expected 30px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> whiteness/unit/wrong/error-libsass
+Error: $whiteness: Expected 30px to have unit "%".
+  ,
+2 | a {b: color.hwb(0, 30px, 40%, 0.5)}
+  |                    ^^^^
+  '
+  input.scss 2:20  hwb()
+  ,
+2 | a {b: color.hwb(0, 30px, 40%, 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -80,6 +106,19 @@ Error: $blackness: Expected 40 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> blackness/unit/none/error-libsass
+Error: $blackness: Expected 40 to have unit "%".
+  ,
+2 | a {b: color.hwb(0, 30%, 40, 0.5)}
+  |                         ^^
+  '
+  input.scss 2:25  hwb()
+  ,
+2 | a {b: color.hwb(0, 30%, 40, 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> blackness/unit/wrong/input.scss
@@ -94,6 +133,19 @@ Error: $blackness: Expected 40px to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> blackness/unit/wrong/error-libsass
+Error: $blackness: Expected 40px to have unit "%".
+  ,
+2 | a {b: color.hwb(0, 30%, 40px, 0.5)}
+  |                         ^^^^
+  '
+  input.scss 2:25  hwb()
+  ,
+2 | a {b: color.hwb(0, 30%, 40px, 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> alpha/unit/input.scss
@@ -107,3 +159,16 @@ Error: $alpha: Expected 0.5px to have unit "%" or no units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> alpha/unit/error-libsass
+Error: $alpha: Expected 0.5px to have unit "%" or no units.
+  ,
+2 | a {b: color.hwb(0, 0%, 0%, 0.5px)}
+  |                            ^^^^^
+  '
+  input.scss 2:28  hwb()
+  ,
+2 | a {b: color.hwb(0, 0%, 0%, 0.5px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

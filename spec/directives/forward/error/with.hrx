@@ -135,6 +135,34 @@ Error: 1px and 1em have incompatible units.
   _midstream.scss 1:31  @use
   input.scss 1:1        root stylesheet
 
+<===> invalid_expression/error/error-libsass
+Error: 1px and 1em have incompatible units.
+  ,
+1 | @forward "upstream" with ($a: 1px + 1em);
+  |                                     ^^^
+  '
+  _midstream.scss 1:37  @forward
+  ,
+1 | @forward "upstream" with ($a: 1px + 1em);
+  |                               ^^^
+  '
+  _midstream.scss 1:31  @forward
+  ,
+1 | @forward "upstream" with ($a: 1px + 1em);
+  |                               ^^^^^^^^^
+  '
+  _midstream.scss 1:31  @forward
+  ,
+1 | @forward "upstream" with ($a: 1px + 1em);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1        root stylesheet
+
 <===>
 ================================================================================
 <===> invalid_expression/variable_defined_later/input.scss
@@ -154,6 +182,24 @@ Error: Undefined variable.
   |                               ^^
   '
   _midstream.scss 1:31  @use
+  input.scss 1:1        root stylesheet
+
+<===> invalid_expression/variable_defined_later/error-libsass
+Error: Undefined variable.
+  ,
+1 | @forward "upstream" with ($a: $b);
+  |                               ^^
+  '
+  _midstream.scss 1:31  @forward
+  ,
+1 | @forward "upstream" with ($a: $b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
   input.scss 1:1        root stylesheet
 
 <===>
@@ -180,6 +226,24 @@ Error: There is no module with the namespace "upstream".
   _midstream.scss 1:33  @use
   input.scss 1:1        root stylesheet
 
+<===> invalid_expression/module_loaded_later/error-libsass
+Error: There is no module with the namespace "upstream".
+  ,
+1 | @forward "configured" with ($a: upstream.$b);
+  |                                 ^^^^^^^^^^^
+  '
+  _midstream.scss 1:33  @forward
+  ,
+1 | @forward "configured" with ($a: upstream.$b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1   @use
+  ,
+1 | @use "midstream";
+  | ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1        root stylesheet
+
 <===>
 ================================================================================
 <===> repeated_variable/input.scss
@@ -197,6 +261,19 @@ Error: The same variable may only be configured once.
   _other.scss 1:34  @use
   input.scss 1:1    root stylesheet
 
+<===> repeated_variable/error-libsass
+Error: The same variable may only be configured once.
+  ,
+1 | @forward "upstream" with ($a: b, $a: c);
+  |                                  ^^^^^
+  '
+  _other.scss 1:34  @use
+  ,
+1 | @use "other";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1    root stylesheet
+
 <===>
 ================================================================================
 <===> core_module/input.scss
@@ -212,6 +289,19 @@ Error: Built-in modules can't be configured.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   _other.scss 1:1  @use
+  input.scss 1:1   root stylesheet
+
+<===> core_module/error-libsass
+Error: Built-in modules can't be configured.
+  ,
+1 | @forward "sass:color" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _other.scss 1:1  @use
+  ,
+1 | @use "other";
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1   root stylesheet
 
 <===>
@@ -236,6 +326,14 @@ Error: This module was already loaded, so it can't be configured using "with".
   | ============================= original load
 2 | @forward "other" with ($a: b);
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
+  '
+  input.scss 2:1  root stylesheet
+
+<===> multi_configuration/one_file/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+2 | @forward "other" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
 
@@ -267,6 +365,19 @@ Error: This module was already loaded, so it can't be configured using "with".
   _right.scss 1:1  @use
   input.scss 2:1   root stylesheet
 
+<===> multi_configuration/multi_file/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @forward "other" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _right.scss 1:1  @use
+  ,
+2 | @use "right";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+
 <===>
 ================================================================================
 <===> multi_configuration/unconfigured_first/input.scss
@@ -283,6 +394,14 @@ Error: This module was already loaded, so it can't be configured using "with".
   | ================ original load
 2 | @forward "other" with ($a: b);
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
+  '
+  input.scss 2:1  root stylesheet
+
+<===> multi_configuration/unconfigured_first/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+2 | @forward "other" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
 
@@ -314,6 +433,19 @@ Error: This module was already loaded, so it can't be configured using "with".
   | ================================= configuration
   '
   _midstream.scss 1:1  @forward
+  input.scss 2:1       root stylesheet
+
+<===> multi_configuration/through_forward/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @forward "upstream";
+  | ^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1  @forward
+  ,
+2 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
   input.scss 2:1       root stylesheet
 
 <===>

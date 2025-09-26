@@ -10,6 +10,19 @@ Error: $whiteness: Expected 1 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> none/whiteness/error-libsass
+Error: $whiteness: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.adjust(white, $whiteness: 1)}
+  |                                       ^
+  '
+  input.scss 2:39  adjust()
+  ,
+2 | a {b: color.adjust(white, $whiteness: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> none/blackness/input.scss
@@ -23,6 +36,19 @@ Error: $blackness: Expected 1 to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> none/blackness/error-libsass
+Error: $blackness: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.adjust(black, $blackness: 1)}
+  |                                       ^
+  '
+  input.scss 2:39  adjust()
+  ,
+2 | a {b: color.adjust(black, $blackness: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $whiteness: Expected 1px to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> wrong/whiteness/error-libsass
+Error: $whiteness: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.adjust(white, $whiteness: 1px)}
+  |                                       ^^^
+  '
+  input.scss 2:39  adjust()
+  ,
+2 | a {b: color.adjust(white, $whiteness: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong/blackness/input.scss
@@ -51,3 +90,16 @@ Error: $blackness: Expected 1px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> wrong/blackness/error-libsass
+Error: $blackness: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.adjust(black, $blackness: 1px)}
+  |                                       ^^^
+  '
+  input.scss 2:39  adjust()
+  ,
+2 | a {b: color.adjust(black, $blackness: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

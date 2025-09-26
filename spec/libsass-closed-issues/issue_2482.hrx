@@ -17,3 +17,16 @@ Error: Top-level selectors may not contain the parent selector "&".
   '
   input.scss 3:2  mixin()
   input.scss 9:1  root stylesheet
+
+<===> error-libsass
+Error: Top-level selectors may not contain the parent selector "&".
+  ,
+3 |     & .class
+  |     ^
+  '
+  input.scss 3:2  mixin()
+  ,
+9 | @include mixin();
+  | ^^^^^^^^^^^^^^^^
+  '
+  input.scss 9:1  root stylesheet

@@ -242,6 +242,19 @@ Error: $channels: Expected hue channel to be a number, was "from".
   '
   input.scss 1:7  root stylesheet
 
+<===> relative_color/error/quoted/alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was "from".
+  ,
+1 | a {b: hwb("from" #aaa h w b / 25%)}
+  |           ^^^^^^
+  '
+  input.scss 1:11  hwb()
+  ,
+1 | a {b: hwb("from" #aaa h w b / 25%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> relative_color/error/quoted/no_alpha/input.scss
@@ -254,6 +267,19 @@ Error: $channels: Expected hue channel to be a number, was "from".
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> relative_color/error/quoted/no_alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was "from".
+  ,
+1 | a {b: hwb("from" #aaa h w b)}
+  |           ^^^^^^
+  '
+  input.scss 1:11  hwb()
+  ,
+1 | a {b: hwb("from" #aaa h w b)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -268,6 +294,19 @@ Error: $channels: Expected hue channel to be a number, was c.
   '
   input.scss 1:7  root stylesheet
 
+<===> relative_color/error/wrong_keyword/alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was c.
+  ,
+1 | a {b: hwb(c #aaa h w b / 25%)}
+  |           ^
+  '
+  input.scss 1:11  hwb()
+  ,
+1 | a {b: hwb(c #aaa h w b / 25%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> relative_color/error/wrong_keyword/no_alpha/input.scss
@@ -280,3 +319,16 @@ Error: $channels: Expected hue channel to be a number, was c.
   |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> relative_color/error/wrong_keyword/no_alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was c.
+  ,
+1 | a {b: hwb(c #aaa h w b)}
+  |           ^
+  '
+  input.scss 1:11  hwb()
+  ,
+1 | a {b: hwb(c #aaa h w b)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

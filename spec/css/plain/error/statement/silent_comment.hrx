@@ -12,3 +12,16 @@ Error: Silent comments aren't allowed in plain CSS.
   '
   plain.css 1:1   @use
   input.scss 1:1  root stylesheet
+
+<===> error-libsass
+Error: Silent comments aren't allowed in plain CSS.
+  ,
+1 | // silent
+  | ^^^^^^^^^
+  '
+  plain.css 1:1   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet

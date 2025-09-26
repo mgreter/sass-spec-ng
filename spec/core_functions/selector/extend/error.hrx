@@ -49,6 +49,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> selector/type/error-libsass
+Error: $selector: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.extend(1, "c", "d")}
+  |                       ^
+  '
+  input.scss 2:23  selector-extend()
+  ,
+2 | a {b: selector.extend(1, "c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> extendee/parent/input.scss
@@ -130,6 +144,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> extendee/type/error-libsass
+Error: $extendee: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.extend("c", 1, "d")}
+  |                            ^
+  '
+  input.scss 2:28  selector-extend()
+  ,
+2 | a {b: selector.extend("c", 1, "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> extender/parent/input.scss
@@ -183,6 +211,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> extender/type/error-libsass
+Error: $extender: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.extend("c", "d", 1)}
+  |                                 ^
+  '
+  input.scss 2:33  selector-extend()
+  ,
+2 | a {b: selector.extend("c", "d", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong_name/input.scss
@@ -215,6 +257,14 @@ Error: Only 3 arguments allowed, but 4 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: selector.extend("c", "d", "e", "f")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_few_args/input.scss
@@ -230,5 +280,13 @@ Error: Missing argument $extender.
   ,--> sass:selector
 1 | @function extend($selector, $extendee, $extender) {
   |           ======================================= declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> too_few_args/error-libsass
+Error: Missing argument $extender.
+  ,
+2 | a {b: selector.extend("c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

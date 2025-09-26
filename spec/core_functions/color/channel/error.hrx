@@ -14,6 +14,14 @@ Error: Missing argument $channel.
   '
   input.scss 2:7  root stylesheet
 
+<===> too_few_args/error-libsass
+Error: Missing argument $channel.
+  ,
+2 | a {b: color.channel(pink)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_many_args/input.scss
@@ -32,6 +40,14 @@ Error: Only 3 arguments allowed, but 4 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: color.channel(pink, "red", rgb, "red")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> type/color/input.scss
@@ -45,6 +61,19 @@ Error: $color: "pink" is not a color.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> type/color/error-libsass
+Error: $color: "pink" is not a color.
+  ,
+2 | a {b: color.channel("pink", "red")}
+  |                     ^^^^^^
+  '
+  input.scss 2:21  channel()
+  ,
+2 | a {b: color.channel("pink", "red")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -60,6 +89,19 @@ Error: $channel: red is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> type/channel/error-libsass
+Error: $channel: red is not a string.
+  ,
+2 | a {b: color.channel(pink, red)}
+  |                           ^^^
+  '
+  input.scss 2:27  channel()
+  ,
+2 | a {b: color.channel(pink, red)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> type/space/input.scss
@@ -74,6 +116,19 @@ Error: $space: red is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> type/space/error-libsass
+Error: $space: red is not a string.
+  ,
+2 | a {b: color.channel(pink, "red", red)}
+  |                                  ^^^
+  '
+  input.scss 2:34  channel()
+  ,
+2 | a {b: color.channel(pink, "red", red)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> channel/unquoted/input.scss
@@ -87,6 +142,19 @@ Error: $channel: Expected hue to be a quoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> channel/unquoted/error-libsass
+Error: $channel: Expected hue to be a quoted string.
+  ,
+2 | a {b: color.channel(hsl(50deg 50% 50%), hue)}
+  |                                         ^^^
+  '
+  input.scss 2:41  channel()
+  ,
+2 | a {b: color.channel(hsl(50deg 50% 50%), hue)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -144,6 +212,19 @@ Error: $space: Expected "hsl" to be an unquoted string.
   '
   input.scss 2:7  root stylesheet
 
+<===> space/quoted/error-libsass
+Error: $space: Expected "hsl" to be an unquoted string.
+  ,
+2 | a {b: color.channel(red, "hue", $space: "hsl")}
+  |                                         ^^^^^
+  '
+  input.scss 2:41  channel()
+  ,
+2 | a {b: color.channel(red, "hue", $space: "hsl")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> space/unknown/input.scss
@@ -157,3 +238,16 @@ Error: $space: Expected "foo" to be an unquoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> space/unknown/error-libsass
+Error: $space: Expected "foo" to be an unquoted string.
+  ,
+2 | a {b: color.channel(red, "hue", $space: "foo")}
+  |                                         ^^^^^
+  '
+  input.scss 2:41  channel()
+  ,
+2 | a {b: color.channel(red, "hue", $space: "foo")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

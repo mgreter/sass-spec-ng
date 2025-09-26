@@ -209,3 +209,11 @@ Error: This operation can't be used in a calculation.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: pow(7 % 3, 1)}
+  |           ^^^^^
+  '
+  input.scss 1:11  root stylesheet

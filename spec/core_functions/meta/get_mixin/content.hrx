@@ -144,6 +144,19 @@ Error: Mixin doesn't accept a content block.
     '
   input.scss 5:3  root stylesheet
 
+<===> error/denies_content/user_defined/error-libsass
+Error: Mixin doesn't accept a content block.
+  ,
+5 |   @include meta.apply(meta.get-mixin("a")) {}
+  |                                            ^^
+  '
+  input.scss 5:44  apply()
+  ,
+5 |   @include meta.apply(meta.get-mixin("a")) {}
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 5:3   root stylesheet
+
 <===>
 ================================================================================
 <===> error/denies_content/builtin/input.scss
@@ -166,3 +179,23 @@ Error: Mixin doesn't accept a content block.
   |        =========================== declaration
   '
   input.scss 4:3  root stylesheet
+
+<===> error/denies_content/builtin/error-libsass
+Error: Mixin doesn't accept a content block.
+  ,
+4 |     @include meta.apply(meta.get-mixin(load-css, meta), "a") {
+  | /------------------------------------------------------------^
+5 | |     a: b;
+6 | \   }
+  '
+  input.scss 4:60  load-css()
+  ,
+4 |   @include meta.apply(meta.get-mixin(load-css, meta), "a") {
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:3   apply()
+  ,
+4 |   @include meta.apply(meta.get-mixin(load-css, meta), "a") {
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 4:3   root stylesheet

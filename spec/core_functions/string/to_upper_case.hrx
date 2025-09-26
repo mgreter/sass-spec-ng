@@ -78,6 +78,19 @@ Error: $string: 1 is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $string: 1 is not a string.
+  ,
+2 | a {b: string.to-upper-case(1)}
+  |                            ^
+  '
+  input.scss 2:28  to-upper-case()
+  ,
+2 | a {b: string.to-upper-case(1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -96,6 +109,14 @@ Error: Missing argument $string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $string.
+  ,
+2 | a {b: string.to-upper-case()}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -111,5 +132,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:string
 1 | @function to-upper-case($string) {
   |           ====================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: string.to-upper-case("", "")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

@@ -89,6 +89,19 @@ Error: $number: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $number: c is not a number.
+  ,
+2 | a {b: math.floor(c)}
+  |                  ^
+  '
+  input.scss 2:18  floor()
+  ,
+2 | a {b: math.floor(c)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -107,6 +120,14 @@ Error: Missing argument $number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
+  ,
+2 | a {b: math.floor()}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -122,5 +143,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:math
 1 | @function floor($number) {
   |           ============== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: math.floor(1, 2)}
+  |       ^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

@@ -10,3 +10,11 @@ Error: Expected "important".
   |        ^
   '
   input.scss 3:8  root stylesheet
+
+<===> error/syntax/eof_after_bang/error-libsass
+Error: Expected "important".
+  ,
+4 |
+  | ^
+  '
+  input.scss 4:1  root stylesheet

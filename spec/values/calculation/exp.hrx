@@ -165,3 +165,11 @@ Error: This operation can't be used in a calculation.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: exp(7 % 3)}
+  |           ^^^^^
+  '
+  input.scss 1:11  root stylesheet

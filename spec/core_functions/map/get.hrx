@@ -174,6 +174,19 @@ Error: $map: 1 is not a map.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/map/error-libsass
+Error: $map: 1 is not a map.
+  ,
+2 | a {b: map.get(1, 2)}
+  |               ^
+  '
+  input.scss 2:15  map-get()
+  ,
+2 | a {b: map.get(1, 2)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -189,5 +202,13 @@ Error: Missing argument $key.
   ,--> sass:map
 1 | @function get($map, $key, $keys...) {
   |           ========================= declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $key.
+  ,
+2 | a {b: map.get(1)}
+  |       ^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

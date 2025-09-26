@@ -278,6 +278,14 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.is-in-gamut()}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -296,6 +304,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: color.is-in-gamut(rgb(0 255 0), hwb, c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -310,6 +326,19 @@ Error: $color: 1 is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $color: 1 is not a color.
+  ,
+2 | a {b: color.is-in-gamut(1)}
+  |                         ^
+  '
+  input.scss 2:25  is-in-gamut()
+  ,
+2 | a {b: color.is-in-gamut(1)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/space_unknown/input.scss
@@ -323,6 +352,19 @@ Error: $space: Unknown color space "c".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/space_unknown/error-libsass
+Error: $space: Unknown color space "c".
+  ,
+2 | a {b: color.is-in-gamut(rgb(0 255 0), c)}
+  |                                       ^
+  '
+  input.scss 2:39  is-in-gamut()
+  ,
+2 | a {b: color.is-in-gamut(rgb(0 255 0), c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -378,3 +420,4 @@ Error: $space: Expected "hsl" to be an unquoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
+

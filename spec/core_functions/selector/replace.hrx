@@ -271,6 +271,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/selector/type/error-libsass
+Error: $selector: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.replace(1, "c", "d")}
+  |                        ^
+  '
+  input.scss 2:24  selector-replace()
+  ,
+2 | a {b: selector.replace(1, "c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extendee/parent/input.scss
@@ -352,6 +366,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/extendee/type/error-libsass
+Error: $original: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.replace("c", 1, "d")}
+  |                             ^
+  '
+  input.scss 2:29  selector-replace()
+  ,
+2 | a {b: selector.replace("c", 1, "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extender/parent/input.scss
@@ -405,6 +433,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/extender/type/error-libsass
+Error: $replacement: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.replace("c", "d", 1)}
+  |                                  ^
+  '
+  input.scss 2:34  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "d", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -423,6 +465,14 @@ Error: Only 3 arguments allowed, but 4 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: selector.replace("c", "d", "e", "f")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -438,5 +488,13 @@ Error: Missing argument $replacement.
   ,--> sass:selector
 1 | @function replace($selector, $original, $replacement) {
   |           =========================================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $replacement.
+  ,
+2 | a {b: selector.replace("c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

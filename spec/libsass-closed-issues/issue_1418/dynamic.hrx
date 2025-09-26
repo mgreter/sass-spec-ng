@@ -21,3 +21,16 @@ Error: Plain CSS functions don't support keyword arguments.
   |            ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:12  root stylesheet
+
+<===> error-libsass
+Error: Plain CSS functions don't support keyword arguments.
+  ,
+3 |     color: meta.call(missing, $a: b);
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:12  call()
+  ,
+3 |     color: meta.call(missing, $a: b);
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:12  root stylesheet

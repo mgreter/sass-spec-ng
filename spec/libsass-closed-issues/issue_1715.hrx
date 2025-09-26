@@ -14,3 +14,11 @@ Error: Only 1 argument allowed, but 2 were passed.
   |           =========== declaration
   '
   input.scss 2:10  root stylesheet
+
+<===> error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 |   color: red(blue, purple);
+  |          ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:10  root stylesheet

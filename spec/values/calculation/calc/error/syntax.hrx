@@ -74,6 +74,14 @@ Error: This operation can't be used in a calculation.
   '
   input.scss 1:16  root stylesheet
 
+<===> unknown_operator/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: calc(1px % 2px)}
+  |            ^^^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> hash/input.scss
@@ -141,6 +149,19 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   '
   input.scss 1:13  root stylesheet
 
+<===> no_whitespace/plus/before/error-libsass
+Error: "+" and "-" must be surrounded by whitespace in calculations.
+  ,
+1 | a {b: calc(1+ 1)}
+  |             ^
+  '
+  input.scss 1:13  root stylesheet
+  ,
+1 | a {b: calc(1+ 1)}
+  |            ^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> no_whitespace/plus/after/input.scss
@@ -174,6 +195,19 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   '
   input.scss 1:14  root stylesheet
 
+<===> no_whitespace/plus/after/error-libsass
+Error: "+" and "-" must be surrounded by whitespace in calculations.
+  ,
+1 | a {b: calc(1 +1)}
+  |              ^
+  '
+  input.scss 1:14  root stylesheet
+  ,
+1 | a {b: calc(1 +1)}
+  |            ^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> no_whitespace/plus/both/input.scss
@@ -186,6 +220,19 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> no_whitespace/plus/both/error-libsass
+Error: "+" and "-" must be surrounded by whitespace in calculations.
+  ,
+1 | a {b: calc(1+1)}
+  |             ^
+  '
+  input.scss 1:13  root stylesheet
+  ,
+1 | a {b: calc(1+1)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet
 
 <===>
 ================================================================================
@@ -200,6 +247,19 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   '
   input.scss 1:13  root stylesheet
 
+<===> no_whitespace/minus/before/error-libsass
+Error: "+" and "-" must be surrounded by whitespace in calculations.
+  ,
+1 | a {b: calc(1- 1)}
+  |             ^
+  '
+  input.scss 1:13  root stylesheet
+  ,
+1 | a {b: calc(1- 1)}
+  |            ^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> no_whitespace/minus/after/input.scss
@@ -210,6 +270,14 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   ,
 1 | a {b: calc(1 -1)}
   |              ^
+  '
+  input.scss 1:14  root stylesheet
+
+<===> no_whitespace/minus/after/error-libsass
+Error: "+" and "-" must be surrounded by whitespace in calculations.
+  ,
+1 | a {b: calc(1 -1)}
+  |              ^^
   '
   input.scss 1:14  root stylesheet
 
@@ -225,3 +293,16 @@ Error: "+" and "-" must be surrounded by whitespace in calculations.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> no_whitespace/minus/both/error-libsass
+Error: "+" and "-" must be surrounded by whitespace in calculations.
+  ,
+1 | a {b: calc(1-1)}
+  |             ^
+  '
+  input.scss 1:13  root stylesheet
+  ,
+1 | a {b: calc(1-1)}
+  |            ^^^
+  '
+  input.scss 1:12  root stylesheet

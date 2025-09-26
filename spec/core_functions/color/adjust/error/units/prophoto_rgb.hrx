@@ -10,6 +10,19 @@ Error: $red: Expected 0.5px to have unit "%" or no units.
   '
   input.scss 2:7  root stylesheet
 
+<===> red/error-libsass
+Error: $red: Expected 0.5px to have unit "%" or no units.
+  ,
+2 | a {b: color.adjust(color(prophoto-rgb 0.2 0.5 0.7), $red: 0.5px)}
+  |                                                           ^^^^^
+  '
+  input.scss 2:59  adjust()
+  ,
+2 | a {b: color.adjust(color(prophoto-rgb 0.2 0.5 0.7), $red: 0.5px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> green/input.scss
@@ -24,6 +37,19 @@ Error: $green: Expected 0.5px to have unit "%" or no units.
   '
   input.scss 2:7  root stylesheet
 
+<===> green/error-libsass
+Error: $green: Expected 0.5px to have unit "%" or no units.
+  ,
+2 | a {b: color.adjust(color(prophoto-rgb 0.2 0.5 0.7), $green: 0.5px)}
+  |                                                             ^^^^^
+  '
+  input.scss 2:61  adjust()
+  ,
+2 | a {b: color.adjust(color(prophoto-rgb 0.2 0.5 0.7), $green: 0.5px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> blue/input.scss
@@ -37,3 +63,16 @@ Error: $blue: Expected 0.5px to have unit "%" or no units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> blue/error-libsass
+Error: $blue: Expected 0.5px to have unit "%" or no units.
+  ,
+2 | a {b: color.adjust(color(prophoto-rgb 0.2 0.5 0.7), $blue: 0.5px)}
+  |                                                            ^^^^^
+  '
+  input.scss 2:60  adjust()
+  ,
+2 | a {b: color.adjust(color(prophoto-rgb 0.2 0.5 0.7), $blue: 0.5px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

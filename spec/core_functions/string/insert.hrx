@@ -243,6 +243,19 @@ Error: $string: 1 is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/string/error-libsass
+Error: $string: 1 is not a string.
+  ,
+2 | a {b: string.insert(1, "", 1)}
+  |                     ^
+  '
+  input.scss 2:21  str-insert()
+  ,
+2 | a {b: string.insert(1, "", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/insert/input.scss
@@ -256,6 +269,19 @@ Error: $insert: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/insert/error-libsass
+Error: $insert: 1 is not a string.
+  ,
+2 | a {b: string.insert("", 1, 1)}
+  |                         ^
+  '
+  input.scss 2:25  str-insert()
+  ,
+2 | a {b: string.insert("", 1, 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -271,6 +297,19 @@ Error: $index: "" is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/index/error-libsass
+Error: $index: "" is not a number.
+  ,
+2 | a {b: string.insert("", "", "")}
+  |                             ^^
+  '
+  input.scss 2:29  str-insert()
+  ,
+2 | a {b: string.insert("", "", "")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/decimal/input.scss
@@ -284,6 +323,19 @@ Error: $index: 0.5 is not an int.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/decimal/error-libsass
+Error: $index: 0.5 is not an int.
+  ,
+2 | a {b: string.insert("", "", 0.5)}
+  |                             ^^^
+  '
+  input.scss 2:29  str-insert()
+  ,
+2 | a {b: string.insert("", "", 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -303,6 +355,14 @@ Error: Missing argument $index.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $index.
+  ,
+2 | a {b: string.insert("", "")}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -318,5 +378,13 @@ Error: Only 3 arguments allowed, but 4 were passed.
   ,--> sass:string
 1 | @function insert($string, $insert, $index) {
   |           ================================ declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: string.insert("", "", 1, 2)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

@@ -155,3 +155,11 @@ Error: This operation can't be used in a calculation.
   |              ^
   '
   input.scss 1:14  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: sqrt(7 % 3)}
+  |            ^^^^^
+  '
+  input.scss 1:12  root stylesheet

@@ -137,6 +137,19 @@ Error: $function: 1 is not a function reference.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $function: 1 is not a function reference.
+  ,
+2 | a {b: meta.call(1)}
+  |                 ^
+  '
+  input.scss 2:17  call()
+  ,
+2 | a {b: meta.call(1)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -155,6 +168,14 @@ Error: Missing argument $function.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $function.
+  ,
+2 | a {b: meta.call()}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/invalid_args/input.scss
@@ -168,6 +189,24 @@ Error: $channels: The rgb color space has 3 channels but 1 has 1.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/invalid_args/error-libsass
+Error: $channels: The rgb color space has 3 channels but 1 has 1.
+  ,
+2 | a {b: meta.call(meta.get-function("rgb"), 1)}
+  |                                           ^
+  '
+  input.scss 2:43  rgb()
+  ,
+2 | a {b: meta.call(meta.get-function("rgb"), 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   call()
+  ,
+2 | a {b: meta.call(meta.get-function("rgb"), 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -185,3 +224,16 @@ Error: Undefined variable.
   |                                                    ^^^^^^^^^^
   '
   input.scss 5:52  root stylesheet
+
+<===> error/if_args/error-libsass
+Error: Undefined variable.
+  ,
+5 | a {b: meta.call(meta.get-function("if"), true, "", $undefined)}
+  |                                                    ^^^^^^^^^^
+  '
+  input.scss 5:52  call()
+  ,
+5 | a {b: meta.call(meta.get-function("if"), true, "", $undefined)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 5:7   root stylesheet

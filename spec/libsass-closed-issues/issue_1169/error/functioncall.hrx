@@ -23,3 +23,11 @@ Error: Duplicate key.
   |   ^^^^^^^^^^^ second key
   '
   input.scss 9:3  root stylesheet
+
+<===> error-libsass
+Error: Duplicate key.
+  ,
+9 |   fncall(1+2): 'bar',
+  |   ^^^^^^^^^^^
+  '
+  input.scss 9:3  root stylesheet

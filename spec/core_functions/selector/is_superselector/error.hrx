@@ -49,6 +49,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> super/type/error-libsass
+Error: $super: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.is-superselector(1, "c")}
+  |                                 ^
+  '
+  input.scss 2:33  is-superselector()
+  ,
+2 | a {b: selector.is-superselector(1, "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> sub/parent/input.scss
@@ -102,6 +116,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> sub/type/error-libsass
+Error: $sub: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.is-superselector("c", 1)}
+  |                                      ^
+  '
+  input.scss 2:38  is-superselector()
+  ,
+2 | a {b: selector.is-superselector("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> too_many_args/input.scss
@@ -120,6 +148,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: selector.is-superselector("c", "d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> too_few_args/input.scss
@@ -135,5 +171,13 @@ Error: Missing argument $sub.
   ,--> sass:selector
 1 | @function is-superselector($super, $sub) {
   |           ============================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> too_few_args/error-libsass
+Error: Missing argument $sub.
+  ,
+2 | a {b: selector.is-superselector("c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

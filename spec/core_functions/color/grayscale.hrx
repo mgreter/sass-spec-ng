@@ -254,6 +254,14 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.grayscale()}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -272,6 +280,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: color.grayscale(red, 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -286,6 +302,19 @@ Error: $color: c is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $color: c is not a color.
+  ,
+2 | a {b: color.grayscale(c)}
+  |                       ^
+  '
+  input.scss 2:23  grayscale()
+  ,
+2 | a {b: color.grayscale(c)}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/with_module/type/input.scss
@@ -299,3 +328,16 @@ Error: $color: var(--c) is not a color.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/with_module/type/error-libsass
+Error: $color: var(--c) is not a color.
+  ,
+2 | a {b: color.grayscale(var(--c))}
+  |                       ^^^^^^^^
+  '
+  input.scss 2:23  grayscale()
+  ,
+2 | a {b: color.grayscale(var(--c))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

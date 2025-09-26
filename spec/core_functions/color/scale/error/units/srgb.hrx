@@ -10,6 +10,19 @@ Error: $red: Expected 1 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> none/red/error-libsass
+Error: $red: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $red: 1)}
+  |                                                  ^
+  '
+  input.scss 2:50  scale()
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $red: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> none/green/input.scss
@@ -23,6 +36,19 @@ Error: $green: Expected 1 to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> none/green/error-libsass
+Error: $green: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $green: 1)}
+  |                                                    ^
+  '
+  input.scss 2:52  scale()
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $green: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $blue: Expected 1 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> none/blue/error-libsass
+Error: $blue: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $blue: 1)}
+  |                                                   ^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $blue: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong/red/input.scss
@@ -51,6 +90,19 @@ Error: $red: Expected 1px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> wrong/red/error-libsass
+Error: $red: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $red: 1px)}
+  |                                                  ^^^
+  '
+  input.scss 2:50  scale()
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $red: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -66,6 +118,19 @@ Error: $green: Expected 1px to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> wrong/green/error-libsass
+Error: $green: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $green: 1px)}
+  |                                                    ^^^
+  '
+  input.scss 2:52  scale()
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $green: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong/blue/input.scss
@@ -79,3 +144,16 @@ Error: $blue: Expected 1px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> wrong/blue/error-libsass
+Error: $blue: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $blue: 1px)}
+  |                                                   ^^^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(srgb 0.2 0.5 0.7), $blue: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
