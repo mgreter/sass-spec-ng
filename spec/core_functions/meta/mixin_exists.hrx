@@ -354,6 +354,14 @@ Error: This mixin is available from multiple global modules.
     '
   input.scss 5:7  root stylesheet
 
+<===> error/conflict/error-libsass
+Error: Mixin "member(...)" is available from multiple global modules.
+  ,
+3 | @use "other2" as *;
+  | ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1  root stylesheet
+
 <===>
 ================================================================================
 <===> error/module/non_existent/input.scss
