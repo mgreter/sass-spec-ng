@@ -396,7 +396,7 @@ Error: $channels: Color component list may not be empty.
 <===> list/empty_space/input.scss
 @use 'sass:list';
 $empty-space: list.join((), (), $separator: space);
-a {b: lch(())}
+a {b: lch($empty-space)}
 
 <===> list/empty_space/error
 Error: $channels: Color component list may not be empty.
