@@ -141,7 +141,6 @@ Error: Missing argument $base.
   '
   input.scss 2:7  root stylesheet
 
-
 <===>
 ================================================================================
 <===> error/one_arg/input.scss
