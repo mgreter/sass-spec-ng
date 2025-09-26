@@ -86,6 +86,24 @@ Error: $x: 1deg and $y: 1px have incompatible units.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/incompatible_units/error-libsass
+Error: 1px and 1deg have incompatible units.
+  ,
+2 | a {b: math.atan2(1px, 1deg)}
+  |                       ^^^^
+  '
+  input.scss 2:23  atan2()
+  ,
+2 | a {b: math.atan2(1px, 1deg)}
+  |                  ^^^
+  '
+  input.scss 2:18  atan2()
+  ,
+2 | a {b: math.atan2(1px, 1deg)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unitless_y/input.scss
