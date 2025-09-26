@@ -159,6 +159,10 @@ More info and automated migrator: https://sass-lang.com/d/import
 
 <===>
 ================================================================================
+<===> midstream_definition/with_config/options.yml
+:todo:
+  - libsass#midstream
+
 <===> midstream_definition/with_config/input.scss
 $a: configured;
 @import "midstream";
@@ -189,6 +193,10 @@ More info and automated migrator: https://sass-lang.com/d/import
 
 <===>
 ================================================================================
+<===> midstream_definition/no_config/options.yml
+:todo:
+  - libsass#midstream
+
 <===> midstream_definition/no_config/input.scss
 @import "midstream";
 

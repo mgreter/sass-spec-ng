@@ -360,7 +360,6 @@ Error: $amount: red is not a number.
   '
   input.scss 1:7   root stylesheet
 
-
 <===>
 ================================================================================
 <===> error/with_module/one_arg/type/input.scss
