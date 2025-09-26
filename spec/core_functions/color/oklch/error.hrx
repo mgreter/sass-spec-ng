@@ -409,13 +409,13 @@ Error: $channels: Color component list may not be empty.
 <===> list/empty_space/error-libsass
 Error: $channels: Color component list may not be empty.
   ,
-3 | a {b: oklch(())}
-  |             ^^
+2 | $empty-space: list.join((), (), $separator: space);
+  |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
-  input.scss 3:13  oklch()
+  input.scss 2:15  oklch()
   ,
-3 | a {b: oklch(())}
-  |       ^^^^^^^^^
+3 | a {b: oklch($empty-space)}
+  |       ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:7   root stylesheet
 
