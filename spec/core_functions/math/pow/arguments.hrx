@@ -117,3 +117,4 @@ Error: Only 2 arguments allowed, but 3 were passed.
   |           ===================== declaration
   '
   input.scss 2:7  root stylesheet
+
