@@ -14,3 +14,21 @@ Error: $extendee: Parent selectors aren't allowed here.
   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:8  root stylesheet
+
+<===> error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+2 | @debug(selector.extend(".a .b", &b, ndll));
+  |                                 ^
+  '
+  input.scss 2:33  selector-extend()
+  ,
+2 | @debug(selector.extend(".a .b", "&b", ndll));
+  |                                 ^^^^
+  '
+  input.scss 2:33  selector-extend()
+  ,
+2 | @debug(selector.extend(".a .b", "&b", ndll));
+  |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:8   root stylesheet
