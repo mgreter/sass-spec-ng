@@ -173,6 +173,19 @@ Error: Value "foo" can't be used in a calculation.
   '
   input.scss 2:12  root stylesheet
 
+<===> variable/quoted_string/error-libsass
+Error: Quoted string "foo" can't be used in a calculation.
+  ,
+1 | $a: "foo";
+  |     ^^^^^
+  '
+  input.scss 1:5  calc()
+  ,
+2 | b {c: calc($a)}
+  |       ^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> function/null/input.scss
@@ -349,3 +362,16 @@ Error: Value "foo" can't be used in a calculation.
   |            ^^^
   '
   input.scss 2:12  root stylesheet
+
+<===> function/quoted_string/error-libsass
+Error: Quoted string "foo" can't be used in a calculation.
+  ,
+1 | @function a() {@return "foo"}
+  |                        ^^^^^
+  '
+  input.scss 1:24  calc()
+  ,
+2 | b {c: calc(a())}
+  |       ^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

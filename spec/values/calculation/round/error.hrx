@@ -343,6 +343,19 @@ Error: Value "nearest" can't be used in a calculation.
   '
   input.scss 2:13  root stylesheet
 
+<===> three_argument/strategy_type/error-libsass
+Error: Quoted string "nearest" can't be used in a calculation.
+  ,
+1 | $wrong_input: "nearest";
+  |               ^^^^^^^^^
+  '
+  input.scss 1:15  round()
+  ,
+2 | a {b: round($wrong_input, 0, 0)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> three_argument/number_type/input.scss
@@ -357,6 +370,19 @@ Error: Value "0" can't be used in a calculation.
   '
   input.scss 2:22  root stylesheet
 
+<===> three_argument/number_type/error-libsass
+Error: Quoted string "0" can't be used in a calculation.
+  ,
+1 | $wrong_input: "0";
+  |               ^^^
+  '
+  input.scss 1:15  round()
+  ,
+2 | a {b: round(nearest, $wrong_input, 0)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> three_argument/step_type/input.scss
@@ -370,3 +396,16 @@ Error: Value "0" can't be used in a calculation.
   |                         ^^^^^^^^^^^^
   '
   input.scss 2:25  root stylesheet
+
+<===> three_argument/step_type/error-libsass
+Error: Quoted string "0" can't be used in a calculation.
+  ,
+1 | $wrong_input: "0";
+  |               ^^^
+  '
+  input.scss 1:15  round()
+  ,
+2 | a {b: round(nearest, 0, $wrong_input)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
