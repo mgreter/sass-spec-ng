@@ -308,6 +308,11 @@ Error: Unexpected text after end of comment
 
 <===> error/loud/sass/content_after_close/single_line/error-libsass
 Error: Unexpected text after end of comment.
+  ,
+1 | /* */ a
+  |       ^
+  '
+  input.sass 1:7  root stylesheet
 
 <===>
 ================================================================================
@@ -329,3 +334,8 @@ Error: Unexpected text after end of comment
 
 <===> error/loud/sass/content_after_close/multi_line/error-libsass
 Error: Unexpected text after end of comment.
+  ,
+3 |   a
+  |   ^
+  '
+  input.sass 3:3  root stylesheet

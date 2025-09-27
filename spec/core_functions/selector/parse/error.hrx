@@ -123,6 +123,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 3:7  root stylesheet
 
+<===> too_nested/error-libsass
+Error: $selector: (c,) is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+3 | a {b: selector.parse((list.append((), list.append((), c)),))}
+  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:22  selector-parse()
+  ,
+3 | a {b: selector.parse((list.append((), list.append((), c)),))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:7   root stylesheet
+
 <===>
 ================================================================================
 <===> inner_comma/input.scss

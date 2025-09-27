@@ -234,6 +234,19 @@ Error: $base: Expected 1px to have no units.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/base_has_units/error-libsass
+Error: $base: Expected 1px to have no units.
+  ,
+2 | a {b: math.log(1, 1px)}
+  |                   ^^^
+  '
+  input.scss 2:19  log()
+  ,
+2 | a {b: math.log(1, 1px)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/zero_args/input.scss
