@@ -1,7 +1,3 @@
-<===> options.yml
-:todo:
-  - libsass#comments
-
 <===> input.scss
 .one, /* 1 */
 .two /* 2 */ { /* 3 */

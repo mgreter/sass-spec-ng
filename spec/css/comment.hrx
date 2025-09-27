@@ -33,10 +33,6 @@ a b {
 
 <===>
 ================================================================================
-<===> weird_indentation/options.yml
-:todo:
-  - libsass#comments
-
 <===> weird_indentation/input.scss
 .foo {
     /* Foo
