@@ -98,10 +98,6 @@ a {
 
 <===>
 ================================================================================
-<===> calc/calculation/with_slash/options.yml
-:todo:
-  - libsass#parser
-
 <===> calc/calculation/with_slash/input.scss
 @use 'core_functions/color/utils';
 @include utils.inspect(lab(1% 2 3 / calc(var(--a) / 2)));
