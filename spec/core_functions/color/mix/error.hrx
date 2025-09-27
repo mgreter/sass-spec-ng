@@ -391,10 +391,6 @@ Error: $method: Unknown hue interpolation method longerhue.
 
 <===>
 ================================================================================
-<===> rectangular_space_with_method/options.yml
-:todo:
-  - libsass#error-msg
-
 <===> rectangular_space_with_method/input.scss
 a {b: mix(red, blue, $method: srgb longer hue)}
 
@@ -411,6 +407,14 @@ More info and automated migrator: https://sass-lang.com/d/import
     input.scss 1:7  root stylesheet
 
 Error: $method: Hue interpolation method "HueInterpolationMethod.longer hue" may not be set for rectangular color space srgb.
+  ,
+1 | a {b: mix(red, blue, $method: srgb longer hue)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> rectangular_space_with_method/error-libsass
+Error: $method: Hue interpolation method "longer hue" may not be set for rectangular color space srgb.
   ,
 1 | a {b: mix(red, blue, $method: srgb longer hue)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

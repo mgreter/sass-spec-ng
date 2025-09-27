@@ -1,7 +1,7 @@
 <===> options.yml
 :todo:
   - sass/dart-sass
-  - libsass#dart-too
+  - libsass#dart-sass
 
 <===> input.scss
 a b {
