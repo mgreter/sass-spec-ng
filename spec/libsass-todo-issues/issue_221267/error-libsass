@@ -1,3 +1,6 @@
-Error: Invalid UTF-8 character "\xAD"
-        on line 1 of input.scss
-  Use --trace for backtrace.
+Error: Invalid UTF-8.
+  ,
+1 | @ph??#{I?wpl no?+H?c9ri2?ig?re2?ight==242-4, DdJ?-, o?t==-nqt n???2?e2??ght==242-4, DdE?-, o?t==-nqtn?????me2?i...
+  |    ^
+  '
+  input.scss 1:4  root stylesheet
