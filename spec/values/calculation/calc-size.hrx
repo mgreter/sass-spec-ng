@@ -14,10 +14,6 @@ a {
 
 <===>
 ================================================================================
-<===> unsimplified/options.yml
-:todo:
-  - libsass#calc
-
 <===> unsimplified/input.scss
 a {b: calc-size(auto, 5% - 20px + size)}
 
@@ -28,10 +24,6 @@ a {
 
 <===>
 ================================================================================
-<===> simplified/options.yml
-:todo:
-  - libsass#calc
-
 <===> simplified/input.scss
 a {b: calc-size(auto, 100px - 20px + size)}
 
@@ -42,10 +34,6 @@ a {
 
 <===>
 ================================================================================
-<===> case_insensitive/options.yml
-:todo:
-  - libsass#calc
-
 <===> case_insensitive/input.scss
 a {b: CaLc-size(auto, size - 20px)}
 
@@ -67,15 +55,19 @@ a {
 
 <===>
 ================================================================================
-<===> error/too_few_args/options.yml
-:todo:
-  - libsass#calc
-
 <===> error/too_few_args/input.scss
 a {b: calc-size()}
 
 <===> error/too_few_args/error
 Error: Missing argument.
+  ,
+1 | a {b: calc-size()}
+  |       ^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
   ,
 1 | a {b: calc-size()}
   |       ^^^^^^^^^^^
@@ -110,10 +102,6 @@ Error: Expected identifier.
 
 <===>
 ================================================================================
-<===> error/sass_script/options.yml
-:todo:
-  - libsass#calc
-
 <===> error/sass_script/input.scss
 a {b: calc-size(auto, 7 % 3)}
 
@@ -124,3 +112,11 @@ Error: This operation can't be used in a calculation.
   |                         ^
   '
   input.scss 1:25  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: calc-size(auto, 7 % 3)}
+  |                       ^^^^^
+  '
+  input.scss 1:23  root stylesheet

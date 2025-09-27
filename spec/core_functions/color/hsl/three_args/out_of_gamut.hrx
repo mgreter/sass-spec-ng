@@ -5,8 +5,3 @@ a {b: hsl(0, 500%, 50%)}
 a {
   b: hsl(0, 500%, 50%);
 }
-
-<===> saturation/above/output-libsass.css
-a {
-  b: red;
-}

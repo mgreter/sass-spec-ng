@@ -207,7 +207,7 @@ a {
 ================================================================================
 <===> negative_zero/options.yml
 :todo:
-  - libsass#calc
+  - libsass#inf
 
 <===> negative_zero/input.scss
 @use "sass:math";

@@ -391,6 +391,10 @@ Error: $method: Unknown hue interpolation method longerhue.
 
 <===>
 ================================================================================
+<===> rectangular_space_with_method/options.yml
+:todo:
+  - libsass#error-msg
+
 <===> rectangular_space_with_method/input.scss
 a {b: mix(red, blue, $method: srgb longer hue)}
 

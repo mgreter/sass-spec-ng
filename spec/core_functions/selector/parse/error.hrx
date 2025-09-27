@@ -109,6 +109,10 @@ Error: expected selector.
 
 <===>
 ================================================================================
+<===> too_nested/options.yml
+:todo:
+  - libsass#error-msg
+
 <===> too_nested/input.scss
 @use "sass:list";
 @use "sass:selector";

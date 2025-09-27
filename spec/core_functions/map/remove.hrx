@@ -197,6 +197,10 @@ Error: Missing argument $map.
 
 <===>
 ================================================================================
+<===> error/positional_and_named/options.yml
+:todo:
+  - libsass#error-msg
+
 <===> error/positional_and_named/input.scss
 @use "sass:map";
 a {b: map.remove((c: d, e: f), c, $key: e)}

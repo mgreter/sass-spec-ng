@@ -222,6 +222,10 @@ Error: $number: Expected 1px to have no units.
 
 <===>
 ================================================================================
+<===> error/base_has_units/options.yml
+:todo:
+  - libsass#error-msg
+
 <===> error/base_has_units/input.scss
 @use "sass:math";
 a {b: math.log(1, 1px)}
