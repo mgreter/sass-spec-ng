@@ -197,10 +197,6 @@ Error: Missing argument $map.
 
 <===>
 ================================================================================
-<===> error/positional_and_named/options.yml
-:todo:
-  - libsass#error-msg
-
 <===> error/positional_and_named/input.scss
 @use "sass:map";
 a {b: map.remove((c: d, e: f), c, $key: e)}
@@ -212,3 +208,16 @@ Error: Argument $key was passed both by position and by name.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/positional_and_named/error-libsass
+Error: Argument $key was passed both by position and by name.
+  ,
+2 | a {b: map.remove((c: d, e: f), c, $key: e)}
+  |                                         ^
+  '
+  input.scss 2:41  map-remove()
+  ,
+2 | a {b: map.remove((c: d, e: f), c, $key: e)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
