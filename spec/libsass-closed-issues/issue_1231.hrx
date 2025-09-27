@@ -1,7 +1,3 @@
-<===> options.yml
-:todo:
-  - libsass#unicode
-
 <===> input.scss
 div::before {
   content: #{"\""+\e600+"\""};

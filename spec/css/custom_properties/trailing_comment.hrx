@@ -1,7 +1,3 @@
-<===> scss/silent/options.yml
-:todo:
-  - libsass#comments
-
 <===> scss/silent/input.scss
 a {
   --b: c // comment;
@@ -26,11 +22,6 @@ a {
 
 <===>
 ================================================================================
-<===> sass/silent/options.yml
-:todo:
-  - libsass#comments
-
-
 <===> sass/silent/input.sass
 a
   --b: c // comment
