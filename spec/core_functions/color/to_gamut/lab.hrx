@@ -30,10 +30,5 @@ a {
 
 <===> local_minde/output.css
 a {
-  b: color-mix(in lab, color(xyz 6530020637.921538 2172031124.122868 137328815479.04425) 100%, black);
-}
-
-<===> local_minde/output-libsass.css
-a {
-  b: color-mix(in lab, color(xyz 6530020637.921538353 2172031124.1228680611 137328815479.0442504883) 100%, black);
+  b: red;
 }
