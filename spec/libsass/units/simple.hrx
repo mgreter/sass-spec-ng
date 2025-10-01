@@ -1,7 +1,3 @@
-<===> options.yml
-:todo:
-  - libsass#unit-conversion
-
 <===> input.scss
 @use "sass:math";
 div {
@@ -14,6 +10,14 @@ div {
 <===> output.css
 div {
   hey: 370866.1417322835pt;
+  ho: true;
+  hoo: "px/(fu*emu*gnu)";
+  hee: "cm^-1";
+}
+
+<===> output-libsass.css
+div {
+  hey: 5150.9186351706in;
   ho: true;
   hoo: "px/(fu*emu*gnu)";
   hee: "cm^-1";

@@ -190,10 +190,6 @@ a {
 
 <===>
 ================================================================================
-<===> sourcemap/between_loads/options.yml
-:todo:
-  - libsass#whitespace
-
 <===> sourcemap/between_loads/input.scss
 @use 'sass:math';
 /*# sourceMappingURL=whatever */
@@ -203,6 +199,11 @@ a { b: c }
 
 <===> sourcemap/between_loads/output.css
 
+a {
+  b: c;
+}
+
+<===> sourcemap/between_loads/output-libsass.css
 a {
   b: c;
 }
