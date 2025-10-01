@@ -194,10 +194,6 @@ a b {
 
 <===>
 ================================================================================
-<===> nesting/through_load_css/two_levels/options.yml
-:todo:
-  - libsass#nesting
-
 <===> nesting/through_load_css/two_levels/input.scss
 @use "sass:meta";
 
