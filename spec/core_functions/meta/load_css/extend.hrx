@@ -69,10 +69,6 @@ a {
 
 <===>
 ================================================================================
-<===> shared_cssless_midstream/options.yml
-:todo:
-  - libsass#css-clone
-
 <===> shared_cssless_midstream/input.scss
 // Regression test for sass/sass#3322
 @use 'sass:meta';

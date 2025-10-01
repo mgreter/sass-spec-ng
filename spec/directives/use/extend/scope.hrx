@@ -275,10 +275,6 @@ More info and automated migrator: https://sass-lang.com/d/import
 
 <===>
 ================================================================================
-<===> use_and_import_into_diamond_extend/options.yml
-:todo:
-  - libsass#css-clone
-
 <===> use_and_import_into_diamond_extend/input.scss
 @use "downstream";
 @import "downstream";
@@ -346,10 +342,6 @@ More info and automated migrator: https://sass-lang.com/d/import
 
 <===>
 ================================================================================
-<===> isolated_through_import/options.yml
-:todo:
-  - libsass#css-clone
-
 <===> isolated_through_import/input.scss
 @use "used-by-input";
 @import "imported";
