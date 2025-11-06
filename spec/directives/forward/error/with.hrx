@@ -115,6 +115,24 @@ Error: This variable is available from multiple global modules.
   _downstream.scss 1:1  @use
   input.scss 1:1        root stylesheet
 
+<===> conflict/error-libsass
+Error: $a is available from multiple global modules.
+  ,
+2 | @use "right" as *;
+  | ^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 2:1   @forward
+  ,
+1 | @forward "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _downstream.scss 1:1  @use
+  ,
+1 | @use "downstream";
+  | ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1        root stylesheet
+
 <===>
 ================================================================================
 <===> invalid_expression/error/input.scss
