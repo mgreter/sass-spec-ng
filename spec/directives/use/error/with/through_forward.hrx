@@ -15,6 +15,19 @@ Error: This variable was not declared with !default in the @used module.
   '
   input.scss 1:19  root stylesheet
 
+<===> show/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @use "used" with ($a: b);
+  |                   ^^^^^
+  '
+  input.scss 1:19  @use
+  ,
+1 | @use "used" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
+
 <===>
 ================================================================================
 <===> hide/input.scss
@@ -33,6 +46,19 @@ Error: This variable was not declared with !default in the @used module.
   |                   ^^^^^
   '
   input.scss 1:19  root stylesheet
+
+<===> hide/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @use "used" with ($a: b);
+  |                   ^^^^^
+  '
+  input.scss 1:19  @use
+  ,
+1 | @use "used" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
 
 <===>
 ================================================================================
@@ -53,6 +79,19 @@ Error: This variable was not declared with !default in the @used module.
   '
   input.scss 1:19  root stylesheet
 
+<===> as/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @use "used" with ($a: b);
+  |                   ^^^^^
+  '
+  input.scss 1:19  @use
+  ,
+1 | @use "used" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
+
 <===>
 ================================================================================
 <===> with/input.scss
@@ -71,3 +110,16 @@ Error: This variable was not declared with !default in the @used module.
   |                   ^^^^^
   '
   input.scss 1:19  root stylesheet
+
+<===> with/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @use "used" with ($a: b);
+  |                   ^^^^^
+  '
+  input.scss 1:19  @use
+  ,
+1 | @use "used" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
