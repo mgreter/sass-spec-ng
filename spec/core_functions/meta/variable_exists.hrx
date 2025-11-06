@@ -288,3 +288,11 @@ Error: This variable is available from multiple global modules.
     |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ variable use
     '
   input.scss 5:7  root stylesheet
+
+<===> conflict/error-libsass
+Error: $member is available from multiple global modules.
+  ,
+3 | @use "other2" as *;
+  | ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1  root stylesheet

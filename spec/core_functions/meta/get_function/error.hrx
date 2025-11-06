@@ -304,6 +304,14 @@ Error: This function is available from multiple global modules.
     '
   input.scss 5:7  root stylesheet
 
+<===> conflict/error-libsass
+Error: Function "member(...)" is available from multiple global modules.
+  ,
+3 | @use "other2" as *;
+  | ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1  root stylesheet
+
 <===>
 ================================================================================
 <===> module/undefined/input.scss
