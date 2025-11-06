@@ -16,7 +16,7 @@ Error: expected selector.
 <===> error-libsass
 Error: expected selector.
   ,
-1 | .test31@baz { content: '3.1'}
+1 | .test31@baz { content: '3.1'; }
   |        ^
   '
   input.scss 1:8  root stylesheet
