@@ -107,10 +107,10 @@ Error: expected ":".
 <===> error/supports/condition_function/before_paren/sass/error-libsass
 Error: expected ":".
   ,
-1 | @import "a.css" supports(a
-  |                           ^
+2 |   (b))
+  |      ^
   '
-  input.sass 1:27  root stylesheet
+  input.sass 2:6  root stylesheet
 
 <===>
 ================================================================================

@@ -85,3 +85,12 @@ Error: Undefined operation "c % d".
 5 | \   d
   '
   input.sass 4:6  root stylesheet
+
+<===> error/indented/after/error-libsass
+Error: Undefined operation "c % d".
+  ,
+4 |     b: c %
+  | /------^
+5 | \   d
+  '
+  input.sass 4:6  root stylesheet

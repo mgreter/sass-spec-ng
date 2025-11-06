@@ -9,6 +9,14 @@ Error: a
   '
   input.sass 1:1  root stylesheet
 
+<===> sass/semicolon/error-libsass
+Error: a
+  ,
+1 | @error a;
+  | ^^^^^^^^^
+  '
+  input.sass 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> sass/semicolon_comment/input.sass
@@ -19,6 +27,14 @@ Error: a
   ,
 1 | @error a; // b
   | ^^^^^^^^
+  '
+  input.sass 1:1  root stylesheet
+
+<===> sass/semicolon_comment/error-libsass
+Error: a
+  ,
+1 | @error a; // b
+  | ^^^^^^^^^^^^^^
   '
   input.sass 1:1  root stylesheet
 
