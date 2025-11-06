@@ -237,6 +237,24 @@ Error: $selector: Parent selectors aren't allowed here.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/selector/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+2 | a {b: selector.replace(&, "c", "d")}
+  |                        ^
+  '
+  input.scss 2:24  selector-replace()
+  ,
+2 | a {b: selector.replace("&", "c", "d")}
+  |                        ^^^
+  '
+  input.scss 2:24  selector-replace()
+  ,
+2 | a {b: selector.replace("&", "c", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/selector/invalid/input.scss
@@ -255,6 +273,24 @@ Error: $selector: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/selector/invalid/error-libsass
+Error: expected more input.
+  ,
+2 | a {b: selector.replace([c, "d", "e")}
+  |                          ^
+  '
+  input.scss 2:26  selector-replace()
+  ,
+2 | a {b: selector.replace("[c", "d", "e")}
+  |                        ^^^^
+  '
+  input.scss 2:24  selector-replace()
+  ,
+2 | a {b: selector.replace("[c", "d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -304,6 +340,24 @@ Error: $original: Parent selectors aren't allowed here.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/extendee/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+2 | a {b: selector.replace("c", &, "d")}
+  |                             ^
+  '
+  input.scss 2:29  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "&", "d")}
+  |                             ^^^
+  '
+  input.scss 2:29  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "&", "d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extendee/complex/string/input.scss
@@ -350,6 +404,24 @@ Error: $original: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/extendee/invalid/error-libsass
+Error: expected more input.
+  ,
+2 | a {b: selector.replace("c", [d, "e")}
+  |                               ^
+  '
+  input.scss 2:31  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "[d", "e")}
+  |                             ^^^^
+  '
+  input.scss 2:29  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "[d", "e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -399,6 +471,24 @@ Error: $replacement: Parent selectors aren't allowed here.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/extender/parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+2 | a {b: selector.replace("c", "d", &)}
+  |                                  ^
+  '
+  input.scss 2:34  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "d", "&")}
+  |                                  ^^^
+  '
+  input.scss 2:34  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "d", "&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/extender/invalid/input.scss
@@ -417,6 +507,24 @@ Error: $replacement: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/extender/invalid/error-libsass
+Error: expected more input.
+  ,
+2 | a {b: selector.replace("c", "d", [e)}
+  |                                    ^
+  '
+  input.scss 2:36  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "d", "[e")}
+  |                                  ^^^^
+  '
+  input.scss 2:34  selector-replace()
+  ,
+2 | a {b: selector.replace("c", "d", "[e")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
