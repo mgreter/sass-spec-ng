@@ -75,10 +75,6 @@ a {
 
 <===>
 ================================================================================
-<===> namespace/explicit/and_universal/explicit/equal/options.yml
----
-:todo:
-
 <===> namespace/explicit/and_universal/explicit/equal/input.scss
 @use "sass:selector";
 a {b: selector.is-superselector("c|*", "c|*")}
