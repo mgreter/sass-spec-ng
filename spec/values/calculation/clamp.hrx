@@ -102,6 +102,24 @@ Error: 1s and 2px are incompatible.
   '
   input.scss 1:13  root stylesheet
 
+<===> error/known_incompatible/first/error-libsass
+Error: 1s and 2px have incompatible units.
+  ,
+1 | a {b: clamp(1s, 2px, 3px)}
+  |                 ^^^
+  '
+  input.scss 1:17  clamp()
+  ,
+1 | a {b: clamp(1s, 2px, 3px)}
+  |             ^^
+  '
+  input.scss 1:13  clamp()
+  ,
+1 | a {b: clamp(1s, 2px, 3px)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/known_incompatible/second/input.scss
@@ -116,6 +134,24 @@ Error: 1px and 2s are incompatible.
   '
   input.scss 1:13  root stylesheet
 
+<===> error/known_incompatible/second/error-libsass
+Error: 1px and 2s have incompatible units.
+  ,
+1 | a {b: clamp(1px, 2s, 3px)}
+  |                  ^^
+  '
+  input.scss 1:18  clamp()
+  ,
+1 | a {b: clamp(1px, 2s, 3px)}
+  |             ^^^
+  '
+  input.scss 1:13  clamp()
+  ,
+1 | a {b: clamp(1px, 2s, 3px)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/known_incompatible/third/input.scss
@@ -129,6 +165,24 @@ Error: 1px and 3s are incompatible.
   |                       == 3s
   '
   input.scss 1:13  root stylesheet
+
+<===> error/known_incompatible/third/error-libsass
+Error: 1px and 3s have incompatible units.
+  ,
+1 | a {b: clamp(1px, 2px, 3s)}
+  |                       ^^
+  '
+  input.scss 1:23  clamp()
+  ,
+1 | a {b: clamp(1px, 2px, 3s)}
+  |             ^^^
+  '
+  input.scss 1:13  clamp()
+  ,
+1 | a {b: clamp(1px, 2px, 3s)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
