@@ -162,6 +162,11 @@ a {
   b: 67108864.00000001;
 }
 
+<===> precision_limit/at/balanced/output-libsass.css
+a {
+  b: 67108864.0000000149;
+}
+
 <===>
 ================================================================================
 <===> precision_limit/over/no_decimal/input.scss
