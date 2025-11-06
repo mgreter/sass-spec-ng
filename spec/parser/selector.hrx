@@ -103,6 +103,14 @@ Error: expected selector.
   '
   input.sass 1:2  root stylesheet
 
+<===> error/newline/before_comma/error-libsass
+Error: expected selector.
+  ,
+2 | ,b
+  | ^
+  '
+  input.sass 2:1  root stylesheet
+
 <===>
 ================================================================================
 <===> error/empty_placeholder/input.scss

@@ -146,6 +146,14 @@ Error: Missing argument $channel.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $channel.
+  ,
+2 | a {b: color.is-missing(black)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -164,6 +172,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: color.is-missing(black, "red", rgb)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/color/input.scss
@@ -178,6 +194,19 @@ Error: $color: "black" is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/color/error-libsass
+Error: $color: "black" is not a color.
+  ,
+2 | a {b: color.is-missing("black", "red")}
+  |                        ^^^^^^^
+  '
+  input.scss 2:24  is-missing()
+  ,
+2 | a {b: color.is-missing("black", "red")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/channel/input.scss
@@ -191,6 +220,19 @@ Error: $channel: red is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/channel/error-libsass
+Error: $channel: red is not a string.
+  ,
+2 | a {b: color.is-missing(black, red)}
+  |                               ^^^
+  '
+  input.scss 2:31  is-missing()
+  ,
+2 | a {b: color.is-missing(black, red)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -219,6 +261,19 @@ Error: $channel: Expected hue to be a quoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/channel/unquoted/error-libsass
+Error: $channel: Expected hue to be a quoted string.
+  ,
+2 | a {b: color.is-missing(hsl(0deg 50% 50%), hue)}
+  |                                           ^^^
+  '
+  input.scss 2:43  is-missing()
+  ,
+2 | a {b: color.is-missing(hsl(0deg 50% 50%), hue)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================

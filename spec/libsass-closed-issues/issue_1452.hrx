@@ -11,3 +11,11 @@ Error: () isn't a valid CSS value.
   |        ======= unknown function treated as plain CSS
   '
   input.scss 2:12  root stylesheet
+
+<===> error-libsass
+Error: () isn't a valid CSS value.
+  ,
+2 |   foo: foo(());
+  |            ^^
+  '
+  input.scss 2:12  root stylesheet

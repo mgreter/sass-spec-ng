@@ -359,6 +359,14 @@ Error: Expected identifier.
   '
   input.scss 1:16  root stylesheet
 
+<===> error/wrong_order/url_after_comma/error-libsass
+Error: Expected identifier.
+  ,
+1 | @import "a" b, "c";
+  |               ^
+  '
+  input.scss 1:15  root stylesheet
+
 <===>
 ================================================================================
 <===> error/supports/declaration/custom_prop/empty/input.scss

@@ -115,6 +115,14 @@ Error: Missing argument $list.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $list.
+  ,
+2 | a {b: list.length()}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -130,5 +138,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:list
 1 | @function length($list) {
   |           ============= declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: list.length(1, 2)}
+  |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

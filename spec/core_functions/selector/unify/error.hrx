@@ -49,6 +49,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> selector1/type/error-libsass
+Error: $selector1: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.unify(1, "c")}
+  |                      ^
+  '
+  input.scss 2:22  selector-unify()
+  ,
+2 | a {b: selector.unify(1, "c")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> selector2/parent/input.scss
@@ -101,6 +115,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> selector2/type/error-libsass
+Error: $selector2: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.unify("c", 1)}
+  |                           ^
+  '
+  input.scss 2:27  selector-unify()
+  ,
+2 | a {b: selector.unify("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================

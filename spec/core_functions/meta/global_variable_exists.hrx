@@ -260,6 +260,19 @@ Error: $name: 12px is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/argument/type/name/error-libsass
+Error: $name: 12px is not a string.
+  ,
+2 | a {b: meta.global-variable-exists(12px)}
+  |                                   ^^^^
+  '
+  input.scss 2:35  global-variable-exists()
+  ,
+2 | a {b: meta.global-variable-exists(12px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/argument/type/module/input.scss
@@ -273,6 +286,19 @@ Error: $module: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/argument/type/module/error-libsass
+Error: $module: 1 is not a string.
+  ,
+2 | a {b: meta.global-variable-exists("c", 1)}
+  |                                        ^
+  '
+  input.scss 2:40  global-variable-exists()
+  ,
+2 | a {b: meta.global-variable-exists("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -292,6 +318,14 @@ Error: Missing argument $name.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/argument/too_few/error-libsass
+Error: Missing argument $name.
+  ,
+2 | a {b: meta.global-variable-exists()}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/argument/too_many/input.scss
@@ -307,6 +341,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   ,--> sass:meta
 1 | @function global-variable-exists($name, $module: null) {
   |           ============================================ declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/argument/too_many/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: meta.global-variable-exists(c, d, e)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
 

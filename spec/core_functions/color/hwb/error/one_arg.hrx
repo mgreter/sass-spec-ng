@@ -10,6 +10,19 @@ Error: $channels: Color component list may not be empty.
   '
   input.scss 2:7  root stylesheet
 
+<===> list/empty/error-libsass
+Error: $channels: Color component list may not be empty.
+  ,
+2 | a {b: color.hwb(())}
+  |                 ^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb(())}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> list/comma_separated/input.scss
@@ -23,6 +36,19 @@ Error: $channels: Expected a space- or slash-separated list, was (0, 30%, 40%)
   |       ^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> list/comma_separated/error-libsass
+Error: $channels: Expected a space- or slash-separated list, was (0, 30%, 40%)
+  ,
+2 | a {b: color.hwb((0, 30%, 40%))}
+  |                 ^^^^^^^^^^^^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb((0, 30%, 40%))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $channels: Expected an unbracketed list, was [0 30% 40%]
   '
   input.scss 2:7  root stylesheet
 
+<===> list/bracketed/error-libsass
+Error: $channels: Expected an unbracketed list, was [0 30% 40%]
+  ,
+2 | a {b: color.hwb([0 30% 40%])}
+  |                 ^^^^^^^^^^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb([0 30% 40%])}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> list/one_element/input.scss
@@ -51,6 +90,19 @@ Error: $channels: The hwb color space has 3 channels but 0 has 1.
   |       ^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> list/one_element/error-libsass
+Error: $channels: The hwb color space has 3 channels but 0 has 1.
+  ,
+2 | a {b: color.hwb(0)}
+  |                 ^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb(0)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -66,6 +118,19 @@ Error: $channels: The hwb color space has 3 channels but (0 30%) has 2.
   '
   input.scss 2:7  root stylesheet
 
+<===> list/two_elements/error-libsass
+Error: $channels: The hwb color space has 3 channels but (0 30%) has 2.
+  ,
+2 | a {b: color.hwb(0 30%)}
+  |                 ^^^^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb(0 30%)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> list/four_elements/input.scss
@@ -79,6 +144,19 @@ Error: $channels: The hwb color space has 3 channels but (0 30% 40% 0.4) has 4.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> list/four_elements/error-libsass
+Error: $channels: The hwb color space has 3 channels but (0 30% 40% 0.4) has 4.
+  ,
+2 | a {b: color.hwb(0 30% 40% 0.4)}
+  |                 ^^^^^^^^^^^^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb(0 30% 40% 0.4)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -94,6 +172,19 @@ Error: $channels: Expected hue channel to be a number, was "foo".
   '
   input.scss 2:7  root stylesheet
 
+<===> hue/type/error-libsass
+Error: $channels: Expected hue channel to be a number, was "foo".
+  ,
+2 | a {b: color.hwb("foo" 30% 40%)}
+  |                 ^^^^^
+  '
+  input.scss 2:17  hwb()
+  ,
+2 | a {b: color.hwb("foo" 30% 40%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> whiteness/type/input.scss
@@ -107,6 +198,19 @@ Error: $channels: Expected whiteness channel to be a number, was "foo".
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> whiteness/type/error-libsass
+Error: $channels: Expected whiteness channel to be a number, was "foo".
+  ,
+2 | a {b: color.hwb(0 "foo" 40%)}
+  |                   ^^^^^
+  '
+  input.scss 2:19  hwb()
+  ,
+2 | a {b: color.hwb(0 "foo" 40%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -122,6 +226,19 @@ Error: $whiteness: Expected 30 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> whiteness/unit/none/error-libsass
+Error: $whiteness: Expected 30 to have unit "%".
+  ,
+2 | a {b: color.hwb(0 30 40%)}
+  |                   ^^
+  '
+  input.scss 2:19  hwb()
+  ,
+2 | a {b: color.hwb(0 30 40%)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> whiteness/unit/wrong/input.scss
@@ -135,6 +252,19 @@ Error: $whiteness: Expected 30px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> whiteness/unit/wrong/error-libsass
+Error: $whiteness: Expected 30px to have unit "%".
+  ,
+2 | a {b: color.hwb(0 30px 40%)}
+  |                   ^^^^
+  '
+  input.scss 2:19  hwb()
+  ,
+2 | a {b: color.hwb(0 30px 40%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -150,6 +280,19 @@ Error: $channels: Expected blackness channel to be a number, was "foo".
   '
   input.scss 2:7  root stylesheet
 
+<===> blackness/type/error-libsass
+Error: $channels: Expected blackness channel to be a number, was "foo".
+  ,
+2 | a {b: color.hwb(0 30% "foo")}
+  |                       ^^^^^
+  '
+  input.scss 2:23  hwb()
+  ,
+2 | a {b: color.hwb(0 30% "foo")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> blackness/unit/none/input.scss
@@ -163,6 +306,19 @@ Error: $blackness: Expected 40 to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> blackness/unit/none/error-libsass
+Error: $blackness: Expected 40 to have unit "%".
+  ,
+2 | a {b: color.hwb(0 30% 40)}
+  |                       ^^
+  '
+  input.scss 2:23  hwb()
+  ,
+2 | a {b: color.hwb(0 30% 40)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -178,6 +334,19 @@ Error: $blackness: Expected 40px to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> blackness/unit/wrong/error-libsass
+Error: $blackness: Expected 40px to have unit "%".
+  ,
+2 | a {b: color.hwb(0 30% 40px)}
+  |                       ^^^^
+  '
+  input.scss 2:23  hwb()
+  ,
+2 | a {b: color.hwb(0 30% 40px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> alpha/unit/input.scss
@@ -192,6 +361,19 @@ Error: $alpha: Expected 0.5px to have unit "%" or no units.
   '
   input.scss 2:7  root stylesheet
 
+<===> alpha/unit/error-libsass
+Error: $alpha: Expected 0.5px to have unit "%" or no units.
+  ,
+2 | a {b: color.hwb(0 0% 0% / 0.5px)}
+  |                           ^^^^^
+  '
+  input.scss 2:27  hwb()
+  ,
+2 | a {b: color.hwb(0 0% 0% / 0.5px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> quoted_var_slash/input.scss
@@ -205,3 +387,16 @@ Error: $channels: Expected blackness channel to be a number, was "var(--foo) / 0
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> quoted_var_slash/error-libsass
+Error: $channels: Expected blackness channel to be a number, was "var(--foo) / 0.4".
+  ,
+2 | a {b: color.hwb(0 30% "var(--foo) / 0.4")}
+  |                       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:23  hwb()
+  ,
+2 | a {b: color.hwb(0 30% "var(--foo) / 0.4")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

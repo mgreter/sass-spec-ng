@@ -276,6 +276,19 @@ Error: Number calc(2px * 1px) isn't compatible with CSS calculations.
   '
   input.scss 1:11  root stylesheet
 
+<===> error/units/complex_and_unknown/error-libsass
+Error: Number calc(2px * 1px) isn't compatible with CSS calculations.
+  ,
+1 | a {b: rem(1px*2px, 10%)}
+  |           ^^^^^^^
+  '
+  input.scss 1:11  rem()
+  ,
+1 | a {b: rem(1px*2px, 10%)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -353,6 +366,14 @@ Error: This operation can't be used in a calculation.
   |             ^
   '
   input.scss 1:13  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: rem(7 % 3, 1)}
+  |           ^^^^^
+  '
+  input.scss 1:11  root stylesheet
 
 <===>
 ================================================================================

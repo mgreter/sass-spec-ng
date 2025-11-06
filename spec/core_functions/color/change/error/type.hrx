@@ -10,6 +10,19 @@ Error: $color: 1 is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> color/error-libsass
+Error: $color: 1 is not a color.
+  ,
+2 | a {b: color.change(1)}
+  |                    ^
+  '
+  input.scss 2:20  change-color()
+  ,
+2 | a {b: color.change(1)}
+  |       ^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> red/input.scss
@@ -163,3 +176,16 @@ Error: $space: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> space/error-libsass
+Error: $space: 1 is not a string.
+  ,
+2 | a {b: color.change(red, $space: 1)}
+  |                                 ^
+  '
+  input.scss 2:33  change-color()
+  ,
+2 | a {b: color.change(red, $space: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

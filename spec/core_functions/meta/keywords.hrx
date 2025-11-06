@@ -164,6 +164,19 @@ Error: $args: (1 2 3) is not an argument list.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/non_arg_list/error-libsass
+Error: $args: (1 2 3) is not an argument list.
+  ,
+2 | a {b: meta.keywords(1 2 3)}
+  |                     ^^^^^
+  '
+  input.scss 2:21  keywords()
+  ,
+2 | a {b: meta.keywords(1 2 3)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/non_list/input.scss
@@ -177,6 +190,19 @@ Error: $args: 1 is not an argument list.
   |       ^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/non_list/error-libsass
+Error: $args: 1 is not an argument list.
+  ,
+2 | a {b: meta.keywords(1)}
+  |                     ^
+  '
+  input.scss 2:21  keywords()
+  ,
+2 | a {b: meta.keywords(1)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -196,6 +222,14 @@ Error: Missing argument $args.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $args.
+  ,
+2 | a {b: meta.keywords()}
+  |       ^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -211,5 +245,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:meta
 1 | @function keywords($args) {
   |           =============== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: meta.keywords(1, 2)}
+  |       ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

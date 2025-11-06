@@ -116,6 +116,16 @@ Error: Nothing may be indented beneath a @import rule.
   '
   input.sass 2:3  root stylesheet
 
+<===> error/before_url/sass/error-libsass
+Error: Nothing may be indented beneath a @import rule.
+  ,
+1 |   @import
+  | /---------^
+2 | |   "a.css"
+  | \--^
+  '
+  input.sass 1:8  root stylesheet
+
 <===>
 ================================================================================
 <===> error/before_comma/sass/input.sass
@@ -130,6 +140,16 @@ Error: Nothing may be indented beneath a @import rule.
   '
   input.sass 2:3  root stylesheet
 
+<===> error/before_comma/sass/error-libsass
+Error: Nothing may be indented beneath a @import rule.
+  ,
+1 |   @import "a.css"
+  | /-----------------^
+2 | |   , "b.css"
+  | \--^
+  '
+  input.sass 1:16  root stylesheet
+
 <===>
 ================================================================================
 <===> error/modifier/args/before/sass/input.sass
@@ -143,3 +163,13 @@ Error: Nothing may be indented beneath a @import rule.
   |   ^
   '
   input.sass 2:3  root stylesheet
+
+<===> error/modifier/args/before/sass/error-libsass
+Error: Nothing may be indented beneath a @import rule.
+  ,
+1 |   @import "a.css"
+  | /-----------------^
+2 | |   b(c)
+  | \--^
+  '
+  input.sass 1:16  root stylesheet

@@ -54,3 +54,11 @@ Error: Expected identifier.
   |         ^
   '
   input.sass 2:9  root stylesheet
+
+<===> error/whitespace/sass/before_paren/middle/error-libsass
+Error: Expected identifier.
+  ,
+3 |     (c)
+  |     ^
+  '
+  input.sass 3:5  root stylesheet

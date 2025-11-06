@@ -329,3 +329,11 @@ Error: Missing argument $arg.
   '
   input.scss 2:7  var()
   input.scss 2:7  root stylesheet
+
+<===> error/empty_after_keyword/error-libsass
+Error: Missing argument $arg.
+  ,
+2 | a {b: var($name: --c, )}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet

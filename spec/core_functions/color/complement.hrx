@@ -234,6 +234,14 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.complement()}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -252,6 +260,14 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: color.complement(red, lch, 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -266,6 +282,19 @@ Error: $color: 1 is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $color: 1 is not a color.
+  ,
+2 | a {b: color.complement(1)}
+  |                        ^
+  '
+  input.scss 2:24  complement()
+  ,
+2 | a {b: color.complement(1)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/null_space/non_legacy/input.scss
@@ -279,6 +308,19 @@ Error: $space: null is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/null_space/non_legacy/error-libsass
+Error: $space: null is not a string.
+  ,
+1 | ($color, $space: null)
+  |                  ^^^^
+  '
+  sass://signature 1:18  complement()
+  ,
+2 | a {b: color.complement(oklch(0.63 0.26 29.2))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7         root stylesheet
 
 <===>
 ================================================================================

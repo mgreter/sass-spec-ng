@@ -191,3 +191,21 @@ Error: expected selector.
   input.sass 4:9  @content
   input.sass 2:3  a()
   input.sass 3:1  root stylesheet
+
+<===> error/include/before_using/sass/error-libsass
+Error: expected selector.
+  ,
+4 |   using ()
+  |         ^
+  '
+  input.sass 4:9  @content
+  ,
+2 |   @content
+  |   ^^^^^^^^
+  '
+  input.sass 2:3  a()
+  ,
+3 | @include a()
+  | ^^^^^^^^^^^^
+  '
+  input.sass 3:1  root stylesheet

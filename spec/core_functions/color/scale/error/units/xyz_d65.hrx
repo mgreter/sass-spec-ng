@@ -10,6 +10,19 @@ Error: $x: Expected 1 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> none/x/error-libsass
+Error: $x: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $x: 1)}
+  |                                                   ^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $x: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> none/y/input.scss
@@ -23,6 +36,19 @@ Error: $y: Expected 1 to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> none/y/error-libsass
+Error: $y: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $y: 1)}
+  |                                                   ^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $y: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $z: Expected 1 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> none/z/error-libsass
+Error: $z: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $z: 1)}
+  |                                                   ^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $z: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong/x/input.scss
@@ -51,6 +90,19 @@ Error: $x: Expected 1px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> wrong/x/error-libsass
+Error: $x: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $x: 1px)}
+  |                                                   ^^^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $x: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -66,6 +118,19 @@ Error: $y: Expected 1px to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> wrong/y/error-libsass
+Error: $y: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $y: 1px)}
+  |                                                   ^^^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $y: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong/z/input.scss
@@ -79,3 +144,16 @@ Error: $z: Expected 1px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> wrong/z/error-libsass
+Error: $z: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $z: 1px)}
+  |                                                   ^^^
+  '
+  input.scss 2:51  scale()
+  ,
+2 | a {b: color.scale(color(xyz-d65 0.2 0.5 0.7), $z: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

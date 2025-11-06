@@ -10,6 +10,19 @@ Error: $color: 1 is not a color.
   '
   input.scss 2:7  root stylesheet
 
+<===> color/error-libsass
+Error: $color: 1 is not a color.
+  ,
+2 | a {b: color.scale(1)}
+  |                   ^
+  '
+  input.scss 2:19  scale()
+  ,
+2 | a {b: color.scale(1)}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> red/input.scss
@@ -23,6 +36,19 @@ Error: $red: c is not a number.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> red/error-libsass
+Error: $red: c is not a number.
+  ,
+2 | a {b: color.scale(red, $red: c)}
+  |                              ^
+  '
+  input.scss 2:30  scale()
+  ,
+2 | a {b: color.scale(red, $red: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $green: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> green/error-libsass
+Error: $green: c is not a number.
+  ,
+2 | a {b: color.scale(red, $green: c)}
+  |                                ^
+  '
+  input.scss 2:32  scale()
+  ,
+2 | a {b: color.scale(red, $green: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> blue/input.scss
@@ -51,6 +90,19 @@ Error: $blue: c is not a number.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> blue/error-libsass
+Error: $blue: c is not a number.
+  ,
+2 | a {b: color.scale(red, $blue: c)}
+  |                               ^
+  '
+  input.scss 2:31  scale()
+  ,
+2 | a {b: color.scale(red, $blue: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -66,6 +118,19 @@ Error: $saturation: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> saturation/error-libsass
+Error: $saturation: c is not a number.
+  ,
+2 | a {b: color.scale(red, $saturation: c)}
+  |                                     ^
+  '
+  input.scss 2:37  scale()
+  ,
+2 | a {b: color.scale(red, $saturation: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> lightness/input.scss
@@ -79,6 +144,19 @@ Error: $lightness: c is not a number.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> lightness/error-libsass
+Error: $lightness: c is not a number.
+  ,
+2 | a {b: color.scale(red, $lightness: c)}
+  |                                    ^
+  '
+  input.scss 2:36  scale()
+  ,
+2 | a {b: color.scale(red, $lightness: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -94,6 +172,19 @@ Error: $alpha: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> alpha/error-libsass
+Error: $alpha: c is not a number.
+  ,
+2 | a {b: color.scale(red, $alpha: c)}
+  |                                ^
+  '
+  input.scss 2:32  scale()
+  ,
+2 | a {b: color.scale(red, $alpha: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> none/input.scss
@@ -107,6 +198,19 @@ Error: $alpha: none is not a number.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> none/error-libsass
+Error: $alpha: none is not a number.
+  ,
+2 | a {b: color.scale(red, $alpha: none)}
+  |                                ^^^^
+  '
+  input.scss 2:32  scale()
+  ,
+2 | a {b: color.scale(red, $alpha: none)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -122,6 +226,19 @@ Error: $blackness: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> blackness/error-libsass
+Error: $blackness: c is not a number.
+  ,
+2 | a {b: color.scale(red, $blackness: c)}
+  |                                    ^
+  '
+  input.scss 2:36  scale()
+  ,
+2 | a {b: color.scale(red, $blackness: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> whiteness/input.scss
@@ -136,6 +253,19 @@ Error: $whiteness: c is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> whiteness/error-libsass
+Error: $whiteness: c is not a number.
+  ,
+2 | a {b: color.scale(red, $whiteness: c)}
+  |                                    ^
+  '
+  input.scss 2:36  scale()
+  ,
+2 | a {b: color.scale(red, $whiteness: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> space/input.scss
@@ -149,3 +279,16 @@ Error: $space: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> space/error-libsass
+Error: $space: 1 is not a string.
+  ,
+2 | a {b: color.scale(red, $space: 1)}
+  |                                ^
+  '
+  input.scss 2:32  scale()
+  ,
+2 | a {b: color.scale(red, $space: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

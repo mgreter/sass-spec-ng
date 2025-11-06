@@ -21,6 +21,14 @@ Error: This module was already loaded, so it can't be configured using "with".
   '
   input.scss 2:1  root stylesheet
 
+<===> one_file/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+2 | @use "other" as o2 with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet
+
 <===>
 ================================================================================
 <===> multi_file/input.scss
@@ -49,6 +57,19 @@ Error: This module was already loaded, so it can't be configured using "with".
   _right.scss 1:1  @use
   input.scss 2:1   root stylesheet
 
+<===> multi_file/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @use "other" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _right.scss 1:1  @use
+  ,
+2 | @use "right";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+
 <===>
 ================================================================================
 <===> unconfigured_first/input.scss
@@ -65,6 +86,14 @@ Error: This module was already loaded, so it can't be configured using "with".
   | ================== original load
 2 | @use "other" as o2 with ($a: b);
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ new load
+  '
+  input.scss 2:1  root stylesheet
+
+<===> unconfigured_first/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+2 | @use "other" as o2 with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
 
@@ -96,4 +125,17 @@ Error: This module was already loaded, so it can't be configured using "with".
   | ==================================== configuration
   '
   _midstream.scss 1:1  @use
+  input.scss 2:1       root stylesheet
+
+<===> through_forward/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @forward "forwarded";
+  | ^^^^^^^^^^^^^^^^^^^^
+  '
+  _midstream.scss 1:1  @use
+  ,
+2 | @use "midstream" with ($a: b, $c: d);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
   input.scss 2:1       root stylesheet

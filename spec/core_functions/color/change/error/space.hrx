@@ -10,6 +10,19 @@ Error: $space: Unknown color space "c".
   '
   input.scss 2:7  root stylesheet
 
+<===> unknown/error-libsass
+Error: $space: Unknown color space "c".
+  ,
+2 | a {b: color.change(red, $space: c)}
+  |                                 ^
+  '
+  input.scss 2:33  change-color()
+  ,
+2 | a {b: color.change(red, $space: c)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> quoted/input.scss
@@ -23,3 +36,16 @@ Error: $space: Expected "lab" to be an unquoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> quoted/error-libsass
+Error: $space: Expected "lab" to be an unquoted string.
+  ,
+2 | a {b: color.change(red, $space: "lab")}
+  |                                 ^^^^^
+  '
+  input.scss 2:33  change-color()
+  ,
+2 | a {b: color.change(red, $space: "lab")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

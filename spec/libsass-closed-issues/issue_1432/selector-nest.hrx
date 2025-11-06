@@ -10,3 +10,17 @@ a list of strings, or a list of lists of strings.
   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:8  root stylesheet
+
+<===> error-libsass
+Error: null is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | @debug(selector.nest("foo", null));
+  |                             ^^^^
+  '
+  input.scss 2:29  selector-nest()
+  ,
+2 | @debug(selector.nest("foo", null));
+  |        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:8   root stylesheet
