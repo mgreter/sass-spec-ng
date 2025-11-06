@@ -15,3 +15,16 @@ Error: This variable was not declared with !default in the @used module.
   |                        ^^^^^
   '
   input.scss 1:24  root stylesheet
+
+<===> error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+1 | @use "midstream" with ($a: b);
+  |                        ^^^^^
+  '
+  input.scss 1:24  @use
+  ,
+1 | @use "midstream" with ($a: b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
