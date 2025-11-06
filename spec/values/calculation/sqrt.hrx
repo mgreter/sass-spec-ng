@@ -78,6 +78,19 @@ Error: Expected 1% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/units/unknown/error-libsass
+Error: $number: Expected 1% to have no units.
+  ,
+1 | a {b: sqrt(1%)}
+  |            ^^
+  '
+  input.scss 1:12  sqrt()
+  ,
+1 | a {b: sqrt(1%)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/units/real/input.scss
@@ -90,6 +103,19 @@ Error: Expected 16px to have no units.
   |       ^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/units/real/error-libsass
+Error: $number: Expected 16px to have no units.
+  ,
+1 | a {b: sqrt(16px)}
+  |            ^^^^
+  '
+  input.scss 1:12  sqrt()
+  ,
+1 | a {b: sqrt(16px)}
+  |       ^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================

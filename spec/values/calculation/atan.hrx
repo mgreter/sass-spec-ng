@@ -88,6 +88,19 @@ Error: Expected 1% to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/unknown/error-libsass
+Error: $number: Expected 1% to have no units.
+  ,
+1 | a {b: atan(1%)}
+  |            ^^
+  '
+  input.scss 1:12  atan()
+  ,
+1 | a {b: atan(1%)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/known/input.scss
@@ -101,6 +114,19 @@ Error: Expected 1px to have no units.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/known/error-libsass
+Error: $number: Expected 1px to have no units.
+  ,
+1 | a {b: atan(1px)}
+  |            ^^^
+  '
+  input.scss 1:12  atan()
+  ,
+1 | a {b: atan(1px)}
+  |       ^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/complex/input.scss
@@ -113,6 +139,19 @@ Error: Expected calc(-1.75px / 1em) to have no units.
   |       ^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/unit/complex/error-libsass
+Error: $number: Expected calc(-1.75px / 1em) to have no units.
+  ,
+1 | a {b: atan(-7px / 4em)}
+  |            ^^^^^^^^^^
+  '
+  input.scss 1:12  atan()
+  ,
+1 | a {b: atan(-7px / 4em)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
