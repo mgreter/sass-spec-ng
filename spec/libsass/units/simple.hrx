@@ -15,6 +15,14 @@ div {
   hee: "cm^-1";
 }
 
+<===> output-libsass.css
+div {
+  hey: 5150.9186351706in;
+  ho: true;
+  hoo: "px/(fu*emu*gnu)";
+  hee: "cm^-1";
+}
+
 <===> warning
 DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
 
