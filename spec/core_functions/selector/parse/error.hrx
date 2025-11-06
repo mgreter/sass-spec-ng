@@ -15,6 +15,24 @@ Error: $selector: Parent selectors aren't allowed here.
   '
   input.scss 2:7  root stylesheet
 
+<===> parent/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+2 | a {b: selector.parse(&)}
+  |                      ^
+  '
+  input.scss 2:22  selector-parse()
+  ,
+2 | a {b: selector.parse("&")}
+  |                      ^^^
+  '
+  input.scss 2:22  selector-parse()
+  ,
+2 | a {b: selector.parse("&")}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> parse/invalid/input.scss
@@ -34,6 +52,24 @@ Error: $selector: expected more input.
   '
   input.scss 2:7  root stylesheet
 
+<===> parse/invalid/error-libsass
+Error: expected more input.
+  ,
+2 | a {b: selector.parse([c)}
+  |                        ^
+  '
+  input.scss 2:24  selector-parse()
+  ,
+2 | a {b: selector.parse("[c")}
+  |                      ^^^^
+  '
+  input.scss 2:22  selector-parse()
+  ,
+2 | a {b: selector.parse("[c")}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> parse/extra/input.scss
@@ -52,6 +88,24 @@ Error: $selector: expected selector.
   |       ^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> parse/extra/error-libsass
+Error: expected selector.
+  ,
+2 | a {b: selector.parse(c {)}
+  |                        ^
+  '
+  input.scss 2:24  selector-parse()
+  ,
+2 | a {b: selector.parse("c {")}
+  |                      ^^^^^
+  '
+  input.scss 2:22  selector-parse()
+  ,
+2 | a {b: selector.parse("c {")}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
