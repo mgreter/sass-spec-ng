@@ -146,6 +146,24 @@ Error: $numbers[2]: 1px and $numbers[1]: 1deg have incompatible units.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/incompatible_units/first_and_second/error-libsass
+Error: 1deg and 1px have incompatible units.
+  ,
+2 | a {b: math.hypot(1deg, 1px, 1turn)}
+  |                        ^^^
+  '
+  input.scss 2:24  hypot()
+  ,
+2 | a {b: math.hypot(1deg, 1px, 1turn)}
+  |                  ^^^^
+  '
+  input.scss 2:18  hypot()
+  ,
+2 | a {b: math.hypot(1deg, 1px, 1turn)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/incompatible_units/first_and_third/input.scss
@@ -159,6 +177,24 @@ Error: $numbers[3]: 1px and $numbers[1]: 1deg have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/incompatible_units/first_and_third/error-libsass
+Error: 1deg and 1px have incompatible units.
+  ,
+2 | a {b: math.hypot(1deg, 1turn, 1px)}
+  |                               ^^^
+  '
+  input.scss 2:31  hypot()
+  ,
+2 | a {b: math.hypot(1deg, 1turn, 1px)}
+  |                  ^^^^
+  '
+  input.scss 2:18  hypot()
+  ,
+2 | a {b: math.hypot(1deg, 1turn, 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -174,6 +210,24 @@ Error: $numbers[3]: 1px and $numbers[1]: 1turn have incompatible units.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/incompatible_units/second_and_third/error-libsass
+Error: 1turn and 1px have incompatible units.
+  ,
+2 | a {b: math.hypot(1turn, 1deg, 1px)}
+  |                               ^^^
+  '
+  input.scss 2:31  hypot()
+  ,
+2 | a {b: math.hypot(1turn, 1deg, 1px)}
+  |                  ^^^^^
+  '
+  input.scss 2:18  hypot()
+  ,
+2 | a {b: math.hypot(1turn, 1deg, 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/incompatible_units/all/input.scss
@@ -187,6 +241,24 @@ Error: $numbers[2]: 1px and $numbers[1]: 1turn have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/incompatible_units/all/error-libsass
+Error: 1turn and 1px have incompatible units.
+  ,
+2 | a {b: math.hypot(1turn, 1px, 1s)}
+  |                         ^^^
+  '
+  input.scss 2:25  hypot()
+  ,
+2 | a {b: math.hypot(1turn, 1px, 1s)}
+  |                  ^^^^^
+  '
+  input.scss 2:18  hypot()
+  ,
+2 | a {b: math.hypot(1turn, 1px, 1s)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================

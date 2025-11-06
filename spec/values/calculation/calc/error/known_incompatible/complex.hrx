@@ -9,6 +9,24 @@ Error: 1 and 1px are incompatible.
   '
   input.scss 1:12  root stylesheet
 
+<===> unitless/and_numerator/error-libsass
+Error: 1 and 1px have incompatible units.
+  ,
+1 | a {b: calc(1 + 1px)}
+  |                ^^^
+  '
+  input.scss 1:16  root stylesheet
+  ,
+1 | a {b: calc(1 + 1px)}
+  |            ^
+  '
+  input.scss 1:12  root stylesheet
+  ,
+1 | a {b: calc(1 + 1px)}
+  |            ^^^^^^^
+  '
+  input.scss 1:12  root stylesheet
+
 <===>
 ================================================================================
 <===> unitless/and_denominator/input.scss
