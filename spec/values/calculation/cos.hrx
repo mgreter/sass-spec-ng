@@ -118,6 +118,14 @@ Error: $number: Expected 1% to have an angle unit (deg, grad, rad, turn).
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/unknown/error-libsass
+Error: $angle: Expected 1% to have an angle unit (deg, grad, rad, turn).
+  ,
+1 | a {b: cos(1%)}
+  |       ^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/known/input.scss
@@ -131,6 +139,14 @@ Error: $number: Expected 1px to have an angle unit (deg, grad, rad, turn).
   '
   input.scss 1:7  root stylesheet
 
+<===> error/unit/known/error-libsass
+Error: $angle: Expected 1px to have an angle unit (deg, grad, rad, turn).
+  ,
+1 | a {b: cos(1px)}
+  |       ^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/unit/complex/input.scss
@@ -138,6 +154,14 @@ a {b: cos(-7px / 4em)}
 
 <===> error/unit/complex/error
 Error: $number: Expected calc(-1.75px / 1em) to have an angle unit (deg, grad, rad, turn).
+  ,
+1 | a {b: cos(-7px / 4em)}
+  |       ^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
+<===> error/unit/complex/error-libsass
+Error: $angle: Expected calc(-1.75px / 1em) to have an angle unit (deg, grad, rad, turn).
   ,
 1 | a {b: cos(-7px / 4em)}
   |       ^^^^^^^^^^^^^^^
