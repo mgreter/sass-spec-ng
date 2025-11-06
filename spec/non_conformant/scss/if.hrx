@@ -27,6 +27,7 @@ div {
     height: 40px;
   }
 }
+
 <===> output.css
 span {
   color: blue;

@@ -85,7 +85,6 @@ h1 {
   }
 }
 
-
 <===> output.css
 foo {
   a: 1;

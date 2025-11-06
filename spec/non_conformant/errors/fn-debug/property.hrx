@@ -5,6 +5,7 @@ a {
     foo: bar;
   }
 }
+
 <===> output.css
 a {
   b-foo: bar;

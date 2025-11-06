@@ -3,10 +3,10 @@
 a
   b
     c: d
-    
+
   e
     f: g
-  
+
 <===> empty_line/after_indented/output.css
 a b {
   c: d;
@@ -57,7 +57,7 @@ a[b] {
 a {
   b: c
 }
-  
+
 <===> error/mixed_syntax/block/error
 Error: Expected newline.
   ,
@@ -79,4 +79,3 @@ Error: multiple statements on one line are not supported in the indented syntax.
   |         ^
   '
   input.sass 2:9  root stylesheet
-

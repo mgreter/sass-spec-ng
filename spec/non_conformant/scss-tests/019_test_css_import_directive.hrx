@@ -1,4 +1,5 @@
 <===> input.scss
 @import "foo.css";
+
 <===> output.css
 @import "foo.css";

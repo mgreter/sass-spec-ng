@@ -16,6 +16,7 @@ $map: (
 .foo {
   content: meta.inspect($map);
 }
+
 <===> output.css
 .foo {
   content: (1: "bar", 2: "foo");

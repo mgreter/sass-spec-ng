@@ -1,5 +1,5 @@
 <===> error/after_import/sass/input.sass
-@import 
+@import
 "a"
 
 <===> error/after_import/sass/error
@@ -8,7 +8,7 @@ DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be remo
 More info and automated migrator: https://sass-lang.com/d/import
 
   ,
-1 | @import 
+1 | @import
   |         ^
   '
     input.sass 1:9  root stylesheet
@@ -23,7 +23,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 
 Error: This file is already being loaded.
   ,
-1 | @import 
+1 | @import
   |         ^
   '
   input.sass 1:9  root stylesheet
@@ -31,7 +31,7 @@ Error: This file is already being loaded.
 <===>
 ================================================================================
 <===> error/after_import_indented/sass/input.sass
-@import 
+@import
   "a"
 
 <===> error/after_import_indented/sass/error
@@ -125,7 +125,7 @@ Error: expected ":".
 <===>
 ================================================================================
 <===> error/media/before/sass/input.sass
-@import url("a.css") 
+@import url("a.css")
   print
 
 <===> error/media/before/sass/error
@@ -210,7 +210,7 @@ Error: Nothing may be indented beneath a @import rule.
 <===>
 ================================================================================
 <===> supports/condition_and/before_and/sass/input.sass
-@import "a.css" supports((a: b) 
+@import "a.css" supports((a: b)
   and (c: d))
 
 <===> supports/condition_and/before_and/sass/output.css
@@ -219,7 +219,7 @@ Error: Nothing may be indented beneath a @import rule.
 <===>
 ================================================================================
 <===> supports/condition_and/after_and/sass/input.sass
-@import "a.css" supports((a: b) and 
+@import "a.css" supports((a: b) and
   (c: d))
 
 <===> supports/condition_and/after_and/sass/output.css

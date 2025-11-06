@@ -16,6 +16,7 @@ div {
     }
   }
 }
+
 <===> output.css
 div foo-sel bar {
   color: red;

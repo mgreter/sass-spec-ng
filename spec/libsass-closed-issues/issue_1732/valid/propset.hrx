@@ -1,10 +1,11 @@
 <===> input.scss
-foo { 
+foo {
   border: {
     width: 1px;
     color: green;
   }
 }
+
 <===> output.css
 foo {
   border-width: 1px;

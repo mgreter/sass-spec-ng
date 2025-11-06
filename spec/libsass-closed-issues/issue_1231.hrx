@@ -2,6 +2,7 @@
 div::before {
   content: #{"\""+\e600+"\""};
 }
+
 <===> output.css
 div::before {
   content: "\e600";

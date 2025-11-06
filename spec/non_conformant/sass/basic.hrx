@@ -4,6 +4,7 @@ div
 		color: red
 	li
 		color: green
+
 <===> output.css
 div a {
   color: red;

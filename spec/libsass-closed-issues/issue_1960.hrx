@@ -8,6 +8,7 @@ foo:not(.missing) {
 bar {
   @extend .missing;
 }
+
 <===> output.css
 foo:not(.missing):not(bar) {
   a: b;

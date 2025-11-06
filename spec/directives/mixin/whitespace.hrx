@@ -169,7 +169,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 <===>
 ================================================================================
 <===> error/include/before_using/sass/input.sass
-@mixin a 
+@mixin a
   @content
 @include a()
   using ()

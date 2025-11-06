@@ -7,7 +7,7 @@
 <===>
 ================================================================================
 <===> before_value/scss/input.scss
-@function a() {@return 
+@function a() {@return
   b}
 
 <===> before_value/scss/output.css

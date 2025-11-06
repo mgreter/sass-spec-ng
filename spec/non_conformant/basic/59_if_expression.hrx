@@ -9,6 +9,7 @@ div {
   foo: if($x != 0, if($x, true, false), string.unquote("x is zero"));
   foo: if(false, 1/0, $if-false: $if-false);
 }
+
 <===> output.css
 div {
   foo: hey;

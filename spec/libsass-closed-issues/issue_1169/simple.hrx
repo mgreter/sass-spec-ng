@@ -15,6 +15,7 @@ $map2: (
   content: meta.inspect($map1);
   content: meta.inspect($map2);
 }
+
 <===> output.css
 .foo {
   content: (red: "bar", "red": "foo");

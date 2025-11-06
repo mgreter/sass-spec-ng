@@ -16,6 +16,7 @@
         }
     }
 }
+
 <===> output.css
 .parent .brother, .parent .sister, .parent .cousin {
   color: green;

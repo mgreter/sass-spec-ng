@@ -7,6 +7,7 @@ div {
   content: bar + "foo";
   content: "quoted" + unquoted;
 }
+
 <===> output.css
 div {
   content: blang1;

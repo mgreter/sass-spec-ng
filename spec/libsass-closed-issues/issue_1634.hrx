@@ -14,6 +14,7 @@ $empty-list: ();
 test {
   test: foo($empty-list);
 }
+
 <===> output.css
 test {
   test: 0;

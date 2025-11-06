@@ -3,7 +3,6 @@ a
   b: #{
     c}
 
-  
 <===> whitespace/after_open/output.css
 a {
   b: c;
@@ -16,7 +15,6 @@ a
   b: #{c
     }
 
-  
 <===> whitespace/after_val/output.css
 a {
   b: c;
@@ -38,7 +36,7 @@ a {
 ================================================================================
 <===> error/partial_bracket/scss/input.scss
 [a#{"]:is(b"}) {c:d}
- 
+
 <===> error/partial_bracket/scss/error
 Error: expected "]".
   ,
@@ -52,7 +50,7 @@ Error: expected "]".
 <===> error/partial_bracket/sass/input.sass
 [a#{"]:is(b"})
   c: d
- 
+
 <===> error/partial_bracket/sass/error
 Error: expected "]".
   ,
@@ -67,7 +65,6 @@ Error: expected "]".
 a:is(b))
   c: d
 
-  
 <===> error/selector/unmatched_close_paren/error
 Error: Unexpected ")".
   ,
@@ -82,7 +79,6 @@ Error: Unexpected ")".
 a[b]]
   c: d
 
-  
 <===> error/selector/unmatched_close_bracket/error
 Error: Unexpected "]".
   ,

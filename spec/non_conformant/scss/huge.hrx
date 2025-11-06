@@ -27135,6 +27135,7 @@ div {
     }
   }
 }
+
 <===> output.css
 div {
   color: red;

@@ -26,4 +26,5 @@
     background-size: $background-size;
   }
 }
+
 <===> output.css

@@ -1,5 +1,5 @@
 <===> child/before/input.sass
-a 
+a
 > b
   c: d
 
@@ -12,7 +12,7 @@ a
 WARNING: This selector doesn't have any properties and won't be rendered.
 
   ,
-1 | a 
+1 | a
   | ^^
   '
     input.sass 1:1  root stylesheet
@@ -52,7 +52,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 <===>
 ================================================================================
 <===> next_sibling/before/input.sass
-a 
+a
 + b
   c: d
 
@@ -65,7 +65,7 @@ a
 WARNING: This selector doesn't have any properties and won't be rendered.
 
   ,
-1 | a 
+1 | a
   | ^^
   '
     input.sass 1:1  root stylesheet
@@ -105,7 +105,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 <===>
 ================================================================================
 <===> subsequent_sibling/before/input.sass
-a 
+a
 ~ b
   c: d
 
@@ -118,7 +118,7 @@ a
 WARNING: This selector doesn't have any properties and won't be rendered.
 
   ,
-1 | a 
+1 | a
   | ^^
   '
     input.sass 1:1  root stylesheet

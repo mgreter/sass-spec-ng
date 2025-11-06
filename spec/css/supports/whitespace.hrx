@@ -40,7 +40,7 @@
 <===>
 ================================================================================
 <===> declaration/normal_prop/before_colon/scss/input.scss
-@supports (a 
+@supports (a
   : b) {c {d: e}}
 
 <===> declaration/normal_prop/before_colon/scss/output.css
@@ -154,7 +154,7 @@
 <===>
 ================================================================================
 <===> function/before_close_paren/scss/input.scss
-@supports a(b 
+@supports a(b
   ) {c {d: e}}
 
 <===> function/before_close_paren/scss/output.css
@@ -272,7 +272,7 @@
 ================================================================================
 <===> anything/before_close_paren/sass/input.sass
 @supports (a b
-  ) 
+  )
     c
       d: e
 
@@ -301,7 +301,7 @@
 ================================================================================
 <===> negation/after_not_in_paren/sass/input.sass
 @supports (not
- (a)) 
+ (a))
     b
       c: d
 
@@ -330,7 +330,7 @@
 <===>
 ================================================================================
 <===> interpolation/paren/before_operator/input.sass
-@supports (#{"(a: b)"} 
+@supports (#{"(a: b)"}
   and (c: d))
   @d
 
@@ -354,7 +354,7 @@
 <===>
 ================================================================================
 <===> interpolation/paren/after_second/input.sass
-@supports (#{"(a: b)"} and (c: d) 
+@supports (#{"(a: b)"} and (c: d)
   and (e: f))
     @d
 
@@ -382,7 +382,7 @@ Error: expected "(".
 <===>
 ================================================================================
 <===> error/interpolation/no_paren/before_operator/input.sass
-@supports #{"(a: b)"} 
+@supports #{"(a: b)"}
   and (c: d)
     @d
 
@@ -397,7 +397,7 @@ Error: expected selector.
 <===>
 ================================================================================
 <===> error/interpolation/no_paren/after_second/input.sass
-@supports #{"(a: b)"} and (c: d) 
+@supports #{"(a: b)"} and (c: d)
   and (e: f)
     @d
 
@@ -460,7 +460,7 @@ Error: expected "(".
 ================================================================================
 <===> error/negation/after_not/sass/input.sass
 @supports not
- (a) 
+ (a)
     b
       c: d
 

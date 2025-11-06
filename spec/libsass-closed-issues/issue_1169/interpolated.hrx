@@ -21,6 +21,7 @@ bar {
   content: meta.inspect($merge2);
   content: meta.inspect($merge3);
 }
+
 <===> output.css
 foo {
   content: (red: "literal", transparent: "literal");

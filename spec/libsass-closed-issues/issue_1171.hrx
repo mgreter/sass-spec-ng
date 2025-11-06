@@ -20,6 +20,7 @@
   foo: foo(1, 2);
   baz: baz(1, 2);
 }
+
 <===> output.css
 .test {
   foo: 3;

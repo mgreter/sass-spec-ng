@@ -16,6 +16,7 @@ $input: "\0_\a_\A";
 <===> todo.txt
 Fails on shared build (gcc/clang)
 Looks like some issue with "\r"
+
 <===> output.css
 @charset "UTF-8";
 .result {

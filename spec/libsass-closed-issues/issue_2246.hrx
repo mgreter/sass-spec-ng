@@ -23,6 +23,7 @@
 .foo {
     @include bar('baz');
 }
+
 <===> output.css
 .bar {
   content: "foo";

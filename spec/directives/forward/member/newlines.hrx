@@ -1,5 +1,5 @@
 <===> hide/after/input.sass
-@forward "upstream" hide 
+@forward "upstream" hide
   a
 
 <===> hide/after/_upstream.sass
@@ -10,7 +10,7 @@ $a: b
 <===>
 ================================================================================
 <===> show/after/input.sass
-@forward "upstream" show 
+@forward "upstream" show
   a
 
 <===> show/after/_upstream.sass

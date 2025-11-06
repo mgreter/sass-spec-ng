@@ -16,7 +16,7 @@ a {
 $result: string.split("", "/");
 a {
   value: meta.inspect($result);
-  separator: list.separator($result); 
+  separator: list.separator($result);
 }
 
 <===> empty/output.css
@@ -34,7 +34,7 @@ a {
 $result: string.split("a", "");
 a {
   value: meta.inspect($result);
-  separator: list.separator($result); 
+  separator: list.separator($result);
 }
 
 <===> single/output.css

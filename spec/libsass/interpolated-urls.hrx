@@ -11,6 +11,7 @@ span {
 fudge {
   walnuts: blix"fludge"#{hey now}123;
 }
+
 <===> output.css
 div {
   background-image: "url(" /static_loc/ "img/beta.png)";

@@ -11,6 +11,7 @@ $header-text-color: calcNavbarTextColor($base-text-color);
 .test_class {
         color: color.adjust($header-text-color, $lightness: 20%);
 }
+
 <===> output.css
 .test_class {
   color: #999999;

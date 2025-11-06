@@ -1,5 +1,6 @@
 <===> input.scss
 @import "include.scss";
+
 <===> include.scss
 #{&} {
   foo {

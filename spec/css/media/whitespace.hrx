@@ -1,5 +1,5 @@
 <===> before_query/scss/input.scss
-@media 
+@media
   screen {}
 
 <===> before_query/scss/output.css
@@ -7,7 +7,7 @@
 <===>
 ================================================================================
 <===> after_query/scss/input.scss
-@media screen 
+@media screen
   {}
 
 <===> after_query/scss/output.css

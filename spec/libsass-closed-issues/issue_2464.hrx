@@ -8,6 +8,7 @@ foobar {
         left: 0;
     }
 }
+
 <===> output.css
 :host(:not(.foo)) {
   left: 0;

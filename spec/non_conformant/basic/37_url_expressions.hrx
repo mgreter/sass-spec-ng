@@ -13,6 +13,7 @@ div {
   blah: url(hello-#{world}.png);
   blah: url(if($x, fudge("#{$file-1x}"), "#{$file-1x}"));
 }
+
 <===> output.css
 div {
   blah: url(foobar);

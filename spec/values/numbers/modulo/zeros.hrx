@@ -14,6 +14,7 @@ a {
 a {
   b: +0 % -1;
 }
+
 <===> positive_negative/output.css
 a {
   b: 0;

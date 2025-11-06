@@ -2,6 +2,7 @@
 div {
   color: red(blue, purple);
 }
+
 <===> error
 Error: Only 1 argument allowed, but 2 were passed.
   ,--> input.scss

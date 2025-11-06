@@ -3,9 +3,10 @@ foo {
   &-- {
     &baz {
       color: red;
-    } 
-  } 
-} 
+    }
+  }
+}
+
 <===> output.css
 foo--baz {
   color: red;

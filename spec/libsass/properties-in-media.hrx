@@ -12,6 +12,7 @@
   color: blue;
   color: yellow;
 }
+
 <===> error
 Error: expected "{".
   ,

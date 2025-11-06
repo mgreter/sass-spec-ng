@@ -6,6 +6,7 @@
 div {
   x: type-of(test());
 }
+
 <===> error
 Error: Expected expression.
   ,

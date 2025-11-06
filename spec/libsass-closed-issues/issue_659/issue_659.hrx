@@ -12,4 +12,5 @@ $foo: null;
   out: null();
   out: $foo;
 }
+
 <===> output.css

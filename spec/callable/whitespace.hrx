@@ -154,6 +154,7 @@
 @function a($b, $c){@return null}
 $d: a(
   e, f)
+
 <===> newlines/function_invocation/after_paren/scss/output.css
 
 <===>

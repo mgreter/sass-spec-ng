@@ -12,6 +12,7 @@
 
   &.inner { @extend %foo-inner; }
 }
+
 <===> output.css
 .foo {
   test: outer;

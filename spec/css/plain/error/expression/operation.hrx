@@ -1,5 +1,6 @@
 <===> addition/input.scss
 @use 'plain'
+
 <===> addition/plain.css
 a {
   x: y + z;
@@ -31,6 +32,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> subtraction/input.scss
 @use 'plain'
+
 <===> subtraction/plain.css
 a {
   x: y - z;
@@ -62,6 +64,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> multiplication/input.scss
 @use 'plain'
+
 <===> multiplication/plain.css
 a {
   x: y * z;
@@ -93,6 +96,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> modulo/input.scss
 @use 'plain'
+
 <===> modulo/plain.css
 a {
   x: y % z;
@@ -124,6 +128,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> less_than/input.scss
 @use 'plain'
+
 <===> less_than/plain.css
 a {
   x: y < z;
@@ -155,6 +160,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> less_than_or_equal/input.scss
 @use 'plain'
+
 <===> less_than_or_equal/plain.css
 a {
   x: y <= z;
@@ -186,6 +192,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> greater_than/input.scss
 @use 'plain'
+
 <===> greater_than/plain.css
 a {
   x: y > z;
@@ -217,6 +224,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> greater_than_or_equal/input.scss
 @use 'plain'
+
 <===> greater_than_or_equal/plain.css
 a {
   x: y >= z;
@@ -248,6 +256,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> equals/input.scss
 @use 'plain'
+
 <===> equals/plain.css
 a {
   x: y == z;
@@ -279,6 +288,7 @@ Error: Operators aren't allowed in plain CSS.
 ================================================================================
 <===> not_equals/input.scss
 @use 'plain'
+
 <===> not_equals/plain.css
 a {
   x: y != z;

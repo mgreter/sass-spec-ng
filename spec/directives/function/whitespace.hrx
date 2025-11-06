@@ -23,7 +23,7 @@
 <===>
 ================================================================================
 <===> nested_at_rule/scss/input.scss
-@function a() {@debug 
+@function a() {@debug
   b;
   @return null}
 
@@ -33,7 +33,7 @@
 ================================================================================
 <===> nested_at_rule/sass/input.sass
 @function a()
-  @debug 
+  @debug
     b
   @return null
 

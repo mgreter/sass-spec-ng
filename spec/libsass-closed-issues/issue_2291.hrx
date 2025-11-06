@@ -35,6 +35,7 @@ A {
     }
   }
 }
+
 <===> output.css
 .m__exhibit-header--medium--plain, .m__exhibit-header--medium {
   font-size: 1em;

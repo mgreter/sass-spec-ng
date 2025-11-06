@@ -6,7 +6,7 @@ a {
   @at-root (with: media) {
     @extend .a;
   }
-} 
+}
 
 <===> error
 Error: @extend may only be used within style rules.

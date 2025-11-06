@@ -9,6 +9,7 @@ $map: (
 .foo {
   content: meta.inspect($map);
 }
+
 <===> error
 Error: Duplicate key.
   ,

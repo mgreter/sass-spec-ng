@@ -9,7 +9,7 @@
         $a: "";
         $b: "";
     }
-    
+
     .test-a#{$a} {
         display: block;
     }

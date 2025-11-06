@@ -31,6 +31,7 @@ div {
   @include icons-sprite(all-vip);
   @include icons-sprite(gold);
 }
+
 <===> output.css
 div {
   test: platinum;

@@ -12,9 +12,6 @@
 // Queries don't have to fully parse before interpolation is resolved.
 @media scr#{"een, pri"}nt a#{"nd (max-width: 300px)"} {x {y: z}}
 
-
-
-
 <===> output.css
 @media bar12 {
   x {

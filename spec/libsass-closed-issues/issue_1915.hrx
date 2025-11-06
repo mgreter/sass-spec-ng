@@ -12,6 +12,7 @@
 @include wrapper() {
   @extend %ext;
 }
+
 <===> output.css
 .wrapped {
   background: #000;

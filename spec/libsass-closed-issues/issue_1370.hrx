@@ -15,6 +15,7 @@
 
     @include ico-size(100px, 100px);
 }
+
 <===> output.css
 .test {
   display: inline-block;

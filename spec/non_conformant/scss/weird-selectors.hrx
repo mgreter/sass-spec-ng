@@ -12,6 +12,7 @@ E > > {
     color: red;
   }
 }
+
 <===> output.css
 
 <===> warning

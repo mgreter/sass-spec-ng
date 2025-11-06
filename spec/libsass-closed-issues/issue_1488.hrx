@@ -37,6 +37,7 @@ bar {
   bar: meta.call('bar_', one, two);
   bar: meta.call('bar_', one, two...);
 }
+
 <===> output.css
 foo {
   foo: string;

@@ -34,7 +34,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 ================================================================================
 <===> else_if/before_condition/scss/input.scss
 @if true {}
-@else if 
+@else if
   true {}
 
 <===> else_if/before_condition/scss/output.css
@@ -52,7 +52,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 ================================================================================
 <===> else_if/after_condition/scss/input.scss
 @if true {}
-@else if true 
+@else if true
   {}
 
 <===> else_if/after_condition/scss/output.css
@@ -69,7 +69,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 <===>
 ================================================================================
 <===> condition/before_and/scss/input.scss
-@if true 
+@if true
   and true{}
 
 <===> condition/before_and/scss/output.css
@@ -111,7 +111,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 ================================================================================
 <===> error/else_if/before_if/scss/input.scss
 @if true {}
-@else 
+@else
   if true {}
 
 <===> error/else_if/before_if/scss/output.css

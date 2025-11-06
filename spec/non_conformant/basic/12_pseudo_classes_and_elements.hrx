@@ -16,6 +16,7 @@ a b {
     a { b: c; }
   }
 }
+
 <===> output.css
 a b {
   color: red;

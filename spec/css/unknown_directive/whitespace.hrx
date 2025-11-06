@@ -1,5 +1,5 @@
 <===> no_children/before_value/scss/input.scss
-@a 
+@a
   b
 
 <===> no_children/before_value/scss/output.css
@@ -60,6 +60,7 @@ WARNING: This selector doesn't have any properties and won't be rendered.
 <===> children/no_value/sass/input.sass
 @a
   c: d
+
 <===> children/no_value/sass/output.css
 @a {
   c: d;

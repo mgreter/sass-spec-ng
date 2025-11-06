@@ -6,10 +6,10 @@
         h1 { color: blue; }
     }
 }
-.hive { @include where(); } 
-.bee { @include where(".bee"); } 
-.amp { @include where(&); } 
-.quotedamp { @include where("&"); } 
+.hive { @include where(); }
+.bee { @include where(".bee"); }
+.amp { @include where(&); }
+.quotedamp { @include where("&"); }
 
 <===> output.css
 .hive h1 {

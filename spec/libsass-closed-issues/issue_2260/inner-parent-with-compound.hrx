@@ -12,6 +12,7 @@
     property: value;
    }
  }
+
 <===> output.css
 .test .inner {
   property: value;

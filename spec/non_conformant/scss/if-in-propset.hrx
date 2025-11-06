@@ -8,6 +8,7 @@ div {
     }
   }
 }
+
 <===> output.css
 div {
   prop-a: "hello";

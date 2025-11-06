@@ -25,7 +25,6 @@ $colors: (
     }
 }
 
-
 <===> output.css
 .yellow-0 {
   background-color: hsl(53.8775510204, 100%, 101.568627451%);

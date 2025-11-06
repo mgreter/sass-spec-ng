@@ -3,6 +3,7 @@ a {
   @error "error";
   foo: bar;
 }
+
 <===> error
 Error: "error"
   ,

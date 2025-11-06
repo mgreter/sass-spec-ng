@@ -10,6 +10,7 @@
 img {
   @include img-opacity(.5);
 }
+
 <===> output.css
 img {
   filter: alpha(opacity=50);

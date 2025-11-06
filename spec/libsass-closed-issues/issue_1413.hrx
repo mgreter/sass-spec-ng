@@ -42,6 +42,7 @@ div {
     foo: list.length(A'B'#{C}D'E');
     foo: list.length(#{A}'B'C'D''E');
 }
+
 <===> output.css
 div {
   foo: "A" B;

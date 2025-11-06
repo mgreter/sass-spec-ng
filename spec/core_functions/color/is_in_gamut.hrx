@@ -286,7 +286,7 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
-<===> error/too_few_args/error 
+<===> error/too_few_args/error
 
 <===>
 ================================================================================
@@ -422,4 +422,3 @@ Error: $space: Expected "hsl" to be an unquoted string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-

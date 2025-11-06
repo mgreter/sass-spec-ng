@@ -34,6 +34,7 @@ $seven: 7;
   equal-24: ('#{$seven}' == '#{$seven}');
 
 }
+
 <===> output.css
 .test {
   equal-01: true;

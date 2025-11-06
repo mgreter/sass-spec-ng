@@ -63,6 +63,7 @@ g {
   @extend f;
   bloo: bloo;
 }
+
 <===> output.css
 earth mammal, earth horse, earth naysayer, earth cat, earth dog, earth bird {
   blood: warm;
