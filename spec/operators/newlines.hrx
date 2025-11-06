@@ -58,6 +58,16 @@ Error: Nothing may be indented beneath a variable declaration.
   '
   input.sass 2:3  root stylesheet
 
+<===> error/binary/before_indent/error-libsass
+Error: Nothing may be indented beneath a variable declaration.
+  ,
+1 |   $a: b
+  | /-------^
+2 | |   + c
+  | \--^
+  '
+  input.sass 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/unary/before/input.sass
