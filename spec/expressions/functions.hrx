@@ -1,6 +1,6 @@
 <===> newlines/after_paren/input.sass
 @use "sass:list"
-a 
+a
   b: list.append(
     c d, e)
 
@@ -13,7 +13,7 @@ a {
 ================================================================================
 <===> newlines/after_value/input.sass
 @use "sass:list"
-a 
+a
   b: list.append(c
      d, e)
 
@@ -26,7 +26,7 @@ a {
 ================================================================================
 <===> newlines/before_comma/input.sass
 @use "sass:list"
-a 
+a
   b: list.append(c d
      , e)
 
@@ -39,7 +39,7 @@ a {
 ================================================================================
 <===> newlines/after_comma/input.sass
 @use "sass:list"
-a 
+a
   b: list.append(c d,
      e)
 
@@ -52,7 +52,7 @@ a {
 ================================================================================
 <===> newlines/before_paren/input.sass
 @use "sass:list"
-a 
+a
   b: list.append(c d, e
      )
 

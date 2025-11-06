@@ -1,7 +1,8 @@
 <===> input.scss
-foo { 
+foo {
   color: green;
 }
+
 <===> output.css
 foo {
   color: green;

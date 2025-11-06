@@ -5,6 +5,7 @@ div {
   blah: 12;
   color: #abc;
 }
+
 <===> output.css
 div {
   width: 10px;

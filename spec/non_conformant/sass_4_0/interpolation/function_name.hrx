@@ -17,6 +17,7 @@
   // In 3.5, this would interpret "red()" as a live function call.
   followed-by-function: b#{o}red(arg);
 }
+
 <===> output.css
 .function-name {
   start: 2foo(arg);

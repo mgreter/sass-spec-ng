@@ -1,5 +1,5 @@
 <===> before_var/scss/input.scss
-@for 
+@for
   $i from 1 through 10 {}
 
 <===> before_var/scss/output.css
@@ -7,9 +7,8 @@
 <===>
 ================================================================================
 <===> before_var/sass/input.sass
-@for 
+@for
   $i from 1 through 10
-
 
 <===> before_var/sass/output.css
 
@@ -32,7 +31,7 @@
 <===>
 ================================================================================
 <===> after_from/scss/input.scss
-@for $i from 
+@for $i from
   1 through 10 {}
 
 <===> after_from/scss/output.css
@@ -40,7 +39,7 @@
 <===>
 ================================================================================
 <===> after_from/sass/input.sass
-@for $i from 
+@for $i from
   1 through 10
 
 <===> after_from/sass/output.css
@@ -66,7 +65,6 @@
 <===> after_through/scss/input.scss
 @for $i from 1 through
   10 {}
-
 
 <===> after_through/scss/output.css
 
@@ -100,7 +98,6 @@
 @for $i from 1 to
   10 {}
 
-
 <===> after_to/scss/output.css
 
 <===>
@@ -114,7 +111,7 @@
 <===>
 ================================================================================
 <===> before_block/scss/input.scss
-@for $i from 1 through 10 
+@for $i from 1 through 10
   {}
 
 <===> before_block/scss/output.css

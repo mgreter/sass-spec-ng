@@ -192,6 +192,7 @@ a {
 ================================================================================
 <===> relative_color/var/no_alpha/input.scss
 a {b: hwb(from var(--c) h w b)}
+
 <===> relative_color/var/no_alpha/output.css
 a {
   b: hwb(from var(--c) h w b);

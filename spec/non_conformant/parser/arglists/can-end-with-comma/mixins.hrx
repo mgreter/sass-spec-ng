@@ -27,7 +27,6 @@
   @include mixed-args(y, $b: z,);
 }
 
-
 <===> output.css
 .includes {
   one-positional-arg: positional 1 a;

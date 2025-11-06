@@ -4,6 +4,7 @@
     bar: baz;
   }
 }
+
 <===> error
 Error: A top-level selector may not contain a parent selector with a suffix.
   ,

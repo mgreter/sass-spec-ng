@@ -30,7 +30,7 @@ d {
 <===>
 ================================================================================
 <===> before_optional/scss/input.scss
-a {@extend b 
+a {@extend b
   !optional}
 
 <===> before_optional/scss/output.css

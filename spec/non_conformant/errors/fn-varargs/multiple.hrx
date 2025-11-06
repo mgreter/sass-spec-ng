@@ -1,5 +1,6 @@
 <===> input.scss
 @function test($param...,$rest...) {}
+
 <===> error
 Error: expected ")".
   ,

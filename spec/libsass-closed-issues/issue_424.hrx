@@ -22,6 +22,7 @@ footer {
 .button-secondary {
     background: blue;
 }
+
 <===> output.css
 footer {
   color: red;

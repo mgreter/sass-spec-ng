@@ -2,6 +2,7 @@
 @if (true) {
   @function foo() {}
 }
+
 <===> error
 Error: Functions may not be declared in control directives.
   ,

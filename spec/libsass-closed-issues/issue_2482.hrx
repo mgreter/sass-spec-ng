@@ -8,6 +8,7 @@
 }
 
 @include mixin();
+
 <===> output.css
 & .class {
   color: black;

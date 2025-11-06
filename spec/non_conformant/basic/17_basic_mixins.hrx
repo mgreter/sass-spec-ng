@@ -35,6 +35,7 @@ $x: from a variable;
 div {
   blah: blah $x blah;
 }
+
 <===> output.css
 a {
   hey: ho;

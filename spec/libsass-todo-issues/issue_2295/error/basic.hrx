@@ -2,6 +2,7 @@
 .my-scope {
   @import 'include.scss';
 }
+
 <===> include.scss
 display: none;
 

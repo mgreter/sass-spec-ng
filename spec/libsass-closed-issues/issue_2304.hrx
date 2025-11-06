@@ -1,5 +1,6 @@
 <===> input.scss
 @import "module";
+
 <===> _module.scss
 .foo, & {
   background: red;
@@ -8,6 +9,7 @@
 .foo, &:before {
   background: red;
 }
+
 <===> output.css
 .foo, & {
   background: red;

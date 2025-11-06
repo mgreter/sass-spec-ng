@@ -27,6 +27,7 @@ d { content: (-$foo) }
 e { content: (+ red) }
 e { content: (+ $red) }
 e { content: (+ $foo) }
+
 <===> output.css
 :root {
   --red: #f00;

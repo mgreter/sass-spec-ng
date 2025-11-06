@@ -16,31 +16,31 @@
 $z: hi;
 
 div {
-  foo: meta.global-variable-exists(x);    
-  foo: meta.global-variable-exists("x");    
+  foo: meta.global-variable-exists(x);
+  foo: meta.global-variable-exists("x");
   foo: meta.global-variable-exists(z);
-  foo: meta.global-variable-exists("z");    
+  foo: meta.global-variable-exists("z");
 
   span {
     $x: false;
 
     foo: meta.global-variable-exists(x);
-    foo: meta.global-variable-exists("x");    
+    foo: meta.global-variable-exists("x");
     foo: meta.global-variable-exists(y);
-    foo: meta.global-variable-exists("y");    
+    foo: meta.global-variable-exists("y");
 
     foo: meta.global-variable-exists(z);
-    foo: meta.global-variable-exists("z");    
+    foo: meta.global-variable-exists("z");
 
     p {
       foo: meta.global-variable-exists(x);
-      foo: meta.global-variable-exists("x");    
+      foo: meta.global-variable-exists("x");
       foo: exists(x);
-      foo: exists("x");    
+      foo: exists("x");
       foo: meta.global-variable-exists(z);
-      foo: meta.global-variable-exists("z");    
+      foo: meta.global-variable-exists("z");
       foo: meta.global-variable-exists(y);
-      foo: meta.global-variable-exists("y");    
+      foo: meta.global-variable-exists("y");
       foo: f();
       $y: blah;
       //TODO: check for shadowing

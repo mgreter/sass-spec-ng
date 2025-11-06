@@ -19,6 +19,7 @@
     background: black;
   }
 }
+
 <===> output.css
 div {
   background: green;

@@ -6,6 +6,7 @@
     }
   }
 }
+
 <===> output.css
 & foo {
   bar: baz;

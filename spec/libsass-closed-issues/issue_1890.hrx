@@ -1,14 +1,15 @@
 <===> input.scss
 .wrap {
-  @media (min-width: 480px) { 
+  @media (min-width: 480px) {
     display: block;
-    @at-root (without: media){ 
-      .box { 
+    @at-root (without: media){
+      .box {
         display: inline-block;
       }
-    } 
+    }
   }
 }
+
 <===> output.css
 @media (min-width: 480px) {
   .wrap {

@@ -8,6 +8,7 @@ form {
   $selector: list.nth($selector, 1);
   sel: meta.inspect($selector);
 }
+
 <===> output.css
 form {
   sel: form;

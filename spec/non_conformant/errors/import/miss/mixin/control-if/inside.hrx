@@ -8,6 +8,7 @@
 foo {
   @include do_import();
 }
+
 <===> error
 Error: This at-rule is not allowed here.
   ,

@@ -3,6 +3,7 @@
 test {
   content: bar
 }
+
 <===> output.css
 @customAtRule;
 test {

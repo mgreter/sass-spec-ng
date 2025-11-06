@@ -51,6 +51,7 @@ div {
     }
   }
 }
+
 <===> output.css
 /* top level comment -- should be preserved */
 div {

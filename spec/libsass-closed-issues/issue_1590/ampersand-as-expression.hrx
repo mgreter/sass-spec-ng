@@ -6,9 +6,9 @@
         h1 { color: blue; }
     }
 }
-.hive { @include where(); } 
-.bee { @include where(&); } 
-.queen { @include where("&"); } 
+.hive { @include where(); }
+.bee { @include where(&); }
+.queen { @include where("&"); }
 
 <===> output.css
 .hive h1 {

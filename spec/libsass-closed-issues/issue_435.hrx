@@ -16,7 +16,7 @@ $_URL_SUFFIX: $URL_SUFFIX + $EMPTY_STRING;
 $_URL_SEPARATOR: $URL_SEPARATOR + $EMPTY_STRING;
 $_SKINS_PATH: $SKINS_PATH + $EMPTY_STRING;
 
-@function webresource-image-url( $skin, $control, $file ) 
+@function webresource-image-url( $skin, $control, $file )
 {
 	$_url: $EMPTY_STRING;
 	$_path: $_SKINS_PATH $skin $control;
@@ -38,11 +38,10 @@ $_SKINS_PATH: $SKINS_PATH + $EMPTY_STRING;
 
 $actions-sprite: skin-image-url( "Common", "radActionsSprite.png" );
 
-.test 
+.test
 {
 	background-image: url( $actions-sprite );
 }
-
 
 <===> output.css
 .test {

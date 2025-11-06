@@ -3,6 +3,7 @@ a {
   @debug "debug";
   foo: bar;
 }
+
 <===> output.css
 a {
   foo: bar;

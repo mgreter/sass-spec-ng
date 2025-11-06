@@ -35,6 +35,7 @@ $x: a, b, 1+2;
     background: red;
   }
 }
+
 <===> output.css
 div {
   background: gray;

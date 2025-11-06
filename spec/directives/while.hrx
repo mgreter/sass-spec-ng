@@ -1,5 +1,5 @@
 <===> whitespace/before_var/scss/input.scss
-@while 
+@while
   false {}
 
 <===> whitespace/before_var/scss/output.css

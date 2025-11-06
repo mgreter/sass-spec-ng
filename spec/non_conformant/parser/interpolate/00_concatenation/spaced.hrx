@@ -40,6 +40,7 @@ $input: literal;
   output: "#{"literal"}  #{literal}";
   output: "#{"literal"}  #{"literal"}";
 }
+
 <===> output.css
 .result {
   output: literal literal;

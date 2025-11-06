@@ -43,7 +43,6 @@ e {
   @include a;
 }
 
-
 <===> bubble/in-mixin/output.css
 e {
   f: g;

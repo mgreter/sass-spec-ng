@@ -18,46 +18,46 @@
 }
 
 div {
-  foo: meta.function-exists(lighten); 
-  foo: meta.function-exists("lighten"); 
+  foo: meta.function-exists(lighten);
+  foo: meta.function-exists("lighten");
   foo: meta.function-exists(exists);
-  foo: meta.function-exists("exists"); 
+  foo: meta.function-exists("exists");
   foo: meta.function-exists(f);
-  foo: meta.function-exists("f"); 
+  foo: meta.function-exists("f");
   foo: meta.function-exists(g);
-  foo: meta.function-exists("g"); 
+  foo: meta.function-exists("g");
   foo: meta.function-exists(nope);
-  foo: meta.function-exists("nope"); 
+  foo: meta.function-exists("nope");
   foo: g();
   foo: f();
   foo: h();
 
 
   span {
-    foo: meta.function-exists(lighten); 
-    foo: meta.function-exists("lighten"); 
+    foo: meta.function-exists(lighten);
+    foo: meta.function-exists("lighten");
     foo: meta.function-exists(exists);
-    foo: meta.function-exists("exists"); 
+    foo: meta.function-exists("exists");
     foo: meta.function-exists(f);
-    foo: meta.function-exists("f"); 
+    foo: meta.function-exists("f");
     foo: meta.function-exists(g);
-    foo: meta.function-exists("g"); 
+    foo: meta.function-exists("g");
     foo: meta.function-exists(nope);
-    foo: meta.function-exists("nope"); 
+    foo: meta.function-exists("nope");
     foo: g();
     foo: f();
     foo: h();
     p {
-      foo: meta.function-exists(lighten); 
-      foo: meta.function-exists("lighten"); 
+      foo: meta.function-exists(lighten);
+      foo: meta.function-exists("lighten");
       foo: meta.function-exists(exists);
-      foo: meta.function-exists("exists"); 
+      foo: meta.function-exists("exists");
       foo: meta.function-exists(f);
-      foo: meta.function-exists("f"); 
+      foo: meta.function-exists("f");
       foo: meta.function-exists(g);
-      foo: meta.function-exists("g"); 
+      foo: meta.function-exists("g");
       foo: meta.function-exists(nope);
-      foo: meta.function-exists("nope"); 
+      foo: meta.function-exists("nope");
       foo: g();
       foo: f();
       foo: h();

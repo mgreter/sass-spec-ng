@@ -266,7 +266,7 @@
   ) {c {d: e}}
 
 <===> function/before_close_paren/silent/output.css
-@supports a(b 
+@supports a(b
   ) {
   c {
     d: e;
@@ -317,7 +317,7 @@
   b) {c {d: e}}
 
 <===> anything/after_ident/silent/output.css
-@supports (a 
+@supports (a
   b) {
   c {
     d: e;
@@ -343,7 +343,7 @@
   ) {c {d: e}}
 
 <===> anything/before_close_paren/silent/output.css
-@supports (a b 
+@supports (a b
   ) {
   c {
     d: e;

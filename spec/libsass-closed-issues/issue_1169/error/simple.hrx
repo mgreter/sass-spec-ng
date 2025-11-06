@@ -9,6 +9,7 @@ $map: (
 .foo {
   content: meta.inspect($map);
 }
+
 <===> output.css
 .foo {
   content: (red: "bar", red: "baz");

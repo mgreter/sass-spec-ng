@@ -10,6 +10,7 @@
 zoo {
   @extend %foo;
 }
+
 <===> output.css
 zoo.bar {
   display: block;

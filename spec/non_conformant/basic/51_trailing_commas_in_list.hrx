@@ -3,11 +3,12 @@
 @use "sass:meta";
 $mylist: (alpha, beta, gamma, );
 $my-single-item-list: (alpha,);
-.test { 
+.test {
   out1: list.length($mylist);
   blah: meta.type-of(list.nth($mylist,3));
-  out: list.length($my-single-item-list); 
+  out: list.length($my-single-item-list);
 }
+
 <===> output.css
 .test {
   out1: 3;

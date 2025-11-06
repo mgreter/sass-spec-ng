@@ -21,6 +21,7 @@ $arg: join((), 5%);
   function: dark(#102030, 5%);
   function2: dark2(#102030, 5%);
 }
+
 <===> output.css
 .single {
   direct: rgb(3.7745098039%, 7.5490196078%, 11.3235294118%);

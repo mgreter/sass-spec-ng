@@ -12,6 +12,7 @@ h1 {
 h2 {
   @include f(blue);
 }
+
 <===> output.css
 h1 {
   color: red;

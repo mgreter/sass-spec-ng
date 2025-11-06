@@ -10,6 +10,7 @@ $content-width: 960px;
 /* bin/sassc demo.scss */
 .selector {
   padding: 0 calc(100%/2 - #{$content-width/2}); }
+
 <===> output.css
 /* demo.css: */
 .selector {

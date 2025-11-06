@@ -15,7 +15,7 @@
 <===>
 ================================================================================
 <===> loud/sass/indented/closed/input.sass
-/* 
+/*
   a */
 
 <===> loud/sass/indented/closed/output.css
@@ -24,18 +24,18 @@
 <===>
 ================================================================================
 <===> loud/sass/indented/closed_after/input.sass
-/* 
-  a 
+/*
+  a
   */
 
 <===> loud/sass/indented/closed_after/output.css
-/* a 
+/* a
  * */
 
 <===>
 ================================================================================
 <===> loud/sass/indented/interpolation/input.sass
-/* #{a 
+/* #{a
   + b} */
 
 <===> loud/sass/indented/interpolation/output.css
@@ -44,7 +44,7 @@
 <===>
 ================================================================================
 <===> loud/sass/indented/open/input.sass
-/* 
+/*
   a
 
 <===> loud/sass/indented/open/output.css
@@ -60,16 +60,16 @@
 <===>
 ================================================================================
 <===> silent/sass/indented/identifier/input.sass
-// 
-  a 
+//
+  a
 
 <===> silent/sass/indented/identifier/output.css
 
 <===>
 ================================================================================
 <===> silent/sass/indented/interpolation/input.sass
-// #{a 
-  + b} 
+// #{a
+  + b}
 
 <===> silent/sass/indented/interpolation/output.css
 
@@ -88,7 +88,7 @@ a {
 ================================================================================
 <===> as_whitespace/sass/before-comment/input.sass
 a
-  b: c /* 
+  b: c /*
     d */ e
 
 <===> as_whitespace/sass/before-comment/output.css
@@ -100,7 +100,7 @@ a {
 ================================================================================
 <===> as_whitespace/sass/before-comment-no-indent/input.sass
 a
-  b: c /* 
+  b: c /*
 d */ e
 
 <===> as_whitespace/sass/before-comment-no-indent/output.css
@@ -135,8 +135,8 @@ a {
 <===>
 ================================================================================
 <===> error/loud/sass/indented/closed_no_indent/input.sass
-/* 
-  a 
+/*
+  a
 */
 
 <===> error/loud/sass/indented/closed_no_indent/error

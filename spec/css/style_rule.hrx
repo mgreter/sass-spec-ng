@@ -274,7 +274,6 @@ a {
 a
   b: c;
 
-
 <===> sass/declaration/semicolon/output.css
 a {
   b: c;
@@ -310,7 +309,7 @@ a {
 ================================================================================
 <===> sass/trailing_whitespace/input.sass
 a
-  b: c; 
+  b: c;
   d: e;
 
 <===> sass/trailing_whitespace/output.css

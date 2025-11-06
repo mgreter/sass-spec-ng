@@ -58,10 +58,11 @@ a {
 $a: b
 $c: d
 a
-  @if 
+  @if
     $a == b and
     $c == d
     e: f
+
 <===> if_statement_unwrapped_multiline/output.css
 a {
   e: f;

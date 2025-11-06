@@ -39,7 +39,7 @@
 <===>
 ================================================================================
 <===> after_colon/scss/input.scss
-@at-root (without: 
+@at-root (without:
   media) {}
 
 <===> after_colon/scss/output.css
@@ -71,7 +71,7 @@
 <===>
 ================================================================================
 <===> after_query/scss/input.scss
-@at-root (without: media) 
+@at-root (without: media)
   {}
 
 <===> after_query/scss/output.css

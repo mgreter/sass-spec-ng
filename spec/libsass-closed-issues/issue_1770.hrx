@@ -18,6 +18,7 @@
 #{returns-string()} selector2 {
   color: red;
 }
+
 <===> output.css
 selector {
   color: red;

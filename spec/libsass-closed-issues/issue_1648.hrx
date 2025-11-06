@@ -17,6 +17,7 @@ $x: 3px;
     /* else 4 */
 }
 /* comment 5 */
+
 <===> output.css
 /* comment 1 */
 /* if 1 */

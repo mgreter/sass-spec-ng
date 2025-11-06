@@ -12,6 +12,7 @@
     }
 
 }
+
 <===> error
 Error: You may not @extend selectors across media queries.
     ,

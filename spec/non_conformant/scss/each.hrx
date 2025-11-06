@@ -11,6 +11,7 @@ div {
     }
   }
 }
+
 <===> output.css
 div {
   color: singleton;

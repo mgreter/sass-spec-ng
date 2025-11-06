@@ -11,6 +11,7 @@ span {
 }
 
 @import "bar.css";
+
 <===> output.css
 @import "hux\ bux.css";
 @import "foo.css";

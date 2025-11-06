@@ -4,6 +4,7 @@
     color: red;
   }
 }
+
 <===> output.css
 .foo--bar {
   color: red;

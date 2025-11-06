@@ -8,6 +8,7 @@ terseness' sake isn't tested explicitly.
 a {
   e: round(var(--c), 8px, 9px);
 }
+
 <===> strategy/unknown_variable/output.css
 a {
   e: round(var(--c), 8px, 9px);
@@ -31,6 +32,7 @@ a {
 a {
   d: round(up, 8px, var(--c));
 }
+
 <===> step/unknown_variable/output.css
 a {
   d: round(up, 8px, var(--c));

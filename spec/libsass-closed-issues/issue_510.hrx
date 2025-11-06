@@ -6,6 +6,7 @@ $after: (foo: 1, burp: 4);
 div {
   foo: $before == $after;
 }
+
 <===> output.css
 div {
   foo: true;

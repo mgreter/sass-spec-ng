@@ -6,4 +6,3 @@ a {b: color.channel(rgb(255 none 255), "green")}
 a {
   b: 0;
 }
-

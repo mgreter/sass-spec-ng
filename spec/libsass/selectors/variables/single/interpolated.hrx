@@ -3,6 +3,7 @@
   $bar: &;
   content: #{$bar};
 }
+
 <===> output.css
 .foo {
   content: .foo;

@@ -21,6 +21,7 @@ $y: after;
 foo {
   a: $x;
 }
+
 <===> output.css
 a {
   color: red;

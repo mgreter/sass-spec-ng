@@ -6,6 +6,7 @@
 foo {
   @include mix();
 }
+
 <===> error
 Error: This at-rule is not allowed here.
   ,

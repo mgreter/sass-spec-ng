@@ -1,5 +1,6 @@
 <===> nested_property/no_value/input.scss
 @use 'plain'
+
 <===> nested_property/no_value/plain.css
 a {
   x: {
@@ -259,6 +260,7 @@ Error: Top-level leading combinators aren't allowed in plain CSS.
 ================================================================================
 <===> placeholder_selector/input.scss
 @use 'plain'
+
 <===> placeholder_selector/plain.css
 %foo {
   x: y;
@@ -290,6 +292,7 @@ Error: Placeholder selectors aren't allowed in plain CSS.
 ================================================================================
 <===> interpolation/selector/input.scss
 @use 'plain'
+
 <===> interpolation/selector/plain.css
 a#{b}c {
   x: y;
@@ -321,6 +324,7 @@ Error: Interpolation isn't allowed in plain CSS.
 ================================================================================
 <===> interpolation/declaration/input.scss
 @use 'plain'
+
 <===> interpolation/declaration/plain.css
 a {
   w#{x}y: z;
@@ -352,6 +356,7 @@ Error: Interpolation isn't allowed in plain CSS.
 ================================================================================
 <===> interpolation/custom_property/input.scss
 @use 'plain'
+
 <===> interpolation/custom_property/plain.css
 a {
   --b: #{c};

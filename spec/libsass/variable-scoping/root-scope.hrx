@@ -21,6 +21,7 @@ div {
   x: $x;
   y: $y;
 }
+
 <===> output.css
 div {
   x: -42;

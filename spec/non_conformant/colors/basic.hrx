@@ -8,6 +8,7 @@ p {
   color: string.unquote("red") + green;
   foo: rgb(200, 150%, 170%);
 }
+
 <===> output.css
 p {
   color: rgb(255, 128, 0);

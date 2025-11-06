@@ -14,7 +14,7 @@ $gutter: 100% / 36.2;
     }
 }
 
-// Each number here becomes a grid: onecol, twocol etc. 
+// Each number here becomes a grid: onecol, twocol etc.
 $grids: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve;
 $i: 1;
 @each $grid in $grids {
@@ -29,6 +29,7 @@ $i: 1;
     }
     $i: $i + 1;
 }
+
 <===> output.css
 .onecol {
   width: 5.8011049724%;

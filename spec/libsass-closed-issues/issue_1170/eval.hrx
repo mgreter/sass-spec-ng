@@ -4,6 +4,7 @@ el {
     content: "It works!";
   }
 }
+
 <===> output.css
 el {
   content: "It works!";

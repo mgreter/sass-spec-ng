@@ -47,7 +47,7 @@ c {
 <===>
 ================================================================================
 <===> error/binary/before_indent/input.sass
-$a: b 
+$a: b
   + c
 
 <===> error/binary/before_indent/error
