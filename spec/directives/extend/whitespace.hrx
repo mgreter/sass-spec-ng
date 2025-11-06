@@ -160,9 +160,9 @@ Error: Nothing may be indented beneath a @extend rule.
 <===> error/after_arg_indented/sass/error-libsass
 Error: Nothing may be indented beneath a @extend rule.
   ,
-4 |     @extend
-  | /-----------^
-5 | |     a
+5 |       a
+  | /-------^
+6 | |     b
   | \----^
   '
-  input.sass 4:10  root stylesheet
+  input.sass 5:6  root stylesheet
