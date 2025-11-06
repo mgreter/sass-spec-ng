@@ -32,6 +32,14 @@ Error: Expected "important".
   '
   input.scss 3:8  root stylesheet
 
+<===> error/syntax/eof_after_bang/error-libsass
+Error: Expected "important".
+  ,
+4 |
+  | ^
+  '
+  input.scss 4:1  root stylesheet
+
 <===>
 ================================================================================
 <===> error/syntax/sass/multiline/after_prop/input.sass
@@ -46,3 +54,11 @@ Error: Expected identifier.
   |       ^
   '
   input.sass 2:7  root stylesheet
+
+<===> error/syntax/sass/multiline/after_prop/error-libsass
+Error: Expected identifier.
+  ,
+3 |     !important
+  |     ^
+  '
+  input.sass 3:5  root stylesheet

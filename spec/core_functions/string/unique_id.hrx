@@ -46,3 +46,11 @@ Error: Only 0 arguments allowed, but 1 was passed.
   |           =========== declaration
   '
   input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 0 arguments allowed, but 1 was passed.
+  ,
+2 | a {b: string.unique-id(c)}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet

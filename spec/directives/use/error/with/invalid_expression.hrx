@@ -12,6 +12,29 @@ Error: 1px and 1em have incompatible units.
   '
   input.scss 1:24  root stylesheet
 
+<===> error/error-libsass
+Error: 1px and 1em have incompatible units.
+  ,
+1 | @use "other" with ($a: 1px + 1em);
+  |                              ^^^
+  '
+  input.scss 1:30  @use
+  ,
+1 | @use "other" with ($a: 1px + 1em);
+  |                        ^^^
+  '
+  input.scss 1:24  @use
+  ,
+1 | @use "other" with ($a: 1px + 1em);
+  |                        ^^^^^^^^^
+  '
+  input.scss 1:24  @use
+  ,
+1 | @use "other" with ($a: 1px + 1em);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
+
 <===>
 ================================================================================
 <===> variable_defined_later/input.scss
@@ -28,6 +51,19 @@ Error: Undefined variable.
   |                        ^^
   '
   input.scss 1:24  root stylesheet
+
+<===> variable_defined_later/error-libsass
+Error: Undefined variable.
+  ,
+1 | @use "other" with ($a: $b);
+  |                        ^^
+  '
+  input.scss 1:24  @use
+  ,
+1 | @use "other" with ($a: $b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
 
 <===>
 ================================================================================
@@ -48,3 +84,16 @@ Error: There is no module with namespace "other".
   |                             ^^^^^^^^
   '
   input.scss 1:29  root stylesheet
+
+<===> module_loaded_later/error-libsass
+Error: There is no module with the namespace "other".
+  ,
+1 | @use "configured" with ($a: other.$b);
+  |                             ^^^^^^^^
+  '
+  input.scss 1:29  @use
+  ,
+1 | @use "configured" with ($a: other.$b);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet

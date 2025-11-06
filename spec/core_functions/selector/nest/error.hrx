@@ -24,6 +24,24 @@ Error: A top-level selector may not contain a parent selector with a suffix.
   '
   - 1:1  root stylesheet
 
+<===> parent/first_arg/error-libsass
+Error: Parent selectors aren't allowed here.
+  ,
+2 | a {b: selector.nest(&)}
+  |                     ^
+  '
+  input.scss 2:21  selector-nest()
+  ,
+2 | a {b: selector.nest("&")}
+  |                     ^^^
+  '
+  input.scss 2:21  selector-nest()
+  ,
+2 | a {b: selector.nest("&")}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> parent/non_initial/input.scss
@@ -42,6 +60,24 @@ Error: "&" may only used at the beginning of a compound selector.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> parent/non_initial/error-libsass
+Error: "&" may only used at the beginning of a compound selector.
+  ,
+2 | a {b: selector.nest("c", [d]&)}
+  |                             ^
+  '
+  input.scss 2:29  selector-nest()
+  ,
+2 | a {b: selector.nest("c", "[d]&")}
+  |                          ^^^^^^
+  '
+  input.scss 2:26  selector-nest()
+  ,
+2 | a {b: selector.nest("c", "[d]&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -62,6 +98,24 @@ Error: "&" may only used at the beginning of a compound selector.
   '
   input.scss 2:7  root stylesheet
 
+<===> parent/prefix/error-libsass
+Error: "&" may only used at the beginning of a compound selector.
+  ,
+2 | a {b: selector.nest("c", d&)}
+  |                           ^
+  '
+  input.scss 2:27  selector-nest()
+  ,
+2 | a {b: selector.nest("c", "d&")}
+  |                          ^^^^
+  '
+  input.scss 2:26  selector-nest()
+  ,
+2 | a {b: selector.nest("c", "d&")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> invalid/initial/input.scss
@@ -80,6 +134,24 @@ Error: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> invalid/initial/error-libsass
+Error: expected more input.
+  ,
+2 | a {b: selector.nest([c)}
+  |                       ^
+  '
+  input.scss 2:23  selector-nest()
+  ,
+2 | a {b: selector.nest("[c")}
+  |                     ^^^^
+  '
+  input.scss 2:21  selector-nest()
+  ,
+2 | a {b: selector.nest("[c")}
+  |       ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -100,6 +172,24 @@ Error: expected more input.
   '
   input.scss 2:7  root stylesheet
 
+<===> invalid/later/error-libsass
+Error: expected more input.
+  ,
+2 | a {b: selector.nest("c", [d)}
+  |                            ^
+  '
+  input.scss 2:28  selector-nest()
+  ,
+2 | a {b: selector.nest("c", "[d")}
+  |                          ^^^^
+  '
+  input.scss 2:26  selector-nest()
+  ,
+2 | a {b: selector.nest("c", "[d")}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> type/initial/input.scss
@@ -115,6 +205,20 @@ a list of strings, or a list of lists of strings.
   '
   input.scss 2:7  root stylesheet
 
+<===> type/initial/error-libsass
+Error: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.nest(1)}
+  |                     ^
+  '
+  input.scss 2:21  selector-nest()
+  ,
+2 | a {b: selector.nest(1)}
+  |       ^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> type/later/input.scss
@@ -129,6 +233,20 @@ a list of strings, or a list of lists of strings.
   |       ^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> type/later/error-libsass
+Error: 1 is not a valid selector: it must be a string,
+a list of strings, or a list of lists of strings.
+  ,
+2 | a {b: selector.nest("c", 1)}
+  |                          ^
+  '
+  input.scss 2:26  selector-nest()
+  ,
+2 | a {b: selector.nest("c", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================

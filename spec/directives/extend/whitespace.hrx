@@ -130,6 +130,14 @@ Error: unrecognized syntax
   '
   input.sass 3:3  root stylesheet
 
+<===> error/before_optional/sass/error-libsass
+Error: Expected newline.
+  ,
+3 |   !optional
+  |   ^
+  '
+  input.sass 3:3  root stylesheet
+
 <===>
 ================================================================================
 <===> error/after_arg_indented/sass/input.sass
@@ -148,3 +156,13 @@ Error: Nothing may be indented beneath a @extend rule.
   |     ^
   '
   input.sass 6:5  root stylesheet
+
+<===> error/after_arg_indented/sass/error-libsass
+Error: Nothing may be indented beneath a @extend rule.
+  ,
+4 |     @extend
+  | /-----------^
+5 | |     a
+  | \----^
+  '
+  input.sass 4:10  root stylesheet

@@ -156,6 +156,19 @@ Error: Expected expression.
   plain.css 1:16  @use
   input.scss 1:1  root stylesheet
 
+<===> error/empty_fallback_var/invalid_second_arg_syntax/error-libsass
+Error: Expected expression.
+  ,
+1 | a {b: var(--c, {})}
+  |                ^
+  '
+  plain.css 1:16  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> error/empty_fallback_var/empty_second_before_third/input.scss
@@ -171,4 +184,17 @@ Error: Expected expression.
   |                ^
   '
   plain.css 1:16  @use
+  input.scss 1:1  root stylesheet
+
+<===> error/empty_fallback_var/empty_second_before_third/error-libsass
+Error: Expected expression.
+  ,
+1 | a {b: var(--c, , d)}
+  |                ^
+  '
+  plain.css 1:16  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet

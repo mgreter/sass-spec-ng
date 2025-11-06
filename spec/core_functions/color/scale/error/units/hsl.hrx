@@ -10,6 +10,19 @@ Error: $saturation: Expected 1 to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> none/saturation/error-libsass
+Error: $saturation: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(white, $saturation: 1)}
+  |                                       ^
+  '
+  input.scss 2:39  scale()
+  ,
+2 | a {b: color.scale(white, $saturation: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> none/lightness/input.scss
@@ -23,6 +36,19 @@ Error: $lightness: Expected 1 to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> none/lightness/error-libsass
+Error: $lightness: Expected 1 to have unit "%".
+  ,
+2 | a {b: color.scale(white, $lightness: 1)}
+  |                                      ^
+  '
+  input.scss 2:38  scale()
+  ,
+2 | a {b: color.scale(white, $lightness: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================
@@ -38,6 +64,19 @@ Error: $saturation: Expected 1px to have unit "%".
   '
   input.scss 2:7  root stylesheet
 
+<===> wrong/saturation/error-libsass
+Error: $saturation: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(white, $saturation: 1px)}
+  |                                       ^^^
+  '
+  input.scss 2:39  scale()
+  ,
+2 | a {b: color.scale(white, $saturation: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> wrong/lightness/input.scss
@@ -51,3 +90,16 @@ Error: $lightness: Expected 1px to have unit "%".
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> wrong/lightness/error-libsass
+Error: $lightness: Expected 1px to have unit "%".
+  ,
+2 | a {b: color.scale(white, $lightness: 1px)}
+  |                                      ^^^
+  '
+  input.scss 2:38  scale()
+  ,
+2 | a {b: color.scale(white, $lightness: 1px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

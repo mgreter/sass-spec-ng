@@ -14,6 +14,19 @@ Error: Expected expression.
   plain.css 2:7   @use
   input.scss 1:1  root stylesheet
 
+<===> empty/error-libsass
+Error: Expected expression.
+  ,
+2 |   x: ();
+  |       ^
+  '
+  plain.css 2:7   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+
 <===>
 ================================================================================
 <===> empty_comma/input.scss
@@ -30,4 +43,17 @@ Error: Expected expression.
   |       ^
   '
   plain.css 2:7   @use
+  input.scss 1:1  root stylesheet
+
+<===> empty_comma/error-libsass
+Error: Expected expression.
+  ,
+2 |   x: (,);
+  |       ^
+  '
+  plain.css 2:7   @use
+  ,
+1 | @use 'plain'
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet

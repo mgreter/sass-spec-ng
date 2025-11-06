@@ -110,6 +110,14 @@ Error: Missing argument $color.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.blue()}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -128,6 +136,14 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: color.blue(red, green)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/type/input.scss
@@ -141,6 +157,19 @@ Error: $color: 1 is not a color.
   |       ^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> error/type/error-libsass
+Error: $color: 1 is not a color.
+  ,
+2 | a {b: color.blue(1)}
+  |                  ^
+  '
+  input.scss 2:18  blue()
+  ,
+2 | a {b: color.blue(1)}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 
 <===>
 ================================================================================

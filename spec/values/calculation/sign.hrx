@@ -133,6 +133,14 @@ Error: Missing argument.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $number.
+  ,
+1 | a {b: sign()}
+  |       ^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -171,3 +179,11 @@ Error: This operation can't be used in a calculation.
   |              ^
   '
   input.scss 1:14  root stylesheet
+
+<===> error/sass_script/error-libsass
+Error: This operation can't be used in a calculation.
+  ,
+1 | a {b: sign(7 % 3)}
+  |            ^^^^^
+  '
+  input.scss 1:12  root stylesheet

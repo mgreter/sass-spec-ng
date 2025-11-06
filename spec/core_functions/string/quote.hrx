@@ -89,6 +89,19 @@ Error: $string: (1, 2, 3) is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $string: (1, 2, 3) is not a string.
+  ,
+2 | a {b: string.quote((1, 2, 3))}
+  |                    ^^^^^^^^^
+  '
+  input.scss 2:20  quote()
+  ,
+2 | a {b: string.quote((1, 2, 3))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
@@ -107,6 +120,14 @@ Error: Missing argument $string.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $string.
+  ,
+2 | a {b: string.quote()}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -122,5 +143,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:string
 1 | @function quote($string) {
   |           ============== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: string.quote(c, d)}
+  |       ^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

@@ -99,6 +99,19 @@ Error: $channels: Expected hue channel to be a number, was "from".
   '
   input.scss 1:7  root stylesheet
 
+<===> error/quoted/alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was "from".
+  ,
+1 | a {b: hsl("from" #aaa h s l / 25%)}
+  |           ^^^^^^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl("from" #aaa h s l / 25%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/quoted/no_alpha/input.scss
@@ -111,6 +124,19 @@ Error: $channels: Expected hue channel to be a number, was "from".
   |       ^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/quoted/no_alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was "from".
+  ,
+1 | a {b: hsl("from" #aaa h s l)}
+  |           ^^^^^^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl("from" #aaa h s l)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
 
 <===>
 ================================================================================
@@ -125,6 +151,19 @@ Error: $channels: Expected hue channel to be a number, was c.
   '
   input.scss 1:7  root stylesheet
 
+<===> error/wrong_keyword/alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was c.
+  ,
+1 | a {b: hsl(c #aaa h s l / 25%)}
+  |           ^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl(c #aaa h s l / 25%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/wrong_keyword/no_alpha/input.scss
@@ -137,3 +176,16 @@ Error: $channels: Expected hue channel to be a number, was c.
   |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7  root stylesheet
+
+<===> error/wrong_keyword/no_alpha/error-libsass
+Error: $channels: Expected hue channel to be a number, was c.
+  ,
+1 | a {b: hsl(c #aaa h s l)}
+  |           ^
+  '
+  input.scss 1:11  hsl()
+  ,
+1 | a {b: hsl(c #aaa h s l)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet

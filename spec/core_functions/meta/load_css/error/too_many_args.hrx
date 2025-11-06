@@ -13,3 +13,11 @@ Error: Only 2 arguments allowed, but 3 were passed.
   |        =========================== declaration
   '
   input.scss 2:1  root stylesheet
+
+<===> error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | @include meta.load-css("other", (), "a");
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet

@@ -240,6 +240,14 @@ Error: Missing argument $value.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $value.
+  ,
+2 | a {b: meta.type-of()}
+  |       ^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
@@ -255,5 +263,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:meta
 1 | @function type-of($value) {
   |           =============== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/too_many_args/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: meta.type-of(1, 2)}
+  |       ^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

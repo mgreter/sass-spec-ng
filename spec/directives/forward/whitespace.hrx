@@ -42,6 +42,16 @@ Error: Nothing may be indented beneath a @forward rule.
   '
   input.sass 2:3  root stylesheet
 
+<===> error/before_keyword/sass/error-libsass
+Error: Nothing may be indented beneath a @forward rule.
+  ,
+1 |   @forward "other"
+  | /------------------^
+2 | |   as a-*
+  | \--^
+  '
+  input.sass 1:17  root stylesheet
+
 <===>
 ================================================================================
 <===> after_keyword/scss/input.scss
@@ -245,6 +255,16 @@ Error: Nothing may be indented beneath a @forward rule.
   |   ^
   '
   input.sass 2:3  root stylesheet
+
+<===> show/after_a/sass/error-libsass
+Error: Nothing may be indented beneath a @forward rule.
+  ,
+1 |   @forward "other" show $a
+  | /--------------------------^
+2 | |   , $b
+  | \--^
+  '
+  input.sass 1:25  root stylesheet
 
 <===>
 ================================================================================

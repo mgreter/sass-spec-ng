@@ -18,6 +18,19 @@ Error: $separator: 1 is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> type/separator/error-libsass
+Error: $separator: 1 is not a string.
+  ,
+2 | a {b: list.join(c, d, $separator: 1)}
+  |                                   ^
+  '
+  input.scss 2:35  join()
+  ,
+2 | a {b: list.join(c, d, $separator: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> too_many_args/input.scss
@@ -33,6 +46,14 @@ Error: Only 4 arguments allowed, but 5 were passed.
   ,--> sass:list
 1 | @function join($list1, $list2, $separator: auto, $bracketed: auto) {
   |           ======================================================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> too_many_args/error-libsass
+Error: Only 4 arguments allowed, but 5 were passed.
+  ,
+2 | a {b: list.join(c, d, comma, true, false)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
 
@@ -54,6 +75,14 @@ Error: Missing argument $list2.
   '
   input.scss 2:7  root stylesheet
 
+<===> too_few_args/error-libsass
+Error: Missing argument $list2.
+  ,
+2 | a {b: list.join(c)}
+  |       ^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> named/input.scss
@@ -69,6 +98,14 @@ Error: No parameter named $invalid.
   ,--> sass:list
 1 | @function join($list1, $list2, $separator: auto, $bracketed: auto) {
   |           ======================================================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> named/error-libsass
+Error: No parameter named $invalid.
+  ,
+2 | a {b: list.join(c, d, $invalid: true)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
 

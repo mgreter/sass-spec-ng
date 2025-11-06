@@ -118,3 +118,11 @@ Error: expected selector.
   |         ^
   '
   input.sass 1:9  root stylesheet
+
+<===> error/before_query/sass/error-libsass
+Error: expected selector.
+  ,
+2 |   (without: media)
+  |   ^
+  '
+  input.sass 2:3  root stylesheet

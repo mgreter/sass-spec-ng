@@ -219,3 +219,13 @@ Error: Nothing may be indented beneath a @use rule.
   |   ^
   '
   input.sass 2:3  root stylesheet
+
+<===> error/before_keyword/sass/error-libsass
+Error: Nothing may be indented beneath a @use rule.
+  ,
+1 |   @use "other"
+  | /--------------^
+2 | |   as a
+  | \--^
+  '
+  input.sass 1:13  root stylesheet

@@ -10,6 +10,19 @@ Error: $lightness: Expected 30px to have unit "%" or no units.
   '
   input.scss 2:7  root stylesheet
 
+<===> lightness/error-libsass
+Error: $lightness: Expected 30px to have unit "%" or no units.
+  ,
+2 | a {b: color.change(lch(50% 30 50deg), $lightness: 30px)}
+  |                                                   ^^^^
+  '
+  input.scss 2:51  change-color()
+  ,
+2 | a {b: color.change(lch(50% 30 50deg), $lightness: 30px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> chroma/input.scss
@@ -24,6 +37,19 @@ Error: $chroma: Expected 20px to have unit "%" or no units.
   '
   input.scss 2:7  root stylesheet
 
+<===> chroma/error-libsass
+Error: $chroma: Expected 20px to have unit "%" or no units.
+  ,
+2 | a {b: color.change(lch(50% 30 50deg), $chroma: 20px)}
+  |                                                ^^^^
+  '
+  input.scss 2:48  change-color()
+  ,
+2 | a {b: color.change(lch(50% 30 50deg), $chroma: 20px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> hue/input.scss
@@ -37,3 +63,16 @@ Error: $hue: Expected 20% to have an angle unit (deg, grad, rad, turn).
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
+
+<===> hue/error-libsass
+Error: $hue: Expected 20% to have an angle unit (deg, grad, rad, turn).
+  ,
+2 | a {b: color.change(lch(50% 30 50deg), $hue: 20%)}
+  |                                             ^^^
+  '
+  input.scss 2:45  change-color()
+  ,
+2 | a {b: color.change(lch(50% 30 50deg), $hue: 20%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet

@@ -184,6 +184,19 @@ Error: $n: e is not a number.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/type/error-libsass
+Error: $n: e is not a number.
+  ,
+2 | a {b: list.set-nth(c d, e, f)}
+  |                         ^
+  '
+  input.scss 2:25  set-nth()
+  ,
+2 | a {b: list.set-nth(c d, e, f)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+
 <===>
 ================================================================================
 <===> error/index/0/input.scss
@@ -244,6 +257,14 @@ Error: Missing argument $value.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/index/too_few_args/error-libsass
+Error: Missing argument $value.
+  ,
+2 | a {b: list.set-nth(c d, 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/index/too_many_args/input.scss
@@ -259,5 +280,13 @@ Error: Only 3 arguments allowed, but 4 were passed.
   ,--> sass:list
 1 | @function set-nth($list, $n, $value) {
   |           ========================== declaration
+  '
+  input.scss 2:7  root stylesheet
+
+<===> error/index/too_many_args/error-libsass
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,
+2 | a {b: list.set-nth(c d, 1, 2, 3)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet

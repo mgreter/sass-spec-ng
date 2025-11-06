@@ -19,3 +19,16 @@ Error: This module was already loaded, so it can't be configured using "with".
   '
   _used.scss 2:1  @use
   input.scss 1:1  root stylesheet
+
+<===> with/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+2 | @forward "forwarded" with ($a: used a 2 !default);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _used.scss 2:1  @use
+  ,
+1 | @use "used" with ($a: input a);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
