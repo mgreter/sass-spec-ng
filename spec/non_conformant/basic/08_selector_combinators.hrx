@@ -9,11 +9,11 @@ a   +   b  >  c {
 }
 
 <===> output.css
-a + b > c d e {
-  color: blue;
-  background: white;
-}
 a + b > c {
   color: red;
   background: gray;
+}
+a + b > c d e {
+  color: blue;
+  background: white;
 }
