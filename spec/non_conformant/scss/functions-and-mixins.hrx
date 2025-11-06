@@ -25,13 +25,13 @@ div {
 }
 
 <===> output.css
+div {
+  height: 5;
+}
 div span div {
   content: "hello";
   content: "hello";
   width: 8;
-}
-div {
-  height: 5;
 }
 
 <===> warning
