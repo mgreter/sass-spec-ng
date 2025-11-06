@@ -188,6 +188,16 @@ $method: local-minde
   '
   input.scss 2:7  root stylesheet
 
+<===> method/absent/error-libsass
+Error: $method: color.to-gamut() requires a $method argument for forwards-compatibility with changes in the CSS spec.
+Suggestion:
+$method: local-minde
+  ,
+2 | a {b: color.to-gamut(pink)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> method/null/input.scss
@@ -197,6 +207,16 @@ a {b: color.to-gamut(pink, $method: null)}
 <===> method/null/error
 Error: $method: color.to-gamut() requires a $method argument for forwards-compatibility with changes in the CSS spec. Suggestion:
 
+$method: local-minde
+  ,
+2 | a {b: color.to-gamut(pink, $method: null)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===> method/null/error-libsass
+Error: $method: color.to-gamut() requires a $method argument for forwards-compatibility with changes in the CSS spec.
+Suggestion:
 $method: local-minde
   ,
 2 | a {b: color.to-gamut(pink, $method: null)}
