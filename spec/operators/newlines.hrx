@@ -66,7 +66,7 @@ Error: Nothing may be indented beneath a variable declaration.
 2 | |   + c
   | \--^
   '
-  input.sass 1:7  root stylesheet
+  input.sass 1:6  root stylesheet
 
 <===>
 ================================================================================
