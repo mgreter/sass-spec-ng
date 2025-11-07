@@ -10,6 +10,12 @@ test {
   test2: 0.1458333333in;
 }
 
+<===> output-libsass.css
+test {
+  test1: 12px;
+  test2: 14px;
+}
+
 <===> warning
 DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
 

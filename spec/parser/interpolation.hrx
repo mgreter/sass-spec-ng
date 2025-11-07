@@ -73,6 +73,14 @@ Error: Unexpected ")".
   '
   input.sass 1:8  root stylesheet
 
+<===> error/selector/unmatched_close_paren/error-libsass
+Error: Unexpected "".
+  ,
+1 | a:is(b))
+  |        ^
+  '
+  input.sass 1:8  root stylesheet
+
 <===>
 ================================================================================
 <===> error/selector/unmatched_close_bracket/input.sass
@@ -81,6 +89,14 @@ a[b]]
 
 <===> error/selector/unmatched_close_bracket/error
 Error: Unexpected "]".
+  ,
+1 | a[b]]
+  |     ^
+  '
+  input.sass 1:5  root stylesheet
+
+<===> error/selector/unmatched_close_bracket/error-libsass
+Error: Unexpected "".
   ,
 1 | a[b]]
   |     ^

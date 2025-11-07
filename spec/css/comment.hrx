@@ -61,7 +61,8 @@ should include their own tests for CR LF newlines.
 <===>
 ================================================================================
 <===> converts_newlines/scss/cr/input.scss
-/* foo * bar */
+/* foo
+ * bar */
 
 <===> converts_newlines/scss/cr/output.css
 /* foo
@@ -80,7 +81,8 @@ should include their own tests for CR LF newlines.
 ================================================================================
 <===> converts_newlines/sass/cr/input.sass
 /*
-  foo  bar
+  foo
+  bar
 
 <===> converts_newlines/sass/cr/output.css
 /* foo
@@ -263,6 +265,11 @@ a { b: c }
 
 <===> sourcemap/between_loads/output.css
 
+a {
+  b: c;
+}
+
+<===> sourcemap/between_loads/output-libsass.css
 a {
   b: c;
 }
