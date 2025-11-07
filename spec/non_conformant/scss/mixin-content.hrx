@@ -88,8 +88,6 @@ span {
 }
 span div {
   color: red;
-  background: blue;
-  width: 80%;
 }
 @media fudge {
   span div p {
@@ -99,6 +97,10 @@ span div {
   span div p a {
     text-decoration: underline;
   }
+}
+span div {
+  background: blue;
+  width: 80%;
 }
 span div form {
   color: orange;

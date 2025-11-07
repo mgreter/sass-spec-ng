@@ -17,3 +17,5 @@ Error: Expected string.
   |         ^
   '
   input.sass 1:9  root stylesheet
+
+<===> error/whitespace/sass/error-libsass
