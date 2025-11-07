@@ -58,7 +58,6 @@ div {
 @fudge hux bloo;
 div {
   color: red;
-  height: 20px;
 }
 @fudge {
   div span {
@@ -67,6 +66,9 @@ div {
   div span a {
     font: whatever;
   }
+}
+div {
+  height: 20px;
 }
 @-webkit-keyframes SOMETHING {
   0% {
@@ -88,15 +90,15 @@ div {
   }
 }
 
+div span {
+  font: whatever;
+}
 div {
   border-upper-left: 10px;
   border-upper-right: 9px;
   border-lower-left: 8px;
   border-lower-right: 7px;
   background: gray;
-}
-div span {
-  font: whatever;
 }
 
 @fudge HEY, HOO, HA:first-child {
