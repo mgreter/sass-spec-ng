@@ -61,13 +61,15 @@ div {
   hey: 4;
   ho: hello;
   hee: fudge;
-  fudge: walnut;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
   div {
     background-image: image-url("test@2x.png");
     -webkit-background-size: 100px 300px;
   }
+}
+div {
+  fudge: walnut;
 }
 
 span {
