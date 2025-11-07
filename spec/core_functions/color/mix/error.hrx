@@ -413,6 +413,14 @@ Error: $method: Hue interpolation method "HueInterpolationMethod.longer hue" may
   '
   input.scss 1:7  root stylesheet
 
+<===> rectangular_space_with_method/error-libsass
+Error: $method: Hue interpolation method "longer hue" may not be set for rectangular color space srgb.
+  ,
+1 | a {b: mix(red, blue, $method: srgb longer hue)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+
 <===>
 ================================================================================
 <===> missing_hue_string/input.scss

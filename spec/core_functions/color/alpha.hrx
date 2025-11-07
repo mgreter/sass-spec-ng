@@ -226,6 +226,14 @@ Error: () isn't a valid CSS value.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/too_few_args/error-libsass
+Error: Missing argument $color.
+  ,
+2 | a {b: color.alpha()}
+  |       ^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
 <===>
 ================================================================================
 <===> error/too_many_args/input.scss
