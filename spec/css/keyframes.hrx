@@ -21,6 +21,10 @@ a {
 
 <===>
 ================================================================================
+<===> bubble/empty/options.yml
+:todo:
+  - libsass#comments
+
 <===> bubble/empty/input.scss
 // Regression test for sass/dart-sass#611.
 a {
