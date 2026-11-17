@@ -1,3 +1,7 @@
+<===> clip/options.yml
+:todo:
+  - libsass#gamut
+
 <===> clip/input.scss
 @use "sass:color";
 a {
@@ -14,6 +18,10 @@ a {
 
 <===>
 ================================================================================
+<===> local_minde/options.yml
+:todo:
+  - libsass#gamut
+
 <===> local_minde/input.scss
 @use "sass:color";
 a {

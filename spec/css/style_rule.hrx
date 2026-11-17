@@ -359,6 +359,10 @@ a {
 
 <===>
 ================================================================================
+<===> sass/trailing_loud_comment/options.yml
+:todo:
+  - libsass#comments
+
 <===> sass/trailing_loud_comment/input.sass
 a
   b: c;

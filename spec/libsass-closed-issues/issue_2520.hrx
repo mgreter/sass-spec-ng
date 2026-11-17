@@ -1,7 +1,8 @@
 <===> options.yml
 ---
 :todo:
-- dart-sass
+  - dart-sass
+  - libsass#quotes
 
 <===> input.scss
 @use "sass:list";
