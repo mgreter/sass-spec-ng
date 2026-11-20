@@ -1,0 +1,87 @@
+<===> style_rule/input.scss
+// A local variable that is null is replaced by a !default
+// assignment, like a global one (it used to stay null)
+a {
+  $x: null;
+  $x: 1 !default;
+  b: $x;
+}
+<===> style_rule/output.css
+a {
+  b: 1;
+}
+<===>
+================================================================================
+<===> mixin/input.scss
+@mixin m {
+  $x: null;
+  $x: 2 !default;
+  b: $x;
+}
+a {@include m}
+<===> mixin/output.css
+a {
+  b: 2;
+}
+<===>
+================================================================================
+<===> function/input.scss
+@function f() {
+  $x: null;
+  $x: 3 !default;
+  @return $x;
+}
+a {b: f()}
+<===> function/output.css
+a {
+  b: 3;
+}
+<===>
+================================================================================
+<===> nested_block/input.scss
+a {
+  $x: null;
+  @if true {$x: 4 !default}
+  b: $x;
+}
+<===> nested_block/output.css
+a {
+  b: 4;
+}
+<===>
+================================================================================
+<===> parameter/input.scss
+@mixin m($x: null) {
+  $x: 5 !default;
+  b: $x;
+}
+a {@include m}
+<===> parameter/output.css
+a {
+  b: 5;
+}
+<===>
+================================================================================
+<===> each_variable/input.scss
+a {
+  @each $x in (null,) {
+    $x: 6 !default;
+    b: $x;
+  }
+}
+<===> each_variable/output.css
+a {
+  b: 6;
+}
+<===>
+================================================================================
+<===> not_null_kept/input.scss
+a {
+  $x: 7;
+  $x: 8 !default;
+  b: $x;
+}
+<===> not_null_kept/output.css
+a {
+  b: 7;
+}
