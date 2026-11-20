@@ -1,0 +1,54 @@
+<===> use_then_import/input.scss
+// `@import` also finds import-only files (`x.import.scss`), `@use`
+// does not. The resolved file must not be shared between both kinds
+// of loads (it used to be cached per URL only).
+@use 'x';
+@import 'x';
+<===> use_then_import/x.scss
+a {b: plain}
+<===> use_then_import/x.import.scss
+a {b: import-only}
+<===> use_then_import/output.css
+a {
+  b: plain;
+}
+
+a {
+  b: import-only;
+}
+<===>
+================================================================================
+<===> import_then_load_css/input.scss
+@use 'sass:meta';
+@import 'x';
+c {@include meta.load-css('x')}
+<===> import_then_load_css/x.scss
+a {b: plain}
+<===> import_then_load_css/x.import.scss
+a {b: import-only}
+<===> import_then_load_css/output.css
+a {
+  b: import-only;
+}
+
+c a {
+  b: plain;
+}
+<===>
+================================================================================
+<===> load_css_then_import/input.scss
+@use 'sass:meta';
+c {@include meta.load-css('x')}
+@import 'x';
+<===> load_css_then_import/x.scss
+a {b: plain}
+<===> load_css_then_import/x.import.scss
+a {b: import-only}
+<===> load_css_then_import/output.css
+c a {
+  b: plain;
+}
+
+a {
+  b: import-only;
+}
