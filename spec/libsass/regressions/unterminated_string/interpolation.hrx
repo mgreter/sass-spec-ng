@@ -1,0 +1,9 @@
+<===> error
+Error: Expected ".
+  ,
+1 | $x: "a#{1}b
+  |            ^
+  '
+  input.scss 1:12  root stylesheet
+<===> input.scss
+$x: "a#{1}b

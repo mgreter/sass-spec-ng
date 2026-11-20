@@ -1,0 +1,9 @@
+<===> error
+Error: Expected ".
+  ,
+1 | $x: "abc
+  |         ^
+  '
+  input.sass 1:9  root stylesheet
+<===> input.sass
+$x: "abc

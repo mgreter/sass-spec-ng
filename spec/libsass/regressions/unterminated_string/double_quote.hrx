@@ -1,0 +1,9 @@
+<===> error
+Error: Expected ".
+  ,
+1 | $x: "abc
+  |         ^
+  '
+  input.scss 1:9  root stylesheet
+<===> input.scss
+$x: "abc
