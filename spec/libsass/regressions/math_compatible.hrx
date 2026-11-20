@@ -1,0 +1,40 @@
+<===> arguments_unchanged/input.scss
+// math.compatible() must not modify its arguments (it used to
+// convert them to the canonical units, e.g. $a became 96px)
+@use 'sass:math';
+$a: 1in;
+$b: 1cm;
+$t: 1000ms;
+a {
+  r1: math.compatible($a, $b);
+  r2: math.compatible($t, 1s);
+  r3: math.compatible($a, $t);
+  a: $a;
+  b: $b;
+  t: $t;
+}
+<===> arguments_unchanged/output.css
+a {
+  r1: true;
+  r2: true;
+  r3: false;
+  a: 1in;
+  b: 1cm;
+  t: 1000ms;
+}
+<===>
+================================================================================
+<===> in_loop/input.scss
+// The same number literal is evaluated on every iteration
+@use 'sass:math';
+a {
+  @for $i from 1 through 2 {
+    $x: 1in;
+    b-#{$i}: math.compatible($x, 1cm) $x;
+  }
+}
+<===> in_loop/output.css
+a {
+  b-1: true 1in;
+  b-2: true 1in;
+}
