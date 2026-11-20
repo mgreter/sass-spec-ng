@@ -1,0 +1,46 @@
+<===> inspect_then_unit/input.scss
+// math.unit() and the calc() serialization of infinite numbers with
+// complex units used to share a cache, so whichever ran first decided
+// the format of both
+@use 'sass:math';
+@use 'sass:meta';
+$x: math.div(1, 0) * 1px * 1em;
+a {
+  b: meta.inspect($x);
+  c: math.unit($x);
+}
+<===> inspect_then_unit/output.css
+a {
+  b: calc(infinity * 1px * 1em);
+  c: "px*em";
+}
+<===>
+================================================================================
+<===> unit_then_inspect/input.scss
+@use 'sass:math';
+@use 'sass:meta';
+$x: math.div(1, 0) * 1px * 1em;
+a {
+  c: math.unit($x);
+  b: meta.inspect($x);
+}
+<===> unit_then_inspect/output.css
+a {
+  c: "px*em";
+  b: calc(infinity * 1px * 1em);
+}
+<===>
+================================================================================
+<===> denominator/input.scss
+@use 'sass:math';
+@use 'sass:meta';
+$x: math.div(math.div(1, 0) * 1px, 1s);
+a {
+  b: meta.inspect($x);
+  c: math.unit($x);
+}
+<===> denominator/output.css
+a {
+  b: calc(infinity * 1px / 1s);
+  c: "px/s";
+}
