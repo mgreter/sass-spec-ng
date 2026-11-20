@@ -1,0 +1,46 @@
+<===> nested/input.scss
+// Keyframe blocks of a loaded module must be kept
+@use "sass:meta";
+.x {@include meta.load-css("kf")}
+<===> nested/_kf.scss
+@keyframes spin {
+  from {a: b}
+  to {a: c}
+}
+.y {d: e}
+<===> nested/output.css
+@keyframes spin {
+  from {
+    a: b;
+  }
+  to {
+    a: c;
+  }
+}
+
+.x .y {
+  d: e;
+}
+<===>
+================================================================================
+<===> root/input.scss
+@use "sass:meta";
+@include meta.load-css("kf");
+<===> root/_kf.scss
+@keyframes spin {
+  from {a: b}
+  50% {a: c}
+  to {a: d}
+}
+<===> root/output.css
+@keyframes spin {
+  from {
+    a: b;
+  }
+  50% {
+    a: c;
+  }
+  to {
+    a: d;
+  }
+}

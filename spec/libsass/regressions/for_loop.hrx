@@ -1,0 +1,71 @@
+<===> bounds/input.scss
+// Fuzzy integer bounds iterate over the rounded integers (like dart-sass)
+@function first-over($n) {
+  @for $i from 1 through 100 { @if $i > $n { @return $i; } }
+  @return null;
+}
+@function down-ret() {
+  @for $i from 5 through 1 { @if $i == 2 { @return $i; } }
+  @return null;
+}
+a {
+  @for $i from 0.99999999999 through 3.00000000001 { fuzzy: $i; }
+  @for $i from 3.00000000001 through 0.99999999999 { fuzzy-down: $i; }
+  @for $i from 1 to 3 { exclusive: $i; }
+  @for $i from 3 to 1 { exclusive-down: $i; }
+  @for $i from 1px through 3px { units: $i; }
+  @for $i from 1cm through 20mm { coerce: $i; }
+  @for $i from 1 through 1 { single: $i; }
+  @for $i from 1 to 1 { empty: $i; }
+  @for $i from -2 through 1 { neg: $i; }
+  @for $i from 1 through -1 { neg-down: $i; }
+  early-return: first-over(3);
+  early-return-down: down-ret();
+}
+<===> bounds/output.css
+a {
+  fuzzy: 1;
+  fuzzy: 2;
+  fuzzy: 3;
+  fuzzy-down: 3;
+  fuzzy-down: 2;
+  fuzzy-down: 1;
+  exclusive: 1;
+  exclusive: 2;
+  exclusive-down: 3;
+  exclusive-down: 2;
+  units: 1px;
+  units: 2px;
+  units: 3px;
+  coerce: 1cm;
+  coerce: 2cm;
+  single: 1;
+  neg: -2;
+  neg: -1;
+  neg: 0;
+  neg: 1;
+  neg-down: 1;
+  neg-down: 0;
+  neg-down: -1;
+  early-return: 4;
+  early-return-down: 2;
+}
+<===>
+================================================================================
+<===> int32_boundary/input.scss
+// The loop counter must not overflow at 2^31
+a {
+  @for $i from 2147483646 through 2147483649 { b: $i; }
+  @for $i from -2147483647 through -2147483650 { c: $i; }
+}
+<===> int32_boundary/output.css
+a {
+  b: 2147483646;
+  b: 2147483647;
+  b: 2147483648;
+  b: 2147483649;
+  c: -2147483647;
+  c: -2147483648;
+  c: -2147483649;
+  c: -2147483650;
+}

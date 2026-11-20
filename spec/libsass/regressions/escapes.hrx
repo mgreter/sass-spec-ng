@@ -1,0 +1,57 @@
+<===> max_code_point/input.scss
+// U+10FFFF is the largest valid code point (not replaced with U+FFFD)
+@use "sass:string";
+a {
+  not-replaced: "\10FFFF" != "\FFFD";
+  same-code-point: "\10FFFF" == "\10ffff";
+  length: string.length("\10FFFF");
+}
+<===> max_code_point/output.css
+a {
+  not-replaced: true;
+  same-code-point: true;
+  length: 1;
+}
+<===>
+================================================================================
+<===> escaped_non_ascii/input.scss
+// An escaped multi-byte character is read as a whole
+@use "sass:string";
+a {
+  equal: "\é" == "é";
+  length: string.length("x\éx");
+  index: string.index("\é", "é");
+}
+<===> escaped_non_ascii/output.css
+a {
+  equal: true;
+  length: 3;
+  index: 1;
+}
+<===>
+================================================================================
+<===> escaped_keyword/input.scss
+// `\74 ` is the letter "t", so this is the keyword `through`
+a {
+  @for $i from 1 \74 hrough 2 { b: $i; }
+}
+<===> escaped_keyword/output.css
+a {
+  b: 1;
+  b: 2;
+}
+<===>
+================================================================================
+<===> error/escaped_keyword_truncated/input.scss
+// `\174 ` is U+0174, not "t" (it must not match `through`)
+a {
+  @for $i from 1 \174 hrough 2 { b: $i; }
+}
+<===> error/escaped_keyword_truncated/error-libsass
+Error: Expected "to" or "through".
+  ,
+3 |   @for $i from 1 \174 hrough 2 { b: $i; }
+  |                               ^
+  '
+  input.scss 3:31  root stylesheet
+

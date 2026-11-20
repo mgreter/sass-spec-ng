@@ -1,0 +1,61 @@
+<===> trailing_separator/input.scss
+// The rest after the last separator is always returned, even if empty
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
+$result: string.split("a,b,", ",");
+a {
+  value: meta.inspect($result);
+  length: list.length($result);
+}
+<===> trailing_separator/output.css
+a {
+  value: ["a", "b", ""];
+  length: 3;
+}
+<===>
+================================================================================
+<===> only_separator/input.scss
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
+$result: string.split(",", ",");
+a {
+  value: meta.inspect($result);
+  length: list.length($result);
+}
+<===> only_separator/output.css
+a {
+  value: ["", ""];
+  length: 2;
+}
+<===>
+================================================================================
+<===> double_trailing_separator/input.scss
+@use "sass:meta";
+@use "sass:string";
+a {b: meta.inspect(string.split("a,,", ","))}
+<===> double_trailing_separator/output.css
+a {
+  b: ["a", "", ""];
+}
+<===>
+================================================================================
+<===> limit_with_trailing_separator/input.scss
+@use "sass:meta";
+@use "sass:string";
+a {b: meta.inspect(string.split("a,b,", ",", 2))}
+<===> limit_with_trailing_separator/output.css
+a {
+  b: ["a", "b", ""];
+}
+<===>
+================================================================================
+<===> multi_char_trailing_separator/input.scss
+@use "sass:meta";
+@use "sass:string";
+a {b: meta.inspect(string.split("a--b--", "--"))}
+<===> multi_char_trailing_separator/output.css
+a {
+  b: ["a", "b", ""];
+}

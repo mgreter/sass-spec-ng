@@ -1,0 +1,74 @@
+<===> self_assign/input.scss
+// `$x: list.join(...)` is optimized to append in place; results must
+// match the plain function call
+@use "sass:list";
+@use "sass:meta";
+@function arglist-join($args...) {
+  $args: list.join($args, x);
+  @return meta.type-of($args) + "/" + list.length($args);
+}
+@function local-join() {
+  $l: 1 2;
+  $l: list.join($l, 3 4);
+  @return $l;
+}
+a {
+  // assignee is the second argument
+  $a: 1 2; $b: 3 4;
+  $b: list.join($a, $b);
+  second-arg: $b;            // 1 2 3 4
+  // assignee is the first argument
+  $c: 1 2;
+  $c: list.join($c, 3 4);
+  first-arg: $c;             // 1 2 3 4
+  // join with itself
+  $d: 1 2;
+  $d: list.join($d, $d);
+  self-join: $d;             // 1 2 1 2
+  // aliased: the other variable must not change
+  $e: 1 2; $f: $e;
+  $e: list.join($e, 3);
+  alias-new: $e;             // 1 2 3
+  alias-old: $f;             // 1 2
+  // the second argument must stay unchanged
+  $g: 1 2; $h: 3 4;
+  $g: list.join($g, $h);
+  rhs-new: $g;               // 1 2 3 4
+  rhs-old: $h;               // 3 4
+  // separator and brackets
+  $i: 1 2;
+  $i: list.join($i, (3, 4), comma, true);
+  sep-brackets: meta.inspect($i); // [1, 2, 3, 4]
+  // loop accumulation
+  $j: ();
+  @for $n from 1 through 4 { $j: list.join($j, $n); }
+  loop: $j;                  // 1 2 3 4
+  // loop accumulation, other argument order
+  $k: ();
+  @for $n from 1 through 4 { $k: list.join($n, $k); }
+  loop-prepend: meta.inspect($k); // 4 3 2 1
+  // inside a function with a local variable
+  local: local-join();       // 1 2 3 4
+  // an arglist must become a plain list
+  arglist: arglist-join(1, 2); // list/3
+  // single values (not lists)
+  $m: 1;
+  $m: list.join($m, 2);
+  single: $m;                // 1 2
+}
+<===> self_assign/output.css
+a {
+  second-arg: 1 2 3 4;
+  first-arg: 1 2 3 4;
+  self-join: 1 2 1 2;
+  alias-new: 1 2 3;
+  alias-old: 1 2;
+  rhs-new: 1 2 3 4;
+  rhs-old: 3 4;
+  sep-brackets: [1, 2, 3, 4];
+  loop: 1 2 3 4;
+  loop-prepend: 4 3 2 1;
+  local: 1 2 3 4;
+  arglist: list/3;
+  single: 1 2;
+}

@@ -1,0 +1,27 @@
+<===> three_variables/input.scss
+// Variables after the key/value pair are null
+@use "sass:meta";
+a {
+  @each $key, $value, $extra in (k1: v1, k2: v2) {
+    #{$key}: meta.inspect($value) meta.inspect($extra);
+  }
+}
+<===> three_variables/output.css
+a {
+  k1: v1 null;
+  k2: v2 null;
+}
+<===>
+================================================================================
+<===> four_variables/input.scss
+@use "sass:meta";
+a {
+  @each $x, $y, $z, $w in (a: 1, b: 2) {
+    #{$x}: $y meta.inspect($z) meta.inspect($w);
+  }
+}
+<===> four_variables/output.css
+a {
+  a: 1 null null;
+  b: 2 null null;
+}
