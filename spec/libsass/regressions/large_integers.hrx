@@ -1,0 +1,75 @@
+<===> string_and_list/input.scss
+// Integer arguments beyond 32 bits must not wrap around
+@use "sass:list";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+a {
+  slice-end-big: string.slice("abcde", 2, 3000000000);          // "bcde"
+  slice-start-big: string.slice("abcde", 3000000000);           // ""
+  slice-start-neg-big: string.slice("abcde", -3000000000, 2);   // "ab"
+  insert-big: string.insert("abc", "X", 3000000000);            // "abcX"
+  insert-neg-big: string.insert("abc", "X", -3000000000);       // "Xabc"
+  split-limit-big: meta.inspect(string.split("a b c", " ", 3000000000)); // ["a", "b", "c"]
+  slice-normal: string.slice("abcde", 2, 4);                    // "bcd"
+  slice-neg: string.slice("abcde", -3, -2);                     // "cd"
+  insert-normal: string.insert("abc", "X", 2);                  // "aXbc"
+  insert-neg: string.insert("abc", "X", -1);                    // "abcX"
+  nth-normal: list.nth(10 20 30, -1);                           // 30
+  $r: math.random(3000000000);
+  random-big: ($r == math.round($r)) and ($r >= 1) and ($r <= 3000000000); // true
+}
+<===> string_and_list/output.css
+a {
+  slice-end-big: "bcde";
+  slice-start-big: "";
+  slice-start-neg-big: "ab";
+  insert-big: "abcX";
+  insert-neg-big: "Xabc";
+  split-limit-big: ["a", "b", "c"];
+  slice-normal: "bcd";
+  slice-neg: "cd";
+  insert-normal: "aXbc";
+  insert-neg: "abcX";
+  nth-normal: 30;
+  random-big: true;
+}
+<===>
+================================================================================
+<===> error/nth_big/input.scss
+@use "sass:list";
+a {b: list.nth(10 20 30, 3000000000)}
+<===> error/nth_big/error-libsass
+Error: $n: Invalid index 3000000000 for a list with 3 elements.
+  ,
+2 | a {b: list.nth(10 20 30, 3000000000)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===>
+================================================================================
+<===> error/nth_negative_big/input.scss
+@use "sass:list";
+a {b: list.nth(10 20 30, -2147483648)}
+<===> error/nth_negative_big/error-libsass
+Error: $n: Invalid index -2147483648 for a list with 3 elements.
+  ,
+2 | a {b: list.nth(10 20 30, -2147483648)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+
+<===>
+================================================================================
+<===> error/set_nth_big/input.scss
+@use "sass:list";
+a {b: list.set-nth(10 20 30, 4294967297, x)}
+<===> error/set_nth_big/error-libsass
+Error: $n: Invalid index 4294967297 for a list with 3 elements.
+  ,
+2 | a {b: list.set-nth(10 20 30, 4294967297, x)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+

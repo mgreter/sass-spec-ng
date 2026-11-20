@@ -1,0 +1,111 @@
+<===> map_order/input.scss
+// Maps with the same entries are equal regardless of their order, and
+// must work as map keys (equal values need equal hashes)
+@use "sass:list";
+@use "sass:map";
+a {
+  equal: (a: 1, b: 2) == (b: 2, a: 1);                          // true
+  not-equal: (a: 1, b: 2) == (a: 1, b: 3);                      // false
+  get: map.get(((a: 1, b: 2): found), (b: 2, a: 1));            // found
+  has-key: map.has-key(((a: 1, b: 2): x), (b: 2, a: 1));        // true
+  index: list.index((a: 1, b: 2) (c: 3), (b: 2, a: 1));         // 1
+  distinct: list.length(((a: 1): x, (a: 2): y));                // 2
+}
+<===> map_order/output.css
+a {
+  equal: true;
+  not-equal: false;
+  get: found;
+  has-key: true;
+  index: 1;
+  distinct: 2;
+}
+<===>
+================================================================================
+<===> number_keys/input.scss
+// Map lookups must agree with `==` for numbers
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+a {
+  eq-units: 1in == 96px;                                        // true
+  eq-fuzzy: 0.1 + 0.2 == 0.3;                                   // true
+  get-units: map.get((1in: found), 96px);                       // found
+  get-units-ms: map.get((1s: found), 1000ms);                   // found
+  get-fuzzy: map.get((0.3: found), 0.1 + 0.2);                  // found
+  has-units: map.has-key((1in: x), 96px);                       // true
+  has-fuzzy: map.has-key((0.3: x), 0.1 + 0.2);                  // true
+  merge-units: meta.inspect(map.merge((1in: a), (96px: b)));    // (1in: b)
+  merge-len: list.length(map.merge((1in: a), (96px: b)));       // 1
+  get-neg-zero: map.get((0: found), -0);                        // found
+  get-tiny: map.get((0: found), 1e-13);                         // found
+  distinct-units: list.length((1px: a, 1em: b));                // 2
+  distinct-values: list.length((1: a, 1.001: b));               // 2
+  unitless-vs-unit: map.get((1: x), 1px) == null;               // true
+  index-units: list.index(1in 2in, 192px);                      // 2
+  nested-key: map.get(((1in: a): found), (96px: a));            // found
+}
+<===> number_keys/output.css
+a {
+  eq-units: true;
+  eq-fuzzy: true;
+  get-units: found;
+  get-units-ms: found;
+  get-fuzzy: found;
+  has-units: true;
+  has-fuzzy: true;
+  merge-units: (1in: b);
+  merge-len: 1;
+  get-neg-zero: found;
+  get-tiny: found;
+  distinct-units: 2;
+  distinct-values: 2;
+  unitless-vs-unit: true;
+  index-units: 2;
+  nested-key: found;
+}
+<===>
+================================================================================
+<===> calculation_keys/input.scss
+// Calculations are equal if they have the same name and arguments
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+a {
+  $c: calc(1px + var(--x));
+  type: meta.type-of($c);                                             // calculation
+  self: $c == $c;                                                     // true
+  eq: calc(1px + var(--x)) == calc(1px + var(--x));                   // true
+  ne-op: calc(1px + var(--x)) == calc(1px - var(--x));                // false
+  ne-arg: calc(1px + var(--x)) == calc(2px + var(--x));               // false
+  eq-units: calc(1in + var(--x)) == calc(96px + var(--x));            // true
+  eq-fn: min(1px, var(--x)) == min(1px, var(--x));                    // true
+  ne-name: min(1px, var(--x)) == max(1px, var(--x));                  // false
+  ne-count: min(1px, var(--x)) == min(1px, var(--x), 2px);            // false
+  eq-nested: calc(1px + (2px * var(--x))) == calc(1px + (2px * var(--x))); // true
+  ne-nested: calc(1px + (2px * var(--x))) == calc(1px + (3px * var(--x))); // false
+  ne-type: calc(1px + var(--x)) == "calc(1px + var(--x))";           // false
+  key: map.get((calc(1px + var(--x)): found), calc(1px + var(--x)));  // found
+  has: map.has-key((min(1px, var(--x)): x), min(1px, var(--x)));    // true
+  distinct: list.length((calc(1px + var(--x)): a, calc(2px + var(--x)): b)); // 2
+  index: list.index((calc(1px + var(--x)), 2), calc(1px + var(--x)));       // 1
+}
+<===> calculation_keys/output.css
+a {
+  type: calculation;
+  self: true;
+  eq: true;
+  ne-op: false;
+  ne-arg: false;
+  eq-units: true;
+  eq-fn: true;
+  ne-name: false;
+  ne-count: false;
+  eq-nested: true;
+  ne-nested: false;
+  ne-type: false;
+  key: found;
+  has: true;
+  distinct: 2;
+  index: 1;
+}

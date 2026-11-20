@@ -1,0 +1,54 @@
+<===> nested/input.scss
+@use "sass:map";
+@use "sass:meta";
+a {
+  // the input map must not change (shared inner map)
+  $m: (a: (b: 1));
+  $n: map.set($m, a, b, 2);
+  shared-orig: meta.inspect($m);          // (a: (b: 1))
+  shared-new: meta.inspect($n);           // (a: (b: 2))
+  // an inner map referenced by another variable must not change
+  $p: (x: 1);
+  $q: (a: $p);
+  $r: map.set($q, a, x, 2);
+  alias-inner: meta.inspect($p);          // (x: 1)
+  alias-new: meta.inspect($r);            // (a: (x: 2))
+  // the last key already holds a map: replace it with the value
+  $s: map.set((a: (b: (x: 1))), a, b, 5);
+  replace-map: meta.inspect($s);          // (a: (b: 5))
+  // an intermediate key holds a non-map: replace with a new map
+  $t: map.set((a: 1), a, b, 2);
+  replace-scalar: meta.inspect($t);       // (a: (b: 2))
+  // missing keys are created
+  $u: map.set((), a, b, c, 1);
+  create: meta.inspect($u);               // (a: (b: (c: 1)))
+  // the order of existing entries is preserved
+  $v: map.set((a: 1, b: 2, c: 3), b, x, 9);
+  order: meta.inspect($v);                // (a: 1, b: (x: 9), c: 3)
+  // sibling entries in inner maps are kept
+  $w: map.set((a: (x: 1, y: 2)), a, y, 3);
+  siblings: meta.inspect($w);             // (a: (x: 1, y: 3))
+  // self-assignment in a loop, with a snapshot
+  $l: (a: (n: 0));
+  $snap: $l;
+  @for $i from 1 through 3 { $l: map.set($l, a, n, $i); }
+  loop: meta.inspect($l);                 // (a: (n: 3))
+  loop-snapshot: meta.inspect($snap);     // (a: (n: 0))
+  // the three-argument form is unchanged
+  three-args: meta.inspect(map.set((a: 1), a, 2)); // (a: 2)
+}
+<===> nested/output.css
+a {
+  shared-orig: (a: (b: 1));
+  shared-new: (a: (b: 2));
+  alias-inner: (x: 1);
+  alias-new: (a: (x: 2));
+  replace-map: (a: (b: 5));
+  replace-scalar: (a: (b: 2));
+  create: (a: (b: (c: 1)));
+  order: (a: 1, b: (x: 9), c: 3);
+  siblings: (a: (x: 1, y: 3));
+  loop: (a: (n: 3));
+  loop-snapshot: (a: (n: 0));
+  three-args: (a: 2);
+}

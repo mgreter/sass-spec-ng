@@ -1,0 +1,33 @@
+<===> nan_infinite_step/input.scss
+// NaN stays NaN with an infinite step (like dart-sass `_roundWithStep`)
+a {
+  nearest: round(nearest, NaN, infinity);
+  up: round(up, NaN, infinity);
+  down: round(down, NaN, infinity);
+  to-zero: round(to-zero, NaN, infinity);
+  up-negative-infinity: round(up, NaN, -infinity);
+}
+<===> nan_infinite_step/output.css
+a {
+  nearest: calc(NaN);
+  up: calc(NaN);
+  down: calc(NaN);
+  to-zero: calc(NaN);
+  up-negative-infinity: calc(NaN);
+}
+<===>
+================================================================================
+<===> zero_step/input.scss
+a {
+  number: round(nearest, 5, 0);
+  unit: round(up, 5px, 0px);
+  zero: round(down, 0, 0);
+  infinity: round(up, infinity, 0);
+}
+<===> zero_step/output.css
+a {
+  number: calc(NaN);
+  unit: calc(NaN * 1px);
+  zero: calc(NaN);
+  infinity: calc(NaN);
+}

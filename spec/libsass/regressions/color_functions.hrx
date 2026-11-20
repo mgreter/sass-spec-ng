@@ -1,0 +1,75 @@
+<===> var_space/input.scss
+// A `var()` color space can't be resolved, the call is passed through
+a {
+  channels: color(var(--space) 0.1 0.2 0.3);
+  alpha: color(var(--space) 0.1 0.2 0.3 / 0.5);
+  var-alpha: color(var(--s) 0.1 0.2 0.3 / var(--a));
+  var-channel: color(srgb var(--r) 0.2 0.3);
+  srgb-var-alpha: color(srgb 0.1 0.2 0.3 / var(--a));
+}
+<===> var_space/output.css
+a {
+  channels: color(var(--space) 0.1 0.2 0.3);
+  alpha: color(var(--space) 0.1 0.2 0.3/0.5);
+  var-alpha: color(var(--s) 0.1 0.2 0.3/var(--a));
+  var-channel: color(srgb var(--r) 0.2 0.3);
+  srgb-var-alpha: color(srgb 0.1 0.2 0.3/var(--a));
+}
+<===>
+================================================================================
+<===> var_space_invalid_channel/input.scss
+a {b: color(var(--s) 0.1 red 0.3)}
+<===> var_space_invalid_channel/error-libsass
+Error: $description: Expected channel 2 to be a number, was red.
+  ,
+1 | a {b: color(var(--s) 0.1 red 0.3)}
+  |                          ^^^
+  '
+  input.scss 1:26  color()
+  ,
+1 | a {b: color(var(--s) 0.1 red 0.3)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
+
+<===>
+================================================================================
+<===> mix_transparent/input.scss
+// Mixing colors with zero alpha must not produce NaN channels
+@use "sass:color";
+@use "sass:meta";
+a {
+  legacy: color.mix(rgba(255, 0, 0, 0), rgba(0, 0, 255, 0));
+  legacy-weight: color.mix(rgba(255, 0, 0, 0), rgba(0, 0, 255, 0), 30%);
+  rgb-method: color.mix(rgba(255, 0, 0, 0), rgba(0, 0, 255, 0), $method: rgb);
+  srgb: color.mix(color(srgb 1 0 0 / 0), color(srgb 0 0 1 / 0), $method: srgb);
+  oklch: color.mix(oklch(50% 0.1 30 / 0), oklch(60% 0.2 90 / 0), $method: oklch);
+  hsl: color.mix(hsl(0 50% 50% / 0), hsl(120 50% 50% / 0), $method: hsl);
+  lab: color.mix(lab(50% 10 20 / 0), lab(60% -10 -20 / 0), $method: lab);
+  inspect-srgb: meta.inspect(color.mix(color(srgb 1 0 0 / 0), color(srgb 0 0 1 / 0), $method: srgb));
+  channel-red: color.channel(color.mix(color(srgb 1 0 0 / 0), color(srgb 0 0 1 / 0), $method: srgb), "red");
+  transparent-pair: color.mix(transparent, transparent);
+  opaque-srgb: color.mix(color(srgb 1 0 0), color(srgb 0 0 1), $method: srgb);
+  half-srgb: color.mix(color(srgb 1 0 0 / 0.5), color(srgb 0 0 1 / 0.25), 30%, $method: srgb);
+  one-zero-srgb: color.mix(color(srgb 1 0 0 / 0), color(srgb 0 0 1 / 0.5), $method: srgb);
+  half-oklch: color.mix(oklch(50% 0.1 30 / 0.5), oklch(60% 0.2 90 / 0.2), $method: oklch);
+  none-alpha: color.mix(color(srgb 1 0 0 / none), color(srgb 0 0 1 / none), $method: srgb);
+}
+<===> mix_transparent/output.css
+a {
+  legacy: rgba(127.5, 0, 127.5, 0);
+  legacy-weight: rgba(76.5, 0, 178.5, 0);
+  rgb-method: rgba(0, 0, 0, 0);
+  srgb: color(srgb 0 0 0 / 0);
+  oklch: oklch(0% 0 60deg / 0);
+  hsl: hsla(60, 0%, 0%, 0);
+  lab: lab(0% 0 0 / 0);
+  inspect-srgb: color(srgb 0 0 0 / 0);
+  channel-red: 0;
+  transparent-pair: rgba(0, 0, 0, 0);
+  opaque-srgb: color(srgb 0.5 0 0.5);
+  half-srgb: color(srgb 0.4615384615 0 0.5384615385 / 0.325);
+  one-zero-srgb: color(srgb 0 0 1 / 0.25);
+  half-oklch: oklch(52.8571428571% 0.1285714286 60deg / 0.35);
+  none-alpha: color(srgb 0.5 0 0.5 / none);
+}

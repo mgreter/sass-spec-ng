@@ -1,0 +1,36 @@
+<===> negative_zero/input.scss
+// IEEE 754: x / +-0 is +-infinity (sign of x times sign of the zero),
+// 0 / 0 and NaN / 0 are NaN
+@use "sass:math";
+$nz: -1 * 0;
+a {
+  pos-by-pos-zero: math.div(5, 0);
+  pos-by-neg-zero: math.div(5, $nz);
+  neg-by-pos-zero: math.div(-5, 0);
+  neg-by-neg-zero: math.div(-5, $nz);
+  zero-by-pos-zero: math.div(0, 0);
+  zero-by-neg-zero: math.div(0, $nz);
+  neg-zero-by-neg-zero: math.div($nz, $nz);
+  nan-by-neg-zero: math.div(math.div(0, 0), $nz);
+}
+<===> negative_zero/output.css
+a {
+  pos-by-pos-zero: calc(infinity);
+  pos-by-neg-zero: calc(-infinity);
+  neg-by-pos-zero: calc(-infinity);
+  neg-by-neg-zero: calc(infinity);
+  zero-by-pos-zero: calc(NaN);
+  zero-by-neg-zero: calc(NaN);
+  neg-zero-by-neg-zero: calc(NaN);
+  nan-by-neg-zero: calc(NaN);
+}
+<===>
+================================================================================
+<===> negative_zero_with_unit/input.scss
+@use "sass:math";
+$nz: -1 * 0;
+a {b: math.div(-5px, $nz)}
+<===> negative_zero_with_unit/output.css
+a {
+  b: calc(infinity * 1px);
+}

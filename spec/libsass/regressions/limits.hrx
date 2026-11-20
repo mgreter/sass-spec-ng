@@ -1,0 +1,129 @@
+<===> error/number_units/input.scss
+// Squaring repeatedly doubles the units (2^11 > SassMaxNumberUnits 1024)
+$n: 1px;
+@for $i from 1 through 11 { $n: $n * $n; }
+a {b: $n}
+<===> error/number_units/error-libsass
+Error: Number has too many units (more than 1024).
+  ,
+3 | @for $i from 1 through 11 { $n: $n * $n; }
+  |                                 ^^^^^^^
+  '
+  input.scss 3:33  root stylesheet
+
+<===>
+================================================================================
+<===> number_units_below/input.scss
+// 2^10 = 1024 units are still allowed (multiplying them again is not)
+@use "sass:math";
+$n: 1px;
+@for $i from 1 through 10 { $n: $n * $n; }
+a {b: math.is-unitless($n)}
+<===> number_units_below/output.css
+a {
+  b: false;
+}
+<===>
+================================================================================
+<===> error/selector_nesting/input.scss
+// 3^11 combinations > SassMaxSelectorPaths (100000)
+.a1, .b1, .c1 { .a2, .b2, .c2 { .a3, .b3, .c3 { .a4, .b4, .c4 { .a5, .b5, .c5 { .a6, .b6, .c6 { .a7, .b7, .c7 { .a8, .b8, .c8 { .a9, .b9, .c9 { .a10, .b10, .c10 { .a11, .b11, .c11 { x: y; } } } } } } } } } } } 
+<===> error/selector_nesting/error-libsass
+Error: Selector would expand to more than 100000 combinations, aborting!
+  ,
+2 | ...a7, .b7, .c7 { .a8, .b8, .c8 { .a9, .b9, .c9 { .a10, .b10, .c10 { .a11, .b11, .c11 { x: y; } } } } } } } } } } }
+  |                                                                                  ^^^^
+  '
+  input.scss 2:176  root stylesheet
+
+<===>
+================================================================================
+<===> error/selector_extend/input.scss
+// 6 simple selectors with 8 options each = 8^6 > SassMaxSelectorPaths
+.e0-1 {@extend .a0}
+.e0-2 {@extend .a0}
+.e0-3 {@extend .a0}
+.e0-4 {@extend .a0}
+.e0-5 {@extend .a0}
+.e0-6 {@extend .a0}
+.e0-7 {@extend .a0}
+.e1-1 {@extend .a1}
+.e1-2 {@extend .a1}
+.e1-3 {@extend .a1}
+.e1-4 {@extend .a1}
+.e1-5 {@extend .a1}
+.e1-6 {@extend .a1}
+.e1-7 {@extend .a1}
+.e2-1 {@extend .a2}
+.e2-2 {@extend .a2}
+.e2-3 {@extend .a2}
+.e2-4 {@extend .a2}
+.e2-5 {@extend .a2}
+.e2-6 {@extend .a2}
+.e2-7 {@extend .a2}
+.e3-1 {@extend .a3}
+.e3-2 {@extend .a3}
+.e3-3 {@extend .a3}
+.e3-4 {@extend .a3}
+.e3-5 {@extend .a3}
+.e3-6 {@extend .a3}
+.e3-7 {@extend .a3}
+.e4-1 {@extend .a4}
+.e4-2 {@extend .a4}
+.e4-3 {@extend .a4}
+.e4-4 {@extend .a4}
+.e4-5 {@extend .a4}
+.e4-6 {@extend .a4}
+.e4-7 {@extend .a4}
+.e5-1 {@extend .a5}
+.e5-2 {@extend .a5}
+.e5-3 {@extend .a5}
+.e5-4 {@extend .a5}
+.e5-5 {@extend .a5}
+.e5-6 {@extend .a5}
+.e5-7 {@extend .a5}
+.a0.a1.a2.a3.a4.a5 {x: y}
+<===> error/selector_extend/error-libsass
+Error: Selector would expand to more than 100000 combinations, aborting!
+   ,
+44 | .a0.a1.a2.a3.a4.a5 {x: y}
+   | ^^^^^^^^^^^^^^^^^^
+   '
+  input.scss 44:1  root stylesheet
+
+<===>
+================================================================================
+<===> error/selector_parser_nesting/input.scss
+a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(a:is(b)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) {c: d}
+<===> error/selector_parser_nesting/error-libsass
+Error: Too deep recursion detected. This can be caused by too deep level nesting.
+LibSass will abort here in order to avoid a possible stack overflow.
+<===>
+================================================================================
+<===> error/supports_parser_nesting/input.scss
+@supports (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (not (a: b))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) {c {d: e}}
+<===> error/supports_parser_nesting/error-libsass
+Error: Too deep recursion detected. This can be caused by too deep level nesting.
+LibSass will abort here in order to avoid a possible stack overflow.
+<===>
+================================================================================
+<===> error/value_nesting/input.scss
+// Values nested deeper than SassMaxNesting (512) can't be inspected
+@use "sass:meta";
+$l: 1;
+@for $i from 1 through 600 { $l: ($l,); }
+a {b: meta.inspect($l)}
+<===> error/value_nesting/error-libsass
+Error: Too deep recursion detected. This can be caused by too deep level nesting.
+LibSass will abort here in order to avoid a possible stack overflow.
+<===>
+================================================================================
+<===> deep_value_released/input.scss
+// Deeply nested values are released without overflowing the stack
+$l: 1;
+@for $i from 1 through 50000 { $l: ($l,); }
+a {b: c}
+<===> deep_value_released/output.css
+a {
+  b: c;
+}
