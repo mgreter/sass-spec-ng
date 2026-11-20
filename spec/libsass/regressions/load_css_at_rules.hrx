@@ -1,0 +1,146 @@
+<===> unknown_in_style_rule/input.scss
+// meta.load-css() inside a style rule used to fail with
+// "Not same compilation" for modules with at-rules
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+<===> unknown_in_style_rule/_other.scss
+@foo {.c {d: e}}
+<===> unknown_in_style_rule/output.css
+@foo {
+  a .c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> unknown_at_root/input.scss
+// The children used to escape the at-rule (@foo {} .c {...})
+@use 'sass:meta';
+@include meta.load-css('other');
+<===> unknown_at_root/_other.scss
+@foo {.c {d: e}}
+<===> unknown_at_root/output.css
+@foo {
+  .c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> unknown_twice/input.scss
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+b {@include meta.load-css('other')}
+<===> unknown_twice/_other.scss
+@foo {.c {d: e}}
+<===> unknown_twice/output.css
+@foo {
+  a .c {
+    d: e;
+  }
+}
+
+@foo {
+  b .c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> unknown_nested/input.scss
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+<===> unknown_nested/_other.scss
+@foo {@bar {.c {d: e}}}
+<===> unknown_nested/output.css
+@foo {
+  @bar {
+    a .c {
+      d: e;
+    }
+  }
+}
+<===>
+================================================================================
+<===> unknown_declarations/input.scss
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+<===> unknown_declarations/_other.scss
+@foo {d: e}
+<===> unknown_declarations/output.css
+@foo {
+  d: e;
+}
+<===>
+================================================================================
+<===> media_in_style_rule/input.scss
+// The media rule of the module used to be added unchanged
+// (without the surrounding style rule)
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+<===> media_in_style_rule/_other.scss
+@media screen {.c {d: e}}
+<===> media_in_style_rule/output.css
+@media screen {
+  a .c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> media_merged/input.scss
+@use 'sass:meta';
+@media (min-width: 1px) {
+  a {@include meta.load-css('other')}
+}
+<===> media_merged/_other.scss
+@media screen {.c {d: e}}
+<===> media_merged/output.css
+@media screen and (min-width: 1px) {
+  a .c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> media_extend/input.scss
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+<===> media_extend/_other.scss
+@media screen {
+  .c {d: e}
+  .x {@extend .c}
+}
+<===> media_extend/output.css
+@media screen {
+  a .c, a .x {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> supports_at_root/input.scss
+// The @supports rule of the module used to be dropped
+@use 'sass:meta';
+@include meta.load-css('other');
+<===> supports_at_root/_other.scss
+@supports (a: b) {.c {d: e}}
+<===> supports_at_root/output.css
+@supports (a: b) {
+  .c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> supports_in_style_rule/input.scss
+@use 'sass:meta';
+a {@include meta.load-css('other')}
+<===> supports_in_style_rule/_other.scss
+@supports (a: b) {.c {d: e}}
+<===> supports_in_style_rule/output.css
+@supports (a: b) {
+  a .c {
+    d: e;
+  }
+}
