@@ -1,0 +1,71 @@
+<===> error/cr_only/input.scss
+// Bare CR line breaks (classic Mac), the error is on line 3
+a { b: c }/* x */d { e: ( }
+<===> error/cr_only/error-libsass
+Error: expected ")".
+  ,
+4 | d { e: ( }
+  |          ^
+  '
+  input.scss 4:10  root stylesheet
+<===>
+================================================================================
+<===> error/cr_multibyte/input.scss
+// Bare CR line break with multi-byte chars before the error
+a { b: c }/* ééé */ d { e: ( }
+<===> error/cr_multibyte/error-libsass
+Error: expected ")".
+  ,
+3 | /* ??? */ d { e: ( }
+  |                    ^
+  '
+  input.scss 3:20  root stylesheet
+<===>
+================================================================================
+<===> error/lf_cr/input.scss
+// LF followed by CR is two line breaks, the error is on line 5
+a { b: c }
+/* x */
+d { e: ( }
+<===> error/lf_cr/error-libsass
+Error: expected ")".
+  ,
+6 | d { e: ( }
+  |          ^
+  '
+  input.scss 6:10  root stylesheet
+<===>
+================================================================================
+<===> error/cr_span/input.scss
+// Multi-line span with bare CR line breaks
+a {  @include nope(    1,    2  );}
+<===> error/cr_span/error-libsass
+Error: Undefined mixin.
+  ,
+3 | /   @include nope(
+4 | |     1,
+5 | |     2
+6 | |   );
+  | \---^
+  '
+  input.scss 3:3  root stylesheet
+<===>
+================================================================================
+<===> error/crlf_span/input.scss
+// Multi-line span with CRLF line breaks
+a {
+  @include nope(
+    1,
+    2
+  );
+}
+<===> error/crlf_span/error-libsass
+Error: Undefined mixin.
+  ,
+3 | /   @include nope(
+4 | |     1,
+5 | |     2
+6 | |   );
+  | \---^
+  '
+  input.scss 3:3  root stylesheet
