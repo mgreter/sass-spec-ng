@@ -1,0 +1,49 @@
+<===> type_upper_inner/input.scss
+// Media types are compared case-insensitively when nested queries
+// are merged; the comparison used to work only if the inner type
+// was lowercase, otherwise the rule was dropped.
+@media screen {
+  @media SCREEN and (a: b) {x {y: z}}
+}
+<===> type_upper_inner/output.css
+@media screen and (a: b) {
+  x {
+    y: z;
+  }
+}
+<===>
+================================================================================
+<===> type_mixed_case/input.scss
+@media Screen {
+  @media sCreen {x {y: z}}
+}
+<===> type_mixed_case/output.css
+@media Screen {
+  x {
+    y: z;
+  }
+}
+<===>
+================================================================================
+<===> type_upper_outer/input.scss
+@media SCREEN {
+  @media screen and (a: b) {x {y: z}}
+}
+<===> type_upper_outer/output.css
+@media SCREEN and (a: b) {
+  x {
+    y: z;
+  }
+}
+<===>
+================================================================================
+<===> both_not/input.scss
+@media not screen and (a: b) {
+  @media not SCREEN and (a: b) and (c: d) {x {y: z}}
+}
+<===> both_not/output.css
+@media not screen and (a: b) and (c: d) {
+  x {
+    y: z;
+  }
+}
