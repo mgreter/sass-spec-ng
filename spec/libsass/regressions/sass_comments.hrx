@@ -1,0 +1,51 @@
+<===> single_line/input.sass
+// Non-ASCII text in a loud comment of the indented syntax must be
+// copied byte for byte (it was utf8-encoded a second time)
+/* café */
+a
+  b: c
+<===> single_line/output.css
+@charset "UTF-8";
+/* café */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> multi_line/input.sass
+/* café
+   € and 😀
+a
+  b: c
+<===> multi_line/output.css
+@charset "UTF-8";
+/* café
+ * € and 😀 */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> closed/input.sass
+/* 😀 */
+a
+  b: c
+<===> closed/output.css
+@charset "UTF-8";
+/* 😀 */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> interpolation/input.sass
+$x: café
+/* #{$x} € #not */
+a
+  b: c
+<===> interpolation/output.css
+@charset "UTF-8";
+/* café € #not */
+a {
+  b: c;
+}
