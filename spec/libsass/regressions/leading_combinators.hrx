@@ -1,0 +1,52 @@
+<===> replace/input.scss
+// Complex selectors that only differ in their leading combinators are
+// different selectors (LibSass used to treat `> .d` and `.d` as equal
+// and dropped one of them)
+@use 'sass:selector';
+a {b: selector.replace("> .c, .c", ".c", ".d")}
+<===> replace/output.css
+a {
+  b: > .d, .d;
+}
+<===>
+================================================================================
+<===> append/input.scss
+// The leading combinators of one parent selector must not leak into the
+// next one (this used to give `> .c.e, > .c.e`)
+@use 'sass:selector';
+a {b: selector.append("> .c, .c", ".e")}
+<===> append/output.css
+a {
+  b: > .c.e, .c.e;
+}
+<===>
+================================================================================
+<===> nested_suffix/input.scss
+> .c, .c {
+  &.x {y: z}
+}
+<===> nested_suffix/output.css
+> .c.x, .c.x {
+  y: z;
+}
+<===>
+================================================================================
+<===> nested_descendant/input.scss
+> .c, .c {
+  & .x {y: z}
+}
+<===> nested_descendant/output.css
+> .c .x, .c .x {
+  y: z;
+}
+<===>
+================================================================================
+<===> nested_three/input.scss
+// This used to output only `+ .c.x`
++ .c, > .c, .c {
+  &.x {y: z}
+}
+<===> nested_three/output.css
++ .c.x, > .c.x, .c.x {
+  y: z;
+}
