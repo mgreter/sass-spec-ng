@@ -1,0 +1,38 @@
+<===> README.md
+A partial match of a multi-character pattern (the first `/` of `//`, or the
+first bytes of a UTF-8 BOM) must not move the reported column. LibSass used
+to report these errors one column too far to the right.
+<===>
+================================================================================
+<===> silent_comment_then_loud_comment/input.scss
+// c
+/* d */ a {b: (}
+<===> silent_comment_then_loud_comment/error-libsass
+Error: expected ")".
+  ,
+2 | /* d */ a {b: (}
+  |                ^
+  '
+  input.scss 2:16  root stylesheet
+<===>
+================================================================================
+<===> bom_prefix_one_byte/input.scss
+Ａ {b: (}
+<===> bom_prefix_one_byte/error-libsass
+Error: expected ")".
+  ,
+1 | ? {b: (}
+  |        ^
+  '
+  input.scss 1:8  root stylesheet
+<===>
+================================================================================
+<===> bom_prefix_two_bytes/input.scss
+ﻀ {b: (}
+<===> bom_prefix_two_bytes/error-libsass
+Error: expected ")".
+  ,
+1 | ? {b: (}
+  |        ^
+  '
+  input.scss 1:8  root stylesheet
