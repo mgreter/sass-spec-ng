@@ -1,0 +1,61 @@
+<===> README.md
+`math.sign()` is a LibSass extension (dart-sass has no `sign` in the
+`sass:math` module), so these use `output-libsass.css`. It follows the
+rules of the CSS `sign()` calculation: -1 or 1, and 0, -0 and NaN are
+returned unchanged. It used to return the string "0.0" or "-0.0" for
+every input.
+<===>
+================================================================================
+<===> values/input.scss
+@use 'sass:math';
+a {
+  positive: math.sign(3);
+  negative: math.sign(-5.6);
+  zero: math.sign(0);
+  fuzzy: math.sign(0.000000000001);
+  infinity: math.sign(math.div(-1, 0));
+}
+<===> values/output-libsass.css
+a {
+  positive: 1;
+  negative: -1;
+  zero: 0;
+  fuzzy: 1;
+  infinity: -1;
+}
+<===>
+================================================================================
+<===> is_number/input.scss
+@use 'sass:math';
+@use 'sass:meta';
+a {
+  type: meta.type-of(math.sign(-2));
+  math: math.sign(-2) * 3;
+}
+<===> is_number/output-libsass.css
+a {
+  type: number;
+  math: -3;
+}
+<===>
+================================================================================
+<===> signed_zero/input.scss
+@use 'sass:math';
+a {
+  zero: math.div(1, math.sign(0));
+  negative-zero: math.div(1, math.sign(-0.0));
+}
+<===> signed_zero/output-libsass.css
+a {
+  zero: calc(infinity);
+  negative-zero: calc(-infinity);
+}
+<===>
+================================================================================
+<===> nan/input.scss
+@use 'sass:math';
+a {b: math.sign(math.div(0, 0))}
+<===> nan/output-libsass.css
+a {
+  b: calc(NaN);
+}
