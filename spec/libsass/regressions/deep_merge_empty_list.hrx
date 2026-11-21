@@ -1,0 +1,62 @@
+<===> number_by_empty_list/input.scss
+// An empty list only counts as an empty map when the other value is a
+// map (or an empty list). Otherwise the value from $map2 wins, like any
+// other value (LibSass used to keep the old value for every empty list).
+@use 'sass:map';
+@use 'sass:meta';
+a {b: meta.inspect(map.deep-merge((c: 1), (c: ())))}
+<===> number_by_empty_list/output.css
+a {
+  b: (c: ());
+}
+<===>
+================================================================================
+<===> list_by_empty_list/input.scss
+@use 'sass:map';
+@use 'sass:meta';
+a {b: meta.inspect(map.deep-merge((c: 1 2), (c: ())))}
+<===> list_by_empty_list/output.css
+a {
+  b: (c: ());
+}
+<===>
+================================================================================
+<===> null_by_empty_list/input.scss
+@use 'sass:map';
+@use 'sass:meta';
+a {b: meta.inspect(map.deep-merge((c: null), (c: ())))}
+<===> null_by_empty_list/output.css
+a {
+  b: (c: ());
+}
+<===>
+================================================================================
+<===> number_by_bracketed_empty_list/input.scss
+@use 'sass:map';
+@use 'sass:meta';
+a {b: meta.inspect(map.deep-merge((c: 1), (c: [])))}
+<===> number_by_bracketed_empty_list/output.css
+a {
+  b: (c: []);
+}
+<===>
+================================================================================
+<===> nested/input.scss
+@use 'sass:map';
+@use 'sass:meta';
+a {b: meta.inspect(map.deep-merge((c: (d: 1, e: 2)), (c: (d: ()))))}
+<===> nested/output.css
+a {
+  b: (c: (d: (), e: 2));
+}
+<===>
+================================================================================
+<===> empty_list_by_empty_list/input.scss
+// Both count as empty maps, so the value of $map1 is kept
+@use 'sass:map';
+@use 'sass:meta';
+a {b: meta.inspect(map.deep-merge((c: []), (c: ())))}
+<===> empty_list_by_empty_list/output.css
+a {
+  b: (c: []);
+}
