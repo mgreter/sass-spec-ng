@@ -1,0 +1,112 @@
+<===> error/add_mixed_case/input.scss
+// Units are case-sensitive (like dart-sass): only the exact spellings
+// (px, in, deg, Hz, kHz, ...) are known and convertible. LibSass used to
+// convert them case-insensitively, while comparisons were case-sensitive.
+a {b: 1px + 1PX}
+<===> error/add_mixed_case/error-libsass
+Error: 1px and 1PX have incompatible units.
+  ,
+4 | a {b: 1px + 1PX}
+  |             ^^^
+  '
+  input.scss 4:13  root stylesheet
+  ,
+4 | a {b: 1px + 1PX}
+  |       ^^^
+  '
+  input.scss 4:7   root stylesheet
+  ,
+4 | a {b: 1px + 1PX}
+  |       ^^^^^^^^^
+  '
+  input.scss 4:7   root stylesheet
+<===>
+================================================================================
+<===> error/convert_upper/input.scss
+// Units are case-sensitive (like dart-sass): only the exact spellings
+// (px, in, deg, Hz, kHz, ...) are known and convertible. LibSass used to
+// convert them case-insensitively, while comparisons were case-sensitive.
+a {b: 1in + 96PX}
+<===> error/convert_upper/error-libsass
+Error: 1in and 96PX have incompatible units.
+  ,
+4 | a {b: 1in + 96PX}
+  |             ^^^^
+  '
+  input.scss 4:13  root stylesheet
+  ,
+4 | a {b: 1in + 96PX}
+  |       ^^^
+  '
+  input.scss 4:7   root stylesheet
+  ,
+4 | a {b: 1in + 96PX}
+  |       ^^^^^^^^^^
+  '
+  input.scss 4:7   root stylesheet
+<===>
+================================================================================
+<===> error/lowercase_hertz/input.scss
+// Units are case-sensitive (like dart-sass): only the exact spellings
+// (px, in, deg, Hz, kHz, ...) are known and convertible. LibSass used to
+// convert them case-insensitively, while comparisons were case-sensitive.
+a {b: 1hz + 1khz}
+<===> error/lowercase_hertz/error-libsass
+Error: 1hz and 1khz have incompatible units.
+  ,
+4 | a {b: 1hz + 1khz}
+  |             ^^^^
+  '
+  input.scss 4:13  root stylesheet
+  ,
+4 | a {b: 1hz + 1khz}
+  |       ^^^
+  '
+  input.scss 4:7   root stylesheet
+  ,
+4 | a {b: 1hz + 1khz}
+  |       ^^^^^^^^^^
+  '
+  input.scss 4:7   root stylesheet
+<===>
+================================================================================
+<===> error/angle_upper/input.scss
+// Units are case-sensitive (like dart-sass): only the exact spellings
+// (px, in, deg, Hz, kHz, ...) are known and convertible. LibSass used to
+// convert them case-insensitively, while comparisons were case-sensitive.
+@use 'sass:math';
+a {b: math.sin(90DEG)}
+<===> error/angle_upper/error-libsass
+Error: $number: Expected 90DEG to have an angle unit (deg, grad, rad, turn).
+  ,
+5 | a {b: math.sin(90DEG)}
+  |                ^^^^^
+  '
+  input.scss 5:16  sin()
+  ,
+5 | a {b: math.sin(90DEG)}
+  |       ^^^^^^^^^^^^^^^
+  '
+  input.scss 5:7   root stylesheet
+<===>
+================================================================================
+<===> same_unknown_unit/input.scss
+// Units are case-sensitive (like dart-sass): only the exact spellings
+// (px, in, deg, Hz, kHz, ...) are known and convertible. LibSass used to
+// convert them case-insensitively, while comparisons were case-sensitive.
+a {b: 1PX + 1PX}
+<===> same_unknown_unit/output.css
+a {
+  b: 2PX;
+}
+<===>
+================================================================================
+<===> hertz/input.scss
+// Units are case-sensitive (like dart-sass): only the exact spellings
+// (px, in, deg, Hz, kHz, ...) are known and convertible. LibSass used to
+// convert them case-insensitively, while comparisons were case-sensitive.
+a {b: 1Hz + 1kHz}
+<===> hertz/output.css
+a {
+  b: 1001Hz;
+}
