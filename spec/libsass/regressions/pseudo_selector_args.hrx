@@ -1,0 +1,118 @@
+<===> README.md
+Selector arguments of pseudo selectors (e.g. `:not(.a)`) were emitted with
+the indentation of the enclosing rule after the opening parenthesis, and
+the selector of `:nth-child(An+B of ...)` got the implicit parent selector
+prepended. Expected output generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> indented/not/input.scss
+@media (min-width: 1px) {
+  .a:not(.b) {x: y}
+}
+<===> indented/not/output.css
+@media (min-width: 1px) {
+  .a:not(.b) {
+    x: y;
+  }
+}
+<===>
+================================================================================
+<===> indented/several/input.scss
+@media (min-width: 1px) {
+  .a:not(.b, .c):has(> .d ~ .e), .f ::slotted(.g) {x: y}
+}
+<===> indented/several/output.css
+@media (min-width: 1px) {
+  .a:not(.b, .c):has(> .d ~ .e), .f ::slotted(.g) {
+    x: y;
+  }
+}
+<===>
+================================================================================
+<===> indented/line_break/input.scss
+@media (min-width: 1px) {
+  .a:is(.b,
+  .c), .d {x: y}
+}
+<===> indented/line_break/output.css
+@media (min-width: 1px) {
+  .a:is(.b,
+  .c),
+  .d {
+    x: y;
+  }
+}
+<===>
+================================================================================
+<===> indented/extended/input.scss
+@media (min-width: 1px) {
+  .a {x: y}
+}
+.b:not(.c) {@extend .a}
+<===> indented/extended/output.css
+@media (min-width: 1px) {
+  .a, .b:not(.c) {
+    x: y;
+  }
+}
+<===>
+================================================================================
+<===> nth_child_of/implicit_parent/input.scss
+div {
+  .a:nth-child(2n of .b) {x: 1}
+  .a:nth-last-child(odd of .b, .c) {x: 2}
+  .a:nth-child(2n of .b .c) {x: 3}
+}
+<===> nth_child_of/implicit_parent/output.css
+div .a:nth-child(2n of .b) {
+  x: 1;
+}
+div .a:nth-last-child(odd of .b, .c) {
+  x: 2;
+}
+div .a:nth-child(2n of .b .c) {
+  x: 3;
+}
+<===>
+================================================================================
+<===> nth_child_of/explicit_parent/input.scss
+div {
+  .a:nth-child(2n of &) {x: 1}
+  .a:nth-child(2n of & .b) {x: 2}
+}
+<===> nth_child_of/explicit_parent/output.css
+.a:nth-child(2n of div) {
+  x: 1;
+}
+.a:nth-child(2n of div .b) {
+  x: 2;
+}
+<===>
+================================================================================
+<===> nth_child_of/indented/input.scss
+@media (min-width: 1px) {
+  div {
+    .a:nth-child(2n+1 of .b,
+      .c) {x: y}
+  }
+}
+<===> nth_child_of/indented/output.css
+@media (min-width: 1px) {
+  div .a:nth-child(2n+1 of .b,
+  .c) {
+    x: y;
+  }
+}
+<===>
+================================================================================
+<===> nth_child_of/selector_nest/input.scss
+@use "sass:selector";
+a {
+  b: selector.nest(".a", ".b:nth-child(2n of .c)");
+  c: selector.nest(".a, .x", ".b:nth-last-child(odd of .c, .d)");
+}
+<===> nth_child_of/selector_nest/output.css
+a {
+  b: .a .b:nth-child(2n of .c);
+  c: .a .b:nth-last-child(odd of .c, .d), .x .b:nth-last-child(odd of .c, .d);
+}
