@@ -1,0 +1,132 @@
+<===> README.md
+A `with` configuration only reaches modules loaded through `@forward` or
+`@import`. A module loaded via `@use` (or `meta.load-css()`) without its own
+`with` is not configured by an outer one, so an unused outer configuration
+variable is an error.
+<===>
+================================================================================
+<===> through_forward/input.scss
+@use "midstream" with ($x: configured);
+<===> through_forward/_midstream.scss
+@forward "upstream";
+<===> through_forward/_upstream.scss
+$x: original !default;
+b {c: $x}
+<===> through_forward/output.css
+b {
+  c: configured;
+}
+<===>
+================================================================================
+<===> through_import/input.scss
+@use "midstream" with ($x: configured);
+<===> through_import/_midstream.scss
+@import "upstream";
+<===> through_import/_upstream.scss
+$x: original !default;
+b {c: $x}
+<===> through_import/output.css
+b {
+  c: configured;
+}
+<===>
+================================================================================
+<===> use_without_with/input.scss
+@use "midstream";
+<===> use_without_with/_midstream.scss
+$x: outer;
+@use "upstream";
+<===> use_without_with/_upstream.scss
+$x: original !default;
+b {c: $x}
+<===> use_without_with/output.css
+b {
+  c: original;
+}
+<===>
+================================================================================
+<===> error/through_load_css/input.scss
+@use "sass:meta";
+@include meta.load-css("midstream", $with: (x: configured));
+<===> error/through_load_css/_midstream.scss
+@use "upstream";
+<===> error/through_load_css/_upstream.scss
+$x: original !default;
+b {c: $x}
+<===> error/through_load_css/error
+Error: $x was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("midstream", $with: (x: configured));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet
+<===> error/through_load_css/error-libsass
+Error: $x was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("midstream", $with: (x: configured));
+  |                                             ^
+  '
+  input.scss 2:45  load-css()
+  ,
+2 | @include meta.load-css("midstream", $with: (x: configured));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
+<===>
+================================================================================
+<===> error/through_use/input.scss
+@use "midstream" with ($x: configured);
+<===> error/through_use/_midstream.scss
+@use "upstream";
+<===> error/through_use/_upstream.scss
+$x: original !default;
+b {c: $x}
+<===> error/through_use/error
+Error: This variable was not declared with !default in the @used module.
+  ,
+1 | @use "midstream" with ($x: configured);
+  |                        ^^^^^^^^^^^^^^
+  '
+  input.scss 1:24  root stylesheet
+<===> error/through_use/error-libsass
+Error: $x was not declared with !default in the @used module.
+  ,
+1 | @use "midstream" with ($x: configured);
+  |                        ^^^^^^^^^^^^^^
+  '
+  input.scss 1:24  @use
+  ,
+1 | @use "midstream" with ($x: configured);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
+<===>
+================================================================================
+<===> error/through_use_and_forward/input.scss
+@use "midstream" with ($x: configured);
+<===> error/through_use_and_forward/_forwarder.scss
+@forward "upstream";
+<===> error/through_use_and_forward/_midstream.scss
+@use "forwarder";
+<===> error/through_use_and_forward/_upstream.scss
+$x: original !default;
+b {c: $x}
+<===> error/through_use_and_forward/error
+Error: This variable was not declared with !default in the @used module.
+  ,
+1 | @use "midstream" with ($x: configured);
+  |                        ^^^^^^^^^^^^^^
+  '
+  input.scss 1:24  root stylesheet
+<===> error/through_use_and_forward/error-libsass
+Error: $x was not declared with !default in the @used module.
+  ,
+1 | @use "midstream" with ($x: configured);
+  |                        ^^^^^^^^^^^^^^
+  '
+  input.scss 1:24  @use
+  ,
+1 | @use "midstream" with ($x: configured);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:1   root stylesheet
