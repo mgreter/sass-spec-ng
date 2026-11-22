@@ -1,0 +1,24 @@
+<===> README.md
+The built-in `if()` function, used when it is called via `meta.call()`,
+must return `$if-false` for a falsy condition (it returned the condition).
+<===>
+================================================================================
+<===> call/input.scss
+@use "sass:meta";
+a {
+  b: meta.call(meta.get-function("if"), false, 1, 2);
+  c: meta.call(meta.get-function("if"), true, 1, 2);
+  d: meta.call(meta.get-function("if"), null, a, b);
+  e: meta.call(meta.get-function("if"), $condition: false, $if-true: x, $if-false: y);
+  f: call(get-function("if"), 0, yes, no);
+  g: if(false, 1, 2);
+}
+<===> call/output.css
+a {
+  b: 2;
+  c: 1;
+  d: b;
+  e: y;
+  f: yes;
+  g: 2;
+}
