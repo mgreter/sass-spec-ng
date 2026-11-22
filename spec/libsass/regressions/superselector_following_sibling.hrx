@@ -1,0 +1,40 @@
+<===> README.md
+Checking whether a selector ending in `~` is a superselector of a selector
+with a descendant combinator in the middle (no combinator) crashed libsass
+(`.front()` on an empty combinator list), e.g. while trimming `@extend`.
+<===>
+================================================================================
+<===> extend/input.scss
+.a ~ .b, .a ~ .c .d {x: y}
+.e {@extend .d}
+<===> extend/output.css
+.a ~ .b, .a ~ .c .d, .a ~ .c .e {
+  x: y;
+}
+<===>
+================================================================================
+<===> function/child/input.scss
+@use "sass:selector";
+a {b: selector.is-superselector(".a ~ .b", ".a ~ .c > .d")}
+<===> function/child/output.css
+a {
+  b: false;
+}
+<===>
+================================================================================
+<===> function/descendant/input.scss
+@use "sass:selector";
+a {b: selector.is-superselector(".a ~ .b", ".a ~ .c .d")}
+<===> function/descendant/output.css
+a {
+  b: false;
+}
+<===>
+================================================================================
+<===> function/sibling/input.scss
+@use "sass:selector";
+a {b: selector.is-superselector(".a ~ .b", ".a ~ .c ~ .d")}
+<===> function/sibling/output.css
+a {
+  b: false;
+}
