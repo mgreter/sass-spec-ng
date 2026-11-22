@@ -1,0 +1,92 @@
+<===> README.md
+In compressed mode, blocks that only contain (non-preserved) comments
+are invisible and must be omitted, like dart-sass does. LibSass emitted
+them as empty blocks (`a{}`, `@media screen{}`). `preserved_comment` and
+`unknown_at_rule` are controls. Expected output generated with dart-sass
+1.93.1.
+<===>
+================================================================================
+<===> keyframe_block/options.yml
+:output_style: compressed
+
+<===> keyframe_block/input.scss
+@keyframes k {
+  from {/* c */}
+  to {o: 1}
+}
+<===> keyframe_block/output.css
+@keyframes k{to{o:1}}
+<===>
+================================================================================
+<===> media/options.yml
+:output_style: compressed
+
+<===> media/input.scss
+@media screen {/* c */}
+a {b: c}
+<===> media/output.css
+a{b:c}
+<===>
+================================================================================
+<===> media_with_empty_rule/options.yml
+:output_style: compressed
+
+<===> media_with_empty_rule/input.scss
+@media print {
+  a {/* c */}
+}
+b {c: d}
+<===> media_with_empty_rule/output.css
+b{c:d}
+<===>
+================================================================================
+<===> nested_style_rule/options.yml
+:output_style: compressed
+
+<===> nested_style_rule/input.scss
+a {
+  b {/* c */}
+  c: d;
+}
+<===> nested_style_rule/output.css
+a{c:d}
+<===>
+================================================================================
+<===> preserved_comment/options.yml
+:output_style: compressed
+
+<===> preserved_comment/input.scss
+a {/*! c */}
+b {c: d}
+<===> preserved_comment/output.css
+a{/*! c */}b{c:d}
+<===>
+================================================================================
+<===> style_rule/options.yml
+:output_style: compressed
+
+<===> style_rule/input.scss
+a {/* c */}
+b {c: d}
+<===> style_rule/output.css
+b{c:d}
+<===>
+================================================================================
+<===> supports/options.yml
+:output_style: compressed
+
+<===> supports/input.scss
+@supports (display: grid) {/* c */}
+a {b: c}
+<===> supports/output.css
+a{b:c}
+<===>
+================================================================================
+<===> unknown_at_rule/options.yml
+:output_style: compressed
+
+<===> unknown_at_rule/input.scss
+@foo {/* c */}
+a {b: c}
+<===> unknown_at_rule/output.css
+@foo{}a{b:c}
