@@ -1,0 +1,75 @@
+<===> README.md
+When a parent selector list has line breaks (`.a,` and `.b` on separate
+lines) and the nested selector follows `&` with a combinator (`& ~ .c`),
+the line breaks were lost in the output (they were kept for `&:hover`).
+Expected output generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> extend/extender_line_break/input.scss
+.x ~ .y {a: b}
+.p,
+.q {@extend .x}
+<===> extend/extender_line_break/output.css
+.x ~ .y, .p ~ .y,
+.q ~ .y {
+  a: b;
+}
+<===>
+================================================================================
+<===> parent/child/input.scss
+.a,
+.b {
+  & > .c {x: y}
+}
+<===> parent/child/output.css
+.a > .c,
+.b > .c {
+  x: y;
+}
+<===>
+================================================================================
+<===> parent/compound/input.scss
+.a,
+.b {
+  &:hover {x: y}
+}
+<===> parent/compound/output.css
+.a:hover,
+.b:hover {
+  x: y;
+}
+<===>
+================================================================================
+<===> parent/no_line_break/input.scss
+.a, .b {
+  & ~ .c {x: y}
+}
+<===> parent/no_line_break/output.css
+.a ~ .c, .b ~ .c {
+  x: y;
+}
+<===>
+================================================================================
+<===> parent/several/input.scss
+.a,
+.b {
+  & + .c, & > .d {x: y}
+}
+<===> parent/several/output.css
+.a + .c, .a > .d,
+.b + .c,
+.b > .d {
+  x: y;
+}
+<===>
+================================================================================
+<===> parent/sibling/input.scss
+.a,
+.b {
+  & ~ .c {x: y}
+}
+<===> parent/sibling/output.css
+.a ~ .c,
+.b ~ .c {
+  x: y;
+}

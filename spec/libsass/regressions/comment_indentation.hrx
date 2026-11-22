@@ -1,0 +1,124 @@
+<===> README.md
+Continuation lines of multi-line comments are re-indented like dart-sass:
+the smallest indentation of the following lines (at most the column the
+comment starts at) is replaced by the output indentation. Continuation
+lines of trailing comments get no indentation. Expected output generated
+with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> media/input.scss
+@media screen {
+  .x {
+    /* in media
+       seven
+    */
+    y: z;
+  }
+}
+<===> media/output.css
+@media screen {
+  .x {
+    /* in media
+       seven
+    */
+    y: z;
+  }
+}
+<===>
+================================================================================
+<===> nested/input.scss
+a {
+  /* nested
+     three
+     three */
+  b: c;
+}
+<===> nested/output.css
+a {
+  /* nested
+     three
+     three */
+  b: c;
+}
+<===>
+================================================================================
+<===> nested_deeper_start/input.scss
+a {
+  b: c;
+      /* deep start
+    four
+         nine
+      */
+  d: e;
+}
+<===> nested_deeper_start/output.css
+a {
+  b: c;
+  /* deep start
+  four
+       nine
+    */
+  d: e;
+}
+<===>
+================================================================================
+<===> preserved/input.scss
+/*!
+ * preserved
+ *
+ *   indented
+ */
+a {b: c}
+<===> preserved/output.css
+/*!
+ * preserved
+ *
+ *   indented
+ */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> top_level/input.scss
+/* ==========
+   #TOP
+   ========== */
+a {b: c}
+<===> top_level/output.css
+/* ==========
+   #TOP
+   ========== */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> top_level_less_indented/input.scss
+/* first
+  two
+    four
+*/
+a {b: c}
+<===> top_level_less_indented/output.css
+/* first
+  two
+    four
+*/
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> trailing/input.scss
+a {
+  b: c; /* trailing
+     five */
+  d: e;
+}
+<===> trailing/output.css
+a {
+  b: c; /* trailing
+five */
+  d: e;
+}
