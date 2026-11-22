@@ -1,0 +1,68 @@
+<===> README.md
+A guarded variable (with `!default`) in a module is only configured via an
+explicit `with` or (for modules forwarded by an imported file) by the
+variables visible when the `@import` starts. Variables of the stylesheet that
+loads the module, or later changes to them, must not leak into it.
+<===>
+================================================================================
+<===> import/forward_after_change/input.scss
+$a: outer;
+@import "midstream";
+d {e: $a}
+<===> import/forward_after_change/_midstream.scss
+$a: midstream;
+@forward "upstream";
+<===> import/forward_after_change/_upstream.scss
+$a: original !default;
+b {c: $a}
+<===> import/forward_after_change/output.css
+b {
+  c: outer;
+}
+
+d {
+  e: outer;
+}
+<===>
+================================================================================
+<===> import/forward_nested_scope/input.scss
+x {
+  $a: local;
+  @import "midstream";
+}
+<===> import/forward_nested_scope/_midstream.scss
+$a: midstream;
+@forward "upstream";
+<===> import/forward_nested_scope/_upstream.scss
+$a: original !default;
+b {c: $a}
+<===> import/forward_nested_scope/output.css
+x b {
+  c: local;
+}
+<===>
+================================================================================
+<===> import/use_outer_variable/input.scss
+$a: outer;
+@import "midstream";
+<===> import/use_outer_variable/_midstream.scss
+@use "upstream";
+<===> import/use_outer_variable/_upstream.scss
+$a: original !default;
+b {c: $a}
+<===> import/use_outer_variable/output.css
+b {
+  c: original;
+}
+<===>
+================================================================================
+<===> use/outer_variable/input.scss
+$a: outer;
+@use "upstream";
+<===> use/outer_variable/_upstream.scss
+$a: original !default;
+b {c: $a}
+<===> use/outer_variable/output.css
+b {
+  c: original;
+}
