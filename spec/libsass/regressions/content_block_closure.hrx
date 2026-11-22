@@ -1,0 +1,81 @@
+<===> README.md
+A content block sees the variables of the `@include` where it was passed,
+like a dart-sass closure, also if a recursive mixin has entered the same
+scopes again before the content block is invoked. Arguments passed via
+`@content(...)` are evaluated where `@content` is called.
+<===>
+================================================================================
+<===> assign_in_content/input.scss
+@mixin m($n){ $c: 0; @if $n>0 { @include m($n - 1){ $c: $n !global; v: $n; } } @else { @content; } }
+a{ @include m(1); w: $c; }
+<===> assign_in_content/output.css
+a {
+  v: 1;
+  w: 1;
+}
+<===>
+================================================================================
+<===> local_var/input.scss
+@mixin m($n){ $local: L#{$n}; @if $n>0 { @include m($n - 1){ v: $local; @content; } } @else { @content; } }
+a{ @include m(2); }
+<===> local_var/output.css
+a {
+  v: L1;
+  v: L2;
+}
+<===>
+================================================================================
+<===> nested_mixins/input.scss
+@mixin outer($a){ @include inner { o: $a; } }
+@mixin inner { @content; }
+a { @include outer(1); @include outer(2); }
+<===> nested_mixins/output.css
+a {
+  o: 1;
+  o: 2;
+}
+<===>
+================================================================================
+<===> recursive/input.scss
+@mixin m($n){ @if $n>0 { @include m($n - 1){ v: $n; @content; } } @else { @content; } }
+a{ @include m(2); }
+<===> recursive/output.css
+a {
+  v: 1;
+  v: 2;
+}
+<===>
+================================================================================
+<===> recursive_deep/input.scss
+@mixin m($n){ @if $n>0 { @include m($n - 1){ v: $n; @content; } } @else { @content; } }
+a{ @include m(5) { w: x; } }
+<===> recursive_deep/output.css
+a {
+  v: 1;
+  v: 2;
+  v: 3;
+  v: 4;
+  v: 5;
+  w: x;
+}
+<===>
+================================================================================
+<===> using_args/input.scss
+@mixin m($n){ @if $n>0 { @include m($n - 1) using ($k) { v: $n $k; @content($k); } } @else { @content($n); } }
+a{ @include m(2) using ($z) { w: $z; } }
+<===> using_args/output.css
+a {
+  v: 1 0;
+  v: 2 0;
+  w: 0;
+}
+<===>
+================================================================================
+<===> using_default/input.scss
+@mixin m($n){ @if $n>0 { @include m($n - 1) using ($k: $n) { v: $n $k; @content; } } @else { @content; } }
+a{ @include m(2); }
+<===> using_default/output.css
+a {
+  v: 1 1;
+  v: 2 2;
+}
