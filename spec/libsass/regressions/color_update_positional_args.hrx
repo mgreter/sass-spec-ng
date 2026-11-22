@@ -1,0 +1,40 @@
+<===> README.md
+Like dart-sass, `color.adjust()`, `color.change()` and `color.scale()` only
+accept one positional argument, also if keyword arguments are passed too
+(libsass silently ignored the extra positional arguments then).
+<===>
+================================================================================
+<===> adjust/input.scss
+@use "sass:color";
+a {b: color.adjust(red, 10, $lightness: 5%)}
+<===> adjust/error
+Error: Only one positional argument is allowed. All other arguments must be passed by name.
+  ,
+2 | a {b: color.adjust(red, 10, $lightness: 5%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===>
+================================================================================
+<===> change/input.scss
+@use "sass:color";
+a {b: color.change(red, 10, $red: 1)}
+<===> change/error
+Error: Only one positional argument is allowed. All other arguments must be passed by name.
+  ,
+2 | a {b: color.change(red, 10, $red: 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===>
+================================================================================
+<===> scale/input.scss
+@use "sass:color";
+a {b: color.scale(red, 10, $lightness: 5%)}
+<===> scale/error
+Error: Only one positional argument is allowed. All other arguments must be passed by name.
+  ,
+2 | a {b: color.scale(red, 10, $lightness: 5%)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
