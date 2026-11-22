@@ -1,0 +1,163 @@
+<===> README.md
+Compressed output of selectors and at-rules like dart-sass: no whitespace
+around selector combinators (`a>b`), `@import` without whitespace and
+with `url()` replaced by a string (`@import"foo.css"`), no space after
+`@supports` and `@media` if a parenthesis follows, and media conditions
+joined with `and ` (no space before). Expected output generated with
+dart-sass 1.93.1.
+<===>
+================================================================================
+<===> combinator/after_attribute/options.yml
+:output_style: compressed
+
+<===> combinator/after_attribute/input.scss
+[data-x="a b"] > e {x: 1}
+<===> combinator/after_attribute/output.css
+[data-x="a b"]>e{x:1}
+<===>
+================================================================================
+<===> combinator/descendant/options.yml
+:output_style: compressed
+
+<===> combinator/descendant/input.scss
+.l .m > .n + .o ~ .p {x: 1}
+<===> combinator/descendant/output.css
+.l .m>.n+.o~.p{x:1}
+<===>
+================================================================================
+<===> combinator/in_pseudo/options.yml
+:output_style: compressed
+
+<===> combinator/in_pseudo/input.scss
+a b:not(c > d) {x: 1}
+<===> combinator/in_pseudo/output.css
+a b:not(c>d){x:1}
+<===>
+================================================================================
+<===> combinator/nested/options.yml
+:output_style: compressed
+
+<===> combinator/nested/input.scss
+a {
+  > b {x: 1}
+  + c ~ d {x: 2}
+}
+.h {
+  & > .i,
+  & ~ .j {x: 3}
+}
+<===> combinator/nested/output.css
+a>b{x:1}a+c~d{x:2}.h>.i,.h~.j{x:3}
+<===>
+================================================================================
+<===> combinator/simple/options.yml
+:output_style: compressed
+
+<===> combinator/simple/input.scss
+a > b {x: 1}
+a + b, c ~ d {x: 2}
+li > ol, li > ul {x: 3}
+<===> combinator/simple/output.css
+a>b{x:1}a+b,c~d{x:2}li>ol,li>ul{x:3}
+<===>
+================================================================================
+<===> import/media/options.yml
+:output_style: compressed
+
+<===> import/media/input.scss
+@import "baz.css" screen;
+<===> import/media/output.css
+@import"baz.css"screen
+<===>
+================================================================================
+<===> import/string/options.yml
+:output_style: compressed
+
+<===> import/string/input.scss
+@import "bar.css";
+<===> import/string/output.css
+@import"bar.css"
+<===>
+================================================================================
+<===> import/url/options.yml
+:output_style: compressed
+
+<===> import/url/input.scss
+@import url(foo.css);
+<===> import/url/output.css
+@import"foo.css"
+<===>
+================================================================================
+<===> import/url_quoted/options.yml
+:output_style: compressed
+
+<===> import/url_quoted/input.scss
+@import url("qux.css") print and (min-width: 1px);
+<===> import/url_quoted/output.css
+@import"qux.css"print and (min-width: 1px)
+<===>
+================================================================================
+<===> media/condition/options.yml
+:output_style: compressed
+
+<===> media/condition/input.scss
+@media (min-width: 1px), print {a {x: 1}}
+<===> media/condition/output.css
+@media(min-width: 1px),print{a{x:1}}
+<===>
+================================================================================
+<===> media/conditions/options.yml
+:output_style: compressed
+
+<===> media/conditions/input.scss
+@media (min-width: 1px) and (max-width: 2px) {a {x: 1}}
+@media (min-width: 1px) or (max-width: 2px) {b {x: 2}}
+<===> media/conditions/output.css
+@media(min-width: 1px)and (max-width: 2px){a{x:1}}@media(min-width: 1px)or (max-width: 2px){b{x:2}}
+<===>
+================================================================================
+<===> media/not/options.yml
+:output_style: compressed
+
+<===> media/not/input.scss
+@media not screen and (color) {a {x: 1}}
+@media (not (color)) {b {x: 2}}
+<===> media/not/output.css
+@media not screen and (color){a{x:1}}@media not (color){b{x:2}}
+<===>
+================================================================================
+<===> media/type/options.yml
+:output_style: compressed
+
+<===> media/type/input.scss
+@media only screen {a {x: 1}}
+<===> media/type/output.css
+@media only screen{a{x:1}}
+<===>
+================================================================================
+<===> media/type_and_conditions/options.yml
+:output_style: compressed
+
+<===> media/type_and_conditions/input.scss
+@media screen and (max-width: 999px) and (-ms-high-contrast: active) {a {x: 1}}
+<===> media/type_and_conditions/output.css
+@media screen and (max-width: 999px)and (-ms-high-contrast: active){a{x:1}}
+<===>
+================================================================================
+<===> supports/not/options.yml
+:output_style: compressed
+
+<===> supports/not/input.scss
+@supports not (display: grid) {a {x: 1}}
+<===> supports/not/output.css
+@supports not (display: grid){a{x:1}}
+<===>
+================================================================================
+<===> supports/parenthesis/options.yml
+:output_style: compressed
+
+<===> supports/parenthesis/input.scss
+@supports (display: grid) {a {x: 1}}
+@supports (display: grid) and (gap: 1px) {b {x: 2}}
+<===> supports/parenthesis/output.css
+@supports(display: grid){a{x:1}}@supports(display: grid) and (gap: 1px){b{x:2}}
