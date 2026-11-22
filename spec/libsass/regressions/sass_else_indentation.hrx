@@ -1,0 +1,108 @@
+<===> README.md
+In the indented syntax, `@else` belongs to an `@if` with the same
+indentation, also if the `@if` is nested (libsass assumed indentation 0, so
+a nested `@else` was an error and a less indented one was accepted).
+<===>
+================================================================================
+<===> nested/input.sass
+.a
+  @if false
+    b: c
+  @else
+    d: e
+<===> nested/output.css
+.a {
+  d: e;
+}
+<===>
+================================================================================
+<===> nested_else_if/input.sass
+.a
+  @if false
+    b: c
+  @else if true
+    d: e
+  @else
+    f: g
+<===> nested_else_if/output.css
+.a {
+  d: e;
+}
+<===>
+================================================================================
+<===> deeper/input.sass
+$x: 2
+.a
+  .b
+    @if $x == 1
+      c: d
+    @else if $x == 2
+      e: f
+    @else
+      g: h
+<===> deeper/output.css
+.a .b {
+  e: f;
+}
+<===>
+================================================================================
+<===> root/input.sass
+@if false
+  a
+    b: c
+@else
+  a
+    d: e
+<===> root/output.css
+a {
+  d: e;
+}
+<===>
+================================================================================
+<===> mixin/input.sass
+@mixin m($v)
+  @if $v
+    a: yes
+  @else
+    a: no
+.x
+  +m(false)
+.y
+  +m(true)
+<===> mixin/output.css
+.x {
+  a: no;
+}
+
+.y {
+  a: yes;
+}
+<===>
+================================================================================
+<===> each/input.sass
+.a
+  @each $i in 1 2
+    @if $i == 1
+      one: $i
+    @else
+      other: $i
+<===> each/output.css
+.a {
+  one: 1;
+  other: 2;
+}
+<===>
+================================================================================
+<===> else_less_indented/input.sass
+.a
+  @if false
+    b: c
+@else
+  d: e
+<===> else_less_indented/error
+Error: This at-rule is not allowed here.
+  ,
+4 | @else
+  | ^^^^^
+  '
+  input.sass 4:1  root stylesheet
