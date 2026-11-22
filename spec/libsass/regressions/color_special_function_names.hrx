@@ -1,0 +1,85 @@
+<===> README.md
+The single-argument (`$channels`) forms of `rgba()` and `hsla()` returned
+plain CSS functions named `rgb()` and `hsl()` when the argument contained a
+special value like `var()` or `env()`. The name must be kept. The `control`
+cases already worked. Expected output generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> control/hsl_var/input.scss
+a {b: hsl(var(--foo))}
+<===> control/hsl_var/output.css
+a {
+  b: hsl(var(--foo));
+}
+<===>
+================================================================================
+<===> control/rgb_var/input.scss
+a {b: rgb(var(--foo))}
+<===> control/rgb_var/output.css
+a {
+  b: rgb(var(--foo));
+}
+<===>
+================================================================================
+<===> control/rgba_comma_args/input.scss
+a {b: rgba(1, 2, var(--foo))}
+<===> control/rgba_comma_args/output.css
+a {
+  b: rgba(1, 2, var(--foo));
+}
+<===>
+================================================================================
+<===> hsla/slash_alpha/input.scss
+a {b: hsla(var(--foo) / 0.4)}
+<===> hsla/slash_alpha/output.css
+a {
+  b: hsla(var(--foo)/0.4);
+}
+<===>
+================================================================================
+<===> hsla/space_list_env/input.scss
+a {b: hsla(1 2% 3% / env(--foo))}
+<===> hsla/space_list_env/output.css
+a {
+  b: hsla(1, 2%, 3%, env(--foo));
+}
+<===>
+================================================================================
+<===> hsla/var/input.scss
+a {b: hsla(var(--foo))}
+<===> hsla/var/output.css
+a {
+  b: hsla(var(--foo));
+}
+<===>
+================================================================================
+<===> rgba/slash_alpha/input.scss
+a {b: rgba(var(--foo) / 0.4)}
+<===> rgba/slash_alpha/output.css
+a {
+  b: rgba(var(--foo)/0.4);
+}
+<===>
+================================================================================
+<===> rgba/space_list_env/input.scss
+a {b: rgba(1 2 env(--foo))}
+<===> rgba/space_list_env/output.css
+a {
+  b: rgba(1, 2, env(--foo));
+}
+<===>
+================================================================================
+<===> rgba/space_list_var/input.scss
+a {b: rgba(1 var(--foo) 3)}
+<===> rgba/space_list_var/output.css
+a {
+  b: rgba(1, var(--foo), 3);
+}
+<===>
+================================================================================
+<===> rgba/var/input.scss
+a {b: rgba(var(--foo))}
+<===> rgba/var/output.css
+a {
+  b: rgba(var(--foo));
+}
