@@ -110,6 +110,24 @@ Error: Declarations may only be used within style rules.
   _upstream.scss 2:1   load-css()
   input.scss 3:3       root stylesheet
 
+<===> nested/without_use/error-libsass
+Error: Declarations may only be used within style rules.
+  ,
+1 | @mixin b { c: d }
+  |            ^^^^
+  '
+  _upstream.scss 1:12  b()
+  ,
+2 | @include b;
+  | ^^^^^^^^^^
+  '
+  _upstream.scss 2:1   load-css()
+  ,
+3 |   @include meta.load-css('upstream');
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:3       root stylesheet
+
 <===>
 ================================================================================
 <===> nested/with_use/input.scss
@@ -134,4 +152,22 @@ Error: Declarations may only be used within style rules.
   '
   _midstream.scss 2:12  b()
   _midstream.scss 3:1   load-css()
+  input.scss 3:3        root stylesheet
+
+<===> nested/with_use/error-libsass
+Error: Declarations may only be used within style rules.
+  ,
+2 | @mixin b { c: d }
+  |            ^^^^
+  '
+  _midstream.scss 2:12  b()
+  ,
+3 | @include b;
+  | ^^^^^^^^^^
+  '
+  _midstream.scss 3:1   load-css()
+  ,
+3 |   @include meta.load-css('midstream');
+  |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
   input.scss 3:3        root stylesheet

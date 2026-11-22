@@ -1,0 +1,92 @@
+<===> README.md
+Plain CSS style rules with an explicit parent selector `&` that are loaded
+into a style rule (via `meta.load-css()` or `@import`) are kept nested
+as-is inside that rule, like dart-sass does.
+<===>
+================================================================================
+<===> import/mixed/input.scss
+a {@import "plain"}
+<===> import/mixed/plain.css
+x {& .y {z: 1} .w & {v: 2}}
+& > q {r: s}
+:is(&) {t: u}
+<===> import/mixed/output.css
+a {
+  & > q {
+    r: s;
+  }
+  :is(&) {
+    t: u;
+  }
+}
+a x {
+  & .y {
+    z: 1;
+  }
+  .w & {
+    v: 2;
+  }
+}
+<===>
+================================================================================
+<===> load_css/after_use/input.scss
+@use "sass:meta";
+@use "plain";
+a {@include meta.load-css("plain")}
+<===> load_css/after_use/plain.css
+& {b {c: d}}
+<===> load_css/after_use/output.css
+& {
+  b {
+    c: d;
+  }
+}
+
+a {
+  & {
+    b {
+      c: d;
+    }
+  }
+}
+<===>
+================================================================================
+<===> load_css/mixed/input.scss
+@use "sass:meta";
+a {@include meta.load-css("plain")}
+<===> load_css/mixed/plain.css
+x {& .y {z: 1} .w & {v: 2}}
+& > q {r: s}
+:is(&) {t: u}
+<===> load_css/mixed/output.css
+a {
+  & > q {
+    r: s;
+  }
+  :is(&) {
+    t: u;
+  }
+}
+a x {
+  & .y {
+    z: 1;
+  }
+  .w & {
+    v: 2;
+  }
+}
+<===>
+================================================================================
+<===> load_css/top_level_parent/input.scss
+@use "sass:meta";
+a {@include meta.load-css("plain")}
+<===> load_css/top_level_parent/plain.css
+& {b {c: d}}
+<===> load_css/top_level_parent/output.css
+a {
+  & {
+    b {
+      c: d;
+    }
+  }
+}

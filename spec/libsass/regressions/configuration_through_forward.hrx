@@ -1,0 +1,85 @@
+<===> README.md
+Loading an already loaded module through `@forward` with another explicit
+configuration is only an error if the configuration could have affected one
+of its variables (dart-sass `couldHaveBeenConfigured`). These cases are valid.
+<===>
+================================================================================
+<===> consumed_before_forward/input.scss
+@use "up";
+@use "mid" with ($x: 1);
+b {c: up.$x; d: mid.$x}
+<===> consumed_before_forward/_mid.scss
+$x: 0 !default;
+@forward "up";
+<===> consumed_before_forward/_up.scss
+$x: 0 !default;
+<===> consumed_before_forward/output.css
+b {
+  c: 0;
+  d: 1;
+}
+<===>
+================================================================================
+<===> diamond_same_config/input.scss
+@use "a" with ($x: 1);
+b {c: a.$x}
+<===> diamond_same_config/_a.scss
+@forward "up";
+@forward "mid";
+<===> diamond_same_config/_mid.scss
+@forward "up";
+<===> diamond_same_config/_up.scss
+$x: 0 !default;
+<===> diamond_same_config/output.css
+b {
+  c: 1;
+}
+<===>
+================================================================================
+<===> hidden_through_forward/input.scss
+@use "up";
+@use "mid" with ($y: 1);
+b {c: up.$x; d: mid.$y}
+<===> hidden_through_forward/_mid.scss
+@forward "up" hide $y;
+$y: 0 !default;
+<===> hidden_through_forward/_up.scss
+$x: 0 !default;
+$y: 0 !default;
+<===> hidden_through_forward/output.css
+b {
+  c: 0;
+  d: 1;
+}
+<===>
+================================================================================
+<===> unrelated_variables/input.scss
+@use "up";
+@use "mid" with ($y: 1);
+b {c: up.$x; d: mid.$y}
+<===> unrelated_variables/_mid.scss
+@forward "up";
+$y: 0 !default;
+<===> unrelated_variables/_up.scss
+$x: 0 !default;
+<===> unrelated_variables/output.css
+b {
+  c: 0;
+  d: 1;
+}
+<===>
+================================================================================
+<===> use_without_with/input.scss
+@use "up";
+@use "mid" with ($y: 1);
+b {c: up.$x; d: mid.$y}
+<===> use_without_with/_mid.scss
+@use "up";
+$y: 0 !default;
+<===> use_without_with/_up.scss
+$x: 0 !default;
+<===> use_without_with/output.css
+b {
+  c: 0;
+  d: 1;
+}
