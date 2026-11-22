@@ -1,0 +1,52 @@
+<===> README.md
+User defined functions and mixins that recurse without end must fail with an
+error instead of overflowing the native stack (dart-sass crashes with an
+uncaught "Stack Overflow"). Finite recursion of a few hundred levels works.
+<===>
+================================================================================
+<===> function/input.scss
+@function f($n) {@return f($n + 1)}
+a {b: f(0)}
+<===> function/error
+Error: Too deep recursion detected. This can be caused by too deep level nesting.
+LibSass will abort here in order to avoid a possible stack overflow.
+  ,
+1 | @function f($n) {@return f($n + 1)}
+  |                          ^^^^^^^^^
+  '
+  input.scss 1:26  root stylesheet
+<===>
+================================================================================
+<===> mixin/input.scss
+@mixin m {@include m}
+a {@include m}
+<===> mixin/error
+Error: Too deep recursion detected. This can be caused by too deep level nesting.
+LibSass will abort here in order to avoid a possible stack overflow.
+  ,
+1 | @mixin m {@include m}
+  |           ^^^^^^^^^^
+  '
+  input.scss 1:11  root stylesheet
+<===>
+================================================================================
+<===> content/input.scss
+@mixin m {@include m {@content}}
+a {@include m {b: c}}
+<===> content/error
+Error: Too deep recursion detected. This can be caused by too deep level nesting.
+LibSass will abort here in order to avoid a possible stack overflow.
+  ,
+1 | @mixin m {@include m {@content}}
+  |           ^^^^^^^^^^
+  '
+  input.scss 1:11  root stylesheet
+<===>
+================================================================================
+<===> deep_but_finite/input.scss
+@function f($n) {@if $n <= 0 {@return 0} @return f($n - 1) + 1}
+a {b: f(500)}
+<===> deep_but_finite/output.css
+a {
+  b: 500;
+}
