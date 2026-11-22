@@ -1,0 +1,175 @@
+<===> README.md
+Whether a comment stays on the line of the previous node is decided like
+dart-sass (`_isTrailingComment`): it must start on the line where the
+previous visible node (or, for the first child, the opening brace of the
+parent) ends, in the same source file. A block whose only child is such a
+comment is closed on the same line. LibSass used a flag set by the parser,
+which got it wrong after rules, at-rules, invisible statements, mixins from
+other files, the same file imported twice and in the indented syntax.
+Expected output generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> after_declaration/input.scss
+a {
+  b: c; /* after b */
+  d: e;
+}
+<===> after_declaration/output.css
+a {
+  b: c; /* after b */
+  d: e;
+}
+<===>
+================================================================================
+<===> after_import/input.scss
+@import url(foo.css); /* after import */
+a {b: c}
+<===> after_import/output.css
+@import url(foo.css); /* after import */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> after_invisible_variable/input.scss
+a {
+  $v: 1; /* after variable */
+  b: c;
+}
+<===> after_invisible_variable/output.css
+a {
+  /* after variable */
+  b: c;
+}
+<===>
+================================================================================
+<===> after_last_rule/input.scss
+a {
+  b: c;
+} /* last */
+<===> after_last_rule/output.css
+a {
+  b: c;
+} /* last */
+<===>
+================================================================================
+<===> after_media/input.scss
+@media print {
+  a {b: c}
+} /* after */
+<===> after_media/output.css
+@media print {
+  a {
+    b: c;
+  }
+} /* after */
+<===>
+================================================================================
+<===> after_mixin_from_other_file/input.scss
+@use "other";
+a {
+  @include other.m; /* after mixin */
+  b: c;
+}
+<===> after_mixin_from_other_file/_other.scss
+@mixin m {x: y}
+<===> after_mixin_from_other_file/output.css
+a {
+  x: y;
+  /* after mixin */
+  b: c;
+}
+<===>
+================================================================================
+<===> after_style_rule/input.scss
+a {
+  b: c;
+} /* after */
+d {e: f}
+<===> after_style_rule/output.css
+a {
+  b: c;
+} /* after */
+d {
+  e: f;
+}
+<===>
+================================================================================
+<===> first_child/input.scss
+a { /* first */
+  b: c;
+}
+<===> first_child/output.css
+a { /* first */
+  b: c;
+}
+<===>
+================================================================================
+<===> imported_twice/input.scss
+@import "banner";
+@import "banner";
+a {b: c}
+<===> imported_twice/_banner.css
+/* banner */
+<===> imported_twice/output.css
+/* banner */
+/* banner */
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> nested_rule/input.scss
+a {
+  b {
+    c: d; /* deep */
+  } /* after b */
+}
+<===> nested_rule/output.css
+a b {
+  c: d; /* deep */
+}
+a {
+  /* after b */
+}
+<===>
+================================================================================
+<===> only_child/input.scss
+a {/**/}
+b {c: d}
+<===> only_child/output.css
+a { /**/ }
+
+b {
+  c: d;
+}
+<===>
+================================================================================
+<===> only_child_at_rule/input.scss
+@media screen { /* m */ }
+<===> only_child_at_rule/output.css
+@media screen { /* m */ }
+<===>
+================================================================================
+<===> own_line/input.scss
+a {
+  b: c;
+  /* own line */
+  d: e;
+}
+<===> own_line/output.css
+a {
+  b: c;
+  /* own line */
+  d: e;
+}
+<===>
+================================================================================
+<===> several_on_line/input.scss
+a {b: c} /* one */ /* two */
+/* own line */
+<===> several_on_line/output.css
+a {
+  b: c;
+} /* one */ /* two */
+/* own line */
