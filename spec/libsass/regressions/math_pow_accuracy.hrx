@@ -1,0 +1,47 @@
+<===> README.md
+`math.pow()` must be as accurate as the Dart VM: the C library `pow` of
+MinGW-w64 is often off by one ulp (e.g. for about half of all integer
+exponents), which is visible for large results. Exponents 1, 2 and 3 are
+computed by multiplication, like the Dart VM does.
+<===>
+================================================================================
+<===> cube/input.scss
+@use "sass:math";
+a {
+  // Like the Dart VM, a power of 3 is computed as x * x * x
+  b: math.pow(1291441.0144450965, 3);
+}
+<===> cube/output.css
+a {
+  b: 2153891015549136384;
+}
+<===>
+================================================================================
+<===> integer_exponent/input.scss
+@use "sass:math";
+a {
+  b: math.pow(11, 20);
+  c: math.pow(11, 25);
+  d: math.pow(13, 40);
+}
+<===> integer_exponent/output.css
+a {
+  b: 672749994932560100000;
+  c: 108347059433883730000000000;
+  d: 361188648084531400000000000000000000000000000;
+}
+<===>
+================================================================================
+<===> negative_exponent/input.scss
+@use "sass:math";
+a {
+  b: math.pow(0.3, -15);
+  c: math.pow(0.3, -20);
+  d: math.pow(-0.000000000001, -2);
+}
+<===> negative_exponent/output.css
+a {
+  b: 69691719.37625636;
+  c: 28679719907.924435;
+  d: 1000000000000000000000000;
+}
