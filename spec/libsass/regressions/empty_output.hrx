@@ -1,0 +1,46 @@
+<===> README.md
+# Empty output
+
+Compilations without any CSS output. The C API didn't truncate an
+existing output file in this case (the content of a previous run remained).
+<===>
+================================================================================
+<===> definitions/input.scss
+@mixin a {b: c}
+@function d() {@return e}
+<===> definitions/output.css
+
+<===>
+================================================================================
+<===> empty_rule/input.scss
+a {}
+<===> empty_rule/output.css
+
+<===>
+================================================================================
+<===> placeholder/input.scss
+%a {b: c}
+<===> placeholder/output.css
+
+<===>
+================================================================================
+<===> silent_comment/input.scss
+// nothing to output
+<===> silent_comment/output.css
+
+<===>
+================================================================================
+<===> use_without_css/input.scss
+@use "x";
+$b: x.$a;
+<===> use_without_css/_x.scss
+$a: 1;
+<===> use_without_css/output.css
+
+<===>
+================================================================================
+<===> variables/input.scss
+$a: 1;
+$b: $a + 1;
+<===> variables/output.css
+
