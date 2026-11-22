@@ -1,0 +1,163 @@
+<===> README.md
+In expanded output, dart-sass only writes a blank line after a top-level
+node that ends a group (the last node created by a top-level style rule),
+not after every top-level block (e.g. `@media`, `@supports`, `@font-face`,
+`@keyframes`) or between a style rule and the rules bubbled out of it.
+
+Note: the Perl spec runner collapses blank lines, so it can't detect a
+regression here; these outputs are kept byte-exact for exact comparisons.
+<===>
+================================================================================
+<===> at_root/input.scss
+a {@at-root b {c: d} e: f;}
+g {h: i}
+<===> at_root/output.css
+b {
+  c: d;
+}
+
+a {
+  e: f;
+}
+
+g {
+  h: i;
+}
+<===>
+================================================================================
+<===> comment/input.scss
+a {b: c}
+/* c */
+d {e: f}
+<===> comment/output.css
+a {
+  b: c;
+}
+
+/* c */
+d {
+  e: f;
+}
+<===>
+================================================================================
+<===> font_face/input.scss
+@font-face {a: b}
+@font-face {c: d}
+e {f: g}
+<===> font_face/output.css
+@font-face {
+  a: b;
+}
+@font-face {
+  c: d;
+}
+e {
+  f: g;
+}
+<===>
+================================================================================
+<===> keyframes/input.scss
+@keyframes k {from {a: b} to {c: d}}
+e {f: g}
+<===> keyframes/output.css
+@keyframes k {
+  from {
+    a: b;
+  }
+  to {
+    c: d;
+  }
+}
+e {
+  f: g;
+}
+<===>
+================================================================================
+<===> media/input.scss
+@media print {a {b: c}}
+d {e: f}
+g {h: i}
+<===> media/output.css
+@media print {
+  a {
+    b: c;
+  }
+}
+d {
+  e: f;
+}
+
+g {
+  h: i;
+}
+<===>
+================================================================================
+<===> media_in_rule/input.scss
+a {b: c; @media print {d: e}}
+f {g: h}
+<===> media_in_rule/output.css
+a {
+  b: c;
+}
+@media print {
+  a {
+    d: e;
+  }
+}
+
+f {
+  g: h;
+}
+<===>
+================================================================================
+<===> mixin/input.scss
+@mixin m {a {b: c} d {e: f}}
+@include m;
+g {h: i}
+<===> mixin/output.css
+a {
+  b: c;
+}
+
+d {
+  e: f;
+}
+
+g {
+  h: i;
+}
+<===>
+================================================================================
+<===> nested/input.scss
+a {b: c; d {e: f} g: h}
+x {y: z}
+<===> nested/output.css
+a {
+  b: c;
+}
+a d {
+  e: f;
+}
+a {
+  g: h;
+}
+
+x {
+  y: z;
+}
+<===>
+================================================================================
+<===> supports/input.scss
+@supports (a: b) {c {d: e}}
+@supports (f: g) {h {i: j}}
+<===> supports/output.css
+@supports (a: b) {
+  c {
+    d: e;
+  }
+}
+@supports (f: g) {
+  h {
+    i: j;
+  }
+}
