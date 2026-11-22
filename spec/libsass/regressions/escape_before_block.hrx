@@ -1,0 +1,72 @@
+<===> README.md
+A space always separates a media query or selector from its block, also if
+it ends with an escape that is terminated by a space (`\9 `), which gives two
+spaces in expanded output, like dart-sass.
+<===>
+================================================================================
+<===> media_feature/input.scss
+@media (a: b\9 ) {
+  c {d: e}
+}
+<===> media_feature/output.css
+@media (a: b\9 ) {
+  c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> media_interpolated/input.scss
+@media #{screen\9} {
+  a {b: c}
+}
+<===> media_interpolated/output.css
+@media screen\9  {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> media_type/input.scss
+@media screen\9 {
+  a {b: c}
+}
+<===> media_type/output.css
+@media screen\9  {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> nested_selector/input.scss
+a {
+  b\9 {
+    c: d;
+  }
+}
+<===> nested_selector/output.css
+a b\9  {
+  c: d;
+}
+<===>
+================================================================================
+<===> selector/input.scss
+selector\9 {
+  a: b;
+}
+<===> selector/output.css
+selector\9  {
+  a: b;
+}
+<===>
+================================================================================
+<===> selector_list/input.scss
+a, b\9 {
+  c: d;
+}
+<===> selector_list/output.css
+a, b\9  {
+  c: d;
+}
