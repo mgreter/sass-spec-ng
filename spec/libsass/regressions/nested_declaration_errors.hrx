@@ -1,0 +1,157 @@
+<===> README.md
+Like dart-sass, `@media`, `@supports`, other at-rules and `@extend` are not
+allowed within nested declarations (e.g. via a mixin included in `b: {...}`),
+also for CSS loaded with `meta.load-css()`.
+<===>
+================================================================================
+<===> at_rule/input.scss
+@mixin m {@foo bar {x: y}}
+a {b: {@include m}}
+<===> at_rule/error
+Error: At-rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@foo bar {x: y}}
+  |           ^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  m()
+  input.scss 2:8   root stylesheet
+<===> at_rule/error-libsass
+Error: At-rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@foo bar {x: y}}
+  |           ^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  m()
+  ,
+2 | a {b: {@include m}}
+  |        ^^^^^^^^^^
+  '
+  input.scss 2:8   root stylesheet
+<===>
+================================================================================
+<===> at_rule_childless/input.scss
+@mixin m {@foo bar;}
+a {b: {@include m}}
+<===> at_rule_childless/error
+Error: At-rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@foo bar;}
+  |           ^^^^^^^^
+  '
+  input.scss 1:11  m()
+  input.scss 2:8   root stylesheet
+<===> at_rule_childless/error-libsass
+Error: At-rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@foo bar;}
+  |           ^^^^^^^^
+  '
+  input.scss 1:11  m()
+  ,
+2 | a {b: {@include m}}
+  |        ^^^^^^^^^^
+  '
+  input.scss 2:8   root stylesheet
+<===>
+================================================================================
+<===> extend/input.scss
+.c {d: e}
+@mixin m {@extend .c}
+a {b: {@include m}}
+<===> extend/error
+Error: @extend may only be used within style rules.
+  ,
+2 | @mixin m {@extend .c}
+  |           ^^^^^^^^^^
+  '
+  input.scss 2:11  m()
+  input.scss 3:8   root stylesheet
+<===> extend/error-libsass
+Error: @extend may only be used within style rules.
+  ,
+2 | @mixin m {@extend .c}
+  |           ^^^^^^^^^^
+  '
+  input.scss 2:11  m()
+  ,
+3 | a {b: {@include m}}
+  |        ^^^^^^^^^^
+  '
+  input.scss 3:8   root stylesheet
+<===>
+================================================================================
+<===> load_css/input.scss
+@use "sass:meta";
+a {b: {@include meta.load-css("up")}}
+<===> load_css/_up.scss
+@media screen {x {y: z}}
+<===> load_css/error
+Error: Media rules may not be used within nested declarations.
+  ,
+1 | @media screen {x {y: z}}
+  | ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _up.scss 1:1    load-css()
+  input.scss 2:8  root stylesheet
+<===> load_css/error-libsass
+Error: Media rules may not be used within nested declarations.
+  ,
+1 | @media screen {x {y: z}}
+  | ^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  _up.scss 1:1    load-css()
+  ,
+2 | a {b: {@include meta.load-css("up")}}
+  |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:8  root stylesheet
+<===>
+================================================================================
+<===> media/input.scss
+@mixin m {@media screen {x: y}}
+a {b: {@include m}}
+<===> media/error
+Error: Media rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@media screen {x: y}}
+  |           ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  m()
+  input.scss 2:8   root stylesheet
+<===> media/error-libsass
+Error: Media rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@media screen {x: y}}
+  |           ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  m()
+  ,
+2 | a {b: {@include m}}
+  |        ^^^^^^^^^^
+  '
+  input.scss 2:8   root stylesheet
+<===>
+================================================================================
+<===> supports/input.scss
+@mixin m {@supports (a: b) {x: y}}
+a {b: {@include m}}
+<===> supports/error
+Error: Supports rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@supports (a: b) {x: y}}
+  |           ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  m()
+  input.scss 2:8   root stylesheet
+<===> supports/error-libsass
+Error: Supports rules may not be used within nested declarations.
+  ,
+1 | @mixin m {@supports (a: b) {x: y}}
+  |           ^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:11  m()
+  ,
+2 | a {b: {@include m}}
+  |        ^^^^^^^^^^
+  '
+  input.scss 2:8   root stylesheet
