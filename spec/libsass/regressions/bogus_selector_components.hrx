@@ -1,0 +1,49 @@
+<===> README.md
+Bogus selectors (e.g. with two combinators in a row) are omitted from the
+output like in dart-sass, also if the bogus part is not the first compound,
+and leading combinators in selector pseudo-classes other than `:has()`.
+(libsass only checked the first component).
+<===>
+================================================================================
+<===> first_component/input.scss
+.w > > .x .y {x: y}
+<===> first_component/output.css
+
+<===>
+================================================================================
+<===> has_leading/input.scss
+:has(> .a) {x: y}
+<===> has_leading/output.css
+:has(> .a) {
+  x: y;
+}
+<===>
+================================================================================
+<===> is_leading/input.scss
+:is(> .a) {x: y}
+<===> is_leading/output.css
+
+<===>
+================================================================================
+<===> later_component/input.scss
+a { .w .x > > .y {x: y} }
+<===> later_component/output.css
+
+<===>
+================================================================================
+<===> later_pseudo/input.scss
+a .b :is(.c > > .d) {x: y}
+<===> later_pseudo/output.css
+
+<===>
+================================================================================
+<===> not_leading/input.scss
+:not(> .a) {x: y}
+<===> not_leading/output.css
+
+<===>
+================================================================================
+<===> useless_pseudo/input.scss
+.a :is(> .b) .c {x: y}
+<===> useless_pseudo/output.css
+
