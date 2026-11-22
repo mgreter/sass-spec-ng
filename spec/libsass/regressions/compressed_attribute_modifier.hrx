@@ -1,0 +1,19 @@
+<===> README.md
+In compressed output, an attribute selector modifier directly follows a
+quoted value (`[b="c d"i]`), but needs a space after an identifier value
+(`[b=c i]`), like dart-sass.
+<===>
+================================================================================
+<===> modifiers/options.yml
+:output_style: compressed
+
+<===> modifiers/input.scss
+a[b="c d" i] {x: y}
+a[b=c i] {x: y}
+a[b="c" s] {x: y}
+a[b="--c" i] {x: y}
+a[b="c d"] {x: y}
+a[b] {x: y}
+a[b|=c] {x: y}
+<===> modifiers/output.css
+a[b="c d"i]{x:y}a[b=c i]{x:y}a[b=c s]{x:y}a[b="--c"i]{x:y}a[b="c d"]{x:y}a[b]{x:y}a[b|=c]{x:y}
