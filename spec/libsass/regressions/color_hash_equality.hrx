@@ -1,0 +1,45 @@
+<===> README.md
+Colors that are equal (e.g. legacy colors of different spaces, which are
+compared in rgb, or channels equal up to the 11th decimal digit) must also
+have the same hash, so they find each other as map keys, like dart-sass.
+<===>
+================================================================================
+<===> equality_and_map_keys/input.scss
+@use "sass:color";
+@use "sass:map";
+a {
+  m1: map.get((rgb(255,0,0): 1), hsl(0,100%,50%));
+  m2: map.get((red: 1), hwb(0 0% 0%));
+  m3: map.get((rgb(255,0,0): 1), color.mix(red, red));
+  m4: map.get((rgb(0 0 0 / 0.5): 1), rgba(0,0,0,0.5));
+  m5: map.get((color(srgb 1 0 0): 1), color(srgb 1 0 0));
+  m6: map.get((lab(50% 10 20): 1), lab(50% 10 20.000000000001));
+  m7: map.get((rgb(255,0,0): 1), color(srgb 1 0 0));
+  e1: rgb(255,0,0) == hsl(0,100%,50%);
+  e2: rgb(255,0,0) == color(srgb 1 0 0);
+  e3: rgb(none 0 0) == rgb(0 0 0);
+  e4: rgb(none 0 0) == rgb(none 0 0);
+  e5: hsl(none 100% 50%) == hsl(0 100% 50%);
+  e6: lab(50% 10 20) == lab(50% 10 20.000000000001);
+  e7: lab(50% 10 20) == lab(50% 10 20.00000001);
+  e8: rgb(255 0 0 / 0.5) == rgb(255 0 0 / 0.500000000001);
+  i1: index(rgb(255,0,0) blue, hsl(0,100%,50%));
+}
+<===> equality_and_map_keys/output.css
+a {
+  m1: 1;
+  m2: 1;
+  m3: 1;
+  m4: 1;
+  m5: 1;
+  m6: 1;
+  e1: true;
+  e2: false;
+  e3: false;
+  e4: true;
+  e5: false;
+  e6: true;
+  e7: false;
+  e8: true;
+  i1: 1;
+}
