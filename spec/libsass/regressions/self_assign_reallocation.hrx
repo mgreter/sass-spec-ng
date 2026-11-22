@@ -1,0 +1,21 @@
+<===> README.md
+Self assignments like `$l: list.append($l, ...)` may modify the list in
+place. The variable must still be found if evaluating the arguments grows the
+variable stack (e.g. via deep recursion), which reallocates it.
+<===>
+================================================================================
+<===> append_with_deep_calls/input.scss
+@use "sass:list";
+@use "sass:map";
+@function deep($n) { @if $n <= 0 { @return 0; } $a: 1; $b: 2; $c: 3; @return deep($n - 1) + 1; }
+$l: ();
+$m: ();
+@for $i from 1 through 50 { $l: list.append($l, deep(300)); $m: map.merge($m, ($i: deep(300))); }
+a { b: list.length($l); c: list.nth($l, 50); d: map.get($m, 50); e: list.length(map.keys($m)); }
+<===> append_with_deep_calls/output.css
+a {
+  b: 50;
+  c: 300;
+  d: 300;
+  e: 50;
+}
