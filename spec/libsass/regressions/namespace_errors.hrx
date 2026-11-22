@@ -1,0 +1,54 @@
+<===> README.md
+Like dart-sass, a namespace can't be interpolated (also not for variables,
+e.g. `#{"m"}.$x`), and the default namespace of `@use` (the last path
+segment of the url) must be a valid identifier (e.g. not for "dir/").
+<===>
+================================================================================
+<===> interp_mid/input.scss
+a {b: x#{1}.$x}
+<===> interp_mid/error
+Error: Interpolation isn't allowed in namespaces.
+  ,
+1 | a {b: x#{1}.$x}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet
+<===>
+================================================================================
+<===> interp_var/input.scss
+a {b: #{"m"}.$x}
+<===> interp_var/error
+Error: Interpolation isn't allowed in namespaces.
+  ,
+1 | a {b: #{"m"}.$x}
+  |       ^^^^^^
+  '
+  input.scss 1:7  root stylesheet
+<===>
+================================================================================
+<===> use_digit/input.scss
+@use "a/1foo";
+a {b: 1foo.$x}
+<===> use_digit/error
+Error: The default namespace "1foo" is not a valid Sass identifier.
+
+Recommendation: add an "as" clause to define an explicit namespace.
+  ,
+1 | @use "a/1foo";
+  | ^^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
+<===>
+================================================================================
+<===> use_dir/input.scss
+@use "dir/";
+a {b: c}
+<===> use_dir/error
+Error: The default namespace "" is not a valid Sass identifier.
+
+Recommendation: add an "as" clause to define an explicit namespace.
+  ,
+1 | @use "dir/";
+  | ^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
