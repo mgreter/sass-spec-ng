@@ -1,0 +1,70 @@
+<===> README.md
+A selector ending with an escaped space (`.a\ `) lost the space of the
+following descendant combinator, so `.a\  .b` was emitted as `.a\ .b`,
+which means something else. `compound` and `escaped_backslash` (`.a\\ .b`)
+are controls. Expected output generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> child/input.scss
+.a\ > .b {x: y}
+<===> child/output.css
+.a\  > .b {
+  x: y;
+}
+<===>
+================================================================================
+<===> compound/input.scss
+.a\ .b {x: y}
+<===> compound/output.css
+.a\ .b {
+  x: y;
+}
+<===>
+================================================================================
+<===> descendant/input.scss
+.a\  .b {x: y}
+<===> descendant/output.css
+.a\  .b {
+  x: y;
+}
+<===>
+================================================================================
+<===> escaped_backslash/input.scss
+.a\\ .b {x: y}
+.c\\\  .d {x: y}
+<===> escaped_backslash/output.css
+.a\\ .b {
+  x: y;
+}
+
+.c\\\  .d {
+  x: y;
+}
+<===>
+================================================================================
+<===> nested/input.scss
+.a\  {
+  .b {x: y}
+  & .c {x: y}
+  &.d {x: y}
+}
+<===> nested/output.css
+.a\  .b {
+  x: y;
+}
+.a\  .c {
+  x: y;
+}
+.a\ .d {
+  x: y;
+}
+<===>
+================================================================================
+<===> parent_list/input.scss
+div sp\ ,#abcan {
+  p, |q {x: y}
+}
+<===> parent_list/output.css
+div sp\  p, div sp\  |q, #abcan p, #abcan |q {
+  x: y;
+}

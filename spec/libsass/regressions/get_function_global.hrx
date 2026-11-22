@@ -1,0 +1,72 @@
+<===> README.md
+Global-only built-in functions (`lighten()`, `darken()`, `saturate()`,
+`desaturate()`, `adjust-hue()`) failed with "isn't in the sass:color
+module" when called through `call(get-function(...))`. Also checks that a
+copied plain CSS function value keeps its name. Expected output generated
+with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> adjust_hue/input.scss
+a {b: call(get-function(adjust-hue), red, 30deg)}
+<===> adjust_hue/output.css
+a {
+  b: rgb(255, 127.5, 0);
+}
+<===>
+================================================================================
+<===> css_copy/input.scss
+$list: (get-function(foo, $css: true), 1);
+a {b: call(nth($list, 1), 1)}
+<===> css_copy/output.css
+a {
+  b: foo(1);
+}
+<===>
+================================================================================
+<===> darken/input.scss
+a {b: call(get-function(darken), red, 10%)}
+<===> darken/output.css
+a {
+  b: #cc0000;
+}
+<===>
+================================================================================
+<===> desaturate/input.scss
+a {b: call(get-function(desaturate), red, 10%)}
+<===> desaturate/output.css
+a {
+  b: rgb(242.25, 12.75, 12.75);
+}
+<===>
+================================================================================
+<===> lighten/input.scss
+a {b: call(get-function(lighten), red, 10%)}
+<===> lighten/output.css
+a {
+  b: #ff3333;
+}
+<===>
+================================================================================
+<===> saturate/input.scss
+a {b: call(get-function(saturate), #c66, 10%)}
+<===> saturate/output.css
+a {
+  b: rgb(214.2, 91.8, 91.8);
+}
+<===>
+================================================================================
+<===> saturate_css/input.scss
+a {b: call(get-function(saturate), 50%)}
+<===> saturate_css/output.css
+a {
+  b: saturate(50%);
+}
+<===>
+================================================================================
+<===> variable/input.scss
+$fn: get-function(lighten);
+a {b: call($fn, red, 30%)}
+<===> variable/output.css
+a {
+  b: #ff9999;
+}
