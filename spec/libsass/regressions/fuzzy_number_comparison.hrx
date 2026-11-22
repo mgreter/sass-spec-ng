@@ -1,0 +1,79 @@
+<===> README.md
+Numbers are equal if they are equal up to the 11th decimal digit, like the
+dart-sass `fuzzyEquals` (which also compares the rounded values), and the
+comparison operators, map keys, `index()`, `min()` and `max()` treat such
+numbers as equal. Rounding is correct for the largest double below 0.5.
+<===>
+================================================================================
+<===> comparisons/input.scss
+@use "sass:math";
+@use "sass:map";
+a {
+  le: 0.1 + 0.2 <= 0.3;
+  gt: 0.1 + 0.2 > 0.3;
+  lt: 0.3 < 0.1 + 0.2;
+  ge: 0.3 >= 0.1 + 0.2;
+  eq1: 1 == 1.000000000005;
+  eq2: 1 == 1.00000000005;
+  eq3: 1 == 1.0000000001;
+  lt2: 1 < 1.000000000005;
+  lt3: 1 < 1.00000000002;
+  units1: 1in > 96px + 0.00000000000001px;
+  units2: 1in >= 96px;
+  inf: math.div(1, 0) == math.div(1, 0);
+  neginf: math.div(-1, 0) < 0;
+  zero: 0 == -0;
+  tiny: 0.000000000001 == 0;
+  tiny2: 0.00000000001 == 0;
+  tiny3: 0.000000000005 == 0;
+  half: 0.000000000005 == 0.000000000004;
+  map: map.get((1: a, 2: b), 1.000000000001);
+  map2: map.get((0.3: x), 0.1 + 0.2);
+  min: min(1px, 1.0000000000001px, 2px);
+  max: max(0.3, 0.1 + 0.2);
+  index: index(1 2 3, 2.000000000001);
+}
+<===> comparisons/output.css
+a {
+  le: true;
+  gt: false;
+  lt: false;
+  ge: true;
+  eq1: false;
+  eq2: false;
+  eq3: false;
+  lt2: true;
+  lt3: true;
+  units1: false;
+  units2: true;
+  inf: true;
+  neginf: true;
+  zero: true;
+  tiny: true;
+  tiny2: false;
+  tiny3: true;
+  half: true;
+  map: a;
+  map2: x;
+  min: 1px;
+  max: 0.3;
+  index: 2;
+}
+<===>
+================================================================================
+<===> round/input.scss
+@use "sass:math";
+a {
+  // 0.000000000005 * 100000000000 is the largest double below 0.5
+  b: math.round(0.000000000005 * 100000000000);
+  c: round(0.000000000005 * 100000000000);
+  d: 0.000000000005 == 0;
+  e: 0.000000000005 == 0.000000000004;
+}
+<===> round/output.css
+a {
+  b: 0;
+  c: 0;
+  d: true;
+  e: true;
+}
