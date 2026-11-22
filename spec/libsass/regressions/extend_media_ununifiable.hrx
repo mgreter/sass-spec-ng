@@ -1,0 +1,32 @@
+<===> README.md
+An `@extend` within a media query that can't be unified with the target
+(e.g. two different ids) extends nothing, so like in dart-sass it's no error
+that the target is outside of that media query.
+<===>
+================================================================================
+<===> elements_dont_unify/input.scss
+a.t {a: b}
+@media screen {b {@extend .t}}
+<===> elements_dont_unify/output.css
+a.t {
+  a: b;
+}
+<===>
+================================================================================
+<===> ids_dont_unify/input.scss
+#y.t {a: b}
+@media screen {#x {@extend .t}}
+<===> ids_dont_unify/output.css
+#y.t {
+  a: b;
+}
+<===>
+================================================================================
+<===> same_media/input.scss
+@media screen {.t {a: b} .x {@extend .t}}
+<===> same_media/output.css
+@media screen {
+  .t, .x {
+    a: b;
+  }
+}
