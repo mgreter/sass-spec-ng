@@ -1,0 +1,196 @@
+<===> README.md
+Compressed output of numbers and colors like dart-sass: the zero before
+the decimal point is omitted (following the exact dart-sass rules for
+negative numbers and numbers that need no rounding), `+` and `-` in
+calculations keep their (mandatory) whitespace, legacy colors use their
+shortest form without spaces (and hwb colors are no longer written as
+the invalid `hwba()`), lab/oklch colors use raw channels. Expected output
+generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> calc/additive/options.yml
+:output_style: compressed
+
+<===> calc/additive/input.scss
+a {
+  b: calc(0.5px + 1%);
+  c: calc(1px - 0.5%);
+}
+<===> calc/additive/output.css
+a{b:calc(.5px + 1%);c:calc(1px - .5%)}
+<===>
+================================================================================
+<===> calc/multiplicative/options.yml
+:output_style: compressed
+
+<===> calc/multiplicative/input.scss
+a {b: calc(2px * var(--x) / 3)}
+<===> calc/multiplicative/output.css
+a{b:calc(2px*var(--x)/3)}
+<===>
+================================================================================
+<===> calc/nested/options.yml
+:output_style: compressed
+
+<===> calc/nested/input.scss
+a {b: calc((1px + 2%) * 3)}
+<===> calc/nested/output.css
+a{b:calc((1px + 2%)*3)}
+<===>
+================================================================================
+<===> color/alpha/options.yml
+:output_style: compressed
+
+<===> color/alpha/input.scss
+a {
+  b: rgba(#000, 0);
+  c: rgba(10, 20, 30, 0.5);
+  d: hsla(120, 50%, 50%, 0.3);
+  e: transparent;
+  f: rgb(10 20 30 / 50%);
+}
+<===> color/alpha/output.css
+a{b:rgba(0,0,0,0);c:rgba(10,20,30,.5);d:hsla(120,50%,50%,.3);e:rgba(0,0,0,0);f:rgba(10,20,30,.5)}
+<===>
+================================================================================
+<===> color/hwb/options.yml
+:output_style: compressed
+
+<===> color/hwb/input.scss
+a {
+  b: hwb(120 10% 20% / 0.5);
+  c: hwb(0 0% 0%);
+}
+<===> color/hwb/output.css
+a{b:rgba(25.5,204,25.5,.5);c:red}
+<===>
+================================================================================
+<===> color/in_lists/options.yml
+:output_style: compressed
+
+<===> color/in_lists/input.scss
+a {
+  b: 1px solid #ffffff;
+  c: (#000, #fff);
+}
+<===> color/in_lists/output.css
+a{b:1px solid #fff;c:#000,#fff}
+<===>
+================================================================================
+<===> color/lab_oklch/options.yml
+:output_style: compressed
+
+<===> color/lab_oklch/input.scss
+a {
+  b: lab(50% 20 30 / 0.5);
+  c: oklch(60% 0.1 120deg / 0.5);
+  d: color(srgb 0.1 0.2 0.3 / 0.4);
+}
+<===> color/lab_oklch/output.css
+a{b:lab(50 20 30/.5);c:oklch(.6 .1 120/.5);d:color(srgb .1 .2 .3/.4)}
+<===>
+================================================================================
+<===> color/mix/options.yml
+:output_style: compressed
+
+<===> color/mix/input.scss
+@use "sass:color";
+a {b: color.mix(red, blue)}
+<===> color/mix/output.css
+a{b:hsl(300,100%,25%)}
+<===>
+================================================================================
+<===> color/names_and_hex/options.yml
+:output_style: compressed
+
+<===> color/names_and_hex/input.scss
+a {
+  b: #ff0000;
+  c: #000080;
+  d: white;
+  e: #c0c0c0;
+  f: #123456;
+  g: lightgoldenrodyellow;
+  h: #aabbcc;
+  i: black;
+  j: #f0ffff;
+}
+<===> color/names_and_hex/output.css
+a{b:red;c:navy;d:#fff;e:silver;f:#123456;g:#fafad2;h:#abc;i:#000;j:azure}
+<===>
+================================================================================
+<===> color/shortest/options.yml
+:output_style: compressed
+
+<===> color/shortest/input.scss
+a {
+  b: rgba(255, 255, 255, 0.123456);
+  c: rgb(1.5, 2, 3);
+  d: hsl(120.5, 50%, 50%);
+}
+<===> color/shortest/output.css
+a{b:hsla(0,0%,100%,.123456);c:rgb(1.5,2,3);d:hsl(120.5,50%,50%)}
+<===>
+================================================================================
+<===> number/interpolated/options.yml
+:output_style: compressed
+
+<===> number/interpolated/input.scss
+a {b: #{0.5}}
+<===> number/interpolated/output.css
+a{b:0.5}
+<===>
+================================================================================
+<===> number/leading_zero/options.yml
+:output_style: compressed
+
+<===> number/leading_zero/input.scss
+a {
+  b: 0.5px;
+  c: 0.5 0.25;
+  d: (0.1, 0.2);
+  e: 1/0.5;
+  f: 0.00000001;
+}
+<===> number/leading_zero/output.css
+a{b:.5px;c:.5 .25;d:.1,.2;e:1/.5;f:.00000001}
+<===>
+================================================================================
+<===> number/negative/options.yml
+:output_style: compressed
+
+<===> number/negative/input.scss
+a {
+  b: -0.25em;
+  c: -0.0000001;
+  d: -0.123456789012;
+}
+<===> number/negative/output.css
+a{b:-0.25em;c:-0.0000001;d:-.123456789}
+<===>
+================================================================================
+<===> number/no_rounding_needed/options.yml
+:output_style: compressed
+
+<===> number/no_rounding_needed/input.scss
+a {
+  b: 0.1234567891;
+  c: 0.0000000001;
+  d: -0.1234567891;
+}
+<===> number/no_rounding_needed/output.css
+a{b:0.1234567891;c:0.0000000001;d:-0.1234567891}
+<===>
+================================================================================
+<===> number/rounded/options.yml
+:output_style: compressed
+
+<===> number/rounded/input.scss
+a {
+  b: 0.12345678912;
+  c: 0.00000000005;
+  d: 0.99999999999;
+  e: -0.00000000004;
+}
+<===> number/rounded/output.css
+a{b:.1234567891;c:.0000000001;d:1;e:0}
