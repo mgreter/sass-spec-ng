@@ -1,0 +1,274 @@
+<===> README.md
+# Members of imported files
+
+An imported file couldn't access variables and mixins of modules it loads
+via `@use`, and members it forwards were exposed to the importer without
+the prefix and show/hide filters of the `@forward` rule.
+<===>
+================================================================================
+<===> forward_prefix/assign/input.scss
+@import "p";
+$p-a: 4;
+a {b: $p-a}
+<===> forward_prefix/assign/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/assign/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/assign/output.css
+a {
+  b: 4;
+}
+<===>
+================================================================================
+<===> forward_prefix/config/input.scss
+$p-a: 5;
+@import "pc";
+<===> forward_prefix/config/_c.scss
+$a: 0 !default;
+b {c: $a}
+<===> forward_prefix/config/_pc.scss
+@forward "c" as p-*;
+<===> forward_prefix/config/output.css
+b {
+  c: 5;
+}
+<===>
+================================================================================
+<===> forward_prefix/double/input.scss
+@import "d";
+a {b: $q-p-a; c: q-p-fx()}
+<===> forward_prefix/double/_d.scss
+@forward "p" as q-*;
+<===> forward_prefix/double/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/double/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/double/output.css
+a {
+  b: 0;
+  c: fx;
+}
+<===>
+================================================================================
+<===> forward_prefix/function/input.scss
+@import "p";
+a {b: p-fx()}
+<===> forward_prefix/function/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/function/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/function/output.css
+a {
+  b: fx;
+}
+<===>
+================================================================================
+<===> forward_prefix/hide/input.scss
+@import "h";
+a {b: $p-a; c: p-fx()}
+<===> forward_prefix/hide/_h.scss
+@forward "x" as p-* hide p-fx;
+<===> forward_prefix/hide/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/hide/output.css
+a {
+  b: 0;
+  c: p-fx();
+}
+<===>
+================================================================================
+<===> forward_prefix/mixin/input.scss
+@import "p";
+a {@include p-mx}
+<===> forward_prefix/mixin/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/mixin/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/mixin/output.css
+a {
+  m: x;
+}
+<===>
+================================================================================
+<===> forward_prefix/nested/input.scss
+a {@import "p"; b: $p-a}
+<===> forward_prefix/nested/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/nested/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/nested/output.css
+a {
+  b: 0;
+}
+<===>
+================================================================================
+<===> forward_prefix/variable/input.scss
+@import "p";
+a {b: $p-a}
+<===> forward_prefix/variable/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/variable/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/variable/output.css
+a {
+  b: 0;
+}
+<===>
+================================================================================
+<===> use_in_import/alias/input.scss
+@import "v";
+<===> use_in_import/alias/_v.scss
+@use "x" as y;
+b {c: y.$a; @include y.mx}
+<===> use_in_import/alias/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> use_in_import/alias/output.css
+b {
+  c: 0;
+  m: x;
+}
+<===>
+================================================================================
+<===> use_in_import/members/input.scss
+@import "u";
+a {@include mu; c: fu()}
+<===> use_in_import/members/_u.scss
+@use "x";
+$z: x.$a;
+@mixin mu {m: x.$a; @include x.mx}
+@function fu() {@return x.$a}
+<===> use_in_import/members/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> use_in_import/members/output.css
+a {
+  m: 0;
+  m: x;
+  c: 0;
+}
+<===>
+================================================================================
+<===> use_in_import/nested/input.scss
+a {@import "v"}
+<===> use_in_import/nested/_v.scss
+@use "x" as y;
+b {c: y.$a}
+<===> use_in_import/nested/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> use_in_import/nested/output.css
+a b {
+  c: 0;
+}
+<===>
+================================================================================
+<===> use_in_import/twice/input.scss
+@import "u";
+@import "u";
+a {b: $z}
+<===> use_in_import/twice/_u.scss
+@use "x";
+$z: x.$a;
+@mixin mu {m: x.$a; @include x.mx}
+@function fu() {@return x.$a}
+<===> use_in_import/twice/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> use_in_import/twice/output.css
+a {
+  b: 0;
+}
+<===>
+================================================================================
+<===> use_in_import/variable/input.scss
+@import "u";
+a {b: $z}
+<===> use_in_import/variable/_u.scss
+@use "x";
+$z: x.$a;
+@mixin mu {m: x.$a; @include x.mx}
+@function fu() {@return x.$a}
+<===> use_in_import/variable/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> use_in_import/variable/output.css
+a {
+  b: 0;
+}
+<===>
+================================================================================
+<===> forward_prefix/unprefixed/input.scss
+@import "p";
+a {b: $a}
+<===> forward_prefix/unprefixed/_p.scss
+@forward "x" as p-*;
+<===> forward_prefix/unprefixed/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_prefix/unprefixed/error
+Error: Undefined variable.
+  ,
+2 | a {b: $a}
+  |       ^^
+  '
+  input.scss 2:7  root stylesheet
+<===>
+================================================================================
+<===> forward_show/hidden/input.scss
+@import "s";
+a {@include mx}
+<===> forward_show/hidden/_s.scss
+@forward "x" show $a;
+<===> forward_show/hidden/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> forward_show/hidden/error
+Error: Undefined mixin.
+  ,
+2 | a {@include mx}
+  |    ^^^^^^^^^^^
+  '
+  input.scss 2:4  root stylesheet
+<===>
+================================================================================
+<===> use_in_import/not_exposed/input.scss
+@import "u";
+a {@include x.mx}
+<===> use_in_import/not_exposed/_u.scss
+@use "x";
+$z: x.$a;
+@mixin mu {m: x.$a; @include x.mx}
+@function fu() {@return x.$a}
+<===> use_in_import/not_exposed/_x.scss
+$a: 0 !default;
+@function fx() {@return fx}
+@mixin mx {m: x}
+<===> use_in_import/not_exposed/error
+Error: There is no module with the namespace "x".
+  ,
+2 | a {@include x.mx}
+  |    ^^^^^^^^^^^^^
+  '
+  input.scss 2:4  root stylesheet
