@@ -1,0 +1,106 @@
+<===> README.md
+Custom properties like dart-sass: multi-line values are re-indented
+relative to the output indentation, removing at most the indentation of
+the property name (`_writeReindentedValue`), and empty values (`--a:;`,
+`--a:#{""};`) are allowed instead of failing with "Expected token" or
+"Custom property values may not be empty". Expected output generated with
+dart-sass 1.93.1.
+<===>
+================================================================================
+<===> empty/interpolated_name/input.scss
+.a {#{--b}: #{""};}
+<===> empty/interpolated_name/output.css
+.a {
+  --b: ;
+}
+<===>
+================================================================================
+<===> empty/interpolation/input.scss
+.a {--b:#{""};}
+<===> empty/interpolation/output.css
+.a {
+  --b:;
+}
+<===>
+================================================================================
+<===> empty/literal/input.scss
+.a {--b:;}
+<===> empty/literal/output.css
+.a {
+  --b:;
+}
+<===>
+================================================================================
+<===> empty/null/input.scss
+.a {--b: #{null};}
+<===> empty/null/output.css
+.a {
+  --b: ;
+}
+<===>
+================================================================================
+<===> empty/whitespace/input.scss
+.a {--b: ;}
+<===> empty/whitespace/output.css
+.a {
+  --b: ;
+}
+<===>
+================================================================================
+<===> indentation/below_name/input.scss
+.a {
+  --b:
+    c
+ d
+   e;
+}
+<===> indentation/below_name/output.css
+.a {
+  --b:
+     c
+  d
+    e;
+}
+<===>
+================================================================================
+<===> indentation/deeper_name/input.scss
+.a {
+         --b: {
+           c: d;
+         };
+}
+<===> indentation/deeper_name/output.css
+.a {
+  --b: {
+    c: d;
+  };
+}
+<===>
+================================================================================
+<===> indentation/nested_media/input.scss
+@media print {
+  .a {
+    --b: {
+          c: d;
+        };
+  }
+}
+<===> indentation/nested_media/output.css
+@media print {
+  .a {
+    --b: {
+          c: d;
+        };
+  }
+}
+<===>
+================================================================================
+<===> indentation/trailing_whitespace/input.scss
+.a {
+  --b: x   
+     ;
+}
+<===> indentation/trailing_whitespace/output.css
+.a {
+  --b: x ;
+}
