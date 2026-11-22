@@ -1,0 +1,58 @@
+<===> README.md
+In compressed mode, multi-line custom property values are folded onto a
+single line like dart-sass (`_writeFoldedValue`): every line feed and the
+whitespace following it become a single space. `single_line` is a
+control. Expected output generated with dart-sass 1.93.1.
+<===>
+================================================================================
+<===> blank_lines/options.yml
+:output_style: compressed
+
+<===> blank_lines/input.scss
+.a {
+  --b: {
+    c: d;
+
+    e: f;
+  };
+}
+<===> blank_lines/output.css
+.a{--b: { c: d; e: f; }}
+<===>
+================================================================================
+<===> bracketed/options.yml
+:output_style: compressed
+
+<===> bracketed/input.scss
+.a {
+  --b: {
+    c: d;
+    e: f;
+  }
+}
+<===> bracketed/output.css
+.a{--b: { c: d; e: f; } }
+<===>
+================================================================================
+<===> multi_line/options.yml
+:output_style: compressed
+
+<===> multi_line/input.scss
+.a {
+  --b: // (
+    );
+}
+<===> multi_line/output.css
+.a{--b: // ( )}
+<===>
+================================================================================
+<===> single_line/options.yml
+:output_style: compressed
+
+<===> single_line/input.scss
+.a {
+  --b: value1 value2;
+  --c:value;
+}
+<===> single_line/output.css
+.a{--b: value1 value2;--c:value}
