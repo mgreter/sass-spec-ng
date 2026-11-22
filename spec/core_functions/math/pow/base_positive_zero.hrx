@@ -193,11 +193,6 @@ a {
   b: 1000000000000000000000000000000000000;
 }
 
-<===> fuzzy/with_exponent/negative_odd_integer/output-libsass.css
-a {
-  b: 1000000000000000042420637374017961984;
-}
-
 <===>
 ================================================================================
 <===> fuzzy/with_exponent/negative_decimal/input.scss

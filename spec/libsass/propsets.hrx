@@ -1,7 +1,3 @@
-<===> options.yml
-:todo:
-  - libsass#whitespace
-
 <===> input.scss
 $x: ground;
 $y: e;
