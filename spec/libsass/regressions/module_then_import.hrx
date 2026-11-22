@@ -1,0 +1,201 @@
+<===> README.md
+# Stylesheets loaded as a module and also imported
+
+A file loaded via `@use` or `load-css()` was cached and later reused
+by `@import`, so the import didn't expose its members. Also variables
+of a nested import (e.g. inside a style rule) were not found.
+<===>
+================================================================================
+<===> load_css_then_import/input.scss
+@use "sass:meta";
+@include meta.load-css("f");
+@import "f";
+a {b: $a}
+<===> load_css_then_import/_f.scss
+@forward "x";
+<===> load_css_then_import/_x.scss
+$a: 0 !default;
+b {c: $a}
+<===> load_css_then_import/output.css
+b {
+  c: 0;
+}
+
+b {
+  c: 0;
+}
+
+a {
+  b: 0;
+}
+<===>
+================================================================================
+<===> nested_import/assign_outer/input.scss
+a {$o: 1; @import "r"; d: $o}
+<===> nested_import/assign_outer/_r.scss
+b {c: $o}
+$o: 2;
+<===> nested_import/assign_outer/output.css
+a b {
+  c: 1;
+}
+a {
+  d: 2;
+}
+<===>
+================================================================================
+<===> nested_import/default/input.scss
+a {@import "d"}
+<===> nested_import/default/_d.scss
+$a: 0 !default;
+b {c: $a}
+<===> nested_import/default/output.css
+a b {
+  c: 0;
+}
+<===>
+================================================================================
+<===> nested_import/default_outer/input.scss
+a {$a: 5; @import "d"}
+<===> nested_import/default_outer/_d.scss
+$a: 0 !default;
+b {c: $a}
+<===> nested_import/default_outer/output.css
+a b {
+  c: 5;
+}
+<===>
+================================================================================
+<===> nested_import/function/input.scss
+a {@import "f"}
+<===> nested_import/function/_f.scss
+$a: 1;
+@function ff() {@return $a}
+b {c: ff()}
+<===> nested_import/function/output.css
+a b {
+  c: 1;
+}
+<===>
+================================================================================
+<===> nested_import/media/input.scss
+@media screen {a {b {@import "n"}}}
+<===> nested_import/media/_n.scss
+$a: 0;
+c {d: $a}
+<===> nested_import/media/output.css
+@media screen {
+  a b c {
+    d: 0;
+  }
+}
+<===>
+================================================================================
+<===> nested_import/mixin/input.scss
+a {@import "m"}
+<===> nested_import/mixin/_m.scss
+$a: 1;
+@mixin mm {m: $a}
+b {@include mm}
+<===> nested_import/mixin/output.css
+a b {
+  m: 1;
+}
+<===>
+================================================================================
+<===> nested_import/twice/input.scss
+a {@import "n"}
+c {@import "n"}
+<===> nested_import/twice/_n.scss
+$a: 0;
+b {c: $a}
+<===> nested_import/twice/output.css
+a b {
+  c: 0;
+}
+
+c b {
+  c: 0;
+}
+<===>
+================================================================================
+<===> nested_import/variable/input.scss
+a {@import "n"}
+<===> nested_import/variable/_n.scss
+$a: 0;
+b {c: $a}
+<===> nested_import/variable/output.css
+a b {
+  c: 0;
+}
+<===>
+================================================================================
+<===> use_then_import/forwarded/input.scss
+@use "f";
+@import "f";
+a {b: $a; @include mx; c: fx()}
+<===> use_then_import/forwarded/_f.scss
+@forward "x";
+<===> use_then_import/forwarded/_x.scss
+$a: 0 !default;
+@mixin mx {m: x}
+@function fx() {@return fx}
+<===> use_then_import/forwarded/output.css
+a {
+  b: 0;
+  m: x;
+  c: fx;
+}
+<===>
+================================================================================
+<===> use_then_import/forwarded_show/input.scss
+@use "s";
+@import "s";
+a {b: $a}
+<===> use_then_import/forwarded_show/_s.scss
+@forward "x" show $a;
+<===> use_then_import/forwarded_show/_x.scss
+$a: 0 !default;
+@mixin mx {m: x}
+@function fx() {@return fx}
+<===> use_then_import/forwarded_show/output.css
+a {
+  b: 0;
+}
+<===>
+================================================================================
+<===> use_then_import/own_members/input.scss
+@use "g";
+@import "g";
+a {b: $y; @include mg; c: fg()}
+<===> use_then_import/own_members/_g.scss
+$y: 1;
+@mixin mg {m: g}
+@function fg() {@return fg}
+<===> use_then_import/own_members/output.css
+a {
+  b: 1;
+  m: g;
+  c: fg;
+}
+<===>
+================================================================================
+<===> use_then_nested_import/input.scss
+@use "x";
+a {@import "x"}
+d {e: x.$a}
+<===> use_then_nested_import/_x.scss
+$a: 0 !default;
+b {c: $a}
+<===> use_then_nested_import/output.css
+b {
+  c: 0;
+}
+
+a b {
+  c: 0;
+}
+
+d {
+  e: 0;
+}
