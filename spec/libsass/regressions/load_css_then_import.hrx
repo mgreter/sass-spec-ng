@@ -1,0 +1,36 @@
+<===> README.md
+A module loaded with `meta.load-css()` and then imported again evaluates its
+`@use ... with` rules a second time. Their parent configuration (the one of
+`meta.load-css()`) must still be valid then (it was a stack object).
+<===>
+================================================================================
+<===> use_with/input.scss
+@use "sass:meta";
+@include meta.load-css("n");
+@import "n";
+<===> use_with/_n.scss
+@use "x" with ($a: 1);
+<===> use_with/_x.scss
+$a: 0 !default;
+b {c: $a}
+<===> use_with/error
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @use "x" with ($a: 1);
+  | ^^^^^^^^^^^^^^^^^^^^^ new load
+  | ===================== original load
+  '
+  _n.scss 1:1     @import
+  input.scss 3:9  root stylesheet
+<===> use_with/error-libsass
+Error: This module was already loaded, so it can't be configured using "with".
+  ,
+1 | @use "x" with ($a: 1);
+  | ^^^^^^^^^^^^^^^^^^^^^
+  '
+  _n.scss 1:1     @import
+  ,
+3 | @import "n";
+  |         ^^^
+  '
+  input.scss 3:9  root stylesheet
