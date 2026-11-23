@@ -1,0 +1,68 @@
+<===> README.md
+# Hue of rgb colors with a missing green channel
+
+When converting to hsl or hwb, the maximum was compared against the optional
+green channel (always false if missing), instead of its value (zero).
+<===>
+================================================================================
+<===> hsl/green_max/input.scss
+@use "sass:color";
+a {b: color.to-space(color(srgb 0.2 0.8 0.5), hsl)}
+<===> hsl/green_max/output.css
+a {
+  b: hsl(150, 60%, 50%);
+}
+<===>
+================================================================================
+<===> hsl/in_gamut/input.scss
+@use "sass:color";
+a {b: color.to-space(color(srgb 0.2 none 0.5), hsl)}
+<===> hsl/in_gamut/output.css
+a {
+  b: hsl(264, 100%, 25%);
+}
+<===>
+================================================================================
+<===> hsl/out_of_gamut/input.scss
+@use "sass:color";
+a {b: color.to-space(color(srgb -0.2 none -0.5), hsl)}
+<===> hsl/out_of_gamut/output.css
+a {
+  b: hsl(264, 100%, -25%);
+}
+<===>
+================================================================================
+<===> hsl/out_of_gamut_red/input.scss
+@use "sass:color";
+a {b: color.to-space(color(srgb -0.6 none -0.1), hsl)}
+<===> hsl/out_of_gamut_red/output.css
+a {
+  b: hsl(350, 100%, -30%);
+}
+<===>
+================================================================================
+<===> hue_channel/input.scss
+@use "sass:color";
+a {b: color.channel(color(srgb -0.2 none -0.5), "hue", hsl)}
+<===> hue_channel/output.css
+a {
+  b: 264deg;
+}
+<===>
+================================================================================
+<===> hwb/out_of_gamut/input.scss
+@use "sass:color";
+a {b: color.to-space(color(srgb -0.2 none -0.5), hwb)}
+<===> hwb/out_of_gamut/output.css
+a {
+  b: hsl(264, 100%, -25%);
+}
+<===>
+================================================================================
+<===> srgb_linear/out_of_gamut/input.scss
+@use "sass:color";
+a {b: color.to-space(color(srgb-linear -0.2 none -0.5), hsl)}
+<===> srgb_linear/out_of_gamut/output.css
+a {
+  b: hsl(279.5342030319, 100%, -36.7678491526%);
+}
