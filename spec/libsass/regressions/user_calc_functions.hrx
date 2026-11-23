@@ -1,0 +1,119 @@
+<===> README.md
+Like dart-sass (1.99), user-defined functions named calc() or clamp() are
+allowed and are used instead of the calculation (without a namespace only if
+defined in the current module).
+<===>
+================================================================================
+<===> calc/arguments/input.scss
+@function calc($a) {@return $a * 2}
+a {
+  b: calc(1px + 2px);
+  c: calc(3);
+}
+<===> calc/arguments/output.css
+a {
+  b: 6px;
+  c: 6;
+}
+<===>
+================================================================================
+<===> calc/in_mixin/input.scss
+@function calc($a) {@return 7}
+@mixin m {b: calc(1)}
+a {@include m}
+<===> calc/in_mixin/output.css
+a {
+  b: 7;
+}
+<===>
+================================================================================
+<===> calc/other_module/input.scss
+@use 'other';
+a {
+  b: calc(1px + 2px);
+  c: other.calc(1px);
+}
+<===> calc/other_module/_other.scss
+@function calc($x) {@return 5}
+<===> calc/other_module/output.css
+a {
+  b: 3px;
+  c: 5;
+}
+<===>
+================================================================================
+<===> calc/uppercase/input.scss
+@function calc($a) {@return 1}
+a {b: CALC(1px + 2px)}
+<===> calc/uppercase/output.css
+a {
+  b: 3px;
+}
+<===>
+================================================================================
+<===> clamp/arguments/input.scss
+@function clamp($a, $b, $c) {@return $b}
+a {b: clamp(1px, 2px, 3px)}
+<===> clamp/arguments/output.css
+a {
+  b: 2px;
+}
+<===>
+================================================================================
+<===> error/calc/nested_in_clamp/input.scss
+@function calc($x) {@return 7}
+a {b: clamp(1px, calc(2px), 3px)}
+<===> error/calc/nested_in_clamp/error
+Error: 1px and 7 are incompatible.
+  ,
+2 | a {b: clamp(1px, calc(2px), 3px)}
+  |             ^^^ 1px
+  |                  ========= 7
+  '
+  input.scss 2:13  root stylesheet
+<===> error/calc/nested_in_clamp/error-libsass
+Error: 1px and 7 have incompatible units.
+  ,
+1 | @function calc($x) {@return 7}
+  |                             ^
+  '
+  input.scss 1:29  clamp()
+  ,
+2 | a {b: clamp(1px, calc(2px), 3px)}
+  |             ^^^
+  '
+  input.scss 2:13  clamp()
+  ,
+2 | a {b: clamp(1px, calc(2px), 3px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+<===>
+================================================================================
+<===> error/clamp/unitless/input.scss
+a {b: clamp(1px, 2px, 3)}
+<===> error/clamp/unitless/error
+Error: 1px and 3 are incompatible.
+  ,
+1 | a {b: clamp(1px, 2px, 3)}
+  |             ^^^ 1px
+  |                       = 3
+  '
+  input.scss 1:13  root stylesheet
+<===> error/clamp/unitless/error-libsass
+Error: 1px and 3 have incompatible units.
+  ,
+1 | a {b: clamp(1px, 2px, 3)}
+  |                       ^
+  '
+  input.scss 1:23  clamp()
+  ,
+1 | a {b: clamp(1px, 2px, 3)}
+  |             ^^^
+  '
+  input.scss 1:13  clamp()
+  ,
+1 | a {b: clamp(1px, 2px, 3)}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7   root stylesheet
