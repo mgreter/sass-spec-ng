@@ -14,6 +14,13 @@ Error: Missing argument $\$.
   input.scss 3:7  a()
   input.scss 3:7  root stylesheet
 
+<===> keyword/escape/rest/unquoted/non_normalized/error-libsass
+Error: Missing argument $\$.
+  ,
+3 | b {c: a((string.unquote("\\24"): d)...)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:7  root stylesheet
 <===>
 ================================================================================
 <===> keyword/escape/rest/unquoted/dash_insensitive/input.scss
@@ -32,6 +39,13 @@ Error: Missing argument $b-c.
   input.scss 3:7  a()
   input.scss 3:7  root stylesheet
 
+<===> keyword/escape/rest/unquoted/dash_insensitive/error-libsass
+Error: Missing argument $b-c.
+  ,
+3 | d {e: a((string.unquote("b\\5f c"): f)...)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:7  root stylesheet
 <===>
 ================================================================================
 <===> keyword/escape/rest/unquoted/semantic/input.scss
@@ -50,6 +64,13 @@ Error: Missing argument $\$.
   input.scss 3:7  a()
   input.scss 3:7  root stylesheet
 
+<===> keyword/escape/rest/unquoted/semantic/error-libsass
+Error: Missing argument $\$.
+  ,
+3 | b {c: a((string.unquote("$"): d)...)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:7  root stylesheet
 <===>
 ================================================================================
 <===> keyword/escape/rest/quoted/non_normalized/input.scss
@@ -67,6 +88,13 @@ Error: Missing argument $\$.
   input.scss 2:7  a()
   input.scss 2:7  root stylesheet
 
+<===> keyword/escape/rest/quoted/non_normalized/error-libsass
+Error: Missing argument $\$.
+  ,
+2 | b {c: a(("\\24": d)...)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 <===>
 ================================================================================
 <===> keyword/escape/rest/quoted/dash_insensitive/input.scss
@@ -84,6 +112,13 @@ Error: Missing argument $b-c.
   input.scss 2:7  a()
   input.scss 2:7  root stylesheet
 
+<===> keyword/escape/rest/quoted/dash_insensitive/error-libsass
+Error: Missing argument $b-c.
+  ,
+2 | d {e: a(("b\\5F c": f)...)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 <===>
 ================================================================================
 <===> keyword/escape/rest/quoted/semantic/input.scss
@@ -99,4 +134,11 @@ Error: Missing argument $\$.
   |       ^^^^^^^^^^^^^^ invocation
   '
   input.scss 2:7  a()
+  input.scss 2:7  root stylesheet
+<===> keyword/escape/rest/quoted/semantic/error-libsass
+Error: Missing argument $\$.
+  ,
+2 | b {c: a(("$": d)...)}
+  |       ^^^^^^^^^^^^^^
+  '
   input.scss 2:7  root stylesheet

@@ -122,10 +122,3 @@ Error: expected "%".
   |                      ^
   '
   input.scss 1:22  root stylesheet
-<===> error/unknown_in_keyframes/selector/error-libsass
-Error: expected "%".
-  ,
-1 | @keyframes k {@foo {.a{b: c}}}
-  |                      ^
-  '
-  input.scss 1:22  root stylesheet

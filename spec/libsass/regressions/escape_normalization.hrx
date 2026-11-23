@@ -1,0 +1,160 @@
+<===> README.md
+Escape handling like dart-sass (1.106): invalid code points are normalized to
+U+FFFD (except for the identifier \0), escaped first letters of keywords and
+url(), private use characters and attribute values with backslashes.
+<===>
+================================================================================
+<===> an_plus_b/input.scss
+:nth-child(\6f dd) {a: b}
+:nth-child(\45 VEN) {c: d}
+<===> an_plus_b/output.css
+:nth-child(odd) {
+  a: b;
+}
+
+:nth-child(even) {
+  c: d;
+}
+<===>
+================================================================================
+<===> attribute/input.scss
+[a="\\b"] {c: d}
+[e="\66"] {g: h}
+<===> attribute/output.css
+[a="\\b"] {
+  c: d;
+}
+
+[e=f] {
+  g: h;
+}
+<===>
+================================================================================
+<===> important/input.scss
+a {
+  b: c !\49 MPORTANT;
+  d: e !\69 mportant;
+}
+<===> important/output.css
+a {
+  b: c !important;
+  d: e !important;
+}
+<===>
+================================================================================
+<===> invalid/ie_hack/input.scss
+a {
+  b: 7ch\0;
+  c: 1px\9;
+  d: \0;
+}
+<===> invalid/ie_hack/output.css
+@charset "UTF-8";
+a {
+  b: 7ch�;
+  c: 1px\9 ;
+  d: \0 ;
+}
+<===>
+================================================================================
+<===> invalid/selector/input.scss
+.a\0 b {c: d}
+.e\D800 {f: g}
+<===> invalid/selector/output.css
+@charset "UTF-8";
+.a�b {
+  c: d;
+}
+
+.e� {
+  f: g;
+}
+<===>
+================================================================================
+<===> private_use/bmp_before_hex/input.scss
+a {
+  b: "\E000 a";
+  c: \E000 a;
+  d: "\E000 g";
+}
+<===> private_use/bmp_before_hex/output.css
+a {
+  b: "\e000 a";
+  c: \e000 a;
+  d: "\e000g";
+}
+<===>
+================================================================================
+<===> private_use/supplementary/input.scss
+a {
+  b: "\F0000 1";
+  c: "\10FFFD";
+}
+<===> private_use/supplementary/output.css
+a {
+  b: "\f0000 1";
+  c: "\10fffd";
+}
+<===>
+================================================================================
+<===> url/custom_property/input.scss
+a {--b: \75 rl(c)}
+<===> url/custom_property/output.css
+a {
+  --b: \75 rl(c);
+}
+<===>
+================================================================================
+<===> url/value/input.scss
+a {b: \75 rl(c)}
+<===> url/value/output.css
+a {
+  b: url(c);
+}
+<===>
+================================================================================
+<===> error/get_mixin/unquoted/input.scss
+@use 'sass:meta';
+a {b: meta.get-mixin(c\64)}
+<===> error/get_mixin/unquoted/error
+Error: Mixin not found: cd
+  ,
+2 | a {b: meta.get-mixin(c\64)}
+  |       ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===>
+================================================================================
+<===> error/keyframes/span/input.scss
+@keyframes a {
+  1x%   {b: c}
+}
+<===> error/keyframes/span/error
+Error: expected "%".
+  ,
+2 |   1x%   {b: c}
+  |    ^
+  '
+  input.scss 2:4  root stylesheet
+<===>
+================================================================================
+<===> error/indented_unclosed_attribute/input.sass
+// Regression test for a crash when reporting a warning for a selector that
+// ends at a newline in the indented syntax.
+[ab
+
+<===> error/indented_unclosed_attribute/error
+WARNING: This selector doesn't have any properties and won't be rendered.
+
+  ,
+3 | [ab
+  | ^^^
+  '
+    input.sass 3:1  root stylesheet
+
+Error: expected more input.
+  ,
+3 | [ab
+  |    ^
+  '
+  input.sass 3:4  root stylesheet
