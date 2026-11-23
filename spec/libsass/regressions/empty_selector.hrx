@@ -1,0 +1,49 @@
+<===> README.md
+Like dart-sass, a style rule without a selector errors with `expected end of
+rule.` if nothing follows (e.g. an unclosed block), otherwise with
+`unrecognized syntax`.
+<===>
+================================================================================
+<===> error/unclosed/multiline/input.scss
+a {
+  b: c;
+<===> error/unclosed/multiline/error
+Error: expected end of rule.
+  ,
+2 |   b: c;
+  |        ^
+  '
+  input.scss 2:8  root stylesheet
+<===>
+================================================================================
+<===> error/unclosed/nested/input.scss
+a {b {c: d}
+<===> error/unclosed/nested/error
+Error: expected end of rule.
+  ,
+1 | a {b {c: d}
+  |            ^
+  '
+  input.scss 1:12  root stylesheet
+<===>
+================================================================================
+<===> error/unrecognized/after_declaration/input.scss
+a {b: c; !x}
+<===> error/unrecognized/after_declaration/error
+Error: unrecognized syntax
+  ,
+1 | a {b: c; !x}
+  |          ^^
+  '
+  input.scss 1:10  root stylesheet
+<===>
+================================================================================
+<===> error/unrecognized/first/input.scss
+a { !x }
+<===> error/unrecognized/first/error
+Error: unrecognized syntax
+  ,
+1 | a { !x }
+  |     ^^^
+  '
+  input.scss 1:5  root stylesheet
