@@ -30,7 +30,7 @@ Error: A top-level selector may not contain a parent selector with a suffix.
   input.scss 1:9    root stylesheet
 
 <===> error-libsass
-Error: Top-level selectors may not contain the parent selector "&".
+Error: A top-level selector may not contain a parent selector with a suffix.
   ,
 2 |   &post {
   |   ^^^^^

@@ -24,24 +24,18 @@ Error: A top-level selector may not contain a parent selector with a suffix.
   '
   - 1:1  root stylesheet
 
-<===> parent/first_arg/error-libsass
-Error: Parent selectors aren't allowed here.
+<===> parent/first_arg_suffix/error-libsass
+Error: A top-level selector may not contain a parent selector with a suffix.
   ,
-2 | a {b: selector.nest(&)}
-  |                     ^
+2 | a {b: selector.nest(&c)}
+  |                     ^^
   '
   input.scss 2:21  selector-nest()
   ,
-2 | a {b: selector.nest("&")}
-  |                     ^^^
-  '
-  input.scss 2:21  selector-nest()
-  ,
-2 | a {b: selector.nest("&")}
-  |       ^^^^^^^^^^^^^^^^^^
+2 | a {b: selector.nest("&c")}
+  |       ^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> parent/non_initial/input.scss

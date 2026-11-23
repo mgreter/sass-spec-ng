@@ -1,0 +1,127 @@
+<===> README.md
+Like dart-sass (1.99), parent selectors without a parent (at the root of the
+document) are kept as is. They can be used as parents for nested rules, but
+can't get a suffix.
+<===>
+================================================================================
+<===> extend/input.scss
+.a {b: c}
+& {@extend .a}
+<===> extend/output.css
+.a, & {
+  b: c;
+}
+<===>
+================================================================================
+<===> function/nest/input.scss
+@use 'sass:selector';
+a {
+  b: selector.nest('&', 'c');
+  d: selector.nest('&', '&.e', 'f &');
+}
+<===> function/nest/output.css
+a {
+  b: & c;
+  d: f &.e;
+}
+<===>
+================================================================================
+<===> nested/compound/input.scss
+& {
+  &.a {b: c}
+}
+<===> nested/compound/output.css
+&.a {
+  b: c;
+}
+<===>
+================================================================================
+<===> nested/descendant/input.scss
+& {
+  a & {b: c}
+  & + d {e: f}
+  g {h: i}
+}
+<===> nested/descendant/output.css
+a & {
+  b: c;
+}
+& + d {
+  e: f;
+}
+& g {
+  h: i;
+}
+<===>
+================================================================================
+<===> nested/suffix/input.scss
+&.a {
+  &-b {c: d}
+}
+<===> nested/suffix/output.css
+&.a-b {
+  c: d;
+}
+<===>
+================================================================================
+<===> pseudo/input.scss
+:is(&) {a: b}
+:not(&).c {d: e}
+<===> pseudo/output.css
+:is(&) {
+  a: b;
+}
+
+:not(&).c {
+  d: e;
+}
+<===>
+================================================================================
+<===> error/function_suffix/input.scss
+@use 'sass:selector';
+a {b: selector.nest('&', '&-c')}
+<===> error/function_suffix/error
+Error: Selector "&" can't have a suffix
+  ,
+1 | &
+  | ^ outer selector
+  '
+  ,
+1 | &-c
+  | === parent selector
+  '
+  - 1:1  root stylesheet
+<===> error/function_suffix/error-libsass
+Error: Selector "&" can't have a suffix
+  ,
+2 | a {b: selector.nest(&, '&-c')}
+  |                     ^
+  '
+  input.scss 2:21  selector-nest()
+  ,
+2 | a {b: selector.nest('&', '&-c')}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+<===>
+================================================================================
+<===> error/nested_suffix/input.scss
+& {
+  &-a {b: c}
+}
+<===> error/nested_suffix/error
+Error: Selector "&" can't have a suffix
+  ,
+1 | & {
+  | ^ outer selector
+2 |   &-a {b: c}
+  |   === parent selector
+  '
+  input.scss 1:1  root stylesheet
+<===> error/nested_suffix/error-libsass
+Error: Selector "&" can't have a suffix
+  ,
+1 | & {
+  | ^
+  '
+  input.scss 1:1  root stylesheet
