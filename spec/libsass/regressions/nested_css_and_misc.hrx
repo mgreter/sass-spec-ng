@@ -1,0 +1,110 @@
+<===> README.md
+Like dart-sass (1.97.3), at-rules nested in style rules that already use plain
+CSS nesting are not bubbled. Also covers unique-id() (unquoted like dart-sass).
+<===>
+================================================================================
+<===> plain_css_nesting/load_css/input.scss
+@use 'sass:meta';
+.w {
+  @include meta.load-css('a');
+}
+<===> plain_css_nesting/load_css/a.css
+.x {
+  .y {
+    @supports (a: b) {
+      .z {c: d}
+    }
+  }
+}
+.p {
+  .q {
+    @foo bar {r: s}
+  }
+}
+.m {
+  @media print {n: o}
+}
+<===> plain_css_nesting/load_css/output.css
+.w .x {
+  .y {
+    @supports (a: b) {
+      .z {
+        c: d;
+      }
+    }
+  }
+}
+.w .p {
+  .q {
+    @foo bar {
+      r: s;
+    }
+  }
+}
+@media print {
+  .w .m {
+    n: o;
+  }
+}
+<===>
+================================================================================
+<===> plain_css_nesting/use/input.scss
+@use 'a';
+<===> plain_css_nesting/use/a.css
+.x {
+  .y {
+    @supports (a: b) {
+      .z {c: d}
+    }
+  }
+}
+.p {
+  .q {
+    @foo bar {r: s}
+  }
+}
+.m {
+  @media print {n: o}
+}
+<===> plain_css_nesting/use/output.css
+.x {
+  .y {
+    @supports (a: b) {
+      .z {
+        c: d;
+      }
+    }
+  }
+}
+
+.p {
+  .q {
+    @foo bar {
+      r: s;
+    }
+  }
+}
+
+@media print {
+  .m {
+    n: o;
+  }
+}
+<===>
+================================================================================
+<===> unique_id/input.scss
+@use 'sass:meta';
+@use 'sass:string';
+a {
+  type: meta.type-of(string.unique-id());
+  length: string.length(string.unique-id());
+  unquoted: string.quote(string.unique-id()) != string.unique-id();
+  unique: string.unique-id() != string.unique-id();
+}
+<===> unique_id/output.css
+a {
+  type: string;
+  length: 7;
+  unquoted: true;
+  unique: true;
+}

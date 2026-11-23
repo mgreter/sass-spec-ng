@@ -70,6 +70,18 @@ Error: You may not @extend selectors across media queries.
     '
   input.scss 2:6  root stylesheet
 
+<===> cross_media/before/extend_in_media/error-libsass
+Error: You may not @extend selectors across media queries.
+  ,
+5 | b {c: d}
+  | ^
+  '
+  input.scss 5:1  @extend
+  ,
+2 |   a {@extend b}
+  |      ^^^^^^^^^
+  '
+  input.scss 2:6  root stylesheet
 <===>
 ================================================================================
 <===> cross_media/before/both_in_media/input.scss
@@ -96,6 +108,18 @@ Error: You may not @extend selectors across media queries.
     '
   input.scss 2:6  root stylesheet
 
+<===> cross_media/before/both_in_media/error-libsass
+Error: You may not @extend selectors across media queries.
+  ,
+6 |   b {c: d}
+  |   ^
+  '
+  input.scss 6:3  @extend
+  ,
+2 |   a {@extend b}
+  |      ^^^^^^^^^
+  '
+  input.scss 2:6  root stylesheet
 <===>
 ================================================================================
 <===> cross_media/after/extend_in_media/input.scss
@@ -118,6 +142,18 @@ Error: You may not @extend selectors across media queries.
     '
   input.scss 4:6  root stylesheet
 
+<===> cross_media/after/extend_in_media/error-libsass
+Error: You may not @extend selectors across media queries.
+  ,
+1 | a {b: c}
+  | ^
+  '
+  input.scss 1:1  @extend
+  ,
+4 |   d {@extend a}
+  |      ^^^^^^^^^
+  '
+  input.scss 4:6  root stylesheet
 <===>
 ================================================================================
 <===> cross_media/after/both_in_media/input.scss
@@ -144,6 +180,18 @@ Error: You may not @extend selectors across media queries.
     '
   input.scss 6:6  root stylesheet
 
+<===> cross_media/after/both_in_media/error-libsass
+Error: You may not @extend selectors across media queries.
+  ,
+2 |   a {b: c}
+  |   ^
+  '
+  input.scss 2:3  @extend
+  ,
+6 |   d {@extend a}
+  |      ^^^^^^^^^
+  '
+  input.scss 6:6  root stylesheet
 <===>
 ================================================================================
 <===> cross_media/merged/input.scss
@@ -168,4 +216,11 @@ Error: You may not @extend the same selector from within different media queries
 6   |   a {@extend b !optional}
     |      ^^^^^^^^^^^^^^^^^^^ second extension
     '
+  input.scss 6:6  root stylesheet
+<===> cross_media/merged/error-libsass
+Error: You may not @extend the same selector from within different media queries.
+  ,
+6 |   a {@extend b !optional}
+  |      ^^^^^^^^^^^^^^^^^^^
+  '
   input.scss 6:6  root stylesheet

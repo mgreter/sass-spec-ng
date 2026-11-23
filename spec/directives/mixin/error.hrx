@@ -10,6 +10,13 @@ Error: Duplicate parameter.
   '
   input.scss 1:10  root stylesheet
 
+<===> duplicate_parameter/non_rest/error-libsass
+Error: Duplicate parameter.
+  ,
+1 | @mixin a($b, $b) {}
+  |          ^^
+  '
+  input.scss 1:10  root stylesheet
 <===>
 ================================================================================
 <===> duplicate_parameter/rest/input.scss
@@ -21,5 +28,12 @@ Error: Duplicate parameter.
 1 | @mixin a($b, $b...) {}
   |          ^^ first
   |              ===== second
+  '
+  input.scss 1:10  root stylesheet
+<===> duplicate_parameter/rest/error-libsass
+Error: Duplicate parameter.
+  ,
+1 | @mixin a($b, $b...) {}
+  |          ^^
   '
   input.scss 1:10  root stylesheet
