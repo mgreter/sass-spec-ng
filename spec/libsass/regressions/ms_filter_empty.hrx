@@ -1,0 +1,126 @@
+<===> README.md
+# Microsoft filter syntax in alpha() and opacity()
+
+An empty unquoted string was checked for the filter syntax by dereferencing
+the begin of the empty string (undefined behavior).
+<===>
+================================================================================
+<===> filter/input.scss
+a {b: alpha(opacity=50)}
+<===> filter/output.css
+a {
+  b: alpha(opacity=50);
+}
+<===>
+================================================================================
+<===> filter_multiple/input.scss
+a {b: alpha(opacity=50, foo=1)}
+<===> filter_multiple/output.css
+a {
+  b: alpha(opacity=50, foo=1);
+}
+<===>
+================================================================================
+<===> filter_whitespace/input.scss
+@use "sass:string";
+a {b: alpha(string.unquote("opacity = 50"))}
+<===> filter_whitespace/output.css
+a {
+  b: alpha(opacity = 50);
+}
+<===>
+================================================================================
+<===> error/alpha_empty/input.scss
+@use "sass:string";
+a {b: alpha(string.unquote(""))}
+<===> error/alpha_empty/error
+Error: $color:  is not a color.
+  ,
+2 | a {b: alpha(string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===> error/alpha_empty/error-libsass
+Error: $color:  is not a color.
+  ,
+2 | a {b: alpha(string.unquote(""))}
+  |                            ^^
+  '
+  input.scss 2:28  alpha()
+  ,
+2 | a {b: alpha(string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+<===>
+================================================================================
+<===> error/multiple_empty/input.scss
+@use "sass:string";
+a {b: alpha(opacity=50, string.unquote(""))}
+<===> error/multiple_empty/error
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: alpha(opacity=50, string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===> error/multiple_empty/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: alpha(opacity=50, string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  alpha()
+  ,
+2 | a {b: alpha(opacity=50, string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===>
+================================================================================
+<===> error/no_equals/input.scss
+@use "sass:string";
+a {b: alpha(string.unquote("opacity"))}
+<===> error/no_equals/error
+Error: $color: opacity is not a color.
+  ,
+2 | a {b: alpha(string.unquote("opacity"))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===> error/no_equals/error-libsass
+Error: $color: opacity is not a color.
+  ,
+2 | a {b: alpha(string.unquote("opacity"))}
+  |                            ^^^^^^^^^
+  '
+  input.scss 2:28  alpha()
+  ,
+2 | a {b: alpha(string.unquote("opacity"))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+<===>
+================================================================================
+<===> error/opacity_empty/input.scss
+@use "sass:string";
+a {b: opacity(string.unquote(""))}
+<===> error/opacity_empty/error
+Error: $color:  is not a color.
+  ,
+2 | a {b: opacity(string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===> error/opacity_empty/error-libsass
+Error: $color:  is not a color.
+  ,
+2 | a {b: opacity(string.unquote(""))}
+  |                              ^^
+  '
+  input.scss 2:30  opacity()
+  ,
+2 | a {b: opacity(string.unquote(""))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
