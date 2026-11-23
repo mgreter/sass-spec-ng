@@ -1,0 +1,74 @@
+<===> README.md
+Selectors of a loaded module are shared by all emissions of its css. Resolving
+parent selectors (e.g. in pseudo selector arguments) must not change them.
+<===>
+================================================================================
+<===> load_css/pseudo_parent/nested_then_root/input.scss
+@use "sass:meta";
+x {@include meta.load-css("other")}
+@include meta.load-css("other");
+<===> load_css/pseudo_parent/nested_then_root/_other.scss
+:not(&) {c: d}
+.u:is(& .v) {w: x}
+<===> load_css/pseudo_parent/nested_then_root/output.css
+:not(x) {
+  c: d;
+}
+.u:is(x .v) {
+  w: x;
+}
+
+:not(&) {
+  c: d;
+}
+
+.u:is(& .v) {
+  w: x;
+}
+<===>
+================================================================================
+<===> load_css/pseudo_parent/nested_twice/input.scss
+@use "sass:meta";
+x {@include meta.load-css("other")}
+y {@include meta.load-css("other")}
+<===> load_css/pseudo_parent/nested_twice/_other.scss
+:not(&) {c: d}
+.u:is(& .v) {w: x}
+<===> load_css/pseudo_parent/nested_twice/output.css
+:not(x) {
+  c: d;
+}
+.u:is(x .v) {
+  w: x;
+}
+
+:not(y) {
+  c: d;
+}
+.u:is(y .v) {
+  w: x;
+}
+<===>
+================================================================================
+<===> load_css/pseudo_parent/root_then_nested/input.scss
+@use "sass:meta";
+@include meta.load-css("other");
+x {@include meta.load-css("other")}
+<===> load_css/pseudo_parent/root_then_nested/_other.scss
+:not(&) {c: d}
+.u:is(& .v) {w: x}
+<===> load_css/pseudo_parent/root_then_nested/output.css
+:not(&) {
+  c: d;
+}
+
+.u:is(& .v) {
+  w: x;
+}
+
+:not(x) {
+  c: d;
+}
+.u:is(x .v) {
+  w: x;
+}
