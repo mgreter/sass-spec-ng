@@ -128,7 +128,7 @@ Error: 1 and 1px are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> error/units/unitless_and_real/error-libsass
-Error: 1 and 1px have incompatible units.
+Error: 1 and 1px are incompatible.
   ,
 1 | a {b: atan2(1, 1px)}
   |                ^^^
@@ -144,7 +144,6 @@ Error: 1 and 1px have incompatible units.
   |       ^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/known_incompatible/input.scss
@@ -160,7 +159,7 @@ Error: 1deg and 1px are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> error/units/known_incompatible/error-libsass
-Error: 1deg and 1px have incompatible units.
+Error: 1deg and 1px are incompatible.
   ,
 1 | a {b: atan2(1deg, 1px)}
   |                   ^^^
@@ -176,7 +175,6 @@ Error: 1deg and 1px have incompatible units.
   |       ^^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/complex_and_unknown/input.scss

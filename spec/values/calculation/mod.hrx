@@ -250,7 +250,7 @@ Error: 16px and 5 are incompatible.
   input.scss 1:11  root stylesheet
 
 <===> error/units/real_and_unitless/error-libsass
-Error: 16px and 5 have incompatible units.
+Error: 16px and 5 are incompatible.
   ,
 1 | a {b: mod(16px, 5)}
   |                 ^
@@ -266,7 +266,6 @@ Error: 16px and 5 have incompatible units.
   |       ^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/incompatible/input.scss
@@ -282,7 +281,7 @@ Error: 16px and 5deg are incompatible.
   input.scss 1:11  root stylesheet
 
 <===> error/units/incompatible/error-libsass
-Error: 16px and 5deg have incompatible units.
+Error: 16px and 5deg are incompatible.
   ,
 1 | a {b: mod(16px, 5deg)}
   |                 ^^^^
@@ -298,7 +297,6 @@ Error: 16px and 5deg have incompatible units.
   |       ^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/complex_and_unknown/input.scss

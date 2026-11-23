@@ -174,7 +174,7 @@ Error: 1deg and 1px are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> error/units/incompatible/first_and_second/error-libsass
-Error: 1deg and 1px have incompatible units.
+Error: 1deg and 1px are incompatible.
   ,
 1 | a {b: hypot(1deg, 1px, 1turn)}
   |                   ^^^
@@ -190,7 +190,6 @@ Error: 1deg and 1px have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/incompatible/first_and_third/input.scss
@@ -206,7 +205,7 @@ Error: 1deg and 1px are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> error/units/incompatible/first_and_third/error-libsass
-Error: 1deg and 1px have incompatible units.
+Error: 1deg and 1px are incompatible.
   ,
 1 | a {b: hypot(1deg, 1turn, 1px)}
   |                          ^^^
@@ -222,7 +221,6 @@ Error: 1deg and 1px have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/incompatible/second_and_third/input.scss
@@ -238,7 +236,7 @@ Error: 1turn and 1px are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> error/units/incompatible/second_and_third/error-libsass
-Error: 1turn and 1px have incompatible units.
+Error: 1turn and 1px are incompatible.
   ,
 1 | a {b: hypot(1turn, 1deg, 1px)}
   |                          ^^^
@@ -254,7 +252,6 @@ Error: 1turn and 1px have incompatible units.
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/units/real_and_unitless/input.scss
@@ -270,7 +267,7 @@ Error: 1px and 1 are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> error/units/real_and_unitless/error-libsass
-Error: 1px and 1 have incompatible units.
+Error: 1px and 1 are incompatible.
   ,
 1 | a {b: hypot(1px, 1)}
   |                  ^
@@ -286,7 +283,6 @@ Error: 1px and 1 have incompatible units.
   |       ^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/first_type/input.scss

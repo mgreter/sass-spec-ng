@@ -72,7 +72,7 @@ Error: 1px and 7 are incompatible.
   '
   input.scss 2:13  root stylesheet
 <===> error/calc/nested_in_clamp/error-libsass
-Error: 1px and 7 have incompatible units.
+Error: 1px and 7 are incompatible.
   ,
 1 | @function calc($x) {@return 7}
   |                             ^
@@ -101,7 +101,7 @@ Error: 1px and 3 are incompatible.
   '
   input.scss 1:13  root stylesheet
 <===> error/clamp/unitless/error-libsass
-Error: 1px and 3 have incompatible units.
+Error: 1px and 3 are incompatible.
   ,
 1 | a {b: clamp(1px, 2px, 3)}
   |                       ^

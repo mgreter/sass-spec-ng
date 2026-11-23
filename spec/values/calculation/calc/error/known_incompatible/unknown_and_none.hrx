@@ -10,7 +10,7 @@ Error: 1unknown and 1 are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> error-libsass
-Error: 1unknown and 1 have incompatible units.
+Error: 1unknown and 1 are incompatible.
   ,
 1 | a {b: calc(1unknown + 1)}
   |                       ^

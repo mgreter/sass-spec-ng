@@ -51,7 +51,7 @@ Error: 1s and 2px are incompatible.
   input.scss 1:11  root stylesheet
 
 <===> error/known_incompatible/first/error-libsass
-Error: 1s and 2px have incompatible units.
+Error: 1s and 2px are incompatible.
   ,
 1 | a {b: max(1s, 2px)}
   |               ^^^
@@ -67,7 +67,6 @@ Error: 1s and 2px have incompatible units.
   |       ^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/known_incompatible/second/input.scss
@@ -83,7 +82,7 @@ Error: 1px and 2s are incompatible.
   input.scss 1:11  root stylesheet
 
 <===> error/known_incompatible/second/error-libsass
-Error: 1px and 2s have incompatible units.
+Error: 1px and 2s are incompatible.
   ,
 1 | a {b: max(1px, 2s)}
   |                ^^
@@ -99,7 +98,6 @@ Error: 1px and 2s have incompatible units.
   |       ^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/known_incompatible/third/input.scss
@@ -115,7 +113,7 @@ Error: 1px and 3s are incompatible.
   input.scss 1:11  root stylesheet
 
 <===> error/known_incompatible/third/error-libsass
-Error: 1px and 3s have incompatible units.
+Error: 1px and 3s are incompatible.
   ,
 1 | a {b: max(1px, 2px, 3s)}
   |                     ^^
@@ -131,7 +129,6 @@ Error: 1px and 3s have incompatible units.
   |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/potentially_incompatible_before_unitless/input.scss
@@ -147,7 +144,7 @@ Error: 1c and 3 are incompatible.
   input.scss 1:11  root stylesheet
 
 <===> error/potentially_incompatible_before_unitless/error-libsass
-Error: 1c and 3 have incompatible units.
+Error: 1c and 3 are incompatible.
   ,
 1 | a {b: max(1c, 2d, 3)}
   |                   ^
@@ -163,7 +160,6 @@ Error: 1c and 3 have incompatible units.
   |       ^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/unitless_and_real/in_calc/input.scss
@@ -178,7 +174,7 @@ Error: 1px and 2 are incompatible.
   input.scss 1:16  root stylesheet
 
 <===> error/unitless_and_real/in_calc/error-libsass
-Error: 1px and 2 have incompatible units.
+Error: 1px and 2 are incompatible.
   ,
 1 | a {b: max(calc(1px + 2))}
   |                      ^
@@ -194,7 +190,6 @@ Error: 1px and 2 have incompatible units.
   |                ^^^^^^^
   '
   input.scss 1:16  root stylesheet
-
 <===>
 ================================================================================
 <===> error/complex_unit/input.scss

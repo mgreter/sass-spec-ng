@@ -10,7 +10,7 @@ Error: 1Hz and 1dpi are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> hz/dpi/error-libsass
-Error: 1Hz and 1dpi have incompatible units.
+Error: 1Hz and 1dpi are incompatible.
   ,
 1 | a {b: calc(1Hz + 1dpi)}
   |                  ^^^^
@@ -26,7 +26,6 @@ Error: 1Hz and 1dpi have incompatible units.
   |            ^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> hz/dpcm/input.scss
@@ -41,7 +40,7 @@ Error: 1Hz and 1dpcm are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> hz/dpcm/error-libsass
-Error: 1Hz and 1dpcm have incompatible units.
+Error: 1Hz and 1dpcm are incompatible.
   ,
 1 | a {b: calc(1Hz + 1dpcm)}
   |                  ^^^^^
@@ -57,7 +56,6 @@ Error: 1Hz and 1dpcm have incompatible units.
   |            ^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> hz/dppx/input.scss
@@ -72,7 +70,7 @@ Error: 1Hz and 1dppx are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> hz/dppx/error-libsass
-Error: 1Hz and 1dppx have incompatible units.
+Error: 1Hz and 1dppx are incompatible.
   ,
 1 | a {b: calc(1Hz + 1dppx)}
   |                  ^^^^^
@@ -88,7 +86,6 @@ Error: 1Hz and 1dppx have incompatible units.
   |            ^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> khz/dpi/input.scss
@@ -103,7 +100,7 @@ Error: 1kHz and 1dpi are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> khz/dpi/error-libsass
-Error: 1kHz and 1dpi have incompatible units.
+Error: 1kHz and 1dpi are incompatible.
   ,
 1 | a {b: calc(1kHz + 1dpi)}
   |                   ^^^^
@@ -119,7 +116,6 @@ Error: 1kHz and 1dpi have incompatible units.
   |            ^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> khz/dpcm/input.scss
@@ -134,7 +130,7 @@ Error: 1kHz and 1dpcm are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> khz/dpcm/error-libsass
-Error: 1kHz and 1dpcm have incompatible units.
+Error: 1kHz and 1dpcm are incompatible.
   ,
 1 | a {b: calc(1kHz + 1dpcm)}
   |                   ^^^^^
@@ -150,7 +146,6 @@ Error: 1kHz and 1dpcm have incompatible units.
   |            ^^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> khz/dppx/input.scss
@@ -165,7 +160,7 @@ Error: 1kHz and 1dppx are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> khz/dppx/error-libsass
-Error: 1kHz and 1dppx have incompatible units.
+Error: 1kHz and 1dppx are incompatible.
   ,
 1 | a {b: calc(1kHz + 1dppx)}
   |                   ^^^^^

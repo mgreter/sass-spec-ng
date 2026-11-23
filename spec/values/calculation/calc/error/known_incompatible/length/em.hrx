@@ -10,7 +10,7 @@ Error: 1em and 1deg are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> deg/error-libsass
-Error: 1em and 1deg have incompatible units.
+Error: 1em and 1deg are incompatible.
   ,
 1 | a {b: calc(1em + 1deg)}
   |                  ^^^^
@@ -26,7 +26,6 @@ Error: 1em and 1deg have incompatible units.
   |            ^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> grad/input.scss
@@ -41,7 +40,7 @@ Error: 1em and 1grad are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> grad/error-libsass
-Error: 1em and 1grad have incompatible units.
+Error: 1em and 1grad are incompatible.
   ,
 1 | a {b: calc(1em + 1grad)}
   |                  ^^^^^
@@ -57,7 +56,6 @@ Error: 1em and 1grad have incompatible units.
   |            ^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> rad/input.scss
@@ -72,7 +70,7 @@ Error: 1em and 1rad are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> rad/error-libsass
-Error: 1em and 1rad have incompatible units.
+Error: 1em and 1rad are incompatible.
   ,
 1 | a {b: calc(1em + 1rad)}
   |                  ^^^^
@@ -88,7 +86,6 @@ Error: 1em and 1rad have incompatible units.
   |            ^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> turn/input.scss
@@ -103,7 +100,7 @@ Error: 1em and 1turn are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> turn/error-libsass
-Error: 1em and 1turn have incompatible units.
+Error: 1em and 1turn are incompatible.
   ,
 1 | a {b: calc(1em + 1turn)}
   |                  ^^^^^
@@ -119,7 +116,6 @@ Error: 1em and 1turn have incompatible units.
   |            ^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> s/input.scss
@@ -134,7 +130,7 @@ Error: 1em and 1s are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> s/error-libsass
-Error: 1em and 1s have incompatible units.
+Error: 1em and 1s are incompatible.
   ,
 1 | a {b: calc(1em + 1s)}
   |                  ^^
@@ -150,7 +146,6 @@ Error: 1em and 1s have incompatible units.
   |            ^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> ms/input.scss
@@ -165,7 +160,7 @@ Error: 1em and 1ms are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> ms/error-libsass
-Error: 1em and 1ms have incompatible units.
+Error: 1em and 1ms are incompatible.
   ,
 1 | a {b: calc(1em + 1ms)}
   |                  ^^^
@@ -181,7 +176,6 @@ Error: 1em and 1ms have incompatible units.
   |            ^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> hz/input.scss
@@ -196,7 +190,7 @@ Error: 1em and 1Hz are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> hz/error-libsass
-Error: 1em and 1Hz have incompatible units.
+Error: 1em and 1Hz are incompatible.
   ,
 1 | a {b: calc(1em + 1Hz)}
   |                  ^^^
@@ -212,7 +206,6 @@ Error: 1em and 1Hz have incompatible units.
   |            ^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> khz/input.scss
@@ -227,7 +220,7 @@ Error: 1em and 1kHz are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> khz/error-libsass
-Error: 1em and 1kHz have incompatible units.
+Error: 1em and 1kHz are incompatible.
   ,
 1 | a {b: calc(1em + 1kHz)}
   |                  ^^^^
@@ -243,7 +236,6 @@ Error: 1em and 1kHz have incompatible units.
   |            ^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> dpi/input.scss
@@ -258,7 +250,7 @@ Error: 1em and 1dpi are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> dpi/error-libsass
-Error: 1em and 1dpi have incompatible units.
+Error: 1em and 1dpi are incompatible.
   ,
 1 | a {b: calc(1em + 1dpi)}
   |                  ^^^^
@@ -274,7 +266,6 @@ Error: 1em and 1dpi have incompatible units.
   |            ^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> dpcm/input.scss
@@ -289,7 +280,7 @@ Error: 1em and 1dpcm are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> dpcm/error-libsass
-Error: 1em and 1dpcm have incompatible units.
+Error: 1em and 1dpcm are incompatible.
   ,
 1 | a {b: calc(1em + 1dpcm)}
   |                  ^^^^^
@@ -305,7 +296,6 @@ Error: 1em and 1dpcm have incompatible units.
   |            ^^^^^^^^^^^
   '
   input.scss 1:12  root stylesheet
-
 <===>
 ================================================================================
 <===> dppx/input.scss
@@ -320,7 +310,7 @@ Error: 1em and 1dppx are incompatible.
   input.scss 1:12  root stylesheet
 
 <===> dppx/error-libsass
-Error: 1em and 1dppx have incompatible units.
+Error: 1em and 1dppx are incompatible.
   ,
 1 | a {b: calc(1em + 1dppx)}
   |                  ^^^^^

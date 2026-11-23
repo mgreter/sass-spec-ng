@@ -138,7 +138,7 @@ Error: 10px and 5 are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> two_argument/units/real_and_unitless/error-libsass
-Error: 10px and 5 have incompatible units.
+Error: 10px and 5 are incompatible.
   ,
 1 | a {b: round(10px, 5)}
   |                   ^
@@ -154,7 +154,6 @@ Error: 10px and 5 have incompatible units.
   |       ^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> two_argument/units/known_incompatible/input.scss
@@ -170,7 +169,7 @@ Error: 10deg and 5px are incompatible.
   input.scss 1:13  root stylesheet
 
 <===> two_argument/units/known_incompatible/error-libsass
-Error: 10deg and 5px have incompatible units.
+Error: 10deg and 5px are incompatible.
   ,
 1 | a {b: round(10deg, 5px)}
   |                    ^^^
@@ -186,7 +185,6 @@ Error: 10deg and 5px have incompatible units.
   |       ^^^^^^^^^^^^^^^^^
   '
   input.scss 1:7   root stylesheet
-
 <===>
 ================================================================================
 <===> two_argument/units/complex_and_unknown/input.scss
