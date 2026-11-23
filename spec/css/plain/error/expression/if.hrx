@@ -13,6 +13,18 @@ Error: sass() conditions aren't allowed in plain CSS
   plain.css 1:10  @use
   input.scss 1:1  root stylesheet
 
+<===> sass/direct/error-libsass
+Error: sass() conditions aren't allowed in plain CSS
+  ,
+1 | a {b: if(sass(true): c)}
+  |          ^^^^^^^^^^
+  '
+  plain.css 1:10  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> sass/not/input.scss
@@ -30,6 +42,18 @@ Error: sass() conditions aren't allowed in plain CSS
   plain.css 1:14  @use
   input.scss 1:1  root stylesheet
 
+<===> sass/not/error-libsass
+Error: sass() conditions aren't allowed in plain CSS
+  ,
+1 | a {b: if(not sass(true): c)}
+  |              ^^^^^^^^^^
+  '
+  plain.css 1:14  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> sass/and/input.scss
@@ -47,6 +71,18 @@ Error: sass() conditions aren't allowed in plain CSS
   plain.css 1:10  @use
   input.scss 1:1  root stylesheet
 
+<===> sass/and/error-libsass
+Error: sass() conditions aren't allowed in plain CSS
+  ,
+1 | a {b: if(sass(true) and css(): c)}
+  |          ^^^^^^^^^^
+  '
+  plain.css 1:10  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> sass/or/input.scss
@@ -64,6 +100,18 @@ Error: sass() conditions aren't allowed in plain CSS
   plain.css 1:10  @use
   input.scss 1:1  root stylesheet
 
+<===> sass/or/error-libsass
+Error: sass() conditions aren't allowed in plain CSS
+  ,
+1 | a {b: if(sass(true) or css(): c)}
+  |          ^^^^^^^^^^
+  '
+  plain.css 1:10  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> sass/paren/input.scss
@@ -81,6 +129,18 @@ Error: sass() conditions aren't allowed in plain CSS
   plain.css 1:11  @use
   input.scss 1:1  root stylesheet
 
+<===> sass/paren/error-libsass
+Error: sass() conditions aren't allowed in plain CSS
+  ,
+1 | a {b: if((sass(true)): c)}
+  |           ^^^^^^^^^^
+  '
+  plain.css 1:11  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> interp/direct/input.scss
@@ -98,6 +158,18 @@ Error: Interpolation isn't allowed in plain CSS.
   plain.css 1:10  @use
   input.scss 1:1  root stylesheet
 
+<===> interp/direct/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | a {b: if(#{css()}: c)}
+  |          ^^^^^^^^
+  '
+  plain.css 1:10  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> interp/not/input.scss
@@ -115,6 +187,18 @@ Error: Interpolation isn't allowed in plain CSS.
   plain.css 1:14  @use
   input.scss 1:1  root stylesheet
 
+<===> interp/not/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | a {b: if(not #{css()}: c)}
+  |              ^^^^^^^^
+  '
+  plain.css 1:14  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> interp/and/input.scss
@@ -132,6 +216,18 @@ Error: Interpolation isn't allowed in plain CSS.
   plain.css 1:10  @use
   input.scss 1:1  root stylesheet
 
+<===> interp/and/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | a {b: if(#{css(1)} and css(2): c)}
+  |          ^^^^^^^^^
+  '
+  plain.css 1:10  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> interp/or/input.scss
@@ -149,6 +245,18 @@ Error: Interpolation isn't allowed in plain CSS.
   plain.css 1:10  @use
   input.scss 1:1  root stylesheet
 
+<===> interp/or/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | a {b: if(#{css(1)} or css(2): c)}
+  |          ^^^^^^^^^
+  '
+  plain.css 1:10  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
+  input.scss 1:1  root stylesheet
 <===>
 ================================================================================
 <===> interp/paren/input.scss
@@ -164,4 +272,16 @@ Error: Interpolation isn't allowed in plain CSS.
   |           ^^^^^^^^
   '
   plain.css 1:11  @use
+  input.scss 1:1  root stylesheet
+<===> interp/paren/error-libsass
+Error: Interpolation isn't allowed in plain CSS.
+  ,
+1 | a {b: if((#{css()}): c)}
+  |           ^^^^^^^^
+  '
+  plain.css 1:11  @use
+  ,
+1 | @use "plain";
+  | ^^^^^^^^^^^^
+  '
   input.scss 1:1  root stylesheet

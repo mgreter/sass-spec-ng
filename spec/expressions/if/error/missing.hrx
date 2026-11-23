@@ -22,3 +22,10 @@ Error: Missing argument $if-true.
   |           =================================== declaration
   '
   input.scss 1:7  root stylesheet
+<===> condition/error-libsass
+Error: Missing argument $if-true.
+  ,
+1 | a {b: if(c)}
+  |       ^^^^^
+  '
+  input.scss 1:7  root stylesheet

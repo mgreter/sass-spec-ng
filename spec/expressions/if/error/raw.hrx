@@ -10,6 +10,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:21  root stylesheet
 
+<===> with_sass/adjacent/before/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(sass(true) var(--and-clause): c)}
+  |                     ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:21  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/adjacent/before/nested/input.scss
@@ -24,6 +31,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:23  root stylesheet
 
+<===> with_sass/adjacent/before/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if((sass(true)) var(--and-clause): c)}
+  |                       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:23  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/adjacent/after/1/direct/input.scss
@@ -38,6 +52,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:10  root stylesheet
 
+<===> with_sass/adjacent/after/1/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(var(--not) sass(true): c)}
+  |          ^^^^^^^^^^
+  '
+  input.scss 1:10  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/adjacent/after/1/nested/input.scss
@@ -52,6 +73,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:10  root stylesheet
 
+<===> with_sass/adjacent/after/1/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(var(--not) (sass(true)): c)}
+  |          ^^^^^^^^^^
+  '
+  input.scss 1:10  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/adjacent/after/2/direct/input.scss
@@ -66,6 +94,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:10  root stylesheet
 
+<===> with_sass/adjacent/after/2/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(var(--clause) var(--and) sass(true): c)}
+  |          ^^^^^^^^^^^^^
+  '
+  input.scss 1:10  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/adjacent/after/2/nested/input.scss
@@ -80,6 +115,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:10  root stylesheet
 
+<===> with_sass/adjacent/after/2/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(var(--clause) var(--and) (sass(true)): c)}
+  |          ^^^^^^^^^^^^^
+  '
+  input.scss 1:10  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/before/operator/direct/input.scss
@@ -94,6 +136,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:32  root stylesheet
 
+<===> with_sass/and/before/operator/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(sass(true) and css(1) var(--and) css(2): c)}
+  |                                ^^^^^^^^^^
+  '
+  input.scss 1:32  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/before/operator/nested/input.scss
@@ -108,6 +157,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:34  root stylesheet
 
+<===> with_sass/and/before/operator/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if((sass(true)) and css(1) var(--and) css(2): c)}
+  |                                  ^^^^^^^^^^
+  '
+  input.scss 1:34  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/before/clause/direct/input.scss
@@ -122,6 +178,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:32  root stylesheet
 
+<===> with_sass/and/before/clause/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(sass(true) and css(1) var(--and-clause): c)}
+  |                                ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:32  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/before/clause/nested/input.scss
@@ -136,6 +199,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:34  root stylesheet
 
+<===> with_sass/and/before/clause/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if((sass(true)) and css(1) var(--and-clause): c)}
+  |                                  ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:34  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/after/operator/direct/input.scss
@@ -150,6 +220,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:28  root stylesheet
 
+<===> with_sass/and/after/operator/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) and css(2) var(--and) sass(true): c)}
+  |                            ^^^^^^^^^^
+  '
+  input.scss 1:28  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/after/operator/nested/input.scss
@@ -164,6 +241,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:28  root stylesheet
 
+<===> with_sass/and/after/operator/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) and css(2) var(--and) (sass(true)): c)}
+  |                            ^^^^^^^^^^
+  '
+  input.scss 1:28  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/after/clause/direct/input.scss
@@ -178,6 +262,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:21  root stylesheet
 
+<===> with_sass/and/after/clause/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) and var(--clause-and) sass(true): c)}
+  |                     ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:21  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/and/after/clause/nested/input.scss
@@ -192,6 +283,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:21  root stylesheet
 
+<===> with_sass/and/after/clause/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) and var(--clause-and) (sass(true)): c)}
+  |                     ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:21  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/before/operator/direct/input.scss
@@ -206,6 +304,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:31  root stylesheet
 
+<===> with_sass/or/before/operator/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(sass(true) or css(1) var(--or) css(2): c)}
+  |                               ^^^^^^^^^
+  '
+  input.scss 1:31  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/before/operator/nested/input.scss
@@ -220,6 +325,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:33  root stylesheet
 
+<===> with_sass/or/before/operator/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if((sass(true)) or css(1) var(--or) css(2): c)}
+  |                                 ^^^^^^^^^
+  '
+  input.scss 1:33  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/before/clause/direct/input.scss
@@ -234,6 +346,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:31  root stylesheet
 
+<===> with_sass/or/before/clause/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(sass(true) or css(1) var(--or-clause): c)}
+  |                               ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:31  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/before/clause/nested/input.scss
@@ -248,6 +367,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:33  root stylesheet
 
+<===> with_sass/or/before/clause/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if((sass(true)) or css(1) var(--or-clause): c)}
+  |                                 ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:33  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/after/operator/direct/input.scss
@@ -262,6 +388,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:27  root stylesheet
 
+<===> with_sass/or/after/operator/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) or css(2) var(--or) sass(true): c)}
+  |                           ^^^^^^^^^
+  '
+  input.scss 1:27  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/after/operator/nested/input.scss
@@ -276,6 +409,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:27  root stylesheet
 
+<===> with_sass/or/after/operator/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) or css(2) var(--or) (sass(true)): c)}
+  |                           ^^^^^^^^^
+  '
+  input.scss 1:27  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/after/clause/direct/input.scss
@@ -290,6 +430,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:20  root stylesheet
 
+<===> with_sass/or/after/clause/direct/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) or var(--clause-or) sass(true): c)}
+  |                    ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:20  root stylesheet
 <===>
 ================================================================================
 <===> with_sass/or/after/clause/nested/input.scss
@@ -304,6 +451,13 @@ Error: if() conditions with arbitrary substitutions may not contain sass() expre
   '
   input.scss 1:20  root stylesheet
 
+<===> with_sass/or/after/clause/nested/error-libsass
+Error: if() conditions with arbitrary substitutions may not contain sass() expressions.
+  ,
+1 | a {b: if(css(1) or var(--clause-or) (sass(true)): c)}
+  |                    ^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:20  root stylesheet
 <===>
 ================================================================================
 <===> not/not/input.scss

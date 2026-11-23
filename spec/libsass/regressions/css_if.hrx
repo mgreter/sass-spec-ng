@@ -1,0 +1,55 @@
+<===> README.md
+CSS if() expressions like dart-sass (1.95), including the fallback from the
+legacy if() syntax, special variables in color functions and plain CSS.
+<===>
+================================================================================
+<===> legacy_and_modern/input.scss
+a {
+  legacy: if(true, b, c);
+  modern: if(sass(true): b; else: c);
+  css: if(media(print): b; else: c);
+}
+<===> legacy_and_modern/output.css
+a {
+  legacy: b;
+  modern: b;
+  css: if(media(print): b; else: c);
+}
+<===>
+================================================================================
+<===> plain_css/input.scss
+@use 'a';
+<===> plain_css/a.css
+a {b: if(media(print): c; else: d)}
+<===> plain_css/output.css
+a {
+  b: if(media(print): c; else: d);
+}
+<===>
+================================================================================
+<===> short_circuit/input.scss
+a {b: if(sass(true): c; else: $undefined)}
+<===> short_circuit/output.css
+a {
+  b: c;
+}
+<===>
+================================================================================
+<===> special_variable/input.scss
+a {
+  b: rgb(if(css(): c));
+  c: rgb(1 if(x(): 2) 3);
+}
+<===> special_variable/output.css
+a {
+  b: rgb(if(css(): c));
+  c: rgb(1, if(x(): 2), 3);
+}
+<===>
+================================================================================
+<===> uppercase/input.scss
+a {b: IF(sass(false): c; else: d)}
+<===> uppercase/output.css
+a {
+  b: d;
+}
