@@ -1,0 +1,38 @@
+<===> README.md
+Like dart-sass (1.101.4), legacy colors with non-integer channels are written
+with percentages. Compressed output uses the shorter one of rgb() and hsl().
+<===>
+================================================================================
+<===> decimal/options.yml
+:output_style: compressed
+
+<===> decimal/input.scss
+a {
+  b: rgb(0 255 127.5);
+  c: rgba(0, 255, 127.5, .5);
+  d: rgb(10.25 20.5 30.125);
+  e: rgb(255 0 0.5);
+}
+<===> decimal/output.css
+a{b:rgb(0%,100%,50%);c:rgba(0%,100%,50%,.5);d:rgb(4.0196078431%,8.0392156863%,11.8137254902%);e:rgb(100%,0%,.1960784314%)}
+<===>
+================================================================================
+<===> integer/options.yml
+:output_style: compressed
+
+<===> integer/input.scss
+a {
+  b: rgb(1 2 3);
+  c: rgba(1, 2, 3, .5);
+}
+<===> integer/output.css
+a{b:#010203;c:rgba(1,2,3,.5)}
+<===>
+================================================================================
+<===> shorter_hsl/options.yml
+:output_style: compressed
+
+<===> shorter_hsl/input.scss
+a {b: rgb(1.5 2 3)}
+<===> shorter_hsl/output.css
+a{b:hsl(220,33.3333333333%,.8823529412%)}

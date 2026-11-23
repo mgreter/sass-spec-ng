@@ -57,8 +57,8 @@ a {
 }
 <===> mix_transparent/output.css
 a {
-  legacy: rgba(127.5, 0, 127.5, 0);
-  legacy-weight: rgba(76.5, 0, 178.5, 0);
+  legacy: rgba(50%, 0%, 50%, 0);
+  legacy-weight: rgba(30%, 0%, 70%, 0);
   rgb-method: rgba(0, 0, 0, 0);
   srgb: color(srgb 0 0 0 / 0);
   oklch: oklch(0% 0 60deg / 0);
