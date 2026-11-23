@@ -1,0 +1,112 @@
+<===> README.md
+# Equality of argument lists
+
+Like dart-sass, argument lists are compared (and hashed) like lists,
+ignoring their keywords. Before, two argument lists were only compared
+by their keywords (e.g. `args(1) == args(2)` was `true`).
+<===>
+================================================================================
+<===> equal/different_elements/input.scss
+@function args($a...) {@return $a}
+a {b: args(1) == args(2); c: args(1) != args(2)}
+<===> equal/different_elements/output.css
+a {
+  b: false;
+  c: true;
+}
+<===>
+================================================================================
+<===> equal/empty/input.scss
+@function args($a...) {@return $a}
+a {b: args() == args(); c: args() == ()}
+<===> equal/empty/output.css
+a {
+  b: true;
+  c: false;
+}
+<===>
+================================================================================
+<===> equal/list/input.scss
+@function args($a...) {@return $a}
+a {b: args(1, 2) == (1, 2); c: (1, 2) == args(1, 2); d: args(1, 2) == (1 2)}
+<===> equal/list/output.css
+a {
+  b: true;
+  c: true;
+  d: false;
+}
+<===>
+================================================================================
+<===> equal/same_elements/input.scss
+@function args($a...) {@return $a}
+a {b: args(1, 2) == args(1, 2)}
+<===> equal/same_elements/output.css
+a {
+  b: true;
+}
+<===>
+================================================================================
+<===> index/input.scss
+@use "sass:list";
+@function args($a...) {@return $a}
+a {b: list.index((args(1), args(2)), args(2))}
+<===> index/output.css
+a {
+  b: 2;
+}
+<===>
+================================================================================
+<===> keywords/ignored/input.scss
+@use "sass:meta";
+@function args($a...) {$_: meta.keywords($a); @return $a}
+a {b: args(1, $x: 2) == args(1, $x: 3); c: args(1, $x: 2) == args(1, $x: 2); d: args($x: 2) == args($y: 2)}
+<===> keywords/ignored/output.css
+a {
+  b: true;
+  c: true;
+  d: true;
+}
+<===>
+================================================================================
+<===> keywords/list/input.scss
+@use "sass:meta";
+@function args($a...) {$_: meta.keywords($a); @return $a}
+a {b: args(1, $x: 2) == (1,)}
+<===> keywords/list/output.css
+a {
+  b: true;
+}
+<===>
+================================================================================
+<===> map_key/arglist_lookup/input.scss
+@use "sass:map";
+@function args($a...) {@return $a}
+$m: ((1, 2): found);
+a {b: map.get($m, args(1, 2))}
+<===> map_key/arglist_lookup/output.css
+a {
+  b: found;
+}
+<===>
+================================================================================
+<===> map_key/keywords/input.scss
+@use "sass:map";
+@use "sass:meta";
+@function args($a...) {$_: meta.keywords($a); @return $a}
+$m: ((1, 2): found);
+a {b: map.get($m, args(1, 2, $x: 3))}
+<===> map_key/keywords/output.css
+a {
+  b: found;
+}
+<===>
+================================================================================
+<===> map_key/list_lookup/input.scss
+@use "sass:map";
+@function args($a...) {@return $a}
+$m: map.merge((x: y), (args(1, 2): found));
+a {b: map.get($m, (1, 2))}
+<===> map_key/list_lookup/output.css
+a {
+  b: found;
+}
