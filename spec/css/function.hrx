@@ -233,6 +233,15 @@ Error: Nothing may be indented beneath a @function result.
   '
   input.sass 3:5  root stylesheet
 
+<===> error/lowercase/result/nested/error-libsass
+Error: Nothing may be indented beneath a @function result.
+  ,
+2 |     result:
+  | /-----------^
+3 | |     b: c
+  | \----^
+  '
+  input.sass 2:10  root stylesheet
 <===>
 ================================================================================
 <===> error/uppercase/result/nested/input.sass
@@ -248,6 +257,15 @@ Error: Nothing may be indented beneath a @function result.
   '
   input.sass 3:5  root stylesheet
 
+<===> error/uppercase/result/nested/error-libsass
+Error: Nothing may be indented beneath a @function result.
+  ,
+2 |     result:
+  | /-----------^
+3 | |     b: c
+  | \----^
+  '
+  input.sass 2:10  root stylesheet
 <===>
 ================================================================================
 <===> error/interpolated/result/characters/input.scss
@@ -278,6 +296,15 @@ Error: Nothing may be indented beneath a @function result.
   '
   input.sass 3:5  root stylesheet
 
+<===> error/result/uppercase/nested/error-libsass
+Error: Nothing may be indented beneath a @function result.
+  ,
+2 |     RESULT:
+  | /-----------^
+3 | |     b: c
+  | \----^
+  '
+  input.sass 2:10  root stylesheet
 <===>
 ================================================================================
 <===> error/result/interpolated/characters/input.scss

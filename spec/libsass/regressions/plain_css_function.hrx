@@ -1,0 +1,81 @@
+<===> README.md
+Like dart-sass (1.94), @function rules whose names begin with -- are plain CSS
+at-rules. Only their (possibly nested) result properties are parsed as raw CSS,
+and calls to functions beginning with -- are never Sass function calls.
+<===>
+================================================================================
+<===> call/input.scss
+@function __a() {@return 1}
+b {
+  c: --a(1 + 2);
+  d: __a();
+}
+<===> call/output.css
+b {
+  c: --a(3);
+  d: 1;
+}
+<===>
+================================================================================
+<===> empty_result/input.scss
+@function --a() {result:;}
+<===> empty_result/output.css
+@function --a() {}
+<===>
+================================================================================
+<===> in_style_rule/input.scss
+a {
+  @function --b() {result: 1 + 1}
+}
+<===> in_style_rule/output.css
+@function --b() {
+  a {
+    result: 1 + 1;
+  }
+}
+<===>
+================================================================================
+<===> nested/media/input.scss
+@function --a() {
+  @media (b) {result: 1 + 1}
+  --c: d;
+}
+<===> nested/media/output.css
+@function --a() {
+  @media (b) {
+    result: 1 + 1;
+  }
+  --c: d;
+}
+<===>
+================================================================================
+<===> nested/style_rule/input.scss
+@function --a() {
+  .b {result: 1 + 1}
+}
+<===> nested/style_rule/output.css
+@function --a() {
+  .b {
+    result: 1 + 1;
+  }
+}
+<===>
+================================================================================
+<===> other_at_rule/input.scss
+@b {result: 1 + 1}
+<===> other_at_rule/output.css
+@b {
+  result: 2;
+}
+<===>
+================================================================================
+<===> other_declarations/input.scss
+@function --a() {
+  b: 1 + 1;
+  result: 1 + 1;
+}
+<===> other_declarations/output.css
+@function --a() {
+  b: 2;
+  result: 1 + 1;
+}
