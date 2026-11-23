@@ -51,10 +51,3 @@ Error: Expected identifier.
   '
   input.sass 2:8  root stylesheet
 
-<===> error/syntax/whitespace/newline/after_percent/error-libsass
-Error: Expected identifier.
-  ,
-3 |     1
-  |     ^
-  '
-  input.sass 3:5  root stylesheet

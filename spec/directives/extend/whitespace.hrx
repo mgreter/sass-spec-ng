@@ -130,14 +130,6 @@ Error: unrecognized syntax
   '
   input.sass 3:3  root stylesheet
 
-<===> error/before_optional/sass/error-libsass
-Error: Expected newline.
-  ,
-3 |   !optional
-  |   ^
-  '
-  input.sass 3:3  root stylesheet
-
 <===>
 ================================================================================
 <===> error/after_arg_indented/sass/input.sass
