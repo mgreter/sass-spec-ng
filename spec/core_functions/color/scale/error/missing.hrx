@@ -12,13 +12,12 @@ Error: $red: Because the CSS working group is still deciding on the best behavio
 
 <===> legacy/error-libsass
 Error: $red: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
-modifying missing channels (color: rgb(none 0 0).
+modifying missing channels (color: rgb(none 0 0)).
   ,
 2 | a {b: color.scale(rgb(none 0 0), $red: 10%)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
-
 <===>
 ================================================================================
 <===> modern/input.scss
@@ -35,13 +34,12 @@ Error: $lightness: Because the CSS working group is still deciding on the best b
 
 <===> modern/error-libsass
 Error: $lightness: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
-modifying missing channels (color: lab(none 0 0).
+modifying missing channels (color: lab(none 0 0)).
   ,
 2 | a {b: color.scale(lab(none 0 0), $lightness: 10%, $space: lab)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7  root stylesheet
-
 <===>
 ================================================================================
 <===> alpha/input.scss
@@ -58,7 +56,7 @@ Error: $alpha: Because the CSS working group is still deciding on the best behav
 
 <===> alpha/error-libsass
 Error: $alpha: Because the CSS working group is still deciding on the best behavior, Sass doesn't currently support
-modifying missing channels (color: rgb(0 0 0 / none).
+modifying missing channels (color: rgb(0 0 0 / none)).
   ,
 2 | a {b: color.scale(rgb(0 0 0 / none), $alpha: 10%)}
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

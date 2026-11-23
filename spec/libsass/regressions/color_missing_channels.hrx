@@ -1,0 +1,57 @@
+<===> README.md
+Like dart-sass (1.102/1.103), analogous sets of missing channels are preserved
+by color conversions and rec2020 uses the 2.4 gamma transfer function.
+<===>
+================================================================================
+<===> analogous/all_missing/input.scss
+@use 'sass:color';
+a {
+  b: color.to-space(color(srgb none none none), lab);
+  c: color.to-space(hsl(30deg none none), lch);
+}
+<===> analogous/all_missing/output.css
+a {
+  b: lab(none none none);
+  c: lch(none none none);
+}
+<===>
+================================================================================
+<===> analogous/hwb/input.scss
+@use 'sass:color';
+a {
+  b: color.to-space(hwb(none none none), hsl);
+  c: color.to-space(hwb(120 none none), hsl);
+  d: color.to-space(hwb(120 none none), lch);
+}
+<===> analogous/hwb/output.css
+a {
+  b: hsl(0, 0%, 0%);
+  c: hsl(120, 0%, 0%);
+  d: lch(none none 134.3838563618deg);
+}
+<===>
+================================================================================
+<===> analogous/lab_lch/input.scss
+@use 'sass:color';
+a {
+  b: color.to-space(lch(50% none none), lab);
+  c: color.to-space(lab(50% none none), lch);
+  d: color.to-space(oklch(50% none none), oklab);
+  e: color.to-space(lab(50% none none), oklch);
+}
+<===> analogous/lab_lch/output.css
+a {
+  b: lab(50% none none);
+  c: lch(50% none none);
+  d: oklab(50% none none);
+  e: oklch(56.8965517241% none none);
+}
+<===>
+================================================================================
+<===> rec2020_gamma/input.scss
+@use 'sass:color';
+a {b: color.to-space(color(rec2020 0.1 0.3 0.2), xyz)}
+<===> rec2020_gamma/output.css
+a {
+  b: color(xyz 0.0141253404 0.0399899899 0.0238545541);
+}
