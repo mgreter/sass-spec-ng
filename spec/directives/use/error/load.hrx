@@ -180,15 +180,6 @@ Error: Module loop: this module is already being loaded.
   '
   input.scss 1:1  root stylesheet
 
-<===> loop/use_self/error-libsass
-Error: An @import loop has been found:
-    input.scss imports input.scss
-  ,
-1 | @use "input";
-  | ^^^^^^^^^^^^
-  '
-  input.scss 1:1  root stylesheet
-
 <===>
 ================================================================================
 <===> loop/use_to_use/input.scss
@@ -207,9 +198,7 @@ Error: Module loop: this module is already being loaded.
   input.scss 1:1  root stylesheet
 
 <===> loop/use_to_use/error-libsass
-Error: An @import loop has been found:
-    input.scss imports other.scss
-    other.scss imports input.scss
+Error: Module loop: this module is already being loaded.
   ,
 1 | @use "input";
   | ^^^^^^^^^^^^
@@ -220,7 +209,6 @@ Error: An @import loop has been found:
   | ^^^^^^^^^^^^
   '
   input.scss 1:1  root stylesheet
-
 <===>
 ================================================================================
 <===> loop/use_to_import/input.scss
@@ -250,9 +238,7 @@ Error: This file is already being loaded.
   input.scss 1:1  root stylesheet
 
 <===> loop/use_to_import/error-libsass
-Error: An @import loop has been found:
-    input.scss imports other.scss
-    other.scss imports input.scss
+Error: This file is already being loaded.
   ,
 1 | @import "input";
   |         ^^^^^^^
@@ -263,7 +249,6 @@ Error: An @import loop has been found:
   | ^^^^^^^^^^^^
   '
   input.scss 1:1  root stylesheet
-
 <===>
 ================================================================================
 <===> loop/import_to_use/input.scss
@@ -292,9 +277,7 @@ Error: Module loop: this module is already being loaded.
   input.scss 1:9  root stylesheet
 
 <===> loop/import_to_use/error-libsass
-Error: An @import loop has been found:
-    input.scss imports other.scss
-    other.scss imports input.scss
+Error: Module loop: this module is already being loaded.
   ,
 1 | @use "input";
   | ^^^^^^^^^^^^
@@ -305,7 +288,6 @@ Error: An @import loop has been found:
   |         ^^^^^^^
   '
   input.scss 1:9  root stylesheet
-
 <===>
 ================================================================================
 <===> conflicting_namespace/explicit/input.scss

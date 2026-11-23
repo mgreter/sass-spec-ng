@@ -30,15 +30,6 @@ Error: Module loop: this module is already being loaded.
   '
   input.scss 1:1  root stylesheet
 
-<===> loop/forward_self/error-libsass
-Error: An @import loop has been found:
-    input.scss imports input.scss
-  ,
-1 | @forward "input";
-  | ^^^^^^^^^^^^^^^^
-  '
-  input.scss 1:1  root stylesheet
-
 <===>
 ================================================================================
 <===> loop/forward_to_forward/input.scss
@@ -57,9 +48,7 @@ Error: Module loop: this module is already being loaded.
   input.scss 1:1  root stylesheet
 
 <===> loop/forward_to_forward/error-libsass
-Error: An @import loop has been found:
-    input.scss imports other.scss
-    other.scss imports input.scss
+Error: Module loop: this module is already being loaded.
   ,
 1 | @forward "input";
   | ^^^^^^^^^^^^^^^^
@@ -70,7 +59,6 @@ Error: An @import loop has been found:
   | ^^^^^^^^^^^^^^^^
   '
   input.scss 1:1  root stylesheet
-
 <===>
 ================================================================================
 <===> loop/forward_to_use/input.scss
@@ -89,9 +77,7 @@ Error: Module loop: this module is already being loaded.
   input.scss 1:1  root stylesheet
 
 <===> loop/forward_to_use/error-libsass
-Error: An @import loop has been found:
-    input.scss imports other.scss
-    other.scss imports input.scss
+Error: Module loop: this module is already being loaded.
   ,
 1 | @use "input";
   | ^^^^^^^^^^^^
@@ -102,7 +88,6 @@ Error: An @import loop has been found:
   | ^^^^^^^^^^^^^^^^
   '
   input.scss 1:1  root stylesheet
-
 <===>
 ================================================================================
 <===> loop/forward_to_import/input.scss
@@ -132,9 +117,7 @@ Error: This file is already being loaded.
   input.scss 1:1  root stylesheet
 
 <===> loop/forward_to_import/error-libsass
-Error: An @import loop has been found:
-    input.scss imports other.scss
-    other.scss imports input.scss
+Error: This file is already being loaded.
   ,
 1 | @import "input";
   |         ^^^^^^^

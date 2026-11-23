@@ -39,8 +39,7 @@ Error: This file is already being loaded.
   input.scss 1:9  root stylesheet
 
 <===> error-libsass
-Error: An @import loop has been found:
-    _susy.scss imports _susy.scss
+Error: This file is already being loaded.
   ,
 1 | @import 'susy';
   |         ^^^^^^
