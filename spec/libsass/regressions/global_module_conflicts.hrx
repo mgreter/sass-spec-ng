@@ -1,0 +1,89 @@
+<===> README.md
+Members available from multiple global modules (`@use ... as *`) only cause an
+error when they are used. Members declared locally win over global modules.
+<===>
+================================================================================
+<===> local_member/keeps_module_member/input.scss
+@use "left" as *;
+@use "left" as l;
+@function f() {@return local}
+@mixin m {x: local}
+a {
+  b: l.f();
+  c: f();
+  @include l.m;
+  @include m;
+}
+<===> local_member/keeps_module_member/_left.scss
+$a: left;
+@function f() {@return left}
+@mixin m {x: left}
+<===> local_member/keeps_module_member/output.css
+a {
+  b: left;
+  c: local;
+  x: left;
+  x: local;
+}
+<===>
+================================================================================
+<===> unused_conflict/local_member/input.scss
+@use "left" as *;
+@use "right" as *;
+@function f() {@return local}
+a {b: f()}
+<===> unused_conflict/local_member/_left.scss
+$a: left;
+@function f() {@return left}
+@mixin m {x: left}
+<===> unused_conflict/local_member/_right.scss
+$a: right;
+@function f() {@return right}
+@mixin m {x: right}
+<===> unused_conflict/local_member/output.css
+a {
+  b: local;
+}
+<===>
+================================================================================
+<===> unused_conflict/namespaced/input.scss
+@use "left" as *;
+@use "right" as *;
+@use "right" as r;
+a {
+  b: r.$a;
+  c: r.f();
+  @include r.m;
+}
+<===> unused_conflict/namespaced/_left.scss
+$a: left;
+@function f() {@return left}
+@mixin m {x: left}
+<===> unused_conflict/namespaced/_right.scss
+$a: right;
+@function f() {@return right}
+@mixin m {x: right}
+<===> unused_conflict/namespaced/output.css
+a {
+  b: right;
+  c: right;
+  x: right;
+}
+<===>
+================================================================================
+<===> unused_conflict/unused/input.scss
+@use "left" as *;
+@use "right" as *;
+a {b: c}
+<===> unused_conflict/unused/_left.scss
+$a: left;
+@function f() {@return left}
+@mixin m {x: left}
+<===> unused_conflict/unused/_right.scss
+$a: right;
+@function f() {@return right}
+@mixin m {x: right}
+<===> unused_conflict/unused/output.css
+a {
+  b: c;
+}

@@ -251,13 +251,12 @@ Error: This mixin is available from multiple global modules.
   input.scss 5:7  root stylesheet
 
 <===> conflict/error-libsass
-Error: Mixin "member(...)" is available from multiple global modules.
+Error: This mixin is available from multiple global modules.
   ,
-3 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+5 | a {b: meta.get-mixin(member)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
   '
-  input.scss 3:1  root stylesheet
-
+  input.scss 5:7  root stylesheet
 <===>
 ================================================================================
 <===> escape/unquoted/non_normalized/input.scss

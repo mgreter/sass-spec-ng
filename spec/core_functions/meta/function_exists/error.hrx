@@ -127,6 +127,13 @@ Error: This function is available from multiple global modules.
   input.scss 5:7  root stylesheet
 
 
+<===> conflict/error-libsass
+Error: This function is available from multiple global modules.
+  ,
+5 | a {b: meta.function-exists(member)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 5:7  root stylesheet
 <===>
 ================================================================================
 <===> module/non_existent/input.scss

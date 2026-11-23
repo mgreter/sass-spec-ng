@@ -148,6 +148,18 @@ Error: This variable is available from multiple global modules.
   _midstream.scss 4:1  load()
   input.scss 2:5       root stylesheet
 
+<===> conflict/error-libsass
+Error: This variable is available from multiple global modules.
+  ,
+4 | $a: c !default;
+  | ^^^^^^^^^^^^^^
+  '
+  _midstream.scss 4:1  load()
+  ,
+2 | $_: meta.load("midstream", $with: (a: b));
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5       root stylesheet
 <===>
 ================================================================================
 <===> repeated_variable/input.scss

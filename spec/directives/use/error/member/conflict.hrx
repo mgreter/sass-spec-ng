@@ -24,13 +24,12 @@ Error: This variable is available from multiple global modules.
   input.scss 4:7  root stylesheet
 
 <===> variable/error-libsass
-Error: $member is available from multiple global modules.
+Error: This variable is available from multiple global modules.
   ,
-2 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+4 | a {b: $member}
+  |       ^^^^^^^
   '
-  input.scss 2:1  root stylesheet
-
+  input.scss 4:7  root stylesheet
 <===>
 ================================================================================
 <===> function/input.scss
@@ -59,13 +58,12 @@ Error: This function is available from multiple global modules.
   input.scss 4:7  root stylesheet
 
 <===> function/error-libsass
-Error: Function "member(...)" is available from multiple global modules.
+Error: This function is available from multiple global modules.
   ,
-2 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+4 | a {b: member()}
+  |       ^^^^^^^^
   '
-  input.scss 2:1  root stylesheet
-
+  input.scss 4:7  root stylesheet
 <===>
 ================================================================================
 <===> mixin/input.scss
@@ -94,13 +92,12 @@ Error: This mixin is available from multiple global modules.
   input.scss 4:4  root stylesheet
 
 <===> mixin/error-libsass
-Error: Mixin "member(...)" is available from multiple global modules.
+Error: This mixin is available from multiple global modules.
   ,
-2 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+4 | a {@include member}
+  |    ^^^^^^^^^^^^^^^
   '
-  input.scss 2:1  root stylesheet
-
+  input.scss 4:4  root stylesheet
 <===>
 ================================================================================
 <===> same_value/variable/input.scss
@@ -129,13 +126,12 @@ Error: This variable is available from multiple global modules.
   input.scss 4:7  root stylesheet
 
 <===> same_value/variable/error-libsass
-Error: $c is available from multiple global modules.
+Error: This variable is available from multiple global modules.
   ,
-2 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+4 | a {b: $c}
+  |       ^^
   '
-  input.scss 2:1  root stylesheet
-
+  input.scss 4:7  root stylesheet
 <===>
 ================================================================================
 <===> same_value/function/input.scss
@@ -164,13 +160,12 @@ Error: This function is available from multiple global modules.
   input.scss 4:7  root stylesheet
 
 <===> same_value/function/error-libsass
-Error: Function "c(...)" is available from multiple global modules.
+Error: This function is available from multiple global modules.
   ,
-2 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+4 | a {b: c()}
+  |       ^^^
   '
-  input.scss 2:1  root stylesheet
-
+  input.scss 4:7  root stylesheet
 <===>
 ================================================================================
 <===> same_value/mixin/input.scss
@@ -199,9 +194,9 @@ Error: This mixin is available from multiple global modules.
   input.scss 4:4  root stylesheet
 
 <===> same_value/mixin/error-libsass
-Error: Mixin "b(...)" is available from multiple global modules.
+Error: This mixin is available from multiple global modules.
   ,
-2 | @use "other2" as *;
-  | ^^^^^^^^^^^^^^^^^^
+4 | a {@include b}
+  |    ^^^^^^^^^^
   '
-  input.scss 2:1  root stylesheet
+  input.scss 4:4  root stylesheet
