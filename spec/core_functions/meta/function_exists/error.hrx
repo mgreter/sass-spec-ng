@@ -10,6 +10,18 @@ Error: $name: 12px is not a string.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/type/name/error-libsass
+Error: $name: 12px is not a string.
+  ,
+2 | a {b: meta.function-exists(12px)}
+  |                            ^^^^
+  '
+  input.scss 2:28  function-exists()
+  ,
+2 | a {b: meta.function-exists(12px)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 <===>
 ================================================================================
 <===> argument/type/module/input.scss
@@ -24,6 +36,18 @@ Error: $module: 1 is neither a string nor a module reference.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/type/module/error-libsass
+Error: $module: 1 is neither a string nor a module reference.
+  ,
+2 | a {b: meta.function-exists("red", 1)}
+  |                                   ^
+  '
+  input.scss 2:35  function-exists()
+  ,
+2 | a {b: meta.function-exists("red", 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 <===>
 ================================================================================
 <===> argument/too_few/input.scss
@@ -42,6 +66,13 @@ Error: Missing argument $name.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/too_few/error-libsass
+Error: Missing argument $name.
+  ,
+2 | a {b: meta.function-exists()}
+  |       ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 <===>
 ================================================================================
 <===> argument/too_many/input.scss
@@ -60,6 +91,13 @@ Error: Only 2 arguments allowed, but 3 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> argument/too_many/error-libsass
+Error: Only 2 arguments allowed, but 3 were passed.
+  ,
+2 | a {b: meta.function-exists(c, d, e)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 <===>
 ================================================================================
 <===> conflict/input.scss

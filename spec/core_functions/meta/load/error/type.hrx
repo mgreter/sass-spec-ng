@@ -10,6 +10,18 @@ Error: $url: 1 is not a string.
   '
   input.scss 2:5  root stylesheet
 
+<===> url/error-libsass
+Error: $url: 1 is not a string.
+  ,
+2 | $_: meta.load(1);
+  |               ^
+  '
+  input.scss 2:15  load()
+  ,
+2 | $_: meta.load(1);
+  |     ^^^^^^^^^^^^
+  '
+  input.scss 2:5   root stylesheet
 <===>
 ================================================================================
 <===> with/map/input.scss
@@ -24,6 +36,18 @@ Error: $with: 1 is not a map.
   '
   input.scss 2:5  root stylesheet
 
+<===> with/map/error-libsass
+Error: $with: 1 is not a map.
+  ,
+2 | $_: meta.load("other", $with: 1);
+  |                               ^
+  '
+  input.scss 2:31  load()
+  ,
+2 | $_: meta.load("other", $with: 1);
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5   root stylesheet
 <===>
 ================================================================================
 <===> with/key/input.scss
@@ -37,3 +61,15 @@ Error: $with key: 1 is not a string.
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:5  root stylesheet
+<===> with/key/error-libsass
+Error: $with key: 1 is not a string.
+  ,
+2 | $_: meta.load("other", $with: (1: null));
+  |                                ^
+  '
+  input.scss 2:32  load()
+  ,
+2 | $_: meta.load("other", $with: (1: null));
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5   root stylesheet

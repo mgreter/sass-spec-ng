@@ -176,6 +176,18 @@ Error: $module: null is neither a string nor a module reference.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/argument/type/module/error-libsass
+Error: $module: null is neither a string nor a module reference.
+  ,
+2 | a {b: meta.get-module(null)}
+  |                       ^^^^
+  '
+  input.scss 2:23  get-module()
+  ,
+2 | a {b: meta.get-module(null)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
 <===>
 ================================================================================
 <===> error/argument/too_few/input.scss
@@ -194,6 +206,13 @@ Error: Missing argument $module.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/argument/too_few/error-libsass
+Error: Missing argument $module.
+  ,
+2 | a {b: meta.get-module()}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 <===>
 ================================================================================
 <===> error/argument/too_many/input.scss
@@ -212,6 +231,13 @@ Error: Only 1 argument allowed, but 2 were passed.
   '
   input.scss 2:7  root stylesheet
 
+<===> error/argument/too_many/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | a {b: meta.get-module(c, d)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
 <===>
 ================================================================================
 <===> error/non_existent/input.scss

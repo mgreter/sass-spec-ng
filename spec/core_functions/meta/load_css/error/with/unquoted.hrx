@@ -15,6 +15,18 @@ Error: $\24 was not declared with !default in the @used module.
   '
   input.scss 3:1  root stylesheet
 
+<===> non_normalized/error-libsass
+Error: $\24 was not declared with !default in the @used module.
+  ,
+3 | @include meta.load-css("other", $with: (string.unquote("\\24"): override));
+  |                                                        ^^^^^^
+  '
+  input.scss 3:56  load-css()
+  ,
+3 | @include meta.load-css("other", $with: (string.unquote("\\24"): override));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1   root stylesheet
 <===>
 ================================================================================
 <===> dash_insensitive/input.scss
@@ -34,6 +46,18 @@ Error: $a\5f b was not declared with !default in the @used module.
   '
   input.scss 3:1  root stylesheet
 
+<===> dash_insensitive/error-libsass
+Error: $a\5f b was not declared with !default in the @used module.
+  ,
+3 | @include meta.load-css("other", $with: (string.unquote("a\\5f b"): override));
+  |                                                        ^^^^^^^^^
+  '
+  input.scss 3:56  load-css()
+  ,
+3 | @include meta.load-css("other", $with: (string.unquote("a\\5f b"): override));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1   root stylesheet
 <===>
 ================================================================================
 <===> semantic/input.scss
@@ -52,3 +76,15 @@ Error: $$ was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 3:1  root stylesheet
+<===> semantic/error-libsass
+Error: $$ was not declared with !default in the @used module.
+  ,
+3 | @include meta.load-css("other", $with: (string.unquote("$"): override));
+  |                                                        ^^^
+  '
+  input.scss 3:56  load-css()
+  ,
+3 | @include meta.load-css("other", $with: (string.unquote("$"): override));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:1   root stylesheet

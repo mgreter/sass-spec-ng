@@ -34,3 +34,15 @@ Error: Module loop: input.scss is already being loaded.
   '
   _other.scss 2:7  load()
   input.scss 2:5   root stylesheet
+<===> loop/error-libsass
+Error: Module loop: input.scss is already being loaded.
+  ,
+2 | c {d: meta.load("input")}
+  |       ^^^^^^^^^^^^^^^^^^
+  '
+  _other.scss 2:7  load()
+  ,
+2 | $_: meta.load("other");
+  |     ^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5   root stylesheet

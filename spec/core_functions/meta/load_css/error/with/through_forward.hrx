@@ -16,6 +16,18 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> show/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 <===>
 ================================================================================
 <===> hide/input.scss
@@ -36,6 +48,18 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> hide/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 <===>
 ================================================================================
 <===> as/input.scss
@@ -56,6 +80,18 @@ Error: $a was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> as/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 <===>
 ================================================================================
 <===> with/input.scss
@@ -75,3 +111,15 @@ Error: $a was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+<===> with/error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  |                                        ^
+  '
+  input.scss 2:40  load-css()
+  ,
+2 | @include meta.load-css("used", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet

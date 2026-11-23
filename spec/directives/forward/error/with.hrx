@@ -317,7 +317,7 @@ Error: There is no module with namespace "upstream".
   input.scss 1:1        root stylesheet
 
 <===> invalid_expression/module_loaded_later/error-libsass
-Error: There is no module with the namespace "upstream".
+Error: There is no module with namespace "upstream".
   ,
 1 | @forward "configured" with ($a: upstream.$b);
   |                                 ^^^^^^^^^^^

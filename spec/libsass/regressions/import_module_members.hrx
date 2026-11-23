@@ -266,7 +266,7 @@ $a: 0 !default;
 @function fx() {@return fx}
 @mixin mx {m: x}
 <===> use_in_import/not_exposed/error
-Error: There is no module with the namespace "x".
+Error: There is no module with namespace "x".
   ,
 2 | a {@include x.mx}
   |    ^^^^^^^^^^^^^

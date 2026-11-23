@@ -1,0 +1,132 @@
+<===> README.md
+Regression specs for first-class modules (meta.load(), meta.get-module() and
+meta.css()) that aren't covered by the upstream specs.
+<===>
+================================================================================
+<===> inspect/containers/input.scss
+@use "sass:meta";
+@use "other";
+a {
+  b: meta.inspect((meta.get-module(meta): 1));
+  c: meta.inspect([meta.get-module(other)]);
+  d: not meta.get-module(meta);
+  e: meta.load("other") == meta.get-module(other);
+}
+<===> inspect/containers/_other.scss
+$value: c;
+<===> inspect/containers/output.css
+a {
+  b: (get-module("meta"): 1);
+  c: [get-module("other")];
+  d: false;
+  e: true;
+}
+<===>
+================================================================================
+<===> load/built_in/input.scss
+@use "sass:meta";
+$m: meta.load("sass:math");
+a {
+  b: meta.inspect($m);
+  c: meta.global-variable-exists("pi", $m);
+  d: meta.type-of($m);
+}
+@include meta.css($m);
+<===> load/built_in/output.css
+a {
+  b: get-module("math");
+  c: true;
+  d: module;
+}
+<===>
+================================================================================
+<===> load/members/input.scss
+@use "sass:meta";
+$m: meta.load("other");
+a {
+  b: meta.inspect(meta.module-functions($m));
+  c: meta.call(meta.get-function(f, $module: $m));
+  d: meta.mixin-exists(m, $m);
+  e: meta.inspect(meta.module-mixins($m));
+  @include meta.apply(meta.get-mixin(m, $m));
+}
+@include meta.css($m);
+<===> load/members/_other.scss
+$value: c;
+@function f() {@return d}
+@mixin m {e: f}
+g {h: i}
+<===> load/members/output.css
+a {
+  b: ("f": get-function("f"));
+  c: d;
+  d: true;
+  e: ("m": get-mixin("m"));
+  e: f;
+}
+
+g {
+  h: i;
+}
+<===>
+================================================================================
+<===> module_variables/no_caller_variables/input.scss
+@use "sass:meta";
+@use "other";
+$x: 1;
+a {b: meta.inspect(meta.module-variables("other"))}
+<===> module_variables/no_caller_variables/_other.scss
+$value: c;
+<===> module_variables/no_caller_variables/output.css
+a {
+  b: ("value": c);
+}
+<===>
+================================================================================
+<===> error/css_value/mixin/input.scss
+@use "sass:meta";
+@mixin m {}
+a {b: meta.get-mixin(m)}
+<===> error/css_value/mixin/error
+Error: get-mixin("m") isn't a valid CSS value.
+  ,
+3 | a {b: meta.get-mixin(m)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
+  input.scss 3:7  root stylesheet
+<===>
+================================================================================
+<===> error/css_value/module/input.scss
+@use "sass:meta";
+a {b: meta.get-module(meta)}
+<===> error/css_value/module/error
+Error: get-module("meta") isn't a valid CSS value.
+  ,
+2 | a {b: meta.get-module(meta)}
+  |       ^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===>
+================================================================================
+<===> error/load/unknown_built_in/input.scss
+@use "sass:meta";
+$_: meta.load("sass:nope");
+<===> error/load/unknown_built_in/error
+Error: Can't find stylesheet to import.
+  ,
+2 | $_: meta.load("sass:nope");
+  |     ^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:5  root stylesheet
+<===>
+================================================================================
+<===> error/operation/plus_string/input.scss
+@use "sass:meta";
+a {b: meta.get-module(meta) + "x"}
+<===> error/operation/plus_string/error
+Error: Undefined operation "get-module("meta") + "x"".
+  ,
+2 | a {b: meta.get-module(meta) + "x"}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet

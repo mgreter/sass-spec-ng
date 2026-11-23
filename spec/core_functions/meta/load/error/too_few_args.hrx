@@ -13,3 +13,10 @@ Error: Missing argument $url.
   |           ======================= declaration
   '
   input.scss 2:5  root stylesheet
+<===> error-libsass
+Error: Missing argument $url.
+  ,
+2 | $_: meta.load();
+  |     ^^^^^^^^^^^
+  '
+  input.scss 2:5  root stylesheet

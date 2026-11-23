@@ -86,7 +86,7 @@ Error: There is no module with namespace "other".
   input.scss 1:29  root stylesheet
 
 <===> module_loaded_later/error-libsass
-Error: There is no module with the namespace "other".
+Error: There is no module with namespace "other".
   ,
 1 | @use "configured" with ($a: other.$b);
   |                             ^^^^^^^^

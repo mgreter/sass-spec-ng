@@ -14,6 +14,18 @@ Error: $\24 was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> non_normalized/error-libsass
+Error: $\24 was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("other", $with: ("\\24": override));
+  |                                         ^^^^^^
+  '
+  input.scss 2:41  load-css()
+  ,
+2 | @include meta.load-css("other", $with: ("\\24": override));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 <===>
 ================================================================================
 <===> dash_insensitive/input.scss
@@ -32,6 +44,18 @@ Error: $a\5f b was not declared with !default in the @used module.
   '
   input.scss 2:1  root stylesheet
 
+<===> dash_insensitive/error-libsass
+Error: $a\5f b was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("other", $with: ("a\\5f b": override));
+  |                                         ^^^^^^^^^
+  '
+  input.scss 2:41  load-css()
+  ,
+2 | @include meta.load-css("other", $with: ("a\\5f b": override));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 <===>
 ================================================================================
 <===> semantic/input.scss
@@ -49,3 +73,15 @@ Error: $$ was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+<===> semantic/error-libsass
+Error: $$ was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("other", $with: ("$": override));
+  |                                         ^^^
+  '
+  input.scss 2:41  load-css()
+  ,
+2 | @include meta.load-css("other", $with: ("$": override));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet

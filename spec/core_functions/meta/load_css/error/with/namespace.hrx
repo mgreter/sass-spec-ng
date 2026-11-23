@@ -16,3 +16,15 @@ Error: $a was not declared with !default in the @used module.
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet
+<===> error-libsass
+Error: $a was not declared with !default in the @used module.
+  ,
+2 | @include meta.load-css("midstream", $with: (a: b));
+  |                                             ^
+  '
+  input.scss 2:45  load-css()
+  ,
+2 | @include meta.load-css("midstream", $with: (a: b));
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet

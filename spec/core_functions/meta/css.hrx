@@ -139,6 +139,18 @@ Error: $module: 1 is neither a string nor a module reference.
   '
   input.scss 2:1  root stylesheet
 
+<===> error/argument/type/error-libsass
+Error: $module: 1 is neither a string nor a module reference.
+  ,
+2 | @include meta.css(1);
+  |                   ^
+  '
+  input.scss 2:19  css()
+  ,
+2 | @include meta.css(1);
+  | ^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1   root stylesheet
 <===>
 ================================================================================
 <===> error/argument/too_few/input.scss
@@ -157,6 +169,13 @@ Error: Missing argument $module.
   '
   input.scss 2:1  root stylesheet
 
+<===> error/argument/too_few/error-libsass
+Error: Missing argument $module.
+  ,
+2 | @include meta.css();
+  | ^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:1  root stylesheet
 <===>
 ================================================================================
 <===> error/argument/too_many/input.scss
@@ -172,5 +191,12 @@ Error: Only 1 argument allowed, but 2 were passed.
   ,--> sass:meta
 1 | @mixin css($module) {
   |        ============ declaration
+  '
+  input.scss 2:1  root stylesheet
+<===> error/argument/too_many/error-libsass
+Error: Only 1 argument allowed, but 2 were passed.
+  ,
+2 | @include meta.css(meta.get-module("meta"), a);
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:1  root stylesheet

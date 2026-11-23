@@ -261,7 +261,7 @@ Error: $module: 1 is neither a string nor a module reference.
   input.scss 2:20  root stylesheet
 
 <===> error/type/error-libsass
-Error: $module: 1 is not a string.
+Error: $module: 1 is neither a string nor a module reference.
   ,
 2 | a {b: meta.inspect(meta.module-variables(1))}
   |                                          ^
@@ -277,7 +277,6 @@ Error: $module: 1 is not a string.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> error/too_few_args/input.scss
