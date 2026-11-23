@@ -1,0 +1,123 @@
+<===> README.md
+# Bubbling of nested media rules
+
+Like dart-sass, a nested media rule bubbles through an outer media rule if all
+its queries are from the merged sources (only the first query was checked).
+<===>
+================================================================================
+<===> at_root/input.scss
+@media print, screen {x {@at-root {@media screen {a {b: c}}}}}
+<===> at_root/output.css
+@media screen {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> at_root_without_media/input.scss
+@media print, screen {@at-root (without: media) {@media screen {a {b: c}}}}
+<===> at_root_without_media/output.css
+@media screen {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> cancelled/sibling_after/input.scss
+@media screen {@media print {a {b: c}}}
+y {z: z}
+<===> cancelled/sibling_after/output.css
+y {
+  z: z;
+}
+<===>
+================================================================================
+<===> cancelled/with_siblings/input.scss
+x {@media foo {a {b: c} @media bar {d {e: f}}}}
+y {z: z}
+<===> cancelled/with_siblings/output.css
+@media foo {
+  x a {
+    b: c;
+  }
+}
+
+y {
+  z: z;
+}
+<===>
+================================================================================
+<===> first_query_merged/input.scss
+@media screen, print {@media screen {a {b: c}}}
+<===> first_query_merged/output.css
+@media screen {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> first_query_not_merged/input.scss
+@media print, screen {@media screen {a {b: c}}}
+<===> first_query_not_merged/output.css
+@media screen {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> load_css/input.scss
+@use "sass:meta";
+@media print, screen {@include meta.load-css("m")}
+<===> load_css/_m.scss
+@media screen {a {b: c}}
+<===> load_css/output.css
+@media screen {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> mixin/input.scss
+@mixin m {@media screen {a {b: c}}}
+@media print, screen {@include m}
+<===> mixin/output.css
+@media screen {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> style_rule/input.scss
+@media print, screen {x {@media screen {a {b: c}}}}
+<===> style_rule/output.css
+@media screen {
+  x a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> three_levels/input.scss
+@media print, screen {@media screen {@media (color) {a {b: c}}}}
+<===> three_levels/output.css
+@media screen and (color) {
+  a {
+    b: c;
+  }
+}
+<===>
+================================================================================
+<===> three_levels_list/input.scss
+@media print, screen {@media screen, print {@media (color) {a {b: c}}}}
+<===> three_levels_list/output.css
+@media print and (color), screen and (color) {
+  a {
+    b: c;
+  }
+}
