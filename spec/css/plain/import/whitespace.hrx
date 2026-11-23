@@ -29,31 +29,12 @@ Error: This file is already being loaded.
   input.sass 1:9  root stylesheet
 
 <===> error/after_import/sass/error-libsass
-DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
-
-More info and automated migrator: https://sass-lang.com/d/import
-
-  ,
-1 | @import
-  |         ^
-  '
-    input.sass 1:9  root stylesheet
-
-WARNING: This selector doesn't have any properties and won't be rendered.
-
-  ,
-2 | "a"
-  | ^^^
-  '
-    input.sass 2:1  root stylesheet
-
-Error: Can't find stylesheet to import.
+Error: This file is already being loaded.
   ,
 1 | @import
   |        ^
   '
   input.sass 1:8  root stylesheet
-
 <===>
 ================================================================================
 <===> error/after_import_indented/sass/input.sass
