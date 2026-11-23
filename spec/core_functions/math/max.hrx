@@ -253,4 +253,9 @@ Error: 1px and 2s have incompatible units.
 2 | a {b: math.max(1px, 2s)}
   |       ^^^^^^^^^^^^^^^^^
   '
+  input.scss 2:7   max()
+  ,
+2 | a {b: math.max(1px, 2s)}
+  |       ^^^^^^^^^^^^^^^^^
+  '
   input.scss 2:7   root stylesheet
