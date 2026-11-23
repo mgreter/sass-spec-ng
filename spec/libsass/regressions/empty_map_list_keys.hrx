@@ -1,0 +1,102 @@
+<===> README.md
+# Empty maps and lists as map keys
+
+An empty map is equal to an empty list (also with brackets or another
+separator), but they had different hashes, so they didn't match as map keys.
+<===>
+================================================================================
+<===> deep_merge/input.scss
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$m: map.deep-merge(((): (x: 1)), ($empty-map: (y: 2)));
+a {b: map.get($m, (), x); c: map.get($m, (), y); d: length($m)}
+<===> deep_merge/output.css
+a {
+  b: 1;
+  c: 2;
+  d: 1;
+}
+<===>
+================================================================================
+<===> get/bracketed_key/input.scss
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$m: ([]: found);
+a {b: map.get($m, $empty-map); c: map.get($m, [])}
+<===> get/bracketed_key/output.css
+a {
+  b: found;
+  c: found;
+}
+<===>
+================================================================================
+<===> get/comma_key/input.scss
+@use "sass:list";
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$l: list.join((), (), comma);
+$m: ($l: found);
+a {b: map.get($m, $empty-map); c: map.get($m, $l)}
+<===> get/comma_key/output.css
+a {
+  b: found;
+  c: found;
+}
+<===>
+================================================================================
+<===> get/list_key_map_lookup/input.scss
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$m: ((): found);
+a {b: map.get($m, $empty-map)}
+<===> get/list_key_map_lookup/output.css
+a {
+  b: found;
+}
+<===>
+================================================================================
+<===> get/map_key_list_lookup/input.scss
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$m: map.merge((x: y), ($empty-map: found));
+a {b: map.get($m, ())}
+<===> get/map_key_list_lookup/output.css
+a {
+  b: found;
+}
+<===>
+================================================================================
+<===> has_key/input.scss
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$m: ((): found);
+a {b: map.has-key($m, $empty-map)}
+<===> has_key/output.css
+a {
+  b: true;
+}
+<===>
+================================================================================
+<===> merge/input.scss
+@use "sass:map";
+$empty-map: map.remove((a: 1), a);
+$m: map.merge(((): 1), ($empty-map: 2));
+a {b: map.get($m, ()); c: length($m)}
+<===> merge/output.css
+a {
+  b: 2;
+  c: 1;
+}
+<===>
+================================================================================
+<===> non_empty_lists/input.scss
+@use "sass:map";
+$m: ((1 2): a, (1, 2): b, [1 2]: c);
+a {b: map.get($m, (1 2)); c: map.get($m, (1, 2)); d: map.get($m, [1 2]); e: length($m)}
+<===> non_empty_lists/output.css
+a {
+  b: a;
+  c: b;
+  d: c;
+  e: 3;
+}
