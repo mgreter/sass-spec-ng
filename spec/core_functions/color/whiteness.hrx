@@ -258,7 +258,7 @@ Error: color.whiteness() is only supported for legacy colors. Please use color.c
   input.scss 2:7  root stylesheet
 
 <===> error/non_legacy/error-libsass
-Error: whiteness() is only supported for legacy colors. Please use color.channel() instead with an explicit $space
+Error: color.whiteness() is only supported for legacy colors. Please use color.channel() instead with an explicit $space
 argument.
   ,
 2 | a {b: color.whiteness(color(srgb 1 1 1))}
