@@ -1,0 +1,131 @@
+<===> README.md
+# At-rules nested in keyframes (and vice versa)
+
+Like dart-sass, an unknown at-rule within `@keyframes` is still in the keyframes
+(and `@keyframes` within an unknown at-rule is still in the unknown at-rule).
+<===>
+================================================================================
+<===> keyframes_in_unknown/block/input.scss
+@foo {@keyframes k {@bar {50% {a: b}}}}
+<===> keyframes_in_unknown/block/output.css
+@foo {
+  @keyframes k {
+    @bar {
+      50% {
+        a: b;
+      }
+    }
+  }
+}
+<===>
+================================================================================
+<===> keyframes_in_unknown/declaration/input.scss
+@foo {@keyframes k {a: b}}
+<===> keyframes_in_unknown/declaration/output.css
+@foo {
+  @keyframes k {
+    a: b;
+  }
+}
+<===>
+================================================================================
+<===> keyframes_in_unknown/style_rule/input.scss
+x {@foo {@keyframes k {50% {a: b}}}}
+<===> keyframes_in_unknown/style_rule/output.css
+@foo {
+  @keyframes k {
+    50% {
+      a: b;
+    }
+  }
+}
+<===>
+================================================================================
+<===> unknown_in_keyframes/declaration/input.scss
+@keyframes k {@foo {a: b}}
+<===> unknown_in_keyframes/declaration/output.css
+@keyframes k {
+  @foo {
+    a: b;
+  }
+}
+<===>
+================================================================================
+<===> unknown_in_keyframes/from/input.scss
+@keyframes k {@foo {from {a: b}}}
+<===> unknown_in_keyframes/from/output.css
+@keyframes k {
+  @foo {
+    from {
+      a: b;
+    }
+  }
+}
+<===>
+================================================================================
+<===> unknown_in_keyframes/list/input.scss
+@keyframes k {@foo {0%, 100% {a: b}}}
+<===> unknown_in_keyframes/list/output.css
+@keyframes k {
+  @foo {
+    0%, 100% {
+      a: b;
+    }
+  }
+}
+<===>
+================================================================================
+<===> unknown_in_keyframes/nested/input.scss
+@keyframes k {@foo {@bar {50% {a: b}}}}
+<===> unknown_in_keyframes/nested/output.css
+@keyframes k {
+  @foo {
+    @bar {
+      50% {
+        a: b;
+      }
+    }
+  }
+}
+<===>
+================================================================================
+<===> unknown_in_keyframes/percentage/input.scss
+@keyframes k {@foo {50% {a: b}}}
+<===> unknown_in_keyframes/percentage/output.css
+@keyframes k {
+  @foo {
+    50% {
+      a: b;
+    }
+  }
+}
+<===>
+================================================================================
+<===> unknown_in_keyframes/vendor/input.scss
+@-webkit-keyframes k {@foo {50% {a: b}}}
+<===> unknown_in_keyframes/vendor/output.css
+@-webkit-keyframes k {
+  @foo {
+    50% {
+      a: b;
+    }
+  }
+}
+<===>
+================================================================================
+<===> error/unknown_in_keyframes/selector/input.scss
+@keyframes k {@foo {.a {b: c}}}
+<===> error/unknown_in_keyframes/selector/error
+Error: expected "%".
+  ,
+1 | @keyframes k {@foo {.a {b: c}}}
+  |                      ^
+  '
+  input.scss 1:22  root stylesheet
+<===> error/unknown_in_keyframes/selector/error-libsass
+Error: expected "%".
+  ,
+1 | @keyframes k {@foo {.a{b: c}}}
+  |                      ^
+  '
+  input.scss 1:22  root stylesheet
