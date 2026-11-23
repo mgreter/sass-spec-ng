@@ -1,0 +1,110 @@
+<===> README.md
+# Detection of var() in color functions
+
+Like dart-sass, an unquoted string is a `var()` if it starts with `var(`,
+case-insensitive, and is at least as long as `var(--_)`.
+<===>
+================================================================================
+<===> minimum_length/input.scss
+@use "sass:string";
+a {b: rgb(string.unquote("var(--_)"))}
+<===> minimum_length/output.css
+a {
+  b: rgb(var(--_));
+}
+<===>
+================================================================================
+<===> mixed_case/rgb/input.scss
+a {b: rgb(Var(--x), 2, 3)}
+<===> mixed_case/rgb/output.css
+a {
+  b: rgb(Var(--x), 2, 3);
+}
+<===>
+================================================================================
+<===> uppercase/color/input.scss
+a {b: color(VAR(--x))}
+<===> uppercase/color/output.css
+a {
+  b: color(VAR(--x));
+}
+<===>
+================================================================================
+<===> uppercase/color_space/input.scss
+a {b: color(VAR(--s) 1 2 3)}
+<===> uppercase/color_space/output.css
+a {
+  b: color(VAR(--s) 1 2 3);
+}
+<===>
+================================================================================
+<===> uppercase/hsla/input.scss
+a {b: hsla(VAR(--c), 0.5)}
+<===> uppercase/hsla/output.css
+a {
+  b: hsla(VAR(--c), 0.5);
+}
+<===>
+================================================================================
+<===> uppercase/rgb/input.scss
+a {b: rgb(VAR(--x))}
+<===> uppercase/rgb/output.css
+a {
+  b: rgb(VAR(--x));
+}
+<===>
+================================================================================
+<===> uppercase/rgba/input.scss
+a {b: rgba(VAR(--c), 0.5)}
+<===> uppercase/rgba/output.css
+a {
+  b: rgba(VAR(--c), 0.5);
+}
+<===>
+================================================================================
+<===> error/too_short/color/input.scss
+@use "sass:string";
+a {b: color(string.unquote("var(x)"))}
+<===> error/too_short/color/error
+Error: $description: Unknown color space "var(x)".
+  ,
+2 | a {b: color(string.unquote("var(x)"))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===> error/too_short/color/error-libsass
+Error: $description: Unknown color space "var(x)".
+  ,
+2 | a {b: color(string.unquote("var(x)"))}
+  |                            ^^^^^^^^
+  '
+  input.scss 2:28  color()
+  ,
+2 | a {b: color(string.unquote("var(x)"))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
+<===>
+================================================================================
+<===> error/too_short/rgba/input.scss
+@use "sass:string";
+a {b: rgba(string.unquote("var(c)"), 0.5)}
+<===> error/too_short/rgba/error
+Error: $color: var(c) is not a color.
+  ,
+2 | a {b: rgba(string.unquote("var(c)"), 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7  root stylesheet
+<===> error/too_short/rgba/error-libsass
+Error: $color: var(c) is not a color.
+  ,
+2 | a {b: rgba(string.unquote("var(c)"), 0.5)}
+  |                           ^^^^^^^^
+  '
+  input.scss 2:27  rgba()
+  ,
+2 | a {b: rgba(string.unquote("var(c)"), 0.5)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 2:7   root stylesheet
