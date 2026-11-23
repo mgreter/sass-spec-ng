@@ -1,0 +1,49 @@
+<===> README.md
+Like dart-sass, quoted strings in raw CSS contexts (custom properties, unknown
+at-rules, special functions) keep the quotes and escapes as written.
+<===>
+================================================================================
+<===> custom_property/input.scss
+a {
+  --b: 'x';
+  --c: 'a#{1 + 1}b';
+  --d: 'it\'s';
+  --e: "q'q";
+}
+<===> custom_property/output.css
+a {
+  --b: 'x';
+  --c: 'a2b';
+  --d: 'it\'s';
+  --e: "q'q";
+}
+<===>
+================================================================================
+<===> special_function/input.scss
+a {
+  b: type('x' "y");
+  c: -a-calc('d');
+}
+<===> special_function/output.css
+a {
+  b: type('x' "y");
+  c: -a-calc('d');
+}
+<===>
+================================================================================
+<===> supports/input.scss
+@supports (--a: 'b') {
+  c {d: e}
+}
+<===> supports/output.css
+@supports (--a: 'b') {
+  c {
+    d: e;
+  }
+}
+<===>
+================================================================================
+<===> unknown_at_rule/input.scss
+@foo 'bar' "baz";
+<===> unknown_at_rule/output.css
+@foo 'bar' "baz";
