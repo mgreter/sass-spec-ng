@@ -1,6 +1,100 @@
 <===> README.md
 Selectors of a loaded module are shared by all emissions of its css. Resolving
-parent selectors (e.g. in pseudo selector arguments) must not change them.
+parent selectors (e.g. in pseudo selector arguments or a leading `&` in plain
+css) must not change them.
+<===>
+================================================================================
+<===> load_css/plain_css_parent/nested_then_root/input.scss
+@use "sass:meta";
+x {@include meta.load-css("other")}
+@include meta.load-css("other");
+<===> load_css/plain_css_parent/nested_then_root/other.css
+.a {
+  &.b {c: d}
+  .e & {f: g}
+  & > .h {i: j}
+}
+& .top {m: n}
+<===> load_css/plain_css_parent/nested_then_root/output.css
+x {
+  & .top {
+    m: n;
+  }
+}
+x .a {
+  &.b {
+    c: d;
+  }
+  .e & {
+    f: g;
+  }
+  & > .h {
+    i: j;
+  }
+}
+
+.a {
+  &.b {
+    c: d;
+  }
+  .e & {
+    f: g;
+  }
+  & > .h {
+    i: j;
+  }
+}
+
+& .top {
+  m: n;
+}
+<===>
+================================================================================
+<===> load_css/plain_css_parent/nested_twice/input.scss
+@use "sass:meta";
+x {@include meta.load-css("other")}
+y {@include meta.load-css("other")}
+<===> load_css/plain_css_parent/nested_twice/other.css
+.a {
+  &.b {c: d}
+  .e & {f: g}
+  & > .h {i: j}
+}
+& .top {m: n}
+<===> load_css/plain_css_parent/nested_twice/output.css
+x {
+  & .top {
+    m: n;
+  }
+}
+x .a {
+  &.b {
+    c: d;
+  }
+  .e & {
+    f: g;
+  }
+  & > .h {
+    i: j;
+  }
+}
+
+y {
+  & .top {
+    m: n;
+  }
+}
+y .a {
+  &.b {
+    c: d;
+  }
+  .e & {
+    f: g;
+  }
+  & > .h {
+    i: j;
+  }
+}
 <===>
 ================================================================================
 <===> load_css/pseudo_parent/nested_then_root/input.scss
