@@ -16,7 +16,7 @@ Error: $super: Parent selectors aren't allowed here.
   input.scss 2:7  root stylesheet
 
 <===> super/parent/error-libsass
-Error: Parent selectors aren't allowed here.
+Error: $super: Parent selectors aren't allowed here.
   ,
 2 | a {b: selector.is-superselector(&, "c")}
   |                                 ^
@@ -32,7 +32,6 @@ Error: Parent selectors aren't allowed here.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> super/invalid/input.scss
@@ -53,7 +52,7 @@ Error: $super: expected more input.
   input.scss 2:7  root stylesheet
 
 <===> super/invalid/error-libsass
-Error: expected more input.
+Error: $super: expected more input.
   ,
 2 | a {b: selector.is-superselector([c, "d")}
   |                                   ^
@@ -69,7 +68,6 @@ Error: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> super/type/input.scss
@@ -119,7 +117,7 @@ Error: $sub: Parent selectors aren't allowed here.
   input.scss 2:7  root stylesheet
 
 <===> sub/parent/error-libsass
-Error: Parent selectors aren't allowed here.
+Error: $sub: Parent selectors aren't allowed here.
   ,
 2 | a {b: selector.is-superselector("c", &)}
   |                                      ^
@@ -135,7 +133,6 @@ Error: Parent selectors aren't allowed here.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> sub/invalid/input.scss
@@ -156,7 +153,7 @@ Error: $sub: expected more input.
   input.scss 2:7  root stylesheet
 
 <===> sub/invalid/error-libsass
-Error: expected more input.
+Error: $sub: expected more input.
   ,
 2 | a {b: selector.is-superselector("c", [d)}
   |                                        ^
@@ -172,7 +169,6 @@ Error: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> sub/type/input.scss

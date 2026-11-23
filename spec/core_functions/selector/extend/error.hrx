@@ -16,7 +16,7 @@ Error: $selector: Parent selectors aren't allowed here.
   input.scss 2:7  root stylesheet
 
 <===> selector/parent/error-libsass
-Error: Parent selectors aren't allowed here.
+Error: $selector: Parent selectors aren't allowed here.
   ,
 2 | a {b: selector.extend(&, "c", "d")}
   |                       ^
@@ -32,7 +32,6 @@ Error: Parent selectors aren't allowed here.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> selector/invalid/input.scss
@@ -53,7 +52,7 @@ Error: $selector: expected more input.
   input.scss 2:7  root stylesheet
 
 <===> selector/invalid/error-libsass
-Error: expected more input.
+Error: $selector: expected more input.
   ,
 2 | a {b: selector.extend([c, "d", "e")}
   |                         ^
@@ -69,7 +68,6 @@ Error: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> selector/type/input.scss
@@ -119,7 +117,7 @@ Error: $extendee: Parent selectors aren't allowed here.
   input.scss 2:7  root stylesheet
 
 <===> extendee/parent/error-libsass
-Error: Parent selectors aren't allowed here.
+Error: $extendee: Parent selectors aren't allowed here.
   ,
 2 | a {b: selector.extend("c", &, "d")}
   |                            ^
@@ -135,7 +133,6 @@ Error: Parent selectors aren't allowed here.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> extendee/complex/string/input.scss
@@ -184,7 +181,7 @@ Error: $extendee: expected more input.
   input.scss 2:7  root stylesheet
 
 <===> extendee/invalid/error-libsass
-Error: expected more input.
+Error: $extendee: expected more input.
   ,
 2 | a {b: selector.extend("c", [d, "e")}
   |                              ^
@@ -200,7 +197,6 @@ Error: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> extendee/type/input.scss
@@ -250,7 +246,7 @@ Error: $extender: Parent selectors aren't allowed here.
   input.scss 2:7  root stylesheet
 
 <===> extender/parent/error-libsass
-Error: Parent selectors aren't allowed here.
+Error: $extender: Parent selectors aren't allowed here.
   ,
 2 | a {b: selector.extend("c", "d", &)}
   |                                 ^
@@ -266,7 +262,6 @@ Error: Parent selectors aren't allowed here.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> extender/invalid/input.scss
@@ -287,7 +282,7 @@ Error: $extender: expected more input.
   input.scss 2:7  root stylesheet
 
 <===> extender/invalid/error-libsass
-Error: expected more input.
+Error: $extender: expected more input.
   ,
 2 | a {b: selector.extend("c", "d", [e)}
   |                                   ^
@@ -303,7 +298,6 @@ Error: expected more input.
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   '
   input.scss 2:7   root stylesheet
-
 <===>
 ================================================================================
 <===> extender/type/input.scss
